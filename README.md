@@ -1,23 +1,23 @@
 # Lloyds-Student
 Team One's Lloyds Student App for CSC2022
 
-## Kirsty Webb
+#### Kirsty Webb
 Team Leader, Designer, Documentation
 
-## Cameron Trotter
+#### Cameron Trotter
 Vice Leader, Head of Testing
 
-## Jomin George
+#### Jomin George
 Tester, Designer
 
-##Dheeraj Sridhar
+#### Dheeraj Sridhar
 Head of Documentation, Designer
 
-## Dan Gardner
+#### Dan Gardner
 Head of Design, Documentation, Junior Programmer
 
-## Michael Green
+#### Michael Green
 Junior Programmer, Tester, Documentation
 
-## Artemiy Bozhenok
+#### Artemiy Bozhenok
 Head Programmer
