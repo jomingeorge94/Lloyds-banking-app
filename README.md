@@ -21,3 +21,12 @@ Junior Programmer, Tester, Documentation
 
 #### Artemiy Bozhenok
 Head Programmer
+
+==========
+
+# Version Control
+The version control is split into two branches, GUI and master. This will allow the GUI and the backend to be worked on inpedendantly of each other and then merged together later. This does add some confusion to the process however; people must be carful to sysnc with the correct branch depending on what they are working on. Jomin and Dan are at the moment the only two working on the GUI so only then need to be syncing the GUI branch, this means everyone else should be on the master branch.
+
+When you commit ou can tell which branch you are a sysncing with as in the GitHub program above the uncommited changes box there will be a small line of text with an arrow at the end which says either 'master' or 'GUI' this is where you are syncing.
+
+If people have any questions or are unsure, get in touch with me and I can try help out.
