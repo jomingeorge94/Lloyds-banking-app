@@ -16,7 +16,18 @@
         android:layout_centerHorizontal="true"
         android:autoText="false"
         android:textColor="#ff252525"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textSize="@dimen/abc_text_size_display_1_material"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="5dp"
+        android:background="#369742"
+        android:paddingTop="50dp"
+        android:id="@+id/login_title_bar"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/login_title"
+        android:layout_alignRight="@+id/login_title"
+        android:layout_alignEnd="@+id/login_title" />
 
     <EditText
         android:layout_width="wrap_content"
