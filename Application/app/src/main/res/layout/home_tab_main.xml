@@ -50,7 +50,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Team One - Tab 1"
-                        android:id="@+id/textView"
+                        android:id="@+id/textView2"
                         android:layout_gravity="center_horizontal"
                         android:textSize="30dp" />
                 </LinearLayout>
@@ -62,13 +62,13 @@
                     android:orientation="vertical"
                     android:clickable="false">
 
-                    <Button
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="JOMIN"
-                        android:id="@+id/button2"
+                        android:text="Team One - Tab 2"
+                        android:id="@+id/textView"
                         android:layout_gravity="center_horizontal"
-                        android:clickable="false" />
+                        android:textSize="30dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -76,7 +76,16 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:orientation="vertical"
-                    android:clickable="false"></LinearLayout>
+                    android:clickable="false">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Team One - Tab 3"
+                        android:id="@+id/textView3"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="30dp" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/tab4"
