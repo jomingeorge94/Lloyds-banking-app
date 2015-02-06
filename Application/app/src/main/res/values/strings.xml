@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    // Login Activity
+    <string name="login_title">Login Lloyds Student</string>
+
     <string name="app_name">Lloyds Student</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello World</string>
+    <string name="menu_login">Menu Login</string>
+    <string name="menu_main">Menu Main</string>
+    <string name="action_settings">Action Settings</string>
+    <string name="title_activity_login">Activity Login</string>
 
 </resources>
