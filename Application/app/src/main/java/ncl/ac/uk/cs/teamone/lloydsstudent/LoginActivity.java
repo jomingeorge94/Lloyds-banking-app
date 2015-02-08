@@ -1,21 +1,57 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+<<<<<<< HEAD:Application/app/src/main/java/ncl/ac/uk/cs/teamone/lloydsstudent/LoginActivity.java
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+=======
+import android.widget.TabHost;
+>>>>>>> origin/GUI:Application/app/src/main/java/ncl/ac/uk/cs/teamone/lloydsstudent/MainActivity.java
 
 
 public class LoginActivity extends ActionBarActivity {
 
+    private TabHost tabHost;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD:Application/app/src/main/java/ncl/ac/uk/cs/teamone/lloydsstudent/LoginActivity.java
         setContentView(R.layout.activity_login);
+=======
+        setContentView(R.layout.home_tab_main);
+        // Refactor at your will.
+        TabHost tabHost = (TabHost)findViewById(R.id.tabHost);
+        tabHost.setup();
+        TabHost.TabSpec tab1 = tabHost.newTabSpec("tab1");
+        TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
+        TabHost.TabSpec tab3 = tabHost.newTabSpec("Third Tab");
+        TabHost.TabSpec tab4 = tabHost.newTabSpec("Fourth Tab");
+
+        tab1.setIndicator("", getResources().getDrawable(R.drawable.ic_budget));
+        tab1.setContent(R.id.tab1);
+
+        tab2.setIndicator("", getResources().getDrawable(R.drawable.ic_home));
+        tab2.setContent(R.id.tab2);
+
+        tab3.setIndicator("", getResources().getDrawable(R.drawable.ic_deals));
+        tab3.setContent(R.id.tab3);
+
+        tab4.setIndicator("", getResources().getDrawable(R.drawable.ic_horse));
+        tab4.setContent(R.id.tab4);
+
+        tabHost.addTab(tab1);
+        tabHost.addTab(tab2);
+        tabHost.addTab(tab3);
+        tabHost.addTab(tab4);
+
+>>>>>>> origin/GUI:Application/app/src/main/java/ncl/ac/uk/cs/teamone/lloydsstudent/MainActivity.java
     }
 
 
