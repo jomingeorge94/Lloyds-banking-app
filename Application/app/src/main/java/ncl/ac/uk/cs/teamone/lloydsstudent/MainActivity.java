@@ -27,5 +27,6 @@ public class MainActivity extends Activity {
                 MainActivity.this.finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
+
     }
 }

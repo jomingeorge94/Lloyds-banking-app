@@ -3,6 +3,7 @@
 
     // Login Activity
     <string name="login_title">Login Lloyds Student</string>
+    <String name="login_intro">Welcome to Lloyds Student, please enter your 4 digit pass code to login and view your account</String>
 
     <string name="app_name">Lloyds Student</string>
     <string name="hello_world">Hello World</string>
