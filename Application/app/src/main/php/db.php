@@ -61,8 +61,8 @@
 		}
 
 		close($db_conn);
-
-		return $f_values;
+		//returns one value as a string or an array
+		return (sizeof($f_values) < 2) ? $f_values[$values] : $f_values;
 	}
 
 	/**
