@@ -7,7 +7,7 @@
 	 * @date 02/02/2015
 	 * @version 0.0.1
 	 *
-	 * This file is used for validation when linking in android studio
+	 * Passcode validation upon login
 	 *
 	 */
 
@@ -27,10 +27,12 @@
 		if( strcmp($passcode, $data['passcode']) == 0 ) {
 			//Retrieve all data and put into a JSON object
 			//Return successful JSON object to the android studio
+			echo json_encode($customer);
 		}
 		else {
-			//send JSON objects to alert that passcodes don't match
-			return false;
+			//set json object valid to false
+			$json = array("error" => true);
+			echo json_encode($json);
 		}
 	}
 ?>
