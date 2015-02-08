@@ -2,8 +2,12 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class LoginActivity extends ActionBarActivity {
@@ -36,4 +40,5 @@ public class LoginActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
