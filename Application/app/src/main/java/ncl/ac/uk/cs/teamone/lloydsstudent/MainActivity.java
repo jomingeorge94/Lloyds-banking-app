@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TabHost;
 
 
@@ -22,7 +24,7 @@ public class MainActivity extends ActionBarActivity {
         TabHost.TabSpec tab1 = tabHost.newTabSpec("tab1");
         TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
         TabHost.TabSpec tab3 = tabHost.newTabSpec("Third Tab");
-        TabHost.TabSpec tab4 = tabHost.newTabSpec("Fourth Tab");
+
 
         tab1.setIndicator("", getResources().getDrawable(R.drawable.ic_budget));
         tab1.setContent(R.id.tab1);
@@ -33,13 +35,12 @@ public class MainActivity extends ActionBarActivity {
         tab3.setIndicator("", getResources().getDrawable(R.drawable.ic_deals));
         tab3.setContent(R.id.tab3);
 
-        tab4.setIndicator("", getResources().getDrawable(R.drawable.ic_horse));
-        tab4.setContent(R.id.tab4);
-
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
-        tabHost.addTab(tab4);
+
+//        ImageButton hpbutton = (ImageButton)findViewById(R.id.horsePointer);
+//        hpbutton.setImageResource(R.drawable.ic_horse);
 
     }
 

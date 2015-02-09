@@ -38,14 +38,9 @@ public class LoginActivity extends ActionBarActivity {
         tab3.setIndicator("", getResources().getDrawable(R.drawable.ic_deals));
         tab3.setContent(R.id.tab3);
 
-        tab4.setIndicator("", getResources().getDrawable(R.drawable.ic_horse));
-        tab4.setContent(R.id.tab4);
-
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
-        tabHost.addTab(tab4);
-
     }
 
 
