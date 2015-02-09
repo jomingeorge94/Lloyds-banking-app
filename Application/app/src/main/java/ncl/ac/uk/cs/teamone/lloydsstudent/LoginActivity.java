@@ -6,13 +6,10 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-<<<<<<< HEAD:Application/app/src/main/java/ncl/ac/uk/cs/teamone/lloydsstudent/LoginActivity.java
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
-=======
 import android.widget.TabHost;
->>>>>>> origin/GUI:Application/app/src/main/java/ncl/ac/uk/cs/teamone/lloydsstudent/MainActivity.java
 
 
 public class LoginActivity extends ActionBarActivity {
@@ -22,9 +19,7 @@ public class LoginActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD:Application/app/src/main/java/ncl/ac/uk/cs/teamone/lloydsstudent/LoginActivity.java
         setContentView(R.layout.activity_login);
-=======
         setContentView(R.layout.home_tab_main);
         // Refactor at your will.
         TabHost tabHost = (TabHost)findViewById(R.id.tabHost);
@@ -51,7 +46,6 @@ public class LoginActivity extends ActionBarActivity {
         tabHost.addTab(tab3);
         tabHost.addTab(tab4);
 
->>>>>>> origin/GUI:Application/app/src/main/java/ncl/ac/uk/cs/teamone/lloydsstudent/MainActivity.java
     }
 
 
