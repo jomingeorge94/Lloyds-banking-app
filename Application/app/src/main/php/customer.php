@@ -1,15 +1,32 @@
 
 <?php
 
+	/**
+	 *
+	 * @file customer.php
+	 * @author Artemiy Bozhenok
+	 * @date 07/02/2015
+	 * @version 1.0.0
+	 *
+	 * Class resembles an entity in the database
+	 *
+	 */
 
 	class Customer {
+		//primary key - used for sortcode
+		//uid will always have a length of 6 format: xx-xx-xx
 		public $uid = "";
-		public $name = "";
-		public $age = "";
-		public $sortcode = "";
-
-		//used in android studio to identify whether an error occurred with validation or retrieval
-		//public $error = false;
+		//names of the customer
+		public $firstname = "";
+		public $lastname = "";
+		//serialized array
+		//the array contains the uid of the contacts
+		public $contacts = "";
+		//set passcode used to login in
+		//length of 4 format: xxxx
+		public $passcode = "";
+		//important! used for setup and data identification
+		public $mobile_number = "";
 	}
 
 ?>
