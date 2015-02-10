@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TabHost;
 
-
 public class MainActivity extends ActionBarActivity {
 
     private TabHost tabHost;
@@ -38,9 +37,6 @@ public class MainActivity extends ActionBarActivity {
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
-
-//        ImageButton hpbutton = (ImageButton)findViewById(R.id.horsePointer);
-//        hpbutton.setImageResource(R.drawable.ic_horse);
 
     }
 
