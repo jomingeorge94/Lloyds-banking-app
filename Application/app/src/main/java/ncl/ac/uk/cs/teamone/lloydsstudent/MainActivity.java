@@ -9,6 +9,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TabHost;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
+import ncl.ac.uk.cs.teamone.lloydsstudent.circleprogress.CircleProgress;
+
 public class MainActivity extends ActionBarActivity {
 
     private TabHost tabHost;
@@ -37,6 +42,21 @@ public class MainActivity extends ActionBarActivity {
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
+
+        final CircleProgress circleProgress = (CircleProgress) findViewById(R.id.circle_progress);
+        circleProgress.setFinishedColor(getResources().getColor(R.color.material_blue_grey_800));
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        circleProgress.setProgress(circleProgress.getProgress() + 1);
+                    }
+                });
+            }
+        }, 1000, 100);
 
     }
 
