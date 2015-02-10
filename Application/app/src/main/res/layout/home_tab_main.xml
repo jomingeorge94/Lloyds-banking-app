@@ -26,7 +26,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:clickable="false"
-            android:background="#5DAD68">
+            android:background="#5DAD68"
+            android:weightSum="1">
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="270dp"
@@ -34,12 +35,11 @@
                 android:background="#5DAD68"
                 android:clickable="false"
                 android:measureWithLargestChild="true"
-                android:paddingTop="20dp"
-                android:paddingBottom="0dp"
-                android:paddingLeft="70dp"
                 android:orientation="horizontal"
-                android:paddingRight="40dp"
-                android:layout_marginLeft="30dp"></TabWidget>
+                android:layout_weight="1.04"
+                android:longClickable="false"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"></TabWidget>
 
             <ImageButton
                 android:layout_width="62dp"
@@ -50,13 +50,121 @@
 
                 android:layout_toRightOf="@android:id/tabs"
                 android:background="#5DAD68"
-                android:layout_gravity="center_vertical|bottom" />
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:clickable="false">
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:clickable="false"
+                    android:background="#FFFFFF"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/customerName"
+                        android:fontFamily="sans-serif-light"
+                        android:id="@+id/customerName"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="#ff000000"
+                        android:textSize="54sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/lastLogin"
+                        android:paddingBottom="5dp"
+                        android:id="@+id/lastLogin"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="#ff808677"
+                        android:textSize="18sp" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@android:color/holo_green_dark"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/accountType"
+                        android:paddingTop="20dp"
+                        android:id="@+id/accountType"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="22sp"
+                        android:textColor="#ff808677" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1"
+                            android:paddingLeft="40dp">
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="49dp"
+                                android:id="@+id/leftArrowAccount"
+                                android:layout_weight="0.18"
+                                android:src="@drawable/ic_leftarrow"
+                                android:background="#fffbfffb"
+                                android:paddingRight="30dp"
+                                android:layout_marginTop="10dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:text="@string/currentMoney"
+                                android:fontFamily="sans-serif-light"
+                                android:id="@+id/currentMoney"
+                                android:paddingTop="5dp"
+                                android:layout_gravity="center_horizontal"
+                                android:textColor="#ff000000"
+                                android:textSize="40dp" />
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="49dp"
+                                android:id="@+id/rightArrowAccount"
+                                android:layout_weight="0.18"
+                                android:background="#ffffffff"
+                                android:src="@drawable/ic_rightarrow"
+                                android:paddingLeft="30dp"
+                                android:layout_marginTop="10dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/accountDetails"
+                        android:id="@+id/accountDetails"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="#ff808677"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/tab1"
@@ -71,24 +179,6 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical"
-                    android:clickable="false"
-                    android:background="#FFFFFF">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Team One - Tab 2"
-                        android:id="@+id/textView"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="30dp"
-                        android:textColor="#000000" />
-                </LinearLayout>
-
-                <LinearLayout
                     android:id="@+id/tab3"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
@@ -96,14 +186,6 @@
                     android:clickable="false"
                     android:background="#FFFFFF">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Team One - Tab 3"
-                        android:id="@+id/textView3"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="30dp"
-                        android:textColor="#000000" />
                 </LinearLayout>
 
             </FrameLayout>

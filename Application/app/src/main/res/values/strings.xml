@@ -11,6 +11,9 @@
     <string name="menu_main">Menu Main</string>
     <string name="action_settings">Action Settings</string>
     <string name="title_activity_login">Activity Login</string>
-
-
+    <string name="customerName">Mike Williams</string>
+    <string name="lastLogin">LAST LOGIN 11:56 NEWCASTLE</string>
+    <string name="accountType">Student Account</string>
+    <string name="currentMoney">£2000.00</string>
+    <string name="accountDetails">20-14-19 | 12345678</string>
 </resources>
