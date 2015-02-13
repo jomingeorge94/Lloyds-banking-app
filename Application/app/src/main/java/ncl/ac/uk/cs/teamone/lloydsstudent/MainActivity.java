@@ -1,22 +1,16 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TabHost;
-
-import java.util.Timer;
-import java.util.TimerTask;
-
-import ncl.ac.uk.cs.teamone.lloydsstudent.circleprogress.CircleProgress;
+import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
     private TabHost tabHost;
+    private TextView click;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,24 +33,14 @@ public class MainActivity extends ActionBarActivity {
         tab3.setIndicator("", getResources().getDrawable(R.drawable.ic_deals));
         tab3.setContent(R.id.tab3);
 
+
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
 
-        final CircleProgress circleProgress = (CircleProgress) findViewById(R.id.circle_progress);
-        circleProgress.setFinishedColor(getResources().getColor(R.color.material_blue_grey_800));
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        circleProgress.setProgress(circleProgress.getProgress() + 1);
-                    }
-                });
-            }
-        }, 1000, 100);
+
+
+
 
     }
 
@@ -82,5 +66,6 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
 }

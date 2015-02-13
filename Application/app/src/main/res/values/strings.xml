@@ -19,5 +19,11 @@
     <string name="makeTransferButton">Make a Transfer</string>
     <string name="payContactButton">Pay a Contact</string>
     <string name="spaceinbetweenthebuttons"></string>
+    <string name="accountTypeInfo">Account Overview</string>
+    <string name="balanceAvailable">Balance</string>
+    <string name="interestRateText">Interest Rate</string>
+    <string name="overdraftText">Overdraft Limit</string>
+    <string name="interestRate">0.5%</string>
+    <string name="overdraftLimit">£1500.00</string>
 
 </resources>
