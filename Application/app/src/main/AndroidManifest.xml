@@ -35,7 +35,7 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden" >
         </activity>
-        
+
         <activity
             android:name=".HomeActivity"
             android:label="@string/main_title"
