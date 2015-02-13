@@ -18,6 +18,7 @@
     <string name="accountDetails">20-14-19 | 12345678</string>
     <string name="makeTransferButton">Make a Transfer</string>
     <string name="payContactButton">Pay a Contact</string>
+    <string name="main_title">Homepage</string>
     <string name="spaceinbetweenthebuttons"></string>
     <string name="accountTypeInfo">Account Overview</string>
     <string name="balanceAvailable">Balance</string>

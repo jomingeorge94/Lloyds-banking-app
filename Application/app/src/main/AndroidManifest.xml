@@ -34,6 +34,12 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden" >
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/main_title"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"
