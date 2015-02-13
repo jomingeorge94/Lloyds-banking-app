@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-public class MainActivity extends ActionBarActivity {
+public class HomeActivity extends ActionBarActivity {
 
     private TabHost tabHost;
     private TextView click;
