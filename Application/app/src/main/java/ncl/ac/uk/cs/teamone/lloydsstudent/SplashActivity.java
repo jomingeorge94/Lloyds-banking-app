@@ -15,12 +15,11 @@ public class SplashActivity extends Activity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        /* New Handler to start the Menu-Activity
-         * and close this Splash-Screen after some seconds.*/
+        /* Creates New handler to start the login screen after wait */
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                /* Create an Intent that will start the Menu-Activity. */
+                /* Create an Intent that will start the Login Screen */
                 Intent mainIntent = new Intent(SplashActivity.this, LoginActivity.class);
                 SplashActivity.this.startActivity(mainIntent);
                 SplashActivity.this.finish();
