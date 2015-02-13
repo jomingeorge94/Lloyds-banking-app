@@ -22,11 +22,11 @@
 		//serialized array
 		//the array contains the uid of the contacts
 		public $contacts = "";
+		//important! used for setup and data identification
+		public $mobile_number = "";
 		//set passcode used to login in
 		//length of 4 format: xxxx
 		public $passcode = "";
-		//important! used for setup and data identification
-		public $mobile_number = "";
 	}
 
 ?>

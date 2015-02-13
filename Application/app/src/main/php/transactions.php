@@ -17,11 +17,9 @@
 		public $to_from = "";
 		//transaction amount
 		public $amount = "";
-		//primary key
+		//primary key & foreign key
 		//unique identifier for the transaction
 		public $tid = ""
-		//foreign key - which relates to the uid
-		public $id = "";
 		//the date of the transaction
 		public $date = "";
 	}

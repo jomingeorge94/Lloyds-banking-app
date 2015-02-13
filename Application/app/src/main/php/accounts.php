@@ -15,9 +15,11 @@
 	class Accounts {
 		//Current, ISA etc..
 		public $type_of_account = "";
+		//foreign key - references UID
+		public $aid = "";
 		//primary key - identifies a specific account
 		public $account_number = "";
-		//foreign key - connects with uid - customer has same SC for all accounts
+		//branch code
 		public $sortcode = "";
 		//Doesn't include the overdraft
 		public $total_money = "";
