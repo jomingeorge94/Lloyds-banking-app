@@ -37,7 +37,7 @@
         </activity>
 
         <activity
-            android:name=".HomeActivity"
+            android:name=".MainActivity"
             android:label="@string/main_title"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden" >
