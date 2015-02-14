@@ -17,7 +17,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_tab_main);
         // Refactor at your will.
-        TabHost tabHost = (TabHost)findViewById(R.id.tabHost);
+        final TabHost tabHost = (TabHost)findViewById(R.id.tabHost);
         tabHost.setup();
         TabHost.TabSpec tab1 = tabHost.newTabSpec("tab1");
         TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
@@ -37,6 +37,27 @@ public class MainActivity extends ActionBarActivity {
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
+
+        /*tabHost.getTabContentView().findViewById(R.id.currentMoney).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                switch(v.getId()){
+                    case R.id.currentMoney:
+                        android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+
+
+                        transaction.replace(R.id.tab2, new OverviewFragment());
+
+
+                        transaction.commit();
+
+
+                }
+            }
+        });*/
 
 
 

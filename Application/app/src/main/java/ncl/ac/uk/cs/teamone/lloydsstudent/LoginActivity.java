@@ -1,14 +1,12 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.inputmethod.EditorInfo;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TabHost;
 
 
@@ -20,27 +18,16 @@ public class LoginActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        setContentView(R.layout.home_tab_main);
-        // Refactor at your will.
-        TabHost tabHost = (TabHost)findViewById(R.id.tabHost);
-        tabHost.setup();
-        TabHost.TabSpec tab1 = tabHost.newTabSpec("tab1");
-        TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
-        TabHost.TabSpec tab3 = tabHost.newTabSpec("Third Tab");
-        TabHost.TabSpec tab4 = tabHost.newTabSpec("Fourth Tab");
 
-        tab1.setIndicator("", getResources().getDrawable(R.drawable.ic_budget));
-        tab1.setContent(R.id.tab1);
 
-        tab2.setIndicator("", getResources().getDrawable(R.drawable.ic_home));
-        tab2.setContent(R.id.tab2);
-
-        tab3.setIndicator("", getResources().getDrawable(R.drawable.ic_deals));
-        tab3.setContent(R.id.tab3);
-
-        tabHost.addTab(tab1);
-        tabHost.addTab(tab2);
-        tabHost.addTab(tab3);
+        final Button skipButton = (Button) findViewById(R.id.skip);
+        skipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent I = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(I);
+            }
+        });
     }
 
 

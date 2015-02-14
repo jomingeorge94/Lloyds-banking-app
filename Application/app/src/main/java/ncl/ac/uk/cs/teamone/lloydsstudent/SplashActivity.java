@@ -14,6 +14,7 @@ public class SplashActivity extends Activity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        setContentView(R.layout.activity_splash);
 
         /* Creates New handler to start the login screen after wait */
         new Handler().postDelayed(new Runnable(){
