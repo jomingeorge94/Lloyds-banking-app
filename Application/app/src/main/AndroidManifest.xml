@@ -46,7 +46,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".FirstTime"
+            android:name=".FirstLoginActivity"
             android:label="@string/title_activity_first_time" >
         </activity>
     </application>
