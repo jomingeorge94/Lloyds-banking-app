@@ -20,7 +20,7 @@ public class FirstLoginActivity extends ActionBarActivity {
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent I = new Intent(FirstLoginActivity.this, MainActivity.class);
+                Intent I = new Intent(FirstLoginActivity.this, LoginActivity.class);
                 startActivity(I);
             }
         });
