@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    // Generics
+    <string name="gen_next">Next</string>
+
     // Login Activity
     <string name="login_title">Login Lloyds Student</string>
 

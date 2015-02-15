@@ -94,8 +94,21 @@
         android:layout_height="wrap_content"
         android:text="Skip"
         android:id="@+id/first_skip"
+        android:layout_above="@+id/button"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gen_next"
+        android:id="@+id/button"
+        android:background="#369742"
+        android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textView7"
+        android:layout_alignEnd="@+id/textView7" />
 
 </RelativeLayout>
