@@ -16,8 +16,8 @@ public class FirstLoginActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_time);
 
-        final Button skipButton = (Button) findViewById(R.id.first_skip);
-        skipButton.setOnClickListener(new View.OnClickListener() {
+        final Button nextButton = (Button) findViewById(R.id.first_skip);
+        nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent I = new Intent(FirstLoginActivity.this, LoginActivity.class);
