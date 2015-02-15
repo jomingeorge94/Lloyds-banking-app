@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     // Login Activity
     <string name="login_title">Login Lloyds Student</string>
-    <string name="login_intro">Welcome to Lloyds Student. \n\nPlease enter your 4 digit pass code to Login and View your account</string>
 
+    // First Time Setup
+    <string name="first_title">Lloyds Student Setup</string>
+    <string name="first_intro">Welcome to Lloyds Student your all-in-one finance solution during Uni
+                               ! \n\nIn order to set up your Lloyds Student App we need to take a few
+                               details to link your bank account with the app.</string>
+    <string name="first_lable_1">1. Online Banking User ID</string>
+
+    <string name="login_intro">Welcome to Lloyds Student. \n\nPlease enter your 4 digit pass code to Login and View your account</string>
     <string name="app_name">Lloyds Student</string>
     <string name="hello_world">Hello World</string>
     <string name="menu_login">Menu Login</string>
@@ -26,5 +32,6 @@
     <string name="overdraftText">Overdraft Limit</string>
     <string name="interestRate">0.5%</string>
     <string name="overdraftLimit">£1500.00</string>
+    <string name="title_activity_first_time">FirstTime</string>
 
 </resources>

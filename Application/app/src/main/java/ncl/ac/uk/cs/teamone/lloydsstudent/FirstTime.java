@@ -1,45 +1,24 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.text.Layout;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TabHost;
 
 
-public class LoginActivity extends ActionBarActivity {
-
-    private TabHost tabHost;
+public class FirstTime extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        final Button skipButton = (Button) findViewById(R.id.skip);
-        skipButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent I = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(I);
-            }
-        });
-
+        setContentView(R.layout.activity_first_time);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login, menu);
+        getMenuInflater().inflate(R.menu.menu_first_time, menu);
         return true;
     }
 
@@ -57,5 +36,4 @@ public class LoginActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 }
