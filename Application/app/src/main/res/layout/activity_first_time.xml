@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/first_lable_1"
+        android:text="@string/first_label_1"
         android:id="@+id/textView8"
         android:layout_below="@+id/textView7"
         android:layout_alignParentLeft="true"
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/first_lable_2"
+        android:text="@string/first_label_2"
         android:id="@+id/textView9"
         android:layout_below="@+id/textView7"
         android:layout_alignParentLeft="true"
@@ -75,13 +75,13 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:ems="10"
         android:id="@+id/editText5"
         android:layout_below="@+id/textView9"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:maxLength="9" />
+        android:maxLength="9"
+        android:inputType="textPassword" />
 
     <Button
         android:layout_width="wrap_content"
