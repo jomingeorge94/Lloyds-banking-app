@@ -9,6 +9,7 @@
                                ! \n\nIn order to set up your Lloyds Student App we need to take a few
                                details to link your bank account with the app.</string>
     <string name="first_lable_1">1. Online Banking User ID</string>
+    <string name="first_lable_2">2. Online Banking Password</string>
 
     <string name="login_intro">Welcome to Lloyds Student. \n\nPlease enter your 4 digit pass code to Login and View your account</string>
     <string name="app_name">Lloyds Student</string>
