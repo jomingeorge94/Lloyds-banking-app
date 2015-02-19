@@ -1,27 +1,36 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TabHost;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
-    private TabHost tabHost;
+    private FragmentTabHost tabHost;
     private TextView click;
+    FragmentManager manager;
+    private boolean bool = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_tab_main);
+
+
+        manager = getFragmentManager();
         // Refactor at your will.
         final TabHost tabHost = (TabHost)findViewById(R.id.tabHost);
         tabHost.setup();
-        TabHost.TabSpec tab1 = tabHost.newTabSpec("tab1");
-        TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
-        TabHost.TabSpec tab3 = tabHost.newTabSpec("Third Tab");
+        final TabHost.TabSpec tab1 = tabHost.newTabSpec("tab1");
+        final TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
+        final TabHost.TabSpec tab3 = tabHost.newTabSpec("Third Tab");
 
 
         tab1.setIndicator("", getResources().getDrawable(R.drawable.ic_budget));
@@ -38,7 +47,14 @@ public class MainActivity extends ActionBarActivity {
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
 
-        /*tabHost.getTabContentView().findViewById(R.id.currentMoney).setOnClickListener(new View.OnClickListener() {
+        final OverviewFragment frag = new OverviewFragment();
+
+        
+
+
+
+
+        tabHost.getTabContentView().findViewById(R.id.currentMoney).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -46,24 +62,35 @@ public class MainActivity extends ActionBarActivity {
                 switch(v.getId()){
                     case R.id.currentMoney:
                         android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        bool = true;
 
+                        transaction.replace(R.id.tabSwitch2, frag);
+                        transaction.addToBackStack(null);
 
-
-                        transaction.replace(R.id.tab2, new OverviewFragment());
+                        //Debuggin
+                        Log.i("Testing","Current Money Clicked");
 
 
                         transaction.commit();
 
 
+
                 }
             }
-        });*/
-
-
+        });
 
 
 
     }
+
+    /*public void showCurrentAccountMoney (View v){
+
+        HomeTabTransaction f1 = new HomeTabTransaction();
+        FragmentTransaction transaction = manager.beginTransaction();
+        Log.i("Jomin","hello");
+        transaction.replace(R.id.tab2, f1);
+        transaction.commit();
+    }*/
 
 
     @Override
