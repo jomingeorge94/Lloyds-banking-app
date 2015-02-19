@@ -4,7 +4,6 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +15,8 @@ public class MainActivity extends ActionBarActivity {
     private FragmentTabHost tabHost;
     private TextView click;
     FragmentManager manager;
-    private boolean bool = false;
+    private boolean boolOverview = false;
+    private boolean boolHome = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +48,27 @@ public class MainActivity extends ActionBarActivity {
         tabHost.addTab(tab3);
 
         final OverviewFragment frag = new OverviewFragment();
+        final HomeFragment fragHome = new HomeFragment();
 
-        
+
+        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String tabId) {
+                if(tabHost.getCurrentTabTag().equals("Second Tab")) {
+
+                    android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+
+
+                    transaction.replace(R.id.tabSwitch2, fragHome);
+                    transaction.addToBackStack(null);
+
+
+
+                    transaction.commit();
+                }
+            }
+        });
 
 
 
@@ -62,13 +81,10 @@ public class MainActivity extends ActionBarActivity {
                 switch(v.getId()){
                     case R.id.currentMoney:
                         android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                        bool = true;
 
                         transaction.replace(R.id.tabSwitch2, frag);
                         transaction.addToBackStack(null);
 
-                        //Debuggin
-                        Log.i("Testing","Current Money Clicked");
 
 
                         transaction.commit();
