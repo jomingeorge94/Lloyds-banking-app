@@ -1,23 +1,17 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TabHost;
+import android.text.*;
 
 
 public class LoginActivity extends ActionBarActivity {
-
-    private TabHost tabHost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +19,12 @@ public class LoginActivity extends ActionBarActivity {
         setContentView(R.layout.activity_login);
 
         final Button skipButton = (Button) findViewById(R.id.skip);
+        //Locates the text edit box and creates an editable object
+        final EditText passcode = (EditText) findViewById(R.id.login_passcode_input);
+        //Locates and creates the login button
+        final Button loginButton = (Button) findViewById(R.id.login);
+
+        //Skip button listener - Temporary
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +33,43 @@ public class LoginActivity extends ActionBarActivity {
             }
         });
 
+        //Disable login
+        loginButton.setEnabled(false);
+
+        //Login button event listener
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+            }
+        });
+
+        passcode.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //When user has entered the entire passcode
+                if(s.length() == 4) {
+                    //Enable the login button
+                    loginButton.setEnabled(true);
+                }
+            }
+
+            /**
+             * Ignore
+             */
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            /**
+             * Ignore
+             */
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
     }
 
 
