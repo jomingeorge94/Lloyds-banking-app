@@ -2,6 +2,7 @@
 <resources>
     // Generics
     <string name="gen_next">Next</string>
+    <string name="gen_finished">Finished</string>
 
     // Login Activity
     <string name="login_title">Login Lloyds Student</string>
@@ -13,6 +14,12 @@
                                details to link your bank account with the app and get you started</string>
     <string name="first_label_1">1. Online Banking User ID</string>
     <string name="first_label_2">2. Online Banking Password</string>
+    <string name="first_passcode_info">Next we need you to set-up a four digit passcode which you'll
+                                       use each time you log into the app to keep your details
+                                       secure Try to make your passcode memorable but also
+                                       unique and secure</string>
+    <string name="first_passcode_label">Passcode:</string>
+    <string name="first_passcode_confirm">Confirm:</string>
 
     <string name="login_intro">Welcome to Lloyds Student. \n\nPlease enter your 4 digit pass code to Login and View your account</string>
     <string name="app_name">Lloyds Student</string>
