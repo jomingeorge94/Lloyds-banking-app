@@ -11,12 +11,19 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Artemiy on 20/02/2015.
@@ -25,6 +32,7 @@ import java.util.List;
 public class PHPHandler {
 
     private String url = "";
+    private Map data = new HashMap();
 
     public PHPHandler(String url, String[] keys, String[] values) {
         //Sets the php files location
@@ -60,6 +68,52 @@ public class PHPHandler {
         } catch(IOException ioe) {
             Log.v("IOException", ioe.getMessage());
         }
+
+        StringBuilder sb = null;
+        String result = null;
+
+        //converts the data into a string
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inStream, "iso-8859-1"));
+            sb = new StringBuilder();
+            sb.append(reader.readLine() + '\n');
+            String line="0";
+
+            while ((line = reader.readLine()) != null) {
+                sb.append(line + '\n');
+            }
+
+            inStream.close();
+            result = sb.toString();
+        } catch(UnsupportedEncodingException uee) {
+            Log.v("UnsupportedEncodingException", uee.getMessage());
+        } catch(IOException ioe) {
+            Log.v("IOException", ioe.getMessage());
+        }
+
+        try {
+            JSONArray jArray = new JSONArray(result);
+            JSONObject json_data = jArray.getJSONObject(0);
+            //places the retrieved data into a java data structure
+            setData(json_data, keys);
+        } catch(JSONException je) {
+            Log.v("JSONException", je.getMessage());
+        }
+    }
+
+    public void setData(JSONObject json_data, String[] keys) throws JSONException {
+        //defensive programming to prevent an empty array from adding nothing
+        if(keys == null) {
+            return;
+        }
+        //add data
+        for(int i = 0; i < keys.length; i++) {
+            this.data.put(keys[i], json_data.getString(keys[i]));
+        }
+    }
+
+    public Map getData() {
+        return data;
     }
 
     public void setURL(String url) {
