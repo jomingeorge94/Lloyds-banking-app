@@ -51,6 +51,7 @@ public class MainActivity extends ActionBarActivity {
         final HomeFragment fragHome = new HomeFragment();
 
 
+
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
