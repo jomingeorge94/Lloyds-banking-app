@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.text.*;
 
+import java.util.Map;
+
 
 public class LoginActivity extends ActionBarActivity {
 
@@ -40,9 +42,16 @@ public class LoginActivity extends ActionBarActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            String[] k = { "passcode" };
+            String[] va = { passcode.getText().toString() };
+            PHPHandler handler = new PHPHandler("localhost/validation.php", k, va);
 
+            Map d = handler.getData();
 
-
+            if(d != null) {
+                Intent I = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(I);
+            }
             }
         });
 

@@ -78,10 +78,16 @@
 
 	function add($db_table, $columns, $values) {
 		$db_conn = connect();
+		$v = "";
 
-		$sql = 'INSERT INTO test_table' .
+		//appends neccessary values to v
+		for($i = 0; $i < sizeof($columns); $i++) {
+			$v .= encrypt($values[$i]) . ($i != (sizeof($columns)-1)) ? '", "' : "";
+		}
+
+		$sql = 'INSERT INTO ' . $db_table .
 			   '(' . $columns . ') ' .
-			   'VALUES ("' . $values[0] . '", "' . encrypt($values[1]) . '", "' . encrypt($values[2]) . '", "' .encrypt($values[3]) . '")';
+			   'VALUES ("' . $v . '")';
 		
 		$success = mysqli_query($db_conn, $sql);
 		

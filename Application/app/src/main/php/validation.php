@@ -28,7 +28,7 @@
 		//decrypt the uid stored in the SQLite
 		$uid = decrypt($uid);
 		//retrieve passcode data from database
-		$data = fetch("test_table", "sortcode", $uid);
+		$data = fetch("test_table", "passcode", $uid);
 
 		//Ensures the passcode entered by user and the users set passcode match
 		if($data == $passcode) {

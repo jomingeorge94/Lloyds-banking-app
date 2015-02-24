@@ -1,5 +1,7 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.util.Log;
 
 import org.apache.http.HttpEntity;
@@ -89,6 +91,10 @@ public class PHPHandler {
             Log.v("UnsupportedEncodingException", uee.getMessage());
         } catch(IOException ioe) {
             Log.v("IOException", ioe.getMessage());
+        }
+
+        if(result.equalsIgnoreCase("1") || result.equalsIgnoreCase("2") || result.equalsIgnoreCase("3")) {
+            return;
         }
 
         try {
