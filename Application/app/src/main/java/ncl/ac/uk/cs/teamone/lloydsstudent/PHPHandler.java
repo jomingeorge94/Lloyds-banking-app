@@ -12,6 +12,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
+import java.io.InputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -47,11 +48,13 @@ public class PHPHandler {
             Log.v("UnsupportedEncodingException", uee.getMessage());
         }
 
+        InputStream inStream = null;
         //Execute the post request
         try {
             HttpResponse response = httpclient.execute(httppost);
             HttpEntity entity = response.getEntity();
-
+            //assigns the content of the execution to an input stream
+            inStream = entity.getContent();
         } catch(ClientProtocolException cpe) {
             Log.v("ClientProtocolException", cpe.getMessage());
         } catch(IOException ioe) {
