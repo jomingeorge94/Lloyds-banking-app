@@ -20,6 +20,7 @@
                                        unique and secure</string>
     <string name="first_passcode_label">Passcode:</string>
     <string name="first_passcode_confirm">Confirm:</string>
+    <string name="first_failed_login">Sorry but your online login details didn\'t match our records (Make sure you\'re using your Online Banking Login)</string>
 
     <string name="login_intro">Welcome to Lloyds Student. \n\nPlease enter your 4 digit pass code to Login and View your account</string>
     <string name="app_name">Lloyds Student</string>

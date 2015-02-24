@@ -1,12 +1,16 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 
 public class FirstLoginActivity extends ActionBarActivity {
@@ -16,14 +20,43 @@ public class FirstLoginActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_time);
 
+        // Creates invalid credentials popup message
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.first_failed_login)
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //do things
+                    }
+                });
+        final AlertDialog alert = builder.create();
+
+        // Finds the editable text and assigns them variables
+        final EditText user = (EditText) findViewById(R.id.userID);
+        final EditText pass = (EditText) findViewById(R.id.userPass);
+
         final Button nextButton = (Button) findViewById(R.id.first_next);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent I = new Intent(FirstLoginActivity.this, LoginActivity.class);
-                startActivity(I);
+                // Check Credentials Against Database
+                if(loginCheck()) {
+                    // Change view to next set of inputs
+                    setContentView(R.layout.activity_first_time_passcode);
+                } else {
+                    // Show alert to tell user the wrong credentials have been entered
+                    alert.show();
+
+                    // Sets them back to null
+                    user.setText(null);
+                    pass.setText(null);
+                }
             }
         });
+    }
+
+    public boolean loginCheck() {
+        return true;
     }
 
 
