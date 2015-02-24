@@ -23,16 +23,16 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_tab_main);
 
-
         manager = getFragmentManager();
         // Refactor at your will.
         final TabHost tabHost = (TabHost)findViewById(R.id.tabHost);
+        tabHost.setCurrentTab(R.id.tab2);
         tabHost.setup();
         final TabHost.TabSpec tab1 = tabHost.newTabSpec("tab1");
         final TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
         final TabHost.TabSpec tab3 = tabHost.newTabSpec("Third Tab");
 
-
+        //three tabs with icons for each of them, also setting the content into the tabhost
         tab1.setIndicator("", getResources().getDrawable(R.drawable.ic_budget));
         tab1.setContent(R.id.tab1);
 
@@ -42,16 +42,19 @@ public class MainActivity extends ActionBarActivity {
         tab3.setIndicator("", getResources().getDrawable(R.drawable.ic_deals));
         tab3.setContent(R.id.tab3);
 
-
+        //adding the three tabs on to the tabhost
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
+
+        //setting the tab to load up first between the three tabs
+        tabHost.setCurrentTab(1);
 
         final OverviewFragment frag = new OverviewFragment();
         final HomeFragment fragHome = new HomeFragment();
 
 
-
+        //fragment switching if the tab 2 has been pressed it set's the display back to the home screen of the tab 2 (home_tab_main)
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
@@ -59,21 +62,15 @@ public class MainActivity extends ActionBarActivity {
 
                     android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
-
-
                     transaction.replace(R.id.tabSwitch2, fragHome);
                     transaction.addToBackStack(null);
-
-
 
                     transaction.commit();
                 }
             }
         });
 
-
-
-
+        //this code below basically switches the fragment when the user clicks on the currentmoney id. Replace the fragment with the Account overview screen.
         tabHost.getTabContentView().findViewById(R.id.currentMoney).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,16 +95,14 @@ public class MainActivity extends ActionBarActivity {
 
 
 
+        TextView mytextview = (TextView) findViewById(R.id.accountType);
+        mytextview.setText("Saving's Account");
+
+
+
+
     }
 
-    /*public void showCurrentAccountMoney (View v){
-
-        HomeTabTransaction f1 = new HomeTabTransaction();
-        FragmentTransaction transaction = manager.beginTransaction();
-        Log.i("Jomin","hello");
-        transaction.replace(R.id.tab2, f1);
-        transaction.commit();
-    }*/
 
 
     @Override

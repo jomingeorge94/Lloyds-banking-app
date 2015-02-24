@@ -76,165 +76,171 @@
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent">
 
-                        <LinearLayout
-                            android:orientation="vertical"
+                        <FrameLayout
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:text="@string/customerName"
-                                android:fontFamily="sans-serif-light"
-                                android:id="@+id/customerName"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="#ff000000"
-                                android:textSize="54sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceSmall"
-                                android:text="@string/lastLogin"
-                                android:paddingBottom="5dp"
-                                android:id="@+id/lastLogin"
-                                android:layout_gravity="center_horizontal|top"
-                                android:textColor="#ff808677"
-                                android:textSize="18sp" />
-
-                            <View
-                                android:layout_width="fill_parent"
-                                android:layout_height="2dp"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginRight="20dp"
-                                android:background="@android:color/holo_green_dark"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/accountType"
-                                android:paddingTop="20dp"
-                                android:id="@+id/accountType"
-                                android:layout_gravity="center_horizontal"
-                                android:textSize="22sp"
-                                android:textColor="#ff808677" />
-
                             <LinearLayout
                                 android:orientation="vertical"
                                 android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:weightSum="1">
+                                android:layout_height="fill_parent">
 
-                                <LinearLayout
-                                    android:orientation="horizontal"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:weightSum="1"
-                                    android:paddingLeft="40dp"
-                                    android:nestedScrollingEnabled="false">
-
-                                    <ImageButton
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="49dp"
-                                        android:id="@+id/leftArrowAccount"
-                                        android:layout_weight="0.18"
-                                        android:src="@drawable/ic_leftarrow"
-                                        android:background="#fffbfffb"
-                                        android:paddingRight="30dp"
-                                        android:layout_marginTop="10dp" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textAppearance="?android:attr/textAppearanceLarge"
-                                        android:text="@string/currentMoney"
-                                        android:fontFamily="sans-serif-light"
-                                        android:onClick="showCurrentAccountMoney"
-                                        android:id="@+id/currentMoney"
-                                        android:paddingTop="5dp"
-                                        android:layout_gravity="center_horizontal"
-                                        android:textColor="#ff000000"
-                                        android:textSize="40dp" />
-
-                                    <ImageButton
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="49dp"
-                                        android:id="@+id/rightArrowAccount"
-                                        android:layout_weight="0.18"
-                                        android:background="#ffffffff"
-                                        android:src="@drawable/ic_rightarrow"
-                                        android:paddingLeft="30dp"
-                                        android:layout_marginTop="10dp" />
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/accountDetails"
-                                android:id="@+id/accountDetails"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="#ff808677"
-                                android:textSize="16sp" />
-
-                            <LinearLayout
-                                android:orientation="vertical"
-                                android:layout_width="331dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:paddingTop="10dp">
-
-                                <LinearLayout
-                                    android:orientation="horizontal"
+                                <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center_horizontal">
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="@string/customerName"
+                                    android:fontFamily="sans-serif-light"
+                                    android:id="@+id/customerName"
+                                    android:layout_gravity="center_horizontal"
+                                    android:textColor="#ff000000"
+                                    android:textSize="54sp" />
 
-                                    <Button
-                                        android:layout_width="150dp"
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:text="@string/lastLogin"
+                                    android:paddingBottom="5dp"
+                                    android:id="@+id/lastLogin"
+                                    android:layout_gravity="center_horizontal|top"
+                                    android:textColor="#ff808677"
+                                    android:textSize="18sp" />
+
+                                <View
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="2dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:background="@android:color/holo_green_dark"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/accountType"
+                                    android:paddingTop="20dp"
+                                    android:id="@+id/accountType"
+                                    android:layout_gravity="center_horizontal"
+                                    android:textSize="22sp"
+                                    android:textColor="#ff808677" />
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:weightSum="1">
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="fill_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="@string/makeTransferButton"
-                                        android:id="@+id/makeTransferButton"
-                                        android:background="#5DAD68" />
+                                        android:weightSum="1"
+                                        android:paddingLeft="40dp"
+                                        android:nestedScrollingEnabled="false">
+
+                                        <ImageButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="49dp"
+                                            android:id="@+id/leftArrowAccount"
+                                            android:layout_weight="0.18"
+                                            android:src="@drawable/ic_leftarrow"
+                                            android:background="#fffbfffb"
+                                            android:paddingRight="30dp"
+                                            android:layout_marginTop="10dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textAppearance="?android:attr/textAppearanceLarge"
+                                            android:text="@string/currentMoney"
+                                            android:fontFamily="sans-serif-light"
+                                            android:onClick="showCurrentAccountMoney"
+                                            android:id="@+id/currentMoney"
+                                            android:paddingTop="5dp"
+                                            android:layout_gravity="center_horizontal"
+                                            android:textColor="#ff000000"
+                                            android:textSize="40dp" />
+
+                                        <ImageButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="49dp"
+                                            android:id="@+id/rightArrowAccount"
+                                            android:layout_weight="0.18"
+                                            android:background="#ffffffff"
+                                            android:src="@drawable/ic_rightarrow"
+                                            android:paddingLeft="30dp"
+                                            android:layout_marginTop="10dp" />
+
+                                    </LinearLayout>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/textView"
-                                        android:text="@string/spaceinbetweenthebuttons"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_marginRight="10dp"
-                                        android:visibility="invisible" />
-
-                                    <Button
-                                        android:layout_width="150dp"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/payContactButton"
-                                        android:id="@+id/payContactButton"
-                                        android:background="#5DAD68" />
+                                        android:text="@string/accountDetails"
+                                        android:id="@+id/accountDetails"
+                                        android:layout_gravity="center_horizontal"
+                                        android:textColor="#ff808677"
+                                        android:textSize="16sp" />
 
                                 </LinearLayout>
 
-                                <FrameLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="fill_parent"
-                                    android:layout_marginTop="15dp">
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="331dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:paddingTop="10dp">
 
-                                    <ncl.ac.uk.cs.teamone.lloydsstudent.circleprogress.CircleProgress
-                                        android:id="@+id/circle_progress"
-                                        android:layout_width="213dp"
-                                        android:layout_height="207dp"
-                                        custom:circle_progress="63"
-                                        android:layout_gravity="center"
-                                        android:layout_row="9"
-                                        android:layout_column="21" />
-                                </FrameLayout>
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal">
+
+                                        <Button
+                                            android:layout_width="150dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/makeTransferButton"
+                                            android:id="@+id/makeTransferButton"
+                                            android:background="#5DAD68" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/textView"
+                                            android:text="@string/spaceinbetweenthebuttons"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:visibility="invisible" />
+
+                                        <Button
+                                            android:layout_width="150dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/payContactButton"
+                                            android:id="@+id/payContactButton"
+                                            android:background="#5DAD68" />
+
+                                    </LinearLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_marginTop="15dp">
+
+                                        <ncl.ac.uk.cs.teamone.lloydsstudent.circleprogress.CircleProgress
+                                            android:id="@+id/circle_progress"
+                                            android:layout_width="213dp"
+                                            android:layout_height="207dp"
+                                            custom:circle_progress="63"
+                                            android:layout_gravity="center"
+                                            android:layout_row="9"
+                                            android:layout_column="21" />
+                                    </FrameLayout>
+
+                                </LinearLayout>
 
                             </LinearLayout>
-                        </LinearLayout>
+                        </FrameLayout>
 
                     </FrameLayout>
 
