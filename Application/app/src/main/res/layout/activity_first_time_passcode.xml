@@ -59,10 +59,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:textColor="#ff252525"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/first_passcode_label"
-        android:id="@+id/textView10"
-        android:layout_above="@+id/editText2"
+        android:id="@+id/first_passcode_label"
+        android:layout_below="@+id/textView7"
         android:layout_centerHorizontal="true" />
 
     <EditText
@@ -70,10 +72,14 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:textColor="#ff252525"
+        android:id="@+id/first_passcode"
         android:maxLength="4"
+        android:gravity="center"
+        android:layout_below="@+id/first_passcode_label"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:password="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -82,7 +88,8 @@
         android:text="@string/first_passcode_confirm"
         android:id="@+id/textView11"
         android:layout_marginTop="34dp"
-        android:layout_below="@+id/editText2"
+        android:textColor="#ff252525"
+        android:layout_below="@+id/first_passcode"
         android:layout_centerHorizontal="true" />
 
     <EditText
@@ -90,9 +97,12 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:gravity="center"
+        android:textColor="#ff252525"
+        android:id="@+id/first_confirm"
         android:maxLength="4"
         android:layout_below="@+id/textView11"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:password="true" />
 
 </RelativeLayout>

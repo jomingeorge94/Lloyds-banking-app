@@ -17,25 +17,36 @@ public class FirstLoginActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_time);
 
+        setupOne();
+
+
+    }
+
+    public void setupOne() {
         // Creates invalid credentials popup message
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // Sets the error message for the popup
         builder.setMessage(R.string.first_failed_login)
+                // Sets the buttons
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        //do things
-                    }
+                    public void onClick(DialogInterface dialog, int id) {}
                 });
-        final AlertDialog alert = builder.create();
+        // Creates the alert object ready to be called
+        final AlertDialog loginFailed = builder.create();
 
         // Finds the editable text and assigns them variables
         final EditText user = (EditText) findViewById(R.id.userID);
         final EditText pass = (EditText) findViewById(R.id.userPass);
 
+        // Find the next button and assigns it a variable
         final Button nextButton = (Button) findViewById(R.id.first_next);
+
+        // Create button listner
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,10 +54,10 @@ public class FirstLoginActivity extends ActionBarActivity {
                 if(loginCheck()) {
                     // Change view to next set of inputs
                     setContentView(R.layout.activity_first_time_passcode);
+                    setupTwo();
                 } else {
                     // Show alert to tell user the wrong credentials have been entered
-                    alert.show();
-
+                    loginFailed.show();
                     // Sets them back to null
                     user.setText(null);
                     pass.setText(null);
@@ -55,8 +66,59 @@ public class FirstLoginActivity extends ActionBarActivity {
         });
     }
 
+    public void setupTwo() {
+
+        // Creates invalid credentials popup message
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // Sets the error message for the popup
+        builder.setMessage(R.string.first_failed_passcode)
+                // Sets the buttons
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {}
+                });
+        // Creates the alert object ready to be called
+        final AlertDialog passNotMatch = builder.create();
+
+        // Finds the editable text and assigns them variables
+        final EditText pass = (EditText) findViewById(R.id.first_passcode);
+        final EditText conf = (EditText) findViewById(R.id.first_confirm);
+
+        // Find the next button and assigns it a variable
+        final Button finishedButton = (Button) findViewById(R.id.first_finished);
+
+        // Create button listener
+        finishedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Check Credentials Against Database
+                if(passCheck(pass.getText().toString(), conf.getText().toString())) {
+                    Intent I = new Intent(FirstLoginActivity.this, MainActivity.class);
+                    startActivity(I);
+                } else {
+                    // Show alert to tell user the wrong credentials have been entered
+                    passNotMatch.show();
+                    // Sets them back to null
+                    pass.setText(null);
+                    conf.setText(null);
+                }
+            }
+        });
+
+    }
+
     public boolean loginCheck() {
         return true;
+    }
+
+    public boolean passCheck(String pass, String confirm) {
+        if(pass.equals(confirm)) {
+            // Passcodes match so added to database
+            return true;
+        } else {
+            // Passcodes don't match don't add to database
+            return false;
+        }
     }
 
 
