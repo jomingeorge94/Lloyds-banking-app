@@ -22,7 +22,7 @@ public class LoginActivity extends ActionBarActivity {
 
         final Button skipButton = (Button) findViewById(R.id.skip);
         //Locates the text edit box and creates an editable object
-        final EditText passcode = (EditText) findViewById(R.id.login_passcode_input);
+        final EditText passCode = (EditText) findViewById(R.id.login_passcode_input);
         //Locates and creates the login button
         final Button loginButton = (Button) findViewById(R.id.login);
 
@@ -43,7 +43,7 @@ public class LoginActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
             String[] k = { "passcode" };
-            String[] va = { passcode.getText().toString() };
+            String[] va = { passCode.getText().toString() };
             PHPHandler handler = new PHPHandler("localhost/validation.php", k, va);
 
             Map d = handler.getData();
@@ -55,7 +55,7 @@ public class LoginActivity extends ActionBarActivity {
             }
         });
 
-        passcode.addTextChangedListener(new TextWatcher() {
+        passCode.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //When user has entered the entire passcode
