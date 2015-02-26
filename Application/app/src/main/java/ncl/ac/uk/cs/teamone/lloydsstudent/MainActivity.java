@@ -95,12 +95,6 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-        TextView mytextview = (TextView) findViewById(R.id.accountType);
-        mytextview.setText("Saving's Account");
-
-
-
-
     }
 
 

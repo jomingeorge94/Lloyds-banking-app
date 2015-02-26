@@ -28,8 +28,8 @@ public class HomeFragment extends Fragment {
 
 
 
-                *//*Animation slide = AnimationUtils.loadAnimation(g.getContext(), R.anim.slidetransition);
-                g.startAnimation(slide);*//*
+                Animation slide = AnimationUtils.loadAnimation(g.getContext(), R.anim.slidetransition);
+                g.startAnimation(slide);
             }
         });*/
         return v;

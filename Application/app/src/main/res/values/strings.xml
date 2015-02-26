@@ -48,5 +48,14 @@
     <string name="title_activity_first_time">FirstTime</string>
     <string name="lastmonth">Last Month</string>
     <string name="thismonth">This Month</string>
+    <string name="transactiondate1">29th August</string>
+    <string name="transactionstorename1">Amazon EU</string>
+    <string name="transactioncost1">-£12.99</string>
+    <string name="transactiondate2">29th August</string>
+    <string name="transactionstorename2">T.K MAXX</string>
+    <string name="transactioncost2">-£52.99</string>
+    <string name="transactiondate3">24th August</string>
+    <string name="transactionstorename3">WWW.CASH.COM</string>
+    <string name="transactioncost3">+£82.51</string>
 
 </resources>

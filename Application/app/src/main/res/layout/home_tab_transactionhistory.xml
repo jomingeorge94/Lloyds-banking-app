@@ -175,33 +175,205 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lastmonth"
+
+                    android:id="@+id/lastMonthButton"
+                    android:layout_marginLeft="40dp"
+                    android:paddingLeft="40dp"
+                    android:textSize="14sp"
+
+                    android:nestedScrollingEnabled="false" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/thismonth"
+                    android:id="@+id/button2"
+                    android:paddingLeft="40dp"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="122dp"
+                android:id="@+id/transactionscrollview"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="5dp">
 
                 <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="69dp">
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/scrollvisibility"
+                    android:visibility="gone">
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lastmonth"
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
 
-                        android:id="@+id/button"
-                        android:layout_marginLeft="40dp"
-                        android:paddingLeft="40dp"
-                        android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/transactiondate1"
+                            android:id="@+id/textView10"
+                            android:textColor="#ff010101"
+                            android:textSize="14sp" />
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/thismonth"
-                        android:id="@+id/button2"
-                        android:paddingLeft="40dp"
-                        android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/transactionstorename1"
+                                android:id="@+id/textView12"
+                                android:textColor="#ff000000"
+                                android:textSize="18sp" />
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageButton"
+                                android:background="#fffbfffb"
+                                android:src="@drawable/ic_fraud" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/transactioncost1"
+                                android:id="@+id/textView13"
+                                android:textColor="#ffff1710"
+                                android:textSize="18sp"
+                                android:layout_marginLeft="100dp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="2dp"
+                            android:background="@android:color/darker_gray" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/transactiondate1"
+                                android:id="@+id/textView14"
+                                android:textColor="#ff000000"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/transactionstorename2"
+                                    android:id="@+id/textView15"
+                                    android:textColor="#ff000000"
+                                    android:textSize="18sp" />
+
+                                <ImageButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/imageButton2"
+                                    android:background="#fffbfffb"
+                                    android:src="@drawable/ic_fraud" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/transactioncost2"
+                                    android:id="@+id/textView16"
+                                    android:textColor="#ffff1710"
+                                    android:textSize="18sp"
+                                    android:layout_marginLeft="113dp" />
+
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="2dp"
+                                android:background="@android:color/darker_gray" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/transactiondate3"
+                                android:id="@+id/textView17"
+                                android:textColor="#ff000000"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/transactionstorename3"
+                                    android:id="@+id/textView18"
+                                    android:textSize="18sp"
+                                    android:textColor="#ff000000" />
+
+                                <ImageButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/imageButton3"
+                                    android:background="#fffbfffb"
+                                    android:src="@drawable/ic_fraud" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/transactioncost3"
+                                    android:id="@+id/textView19"
+                                    android:textSize="18sp"
+                                    android:textColor="@android:color/holo_green_dark"
+                                    android:layout_marginLeft="48dp" />
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="2dp"
+                            android:background="@android:color/darker_gray" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
-            </LinearLayout>
+            </ScrollView>
 
         </LinearLayout>
     </FrameLayout>
