@@ -1,15 +1,19 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 /**
  * Created by Jomin on 19/02/2015.
  */
 public class HomeFragment extends Fragment {
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -17,24 +21,26 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         final View v =  inflater.inflate(R.layout.tab2_main, container, false);
 
-        /*v.findViewById(R.id.rightArrowAccount).setOnClickListener(new View.OnClickListener() {
+        v.findViewById(R.id.currentMoney).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View g) {
-                Log.i("Testing", "Clicked on the TextView");
+            public void onClick(View v) {
 
 
-                TextView mytextview = (TextView) v.findViewById(R.id.accountType);
-                mytextview.setText("Saving's Account");
+                        android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                 ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
+                        transaction.replace(android.R.id.tabcontent, new OverviewFragment());
+                        transaction.commit();
 
 
-
-                Animation slide = AnimationUtils.loadAnimation(g.getContext(), R.anim.slidetransition);
-                g.startAnimation(slide);
             }
-        });*/
+        });
+
+
         return v;
 
     }
+
+
 
 
 

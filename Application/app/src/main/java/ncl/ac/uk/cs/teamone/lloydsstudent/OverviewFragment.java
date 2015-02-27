@@ -1,7 +1,7 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +24,10 @@ public class OverviewFragment extends Fragment {
         v.findViewById(R.id.lastMonthButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //debugging
                 Log.i("Testing", "Button Clicked");
+
                 v.findViewById(R.id.scrollvisibility).setVisibility(View.VISIBLE);
             }
         });
