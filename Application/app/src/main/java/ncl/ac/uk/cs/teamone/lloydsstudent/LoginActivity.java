@@ -27,8 +27,6 @@ public class LoginActivity extends ActionBarActivity {
         final Button skipButton = (Button) findViewById(R.id.skip);
         //Locates the text edit box and creates an editable object
         final EditText passCode = (EditText) findViewById(R.id.login_passcode_input);
-        //Locates and creates the login button
-     //   final Button loginButton = (Button) findViewById(R.id.login);
         //Create the activity
         final Context activity = LoginActivity.this;
 
@@ -40,28 +38,6 @@ public class LoginActivity extends ActionBarActivity {
                 startActivity(I);
             }
         });
-/*
-        //Disable login
-        loginButton.setEnabled(false);
-
-        //Login button event listener
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String[] va = { "http://192.168.0.6/csc2022/validation.php", "1", passCode.getText().toString() };
-                PHPHandler handler = new PHPHandler();
-                handler.execute(va);
-
-                Map<String, String> d = handler.getData();
-
-
-
-                if(d != null) {
-                    Intent I = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(I);
-                }
-            }
-        });*/
 
         passCode.addTextChangedListener(new TextWatcher() {
             @Override
