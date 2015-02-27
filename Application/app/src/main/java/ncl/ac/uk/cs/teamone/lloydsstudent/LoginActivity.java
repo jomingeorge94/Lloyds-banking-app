@@ -44,12 +44,15 @@ public class LoginActivity extends ActionBarActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //checks if the passcode has been entered
                 if(s.length() == 4) {
-                    //start the connection
-                    String[] va = { "http://192.168.0.6/csc2022/validation.php", "1", passCode.getText().toString() };
+                    //url to connect to
+                    String url = "http://192.168.0.6/csc2022/validation.php";
+                    //values to send to the PHP file
+                    String[] keys = {"uid", "passcode"};
+                    String[] values = {"1", passCode.getText().toString()};
                     //create an asynchronous object
-                    PHPHandler handler = new PHPHandler(activity);
+                    PHPHandler handler = new PHPHandler(activity, keys, values);
                     //execute the object
-                    handler.execute(va);
+                    handler.execute(url);
                 }
             }
 

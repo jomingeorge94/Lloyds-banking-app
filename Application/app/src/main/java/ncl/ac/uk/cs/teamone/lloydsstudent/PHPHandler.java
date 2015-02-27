@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.widget.Button;
 
@@ -41,17 +42,28 @@ import java.util.Map;
 public class PHPHandler extends AsyncTask<String, Void, String> {
 
     private Map<String, String> data = new HashMap();
-    private String[] keys = { "uid", "passcode" };
+    private String[] keys = null; //{ "uid", "passcode" };
+    private String[] values = null;
     //progressDialog variables
     private ProgressDialog progressDialog = null;
     private Context activity = null;
+    private AlertDialog alertDialog = null;
 
-    public PHPHandler(Context activity) {
+    public PHPHandler(Context activity, String[] keys, String[] values) {
+        //set the current activity
         this.activity = activity;
+        //set the keys and the mapping of the keys to use
+        this.keys = keys;
+        this.values = values;
+        //Create a progress dialog
         this.progressDialog = new ProgressDialog(this.activity);
         this.progressDialog.show();
         this.progressDialog.setCancelable(false);
         this.progressDialog.setContentView(R.layout.progressdialog);
+        //creates an alert dialog
+        this.alertDialog = new AlertDialog.Builder(this.activity).create();
+        this.alertDialog.setTitle("Wrong Passcode");
+        this.alertDialog.setMessage("3 tries remaining");
     }
 
 
@@ -79,13 +91,6 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
     /**
      * Used to invoke a call to the progress dialog
      */
-    @Override
-    protected void onPreExecute() {
-        //ensure the dialog isn't already open
-        if(this.progressDialog == null) {
-            this.progressDialog.show();
-        }
-    }
 
     @Override
     protected String doInBackground(String... params) {
@@ -98,7 +103,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
 
         //Adds all the data that is going to be sent to the php script
         for(int i = 0; i < this.keys.length; i++) {
-            nameValuePairs.add(new BasicNameValuePair(this.keys[i], params[i+1]));
+            nameValuePairs.add(new BasicNameValuePair(this.keys[i], this.values[i]));
         }
 
         //Encodes the data structure and links it to the post object
@@ -143,8 +148,30 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             Log.v("IOException", ioe.getMessage());
         }
 
-        if(result.equalsIgnoreCase("1") || result.equalsIgnoreCase("2") || result.equalsIgnoreCase("3")) {
-            return "FAILURE";
+        Log.d("StringTAG", result);
+
+        //If the passcode is wrong
+        if(result.trim().equalsIgnoreCase("1")) {
+
+            if(progressDialog.isShowing()) {
+                progressDialog.dismiss();
+            }
+            //countdown from 1 second
+            CountDownTimer timer = new CountDownTimer(1000, 100) {
+                @Override
+                public void onTick(long millisUntilFinished) {}
+
+                @Override
+                public void onFinish() {
+                    alertDialog.dismiss();
+                }
+            }.start();
+
+            return null;
+        }
+
+        if(result.equalsIgnoreCase("2") || result.equalsIgnoreCase("3")) {
+            return null;
         }
 
         try {
