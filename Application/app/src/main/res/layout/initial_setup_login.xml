@@ -86,7 +86,6 @@
         android:layout_below="@+id/textView9"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:maxLength="9"
         android:inputType="textPassword" />
 
     <Button
@@ -94,12 +93,13 @@
         android:layout_height="wrap_content"
         android:text="@string/gen_next"
         android:id="@+id/first_next"
-        android:background="#369742"
+        android:background="#888888"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/textView7"
-        android:layout_alignEnd="@+id/textView7" />
+        android:layout_alignEnd="@+id/textView7"
+        android:enabled="false"/>
 
 </RelativeLayout>

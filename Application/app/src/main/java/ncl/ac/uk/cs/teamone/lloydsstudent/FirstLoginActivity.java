@@ -8,7 +8,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +21,7 @@ public class FirstLoginActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_time);
+        setContentView(R.layout.initial_setup_login);
 
         setupOne();
 
@@ -49,6 +48,37 @@ public class FirstLoginActivity extends ActionBarActivity {
         // Find the next button and assigns it a variable
         final Button nextButton = (Button) findViewById(R.id.first_next);
 
+        // Creates a Text listener to detect if the both fields are filled to enable finished button
+        final TextWatcher watcher = new TextWatcher() {
+            // Ignore
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after)
+            {}
+            // Ignore
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count)
+            {}
+            // Once text has changed checks if both fields are full
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Compares the length of both fields
+                if (user.length() == 9 && pass.length() != 0) {
+                    // Enables finished buttons
+                    nextButton.setEnabled(true);
+                    nextButton.setBackgroundColor(Color.parseColor("#369742"));
+                }
+                else {
+                    // Disables finished buttons
+                    nextButton.setEnabled(false);
+                    nextButton.setBackgroundColor(Color.parseColor("#888888"));
+                }
+            }
+        };
+
+        // Adds the listener to the text fields
+        user.addTextChangedListener(watcher);
+        pass.addTextChangedListener(watcher);
+
         // Create button listner
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +86,7 @@ public class FirstLoginActivity extends ActionBarActivity {
                 // Check Credentials Against Database
                 if(loginCheck()) {
                     // Change view to next set of inputs
-                    setContentView(R.layout.activity_first_time_passcode);
+                    setContentView(R.layout.initial_setup_passcode);
                     setupTwo();
                 } else {
                     // Show alert to tell user the wrong credentials have been entered
