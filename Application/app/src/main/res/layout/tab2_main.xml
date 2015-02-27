@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:id="@+id/tabmainswitch">
+    android:id="@+id/tabmainswitch"
+    android:background="#ffffffff">
 
         <TextView
             android:layout_width="wrap_content"
@@ -65,7 +66,7 @@
                     android:id="@+id/leftArrowAccount"
                     android:layout_weight="0.18"
                     android:src="@drawable/ic_leftarrow"
-                    android:background="#fffbfffb"
+                    android:background="#ffffffff"
                     android:paddingRight="30dp"
                     android:layout_marginTop="10dp" />
 
