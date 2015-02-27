@@ -3,8 +3,11 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -66,6 +69,8 @@ public class FirstLoginActivity extends ActionBarActivity {
         });
     }
 
+
+
     public void setupTwo() {
 
         // Creates invalid credentials popup message
@@ -87,12 +92,43 @@ public class FirstLoginActivity extends ActionBarActivity {
         // Find the next button and assigns it a variable
         final Button finishedButton = (Button) findViewById(R.id.first_finished);
 
+        // Creates a Text listener to detect if the both fields are filled to enable finished button
+        final TextWatcher watcher = new TextWatcher() {
+            // Ignore
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after)
+            {}
+            // Ignore
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count)
+            {}
+            // Once text has changed checks if both fields are full
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Compares the length of both fields
+                if (pass.length() == 4 && conf.length() == 4) {
+                    // Enables finished buttons
+                    finishedButton.setEnabled(true);
+                    finishedButton.setBackgroundColor(Color.parseColor("#369742"));
+                }
+                else {
+                    // Disables finished buttons
+                    finishedButton.setEnabled(false);
+                    finishedButton.setBackgroundColor(Color.parseColor("#888888"));
+                }
+            }
+        };
+
+        // Adds the listener to the text fields
+        pass.addTextChangedListener(watcher);
+        conf.addTextChangedListener(watcher);
+
         // Create button listener
         finishedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Check Credentials Against Database
-                if(passCheck(pass.getText().toString(), conf.getText().toString())) {
+                if(passCheck(pass.getText().toString(), conf.getText().toString()) && pass.length() == 4) {
                     Intent I = new Intent(FirstLoginActivity.this, MainActivity.class);
                     startActivity(I);
                 } else {
