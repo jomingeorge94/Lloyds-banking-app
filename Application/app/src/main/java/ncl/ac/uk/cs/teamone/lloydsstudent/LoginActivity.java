@@ -1,8 +1,11 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import android.app.ListActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.text.*;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -24,7 +28,9 @@ public class LoginActivity extends ActionBarActivity {
         //Locates the text edit box and creates an editable object
         final EditText passCode = (EditText) findViewById(R.id.login_passcode_input);
         //Locates and creates the login button
-        final Button loginButton = (Button) findViewById(R.id.login);
+     //   final Button loginButton = (Button) findViewById(R.id.login);
+        //Create the activity
+        final Context activity = LoginActivity.this;
 
         //Skip button listener - Temporary
         skipButton.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +40,7 @@ public class LoginActivity extends ActionBarActivity {
                 startActivity(I);
             }
         });
-
+/*
         //Disable login
         loginButton.setEnabled(false);
 
@@ -42,26 +48,32 @@ public class LoginActivity extends ActionBarActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            String[] k = { "passcode" };
-            String[] va = { passCode.getText().toString() };
-            PHPHandler handler = new PHPHandler("localhost/validation.php", k, va);
+                String[] va = { "http://192.168.0.6/csc2022/validation.php", "1", passCode.getText().toString() };
+                PHPHandler handler = new PHPHandler();
+                handler.execute(va);
 
-            Map d = handler.getData();
+                Map<String, String> d = handler.getData();
 
-            if(d != null) {
-                Intent I = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(I);
+
+
+                if(d != null) {
+                    Intent I = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(I);
+                }
             }
-            }
-        });
+        });*/
 
         passCode.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                //When user has entered the entire passcode
+                //checks if the passcode has been entered
                 if(s.length() == 4) {
-                    //Enable the login button
-                    loginButton.setEnabled(true);
+                    //start the connection
+                    String[] va = { "http://192.168.0.6/csc2022/validation.php", "1", passCode.getText().toString() };
+                    //create an asynchronous object
+                    PHPHandler handler = new PHPHandler(activity);
+                    //execute the object
+                    handler.execute(va);
                 }
             }
 

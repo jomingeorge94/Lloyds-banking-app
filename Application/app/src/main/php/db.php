@@ -81,13 +81,16 @@
 		$v = "";
 
 		//appends neccessary values to v
-		for($i = 0; $i < sizeof($columns); $i++) {
-			$v .= encrypt($values[$i]) . ($i != (sizeof($columns)-1)) ? '", "' : "";
+		for($i = 0; $i < sizeof($values); $i++) {
+			$e = encrypt($values[$i]);
+			$v .= "'";
+			$v .= $e;
+			$v .= ($i != (sizeof($values)-1)) ? "', " : "'";
 		}
 
 		$sql = 'INSERT INTO ' . $db_table .
 			   '(' . $columns . ') ' .
-			   'VALUES ("' . $v . '")';
+			   'VALUES (' . $v . ')';
 		
 		$success = mysqli_query($db_conn, $sql);
 		

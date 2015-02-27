@@ -1,8 +1,14 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.app.AlertDialog;
+import android.app.ListActivity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Button;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -24,6 +30,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -31,24 +38,67 @@ import java.util.Map;
  * Created by Artemiy on 20/02/2015.
  */
 
-public class PHPHandler {
+public class PHPHandler extends AsyncTask<String, Void, String> {
 
-    private String url = "";
-    private Map data = new HashMap();
+    private Map<String, String> data = new HashMap();
+    private String[] keys = { "uid", "passcode" };
+    //progressDialog variables
+    private ProgressDialog progressDialog = null;
+    private Context activity = null;
 
-    public PHPHandler(String url, String[] keys, String[] values) {
-        //Sets the php files location
-        setURL(url);
+    public PHPHandler(Context activity) {
+        this.activity = activity;
+        this.progressDialog = new ProgressDialog(this.activity);
+        this.progressDialog.show();
+        this.progressDialog.setCancelable(false);
+        this.progressDialog.setContentView(R.layout.progressdialog);
+    }
+
+
+    public void setData(JSONObject data, String[] keys) throws JSONException {
+        //defensive programming to prevent an empty array from adding nothing
+        if(data == null) {
+            return;
+        }
+        //add data
+        //gets an iterator of the keys in the JSON
+        Iterator<String> jsonKeys = data.keys();
+
+        while(jsonKeys.hasNext()) {
+            //get the next key
+            String key = jsonKeys.next();
+            //add the value to the data
+            this.data.put(key, data.get(key).toString());
+            Log.d("DataTAG", "value: " + this.data.get(key));
+        }
+    }
+
+    public Map getData() {
+        return data;
+    }
+    /**
+     * Used to invoke a call to the progress dialog
+     */
+    @Override
+    protected void onPreExecute() {
+        //ensure the dialog isn't already open
+        if(this.progressDialog == null) {
+            this.progressDialog.show();
+        }
+    }
+
+    @Override
+    protected String doInBackground(String... params) {
         //the client
         HttpClient httpclient = new DefaultHttpClient();
         //the post receiver
-        HttpPost httppost = new HttpPost(this.url);
+        HttpPost httppost = new HttpPost(params[0]);
 
-        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(keys.length);
+        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 
         //Adds all the data that is going to be sent to the php script
-        for(int i = 0; i < nameValuePairs.size(); i++) {
-            nameValuePairs.add(new BasicNameValuePair(keys[i], values[i]));
+        for(int i = 0; i < this.keys.length; i++) {
+            nameValuePairs.add(new BasicNameValuePair(this.keys[i], params[i+1]));
         }
 
         //Encodes the data structure and links it to the post object
@@ -76,7 +126,7 @@ public class PHPHandler {
 
         //converts the data into a string
         try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inStream, "iso-8859-1"));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inStream));
             sb = new StringBuilder();
             sb.append(reader.readLine() + '\n');
             String line="0";
@@ -94,35 +144,29 @@ public class PHPHandler {
         }
 
         if(result.equalsIgnoreCase("1") || result.equalsIgnoreCase("2") || result.equalsIgnoreCase("3")) {
-            return;
+            return "FAILURE";
         }
 
         try {
-            JSONArray jArray = new JSONArray(result);
-            JSONObject json_data = jArray.getJSONObject(0);
+            JSONObject data = new JSONObject(result);
             //places the retrieved data into a java data structure
-            setData(json_data, keys);
+            setData(data, keys);
         } catch(JSONException je) {
             Log.v("JSONException", je.getMessage());
         }
+
+        return "SUCCESS";
     }
 
-    public void setData(JSONObject json_data, String[] keys) throws JSONException {
-        //defensive programming to prevent an empty array from adding nothing
-        if(keys == null) {
-            return;
+    protected void onPostExecute(String result) {
+        if(progressDialog.isShowing()) {
+            progressDialog.dismiss();
         }
-        //add data
-        for(int i = 0; i < keys.length; i++) {
-            this.data.put(keys[i], json_data.getString(keys[i]));
+        //starts new activity if data was retrieved
+        if(this.data.size() > 0) {
+            //Start new activity
+            Intent I = new Intent(activity, MainActivity.class);
+            activity.startActivity(I);
         }
-    }
-
-    public Map getData() {
-        return data;
-    }
-
-    public void setURL(String url) {
-        this.url = url;
     }
 }
