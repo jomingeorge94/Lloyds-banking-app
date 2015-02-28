@@ -1,26 +1,22 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.CountDownTimer;
 import android.util.Log;
-import android.widget.Button;
+import android.widget.EditText;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -41,13 +37,14 @@ import java.util.Map;
 
 public class PHPHandler extends AsyncTask<String, Void, String> {
 
-    private Map<String, String> data = new HashMap();
-    private String[] keys = null; //{ "uid", "passcode" };
+    private Map<String, String> data = new HashMap<>();
+    private String[] keys = null;
     private String[] values = null;
     //progressDialog variables
     private ProgressDialog progressDialog = null;
     private Context activity = null;
     private AlertDialog alertDialog = null;
+    private int error = 0;
 
     public PHPHandler(Context activity, String[] keys, String[] values) {
         //set the current activity
@@ -63,24 +60,28 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
         //creates an alert dialog
         this.alertDialog = new AlertDialog.Builder(this.activity).create();
         this.alertDialog.setTitle("Wrong Passcode");
-        this.alertDialog.setMessage("3 tries remaining");
+        this.alertDialog.setButton(DialogInterface.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
     }
 
 
-    public void setData(JSONObject data, String[] keys) throws JSONException {
+    public void setData(JSONObject data) throws JSONException {
         //defensive programming to prevent an empty array from adding nothing
         if(data == null) {
             return;
         }
-        //add data
         //gets an iterator of the keys in the JSON
         Iterator<String> jsonKeys = data.keys();
-
+        //go through the data
         while(jsonKeys.hasNext()) {
             //get the next key
             String key = jsonKeys.next();
             //add the value to the data
             this.data.put(key, data.get(key).toString());
+
             Log.d("DataTAG", "value: " + this.data.get(key));
         }
     }
@@ -88,9 +89,6 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
     public Map getData() {
         return data;
     }
-    /**
-     * Used to invoke a call to the progress dialog
-     */
 
     @Override
     protected String doInBackground(String... params) {
@@ -99,7 +97,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
         //the post receiver
         HttpPost httppost = new HttpPost(params[0]);
 
-        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+        List<NameValuePair> nameValuePairs = new ArrayList<>();
 
         //Adds all the data that is going to be sent to the php script
         for(int i = 0; i < this.keys.length; i++) {
@@ -109,91 +107,83 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
         //Encodes the data structure and links it to the post object
         try {
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-        } catch(UnsupportedEncodingException uee) {
-            Log.v("UnsupportedEncodingException", uee.getMessage());
-        }
 
-        InputStream inStream = null;
-        //Execute the post request
-        try {
+            //Execute the post request
             HttpResponse response = httpclient.execute(httppost);
             HttpEntity entity = response.getEntity();
             //assigns the content of the execution to an input stream
-            inStream = entity.getContent();
-        } catch(ClientProtocolException cpe) {
-            Log.v("ClientProtocolException", cpe.getMessage());
-        } catch(IOException ioe) {
-            Log.v("IOException", ioe.getMessage());
-        }
+            InputStream inStream = entity.getContent();
 
-        StringBuilder sb = null;
-        String result = null;
-
-        //converts the data into a string
-        try {
+            //converts the data into a string
             BufferedReader reader = new BufferedReader(new InputStreamReader(inStream));
-            sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.append(reader.readLine() + '\n');
-            String line="0";
+            String line = "0";
 
             while ((line = reader.readLine()) != null) {
                 sb.append(line + '\n');
             }
-
+            //close input stream
             inStream.close();
-            result = sb.toString();
+            //assign data to a string variable
+            String result = sb.toString();
+
+            try {
+                checkForError(result);
+            } catch (NumberFormatException nfe) {
+                JSONObject data = new JSONObject(result);
+                //places the retrieved data into a java data structure
+                setData(data);
+            }
+
         } catch(UnsupportedEncodingException uee) {
             Log.v("UnsupportedEncodingException", uee.getMessage());
-        } catch(IOException ioe) {
+        }
+        catch(IOException ioe) {
             Log.v("IOException", ioe.getMessage());
         }
-
-        Log.d("StringTAG", result);
-
-        //If the passcode is wrong
-        if(result.trim().equalsIgnoreCase("1")) {
-
-            if(progressDialog.isShowing()) {
-                progressDialog.dismiss();
-            }
-            //countdown from 1 second
-            CountDownTimer timer = new CountDownTimer(1000, 100) {
-                @Override
-                public void onTick(long millisUntilFinished) {}
-
-                @Override
-                public void onFinish() {
-                    alertDialog.dismiss();
-                }
-            }.start();
-
-            return null;
-        }
-
-        if(result.equalsIgnoreCase("2") || result.equalsIgnoreCase("3")) {
-            return null;
-        }
-
-        try {
-            JSONObject data = new JSONObject(result);
-            //places the retrieved data into a java data structure
-            setData(data, keys);
-        } catch(JSONException je) {
+        catch(JSONException je) {
             Log.v("JSONException", je.getMessage());
         }
 
-        return "SUCCESS";
+        return null;
     }
 
+    @Override
     protected void onPostExecute(String result) {
         if(progressDialog.isShowing()) {
             progressDialog.dismiss();
         }
+
+        if(this.error > 0) {
+            catchError();
+            return;
+        }
+
         //starts new activity if data was retrieved
         if(this.data.size() > 0) {
             //Start new activity
             Intent I = new Intent(activity, MainActivity.class);
             activity.startActivity(I);
+        }
+    }
+
+    private void checkForError(String error) throws NumberFormatException {
+        int err = Integer.parseInt(error.trim());
+        if(err > 0) {
+            this.error = err;
+        }
+    }
+
+    private void catchError() {
+        switch(this.error) {
+            case 1:
+                if(progressDialog.isShowing()) {
+                    progressDialog.dismiss();
+                }
+
+                alertDialog.show();
+                break;
         }
     }
 }

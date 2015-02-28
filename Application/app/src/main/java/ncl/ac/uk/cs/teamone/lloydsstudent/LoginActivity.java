@@ -4,6 +4,7 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -50,9 +51,11 @@ public class LoginActivity extends ActionBarActivity {
                     String[] keys = {"uid", "passcode"};
                     String[] values = {"1", passCode.getText().toString()};
                     //create an asynchronous object
-                    PHPHandler handler = new PHPHandler(activity, keys, values);
+                    PHPHandler handler = new PHPHandler(activity, keys, values) ;
                     //execute the object
                     handler.execute(url);
+                    //Resets text
+                    passCode.setText("");
                 }
             }
 
