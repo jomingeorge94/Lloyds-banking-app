@@ -127,8 +127,6 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //assign data to a string variable
             String result = sb.toString();
 
-            Log.d("StringTAG", result);
-
             try {
                 checkForError(result);
             } catch (NumberFormatException nfe) {
@@ -185,6 +183,10 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
         switch(this.error) {
             case 1:
                 this.alertDialog.setTitle("Wrong Passcode");
+                this.alertDialog.show();
+                break;
+            case 5:
+                this.alertDialog.setTitle("Error In Retrieving Data");
                 this.alertDialog.show();
                 break;
         }
