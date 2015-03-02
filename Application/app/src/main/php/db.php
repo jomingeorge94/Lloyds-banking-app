@@ -31,6 +31,8 @@
 		//opens connection to database
 		$db_conn = connect();
 
+		if(!$db_conn) { return false; }
+
 		//SQL query to fetch record
 		$sql = "SELECT " . $values . 
 			   " FROM " . $db_table . 
@@ -78,6 +80,7 @@
 
 	function add($db_table, $columns, $values) {
 		$db_conn = connect();
+		if(!$db_conn) { return false; }
 		$v = "";
 
 		//appends neccessary values to v
@@ -119,6 +122,8 @@
 		//connect to the 'test' database
 		$db_conn = connect();
 		
+		if(!$db_conn) { return false; }
+
 		//SQL for modification
 		$sql = "UPDATE " . $db_table .
 			   " SET " . $column . "='" . encrypt($value) .

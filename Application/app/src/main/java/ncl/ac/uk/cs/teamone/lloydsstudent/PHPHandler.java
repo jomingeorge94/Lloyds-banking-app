@@ -128,6 +128,8 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //assign data to a string variable
             String result = sb.toString();
 
+            Log.d("StringTAG", result);
+
             try {
                 checkForError(result);
             } catch (NumberFormatException nfe) {

@@ -14,10 +14,6 @@
 	require('db.php');
 	require('customer.php');
 
-	define('WRONG_PASSCODE', '1');
-	define('NEW_USER', '2');
-	define('ERROR', '3');
-
 	//retrieve uid
 	$uid = $_POST['uid'];
 	//retrieve passcode

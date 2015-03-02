@@ -46,7 +46,7 @@ public class LoginActivity extends ActionBarActivity {
                 //checks if the passcode has been entered
                 if(s.length() == 4) {
                     //url to connect to
-                    String url = "http://192.168.0.6/csc2022/validation.php";
+                    String url = "http://www.abunities.co.uk/Student_Banking_App/validation.php";
                     //values to send to the PHP file
                     String[] keys = {"uid", "passcode"};
                     String[] values = {"1", passCode.getText().toString()};

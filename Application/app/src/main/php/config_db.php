@@ -11,6 +11,8 @@
 	 *
 	 */
 
+	require('error_lib.php');
+
 	//DB constants
 	define('SERVER', "localhost");
 	define('DATABASE', "test");
@@ -30,7 +32,7 @@
 		//check for internet connection
 		if(!$isConnected) {
 			//error
-			echo "An internet connection was not established";
+			echo NO_INTERNET_CONNECTION;
 			return false;
 		}
 
@@ -40,7 +42,7 @@
 		//does the connection fail?
 		if(!$db_conn) {
 			//return a JSON object to java indicating failure
-			echo "Connection to the database has failed";
+			echo CONNECTION_TO_DB_FAILED;
 			return false;
 		}
 
@@ -60,8 +62,7 @@
 
 		//is the closure of the database successful?
 		if(!$isClosed) {
-			//return JSON object
-			echo "Could not close the connection to " . DATABASE;
+			echo CONNECTION_TO_DB_ERROR;
 		}
 
 	}
