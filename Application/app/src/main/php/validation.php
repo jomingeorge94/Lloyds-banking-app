@@ -26,6 +26,8 @@
 		//retrieve passcode data from database
 		$data = fetch("customer", "passcode", $uid);
 
+		if(!$data) { return; }
+
 		//Ensures the passcode entered by user and the users set passcode match
 		if($data == $passcode) {
 			$customer = new Customer();

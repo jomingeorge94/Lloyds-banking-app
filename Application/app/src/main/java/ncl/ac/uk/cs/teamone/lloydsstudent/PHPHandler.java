@@ -59,7 +59,6 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
         this.progressDialog.setContentView(R.layout.progressdialog);
         //creates an alert dialog
         this.alertDialog = new AlertDialog.Builder(this.activity).create();
-        this.alertDialog.setTitle("Wrong Passcode");
         this.alertDialog.setButton(DialogInterface.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 dialog.dismiss();
@@ -178,13 +177,15 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
     }
 
     private void catchError() {
+
+        if(progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
+
         switch(this.error) {
             case 1:
-                if(progressDialog.isShowing()) {
-                    progressDialog.dismiss();
-                }
-
-                alertDialog.show();
+                this.alertDialog.setTitle("Wrong Passcode");
+                this.alertDialog.show();
                 break;
         }
     }

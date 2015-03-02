@@ -42,7 +42,7 @@
 		//does the connection fail?
 		if(!$db_conn) {
 			//return a JSON object to java indicating failure
-			echo CONNECTION_TO_DB_FAILED;
+			echo CONNECTION_TO_DB_ERROR;
 			return false;
 		}
 
