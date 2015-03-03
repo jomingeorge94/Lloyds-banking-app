@@ -11,6 +11,9 @@ import android.widget.FrameLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends ActionBarActivity {
 
     public FragmentTabHost tabHost;
@@ -23,14 +26,16 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_tab_main);
+/*
+        Data data = new Data();
+        Map<String, String> d = new HashMap<String, String>();
 
+        */
 
         // Refactor at your will.
         tabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
 
         tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
-
-
 
         tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("", getResources().getDrawable(R.drawable.ic_budget)),
                 BudgetFragment.class, null);
@@ -41,14 +46,6 @@ public class MainActivity extends ActionBarActivity {
 
         tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("", getResources().getDrawable(R.drawable.ic_deals)),
                 DealsFragment.class, null);
-
-
-
-
-
-
-
-
 
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
@@ -80,18 +77,6 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 

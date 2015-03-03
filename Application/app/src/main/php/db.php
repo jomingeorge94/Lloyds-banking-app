@@ -42,7 +42,7 @@
 
 		if(!$result) {
 			//return error
-			echo "failed";
+			echo $sql;
 			return false;
 		}
 
@@ -80,7 +80,9 @@
 
 	function add($db_table, $columns, $values) {
 		$db_conn = connect();
+
 		if(!$db_conn) { return false; }
+
 		$v = "";
 
 		//appends neccessary values to v
@@ -96,7 +98,7 @@
 			   'VALUES (' . $v . ')';
 		
 		$success = mysqli_query($db_conn, $sql);
-		
+
 		if(!$success) {
 			echo '<p>Inserting to database has failed</p>';
 			close($db_conn);
@@ -104,7 +106,7 @@
 		}
 
 		close($db_conn);
-		return $success;
+		return true;
 	}
 
 	/**

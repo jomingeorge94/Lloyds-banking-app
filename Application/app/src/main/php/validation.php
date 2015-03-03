@@ -21,10 +21,8 @@
 
 	//make sure both variables have been set and are not empty
 	if(isset($uid) && isset($passcode) && !empty($uid) && !empty($passcode)) {
-		//decrypt the uid stored in the SQLite
-		//$uid = decrypt($uid);
 		//retrieve passcode data from database
-		$data = fetch("customer", "passcode", $uid);
+		$data = fetch("Customer", "passcode", $uid);
 
 		if(!$data) { return; }
 
@@ -38,7 +36,7 @@
 			foreach($customer as $key => &$value) {
 				//ensures that uid is not fetched from the table
 				if($key != 'uid') {
-					$value = fetch("customer", $key, $uid);
+					$value = fetch("Customer", $key, $uid);
 				}
 			}
 

@@ -27,18 +27,11 @@
 	 */
 
 	function keygen() {
-		//generates a key of length 8
-		$key = openssl_random_pseudo_bytes(KEY_LENGTH, $isSecure);
-		//checks if the key is crypto strong?
-		//rare cases that this will evaulate to false
-		if($isSecure) {
-			return bin2hex($key);
-		}
 
 		//generate a key
 		for($i = 0; $i < KEY_LENGTH; $i++) {
 			//append a better rand number
-			$key .= mt_rand(10, 100000);
+			$key .= mt_rand(0, 9);
 		}
 
 		//convert to hex

@@ -12,7 +12,7 @@
 	);
 
 	for($i =  0; $i < sizeof($values); $i++) {
-		add("customer", $columns, $values[$i]);
+		add("Customer", $columns, $values[$i]);
 	}
 
 

@@ -185,6 +185,15 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 this.alertDialog.setTitle("Wrong Passcode");
                 this.alertDialog.show();
                 break;
+            case 2:
+            case 3:
+                this.alertDialog.setTitle("Error Occurred");
+                this.alertDialog.show();
+                break;
+            case 4:
+                this.alertDialog.setTitle("No Internet Connection");
+                this.alertDialog.show();
+                break;
             case 5:
                 this.alertDialog.setTitle("Error In Retrieving Data");
                 this.alertDialog.show();

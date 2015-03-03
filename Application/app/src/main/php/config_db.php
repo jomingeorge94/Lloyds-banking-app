@@ -15,9 +15,9 @@
 
 	//DB constants
 	define('SERVER', "localhost");
-	define('DATABASE', "test");
-	define('DB_USERNAME', "root");
-	define('DB_PASSWORD', "");
+	define('DATABASE', "abunitie_t2022t1");
+	define('DB_USERNAME', "abunitie_t2022t1");
+	define('DB_PASSWORD', "=BoxNext");
 
 	/**
 	 * Connects to a database. Note * constants must be changed if connecting to foreign server
@@ -40,7 +40,7 @@
 		$db_conn = mysqli_connect(SERVER, DB_USERNAME, DB_PASSWORD, DATABASE);
 
 		//does the connection fail?
-		if(!$db_conn) {
+		if(mysqli_connect_error()) {
 			//return a JSON object to java indicating failure
 			echo CONNECTION_TO_DB_ERROR;
 			return false;
