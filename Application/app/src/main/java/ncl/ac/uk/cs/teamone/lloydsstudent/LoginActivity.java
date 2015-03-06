@@ -58,7 +58,7 @@ public class LoginActivity extends ActionBarActivity {
                     passCode.setText("");
                     //set the info within the data class
                     Data d = new Data();
-                    d.setCustomer(handler.getData());
+                    d.customer = handler.getData();
                 }
             }
 

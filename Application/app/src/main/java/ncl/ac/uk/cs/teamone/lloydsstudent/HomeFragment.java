@@ -2,6 +2,7 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,15 +30,23 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         final View v =  inflater.inflate(R.layout.tab2_main, container, false);
 
+        //get the customer data
+        Data data = new Data();
+        //Set the customer name
+        TextView customerName = (TextView) v.findViewById(R.id.customerName);
+
+
+        customerName.setText(data.customer.get("firstname") + " " + data.customer.get("lastname"));
+
         v.findViewById(R.id.currentMoney).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                        android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                 ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
-                        transaction.replace(android.R.id.tabcontent, new OverviewFragment());
-                        transaction.commit();
+                android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                ((FrameLayout) getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
+                transaction.replace(android.R.id.tabcontent, new OverviewFragment());
+                transaction.commit();
 
 
             }

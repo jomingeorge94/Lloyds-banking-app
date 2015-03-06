@@ -80,8 +80,6 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             String key = jsonKeys.next();
             //add the value to the data
             this.data.put(key, data.get(key).toString());
-
-            Log.d("DataTAG", "value: " + this.data.get(key));
         }
     }
 

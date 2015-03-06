@@ -26,11 +26,6 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_tab_main);
-/*
-        Data data = new Data();
-        Map<String, String> d = new HashMap<String, String>();
-
-        */
 
         // Refactor at your will.
         tabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
