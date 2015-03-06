@@ -57,5 +57,12 @@
     <string name="transactiondate3">24th August</string>
     <string name="transactionstorename3">WWW.CASH.COM</string>
     <string name="transactioncost3">+£82.51</string>
+    <string name="transactiondate4">19th August</string>
+    <string name="transactionstorename4">Cash Withdrawal</string>
+    <string name="transactioncost4">-£100.00</string>
+    <string name="AlertTitle">Don\'t Recognise This ?</string>
+    <string name="CallUsButton">Call Us Now</string>
+    <string name="AlertMessage">If you don\'t recognise this payment/transfer we might need to take some action. To keep your money safe we need you to call our Fraud
+    Team right away to investigate this transaction. </string>
 
 </resources>

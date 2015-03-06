@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="195dp"
-        android:text="Budget Page"
+        android:text="Fraud COntact"
         android:id="@+id/textView20"
         android:textColor="#ff000000"
         android:textSize="60sp" />

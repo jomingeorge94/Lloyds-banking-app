@@ -11,9 +11,6 @@ import android.widget.FrameLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class MainActivity extends ActionBarActivity {
 
     public FragmentTabHost tabHost;
@@ -74,6 +71,8 @@ public class MainActivity extends ActionBarActivity {
         });
 
     }
+
+
 
     @Override
     public void onBackPressed() {

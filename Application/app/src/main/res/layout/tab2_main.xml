@@ -58,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1"
                 android:paddingLeft="40dp"
-                android:nestedScrollingEnabled="false">
+                android:nestedScrollingEnabled="false"
+                android:id="@+id/moneyStuff">
 
                 <ImageButton
                     android:layout_width="wrap_content"
