@@ -67,6 +67,8 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        this.v = v;
+
         return v;
     }
 
