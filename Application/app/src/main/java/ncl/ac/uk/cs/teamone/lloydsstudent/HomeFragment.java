@@ -35,17 +35,19 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-
                 android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 ((FrameLayout) getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
                 transaction.replace(android.R.id.tabcontent, new OverviewFragment());
                 transaction.commit();
 
+                gestureDetector = new GestureDetector(getActivity(), new MyGestureDetector());
 
-        gestureDetector = new GestureDetector(getActivity(), new MyGestureDetector());
-        gestureListener = new View.OnTouchListener() {
-            public boolean onTouch(View v, MotionEvent event) {
-                return gestureDetector.onTouchEvent(event);
+                gestureListener = new View.OnTouchListener() {
+                    public boolean onTouch(View v, MotionEvent event) {
+                        return gestureDetector.onTouchEvent(event);
+                    }
+                }
+
             }
         };
 
@@ -79,12 +81,13 @@ public class HomeFragment extends Fragment {
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             try {
+
                 if (Math.abs(e1.getY() - e2.getY()) > SWIPE_MAX_OFF_PATH) {
                     return false;
                 }
+
                 // right to left swipe
                 if(e1.getX() - e2.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
-
 
                     final TextView accounttype = (TextView) v.findViewById(R.id.accountType);
                     accounttype.setText("Student Account");
@@ -104,7 +107,9 @@ public class HomeFragment extends Fragment {
                     Animation anim3 = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
                             R.anim.left_to_right);
                     accountdetails.startAnimation(anim3);
+
                 }  else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
+
                     final TextView accounttype = (TextView) v.findViewById(R.id.accountType);
                     accounttype.setText("Savings Account");
                     Animation anim = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
@@ -123,13 +128,14 @@ public class HomeFragment extends Fragment {
                     Animation anim3 = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
                             R.anim.right_to_left);
                     accountdetails.startAnimation(anim3);
+
                 }
             } catch (Exception e) {
                 // nothing
             }
+
             return false;
+
         }
-
-
     }
 
