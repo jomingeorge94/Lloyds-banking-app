@@ -2,11 +2,7 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-<<<<<<< HEAD
-import android.util.Log;
-=======
 import android.view.GestureDetector;
->>>>>>> origin/master
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,21 +12,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-<<<<<<< HEAD
-import org.w3c.dom.Text;
-
-import java.util.HashMap;
-import java.util.Map;
-
-=======
->>>>>>> origin/master
 /**
  * Created by Jomin on 19/02/2015.
  */
 public class HomeFragment extends Fragment {
-    View v;
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -38,7 +23,6 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         final View v =  inflater.inflate(R.layout.tab2_main, container, false);
 
-<<<<<<< HEAD
         //get the customer data
         Data data = new Data();
         //Set the customer name
@@ -58,12 +42,10 @@ public class HomeFragment extends Fragment {
                 transaction.commit();
 
 
-=======
         gestureDetector = new GestureDetector(getActivity(), new MyGestureDetector());
         gestureListener = new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
                 return gestureDetector.onTouchEvent(event);
->>>>>>> origin/master
             }
         };
 
@@ -84,38 +66,8 @@ public class HomeFragment extends Fragment {
             }
         });
 
+    }
 
-
-this.v=v;
-
-
-//
-//            v.findViewById(R.id.rightArrowAccount).
-//
-//            setOnClickListener(new View.OnClickListener() {
-
-//
-//                }
-//            }
-//
-//            );
-//
-//            v.findViewById(R.id.leftArrowAccount).
-//
-//            setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick (View ve){
-//
-//
-//                }
-//            }
-//
-//            );
-
-
-            return v;
-
-        }
 
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_MAX_OFF_PATH = 250;
@@ -127,8 +79,9 @@ this.v=v;
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             try {
-                if (Math.abs(e1.getY() - e2.getY()) > SWIPE_MAX_OFF_PATH)
+                if (Math.abs(e1.getY() - e2.getY()) > SWIPE_MAX_OFF_PATH) {
                     return false;
+                }
                 // right to left swipe
                 if(e1.getX() - e2.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
 
@@ -180,5 +133,3 @@ this.v=v;
 
     }
 
-
-    }
