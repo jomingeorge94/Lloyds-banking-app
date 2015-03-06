@@ -22,12 +22,10 @@ public class HomeFragment extends Fragment {
 
         // Inflate the layout for this fragment
         final View v =  inflater.inflate(R.layout.tab2_main, container, false);
-
         //get the customer data
         Data data = new Data();
         //Set the customer name
         TextView customerName = (TextView) v.findViewById(R.id.customerName);
-
 
         customerName.setText(data.customer.get("firstname") + " " + data.customer.get("lastname"));
 
@@ -46,10 +44,10 @@ public class HomeFragment extends Fragment {
                     public boolean onTouch(View v, MotionEvent event) {
                         return gestureDetector.onTouchEvent(event);
                     }
-                }
+                };
 
             }
-        };
+        });
 
 
 
@@ -68,6 +66,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        return v;
     }
 
 
@@ -138,4 +137,5 @@ public class HomeFragment extends Fragment {
 
         }
     }
+}
 
