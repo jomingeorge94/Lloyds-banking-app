@@ -56,11 +56,4 @@ public class OverviewFragment extends Fragment {
         return v;
     }
 
-
-
-
-
-
-
-
 }

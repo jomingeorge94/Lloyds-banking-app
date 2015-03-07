@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
+import android.widget.FrameLayout;
 
 /**
  * Created by Jomin on 01/03/2015.
@@ -20,11 +20,16 @@ public class FraudAlertDialogBox extends android.support.v4.app.DialogFragment {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(android.R.id.tabcontent, new FraudAlertFragment());
-                transaction.addToBackStack(null);
 
+                android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
+                transaction.replace(android.R.id.tabcontent, new FraudAlertFragment());
                 transaction.commit();
+
+
+
+
+                
 
 
             }
