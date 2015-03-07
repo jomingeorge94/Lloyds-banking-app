@@ -30,25 +30,14 @@ public class HomeFragment extends Fragment {
 
         customerName.setText(data.customer.get("firstname") + " " + data.customer.get("lastname"));
 
-        v.findViewById(R.id.currentMoney).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                ((FrameLayout) getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
-                transaction.replace(android.R.id.tabcontent, new OverviewFragment());
-                transaction.commit();
 
-                gestureDetector = new GestureDetector(getActivity(), new MyGestureDetector());
-
-                gestureListener = new View.OnTouchListener() {
-                    public boolean onTouch(View v, MotionEvent event) {
-                        return gestureDetector.onTouchEvent(event);
-                    }
-                };
-
-            }
-        });
+        gestureDetector = new GestureDetector(getActivity(), new MyGestureDetector());
+               gestureListener = new View.OnTouchListener() {
+                   public boolean onTouch(View v, MotionEvent event) {
+                       return gestureDetector.onTouchEvent(event);
+                   }
+               };
 
 
 

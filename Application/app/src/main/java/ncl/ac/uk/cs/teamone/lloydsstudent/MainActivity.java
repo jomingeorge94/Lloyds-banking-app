@@ -70,6 +70,9 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        //loads up the home tab straight away
+        tabHost.setCurrentTab(1);
+
     }
 
 
