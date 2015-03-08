@@ -23,6 +23,11 @@
     <string name="first_failed_login">Sorry but your online login details didn\'t match our records (Make sure you\'re using your Online Banking Login)</string>
     <string name="first_failed_passcode">Sorry but your inputs didn\'t match. Please try again making sure you enter both passcodes the same</string>
 
+    // Budget Activity
+    <string name="budget_my_budget">My Weekly Budget Is\u00A0</string>
+    <string name="budget_you_spent">You've spent</string>
+    <string name="budget_thank">less than last week</string>
+
     <string name="login_intro">Welcome to Lloyds Student. \n\nPlease enter your 4 digit pass code to Login and View your account</string>
     <string name="app_name">Lloyds Student</string>
     <string name="hello_world">Hello World</string>

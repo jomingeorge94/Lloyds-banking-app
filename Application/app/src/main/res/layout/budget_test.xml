@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="195dp"
-        android:text="Budget Page"
-        android:id="@+id/textView20"
-        android:textColor="#ff000000"
-        android:textSize="60sp" />
-</LinearLayout>
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/budget_my_budget"
+            android:id="@+id/my_budget"
+            android:layout_gravity="center_horizontal"
+            android:layout_column="3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="£88"
+            android:textColor="#369742"
+            android:id="@+id/budget_view"
+            android:layout_column="4" />
+
+    </TableRow>
+
+</TableLayout>
