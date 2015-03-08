@@ -42,7 +42,7 @@ public class MainActivity extends ActionBarActivity {
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
-                                    if(tabHost.getCurrentTabTag().equals("tab1")) {
+                if(tabHost.getCurrentTabTag().equals("tab1")) {
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     ((FrameLayout)findViewById(android.R.id.tabcontent)).removeAllViews();
