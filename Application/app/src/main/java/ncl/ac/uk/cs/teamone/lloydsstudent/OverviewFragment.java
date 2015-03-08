@@ -39,8 +39,6 @@ public class OverviewFragment extends Fragment {
             }
         });
 
-
-
         final ImageButton b = (ImageButton)v.findViewById(R.id.fraudalert1);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,8 +48,6 @@ public class OverviewFragment extends Fragment {
                 dialog.show(getFragmentManager(),"Hellooo");
             }
         });
-
-
 
         return v;
     }

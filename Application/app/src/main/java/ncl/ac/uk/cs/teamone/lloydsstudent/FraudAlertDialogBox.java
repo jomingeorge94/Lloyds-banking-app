@@ -19,22 +19,12 @@ public class FraudAlertDialogBox extends android.support.v4.app.DialogFragment {
         builder.setTitle(R.string.AlertTitle).setMessage(R.string.AlertMessage).setPositiveButton(R.string.CallUsButton,new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
-
                 android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
                 transaction.replace(android.R.id.tabcontent, new FraudAlertFragment());
                 transaction.commit();
-
-
-
-
-                
-
-
             }
         });
-
         AlertDialog dialog = builder.create();
 
         return dialog;
