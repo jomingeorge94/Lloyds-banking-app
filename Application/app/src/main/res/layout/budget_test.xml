@@ -4,25 +4,45 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <TableRow>
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:paddingTop="10dp" >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/budget_my_budget"
-            android:id="@+id/my_budget"
-            android:layout_gravity="center_horizontal"
-            android:layout_column="3" />
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textSize="@dimen/abc_text_size_large_material"
+            android:textColor="#ff252525"
+            android:fontFamily="sans-serif-light" />
 
         <TextView
+            android:text="£88"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:textColor="#369742"
+            android:textSize="@dimen/abc_text_size_large_material"
+            android:fontFamily="sans-serif-light" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="£88"
-            android:textColor="#369742"
-            android:id="@+id/budget_view"
-            android:layout_column="4" />
+            android:id="@+id/progressBar2"
+            android:layout_column="0"
+            android:layout_span="2" />
 
     </TableRow>
 
