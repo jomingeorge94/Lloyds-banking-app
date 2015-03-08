@@ -33,20 +33,20 @@ public class HomeFragment extends Fragment {
 
 
         gestureDetector = new GestureDetector(getActivity(), new MyGestureDetector());
-               gestureListener = new View.OnTouchListener() {
-                   public boolean onTouch(View v, MotionEvent event) {
-                       return gestureDetector.onTouchEvent(event);
-                   }
-               };
+            gestureListener = new View.OnTouchListener() {
+                public boolean onTouch(View v, MotionEvent event) {
+                    return gestureDetector.onTouchEvent(event);
+                }
+            };
 
 
 
-        v.findViewById(R.id.moneyStuff).setOnTouchListener(gestureListener);
-        v.findViewById(R.id.currentMoney).setOnTouchListener(gestureListener);
-        v.findViewById(R.id.leftArrowAccount).setOnTouchListener(gestureListener);
-        v.findViewById(R.id.rightArrowAccount).setOnTouchListener(gestureListener);
+            v.findViewById(R.id.moneyStuff).setOnTouchListener(gestureListener);
+            v.findViewById(R.id.currentMoney).setOnTouchListener(gestureListener);
+            v.findViewById(R.id.leftArrowAccount).setOnTouchListener(gestureListener);
+            v.findViewById(R.id.rightArrowAccount).setOnTouchListener(gestureListener);+
 
-        v.findViewById(R.id.currentMoney).setOnClickListener(new View.OnClickListener() {
+            v.findViewById(R.id.currentMoney).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
