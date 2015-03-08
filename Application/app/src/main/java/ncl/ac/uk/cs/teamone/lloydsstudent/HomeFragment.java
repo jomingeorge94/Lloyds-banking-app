@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -39,6 +40,33 @@ public class HomeFragment extends Fragment {
                 }
             };
 
+<<<<<<< HEAD
+        v.findViewById(R.id.moneyStuff).setOnTouchListener(gestureListener);
+        v.findViewById(R.id.currentMoney).setOnTouchListener(gestureListener);
+        v.findViewById(R.id.leftArrowAccount).setOnTouchListener(gestureListener);
+        v.findViewById(R.id.rightArrowAccount).setOnTouchListener(gestureListener);
+
+
+
+        final Button maketransfer = (Button)v.findViewById(R.id.makeTransferButton);
+        maketransfer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
+                transaction.replace(android.R.id.tabcontent, new MakeaTransfer());
+                transaction.commit();
+            }
+        });
+
+
+
+
+
+
+
+        v.findViewById(R.id.currentMoney).setOnClickListener(new View.OnClickListener() {
+=======
 
 
             v.findViewById(R.id.moneyStuff).setOnTouchListener(gestureListener);
@@ -47,6 +75,7 @@ public class HomeFragment extends Fragment {
             v.findViewById(R.id.rightArrowAccount).setOnTouchListener(gestureListener);+
 
             v.findViewById(R.id.currentMoney).setOnClickListener(new View.OnClickListener() {
+>>>>>>> origin/master
             @Override
             public void onClick(View v) {
                 android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -59,8 +88,12 @@ public class HomeFragment extends Fragment {
         this.v = v;
 
         return v;
-    }
 
+
+
+
+
+    }
 
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_MAX_OFF_PATH = 250;
@@ -124,10 +157,8 @@ public class HomeFragment extends Fragment {
             } catch (Exception e) {
                 // nothing
             }
-
             return false;
-
         }
     }
-}
 
+}

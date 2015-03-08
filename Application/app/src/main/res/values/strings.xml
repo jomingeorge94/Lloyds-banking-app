@@ -64,5 +64,13 @@
     <string name="CallUsButton">Call Us Now</string>
     <string name="AlertMessage">If you don\'t recognise this payment/transfer we might need to take some action. To keep your money safe we need you to call our Fraud
     Team right away to investigate this transaction. </string>
+    <string name="makeatransfertitle">Transfer money between your Lloyd\'s accounts</string>
+    <string name="makeatransferfrom">From:</string>
+    <string name="makeatransferto">To:</string>
+    <string-array name="accounts">
+        <item>Current Account</item>
+        <item>Saving\'s Account</item>
+        <item>Joined Account</item>
+    </string-array>
 
 </resources>
