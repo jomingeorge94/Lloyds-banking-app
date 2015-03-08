@@ -26,12 +26,6 @@ public class FraudAlertDialogBox extends android.support.v4.app.DialogFragment {
                 transaction.replace(android.R.id.tabcontent, new FraudAlertFragment());
                 transaction.commit();
 
-
-
-
-
-
-
             }
         });
 
