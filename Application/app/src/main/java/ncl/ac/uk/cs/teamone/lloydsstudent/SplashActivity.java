@@ -17,11 +17,11 @@ public class SplashActivity extends Activity {
      *******/
 
     // Normal Start takes you to the login as if you are using the app as normal
-    private boolean normalStart = true;
+    private boolean normalStart = false;
     // First Time Start takes you into the app as if you're a first time user
     private boolean firstTimeStart = false;
     // Skip Start takes you through to the home screen (Tabbed Screen)
-    private boolean skipStart = false;
+    private boolean skipStart = true;
 
     /** Called when the activity is first created. */
     @Override

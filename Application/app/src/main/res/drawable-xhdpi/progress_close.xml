@@ -11,8 +11,8 @@
         <clip>
             <shape>
                 <gradient
-                    android:startColor="@color/spend_half"
-                    android:endColor="@color/spend_half"
+                    android:startColor="@color/spend_close"
+                    android:endColor="@color/spend_close"
                     />
             </shape>
         </clip>
