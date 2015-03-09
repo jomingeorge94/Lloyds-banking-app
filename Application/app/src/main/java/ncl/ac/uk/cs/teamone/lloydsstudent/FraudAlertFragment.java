@@ -1,5 +1,5 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
-/*kirsty is the best*/
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
