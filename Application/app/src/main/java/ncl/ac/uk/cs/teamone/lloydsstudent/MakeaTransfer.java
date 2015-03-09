@@ -29,14 +29,12 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.accounts,android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-
-
-
-
         return v;
-
     }
 
+    /**
+     * method for testing purpose to see what the user has selected from the drop down list
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 

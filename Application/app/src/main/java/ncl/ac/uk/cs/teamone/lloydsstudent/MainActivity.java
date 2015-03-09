@@ -1,6 +1,5 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
@@ -15,10 +14,11 @@ public class MainActivity extends ActionBarActivity {
 
     public FragmentTabHost tabHost;
     private TextView click;
-    FragmentManager manager;
-    private boolean boolOverview = false;
-    private boolean boolHome = false;
 
+    /**
+     * Implemented using the FragmentTabHost, associated fragments within each tabs are coded using the add method
+     * Also with the help of a method removes the current fragment with the latest fragment so that overlaying is prevented
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +76,9 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-
+    /**
+     * Back button method - currently nothing is implemented
+     */
     @Override
     public void onBackPressed() {
 

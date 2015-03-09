@@ -19,6 +19,10 @@ import android.widget.Toast;
  */
 public class HomeFragment extends Fragment {
     View v;
+    private static final int SWIPE_MIN_DISTANCE = 120;
+    private static final int SWIPE_MAX_OFF_PATH = 250;
+    private static final int SWIPE_THRESHOLD_VELOCITY = 200;
+    private GestureDetector gestureDetector;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -60,7 +64,6 @@ public class HomeFragment extends Fragment {
         });
 
 
-
         //onclick event for the button - make a transfer
         final Button maketransfer = (Button)v.findViewById(R.id.makeTransferButton);
         maketransfer.setOnClickListener(new View.OnClickListener() {
@@ -88,11 +91,6 @@ public class HomeFragment extends Fragment {
         return v;
     }
 
-
-    private static final int SWIPE_MIN_DISTANCE = 120;
-    private static final int SWIPE_MAX_OFF_PATH = 250;
-    private static final int SWIPE_THRESHOLD_VELOCITY = 200;
-    private GestureDetector gestureDetector;
     View.OnTouchListener gestureListener;
 
     class MyGestureDetector extends GestureDetector.SimpleOnGestureListener {
@@ -146,14 +144,11 @@ public class HomeFragment extends Fragment {
                     Animation anim3 = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
                             R.anim.right_to_left);
                     accountdetails.startAnimation(anim3);
-
                 }
             } catch (Exception e) {
                 // nothing
             }
-
             return false;
-
         }
     }
 }

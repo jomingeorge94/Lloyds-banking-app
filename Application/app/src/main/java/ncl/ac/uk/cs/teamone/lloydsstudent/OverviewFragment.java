@@ -13,7 +13,10 @@ import android.widget.Toast;
  */
 public class OverviewFragment extends Fragment {
 
-
+    /**
+     * method to change the fragment to the home tab transaction xml layout, also implemented the two buttons
+     * which will change the data
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,12 +54,4 @@ public class OverviewFragment extends Fragment {
 
         return v;
     }
-
-
-
-
-
-
-
-
 }

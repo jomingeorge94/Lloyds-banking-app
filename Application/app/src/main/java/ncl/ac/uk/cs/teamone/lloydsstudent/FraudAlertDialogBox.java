@@ -11,6 +11,11 @@ import android.widget.FrameLayout;
  */
 public class FraudAlertDialogBox extends android.support.v4.app.DialogFragment {
 
+    /**
+     * method which handles the alert dialog which will pop up when the user clicks on the fraud alert symbol within a certain traansaction
+     * dialog has title, a message and a positive button
+     * when the user clicks on the positive button (Call Us) it will change the fragment to the FraudAlert
+     */
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 

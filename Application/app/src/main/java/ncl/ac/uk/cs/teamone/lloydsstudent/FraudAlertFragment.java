@@ -11,7 +11,9 @@ import android.view.ViewGroup;
  */
 public class FraudAlertFragment extends Fragment {
 
-
+    /**
+     * method to change the fragment to the fraud contact us xml layout
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

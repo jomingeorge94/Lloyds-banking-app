@@ -11,6 +11,7 @@ import android.view.ViewGroup;
  */
 public class DealsFragment extends Fragment {
 
+    //method to switch the fragment, this method will switch the fragment to the deals layout xml file
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

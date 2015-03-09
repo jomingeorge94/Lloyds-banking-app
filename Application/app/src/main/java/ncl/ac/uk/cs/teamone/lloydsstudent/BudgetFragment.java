@@ -1,22 +1,14 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import java.util.Random;
 
 /**
  * Created by Jomin on 26/02/2015.
@@ -31,6 +23,7 @@ public class BudgetFragment extends Fragment {
     private Rect bounds;
     private TextView remaining;
 
+    //method to switch the fragment, this method will switch the fragment to the budget layout xml file
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
