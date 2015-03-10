@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by Jomin on 07/03/2015.
@@ -26,9 +24,15 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
 
         spinner = (Spinner)v.findViewById(R.id.spinner);
 
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.accounts,android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.accounts,R.layout.spinner_item);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_items);
+
+        spinner.setPrompt("Select the item");
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        //spinner.setOnItemSelectedListener(this);
+
+
+
         return v;
     }
 
@@ -38,8 +42,11 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-        TextView mytext = (TextView) view;
-        Toast.makeText(getActivity(), "You have selected" +mytext.getText(), Toast.LENGTH_SHORT).show();
+
+
+
+       /* TextView mytext = (TextView) view;
+        Toast.makeText(getActivity(), "You have selected" +mytext.getText(), Toast.LENGTH_SHORT).show();*/
     }
 
     @Override

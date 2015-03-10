@@ -75,6 +75,7 @@
     <string name="makeatransferfrom">From:</string>
     <string name="makeatransferto">To:</string>
     <string-array name="accounts">
+        <item>Select an account to pay</item>
         <item>Current Account</item>
         <item>Saving\'s Account</item>
         <item>Joined Account</item>

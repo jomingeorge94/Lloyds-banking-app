@@ -33,7 +33,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/spinner"
             android:textColor="#ff000000"
-            android:background="#5DAD68"
             android:popupBackground="#5DAD68" />
 
     </LinearLayout>
