@@ -35,7 +35,7 @@ public class BudgetFragment extends Fragment {
         remaining = (TextView) v.findViewById(R.id.budget_remaining);
 
         summaryUpdate(88, 72.11);
-        
+
         return v;
     }
 
