@@ -97,12 +97,13 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-
     /**
      * Back button method - currently nothing is implemented
      */
     @Override
     public void onBackPressed() {
+
+
 
     }
 
@@ -133,6 +134,4 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }

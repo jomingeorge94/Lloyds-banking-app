@@ -82,6 +82,7 @@ public class HomeFragment extends Fragment {
                 android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
                 transaction.replace(android.R.id.tabcontent, new PayaContact(), "");
+                transaction.addToBackStack("");
                 transaction.commit();
             }
         });

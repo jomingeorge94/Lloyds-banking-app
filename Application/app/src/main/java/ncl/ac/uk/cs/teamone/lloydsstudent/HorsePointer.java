@@ -24,7 +24,7 @@ public class HorsePointer extends DialogFragment {
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inf = getActivity().getLayoutInflater();
-        View theDIalog = inf.inflate(R.layout.horse_layout, null);
+        View theDIalog = inf.inflate(R.layout.horse_layout_home_main, null);
         builder.setView(theDIalog);
 
         builder.setCancelable(false);
@@ -33,8 +33,8 @@ public class HorsePointer extends DialogFragment {
         AlertDialog dialog = builder.create();
         WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
         params.gravity = Gravity.TOP | Gravity.RIGHT;
-        params.x = 230;
-        params.y = 230;
+        params.x = 0;
+        params.y = 200;
 
         return dialog;
     }
