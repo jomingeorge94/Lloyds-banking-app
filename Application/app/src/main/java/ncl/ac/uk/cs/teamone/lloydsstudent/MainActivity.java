@@ -2,6 +2,7 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
@@ -57,7 +58,7 @@ public class MainActivity extends ActionBarActivity {
                 if(tabHost.getCurrentTabTag().equals("tab2")) {
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.replace(android.R.id.tabcontent, new HomeFragment());
+                    transaction.replace(android.R.id.tabcontent, new HomeFragment(), "tab2");
                     transaction.addToBackStack(null);
 
                     transaction.commit();
@@ -81,7 +82,13 @@ public class MainActivity extends ActionBarActivity {
         tabHost.findViewById(R.id.horsePointer).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplication(), "Horse pointer - Button is working", Toast.LENGTH_SHORT).show();
+                Fragment entry = getSupportFragmentManager().findFragmentById(android.R.id.tabcontent);
+                if(entry.getTag().equals("tab2")){
+                    Toast.makeText(getApplication(), "Horse pointer - Button is working", Toast.LENGTH_SHORT).show();
+                }else if(entry.getTag().equals("OverView")){
+                    Toast.makeText(getApplication(), "Horse pointer - Button is in here overvbiew ginsgers", Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });
