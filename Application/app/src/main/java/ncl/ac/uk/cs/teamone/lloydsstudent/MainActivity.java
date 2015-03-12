@@ -1,26 +1,30 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
     public FragmentTabHost tabHost;
     private TextView click;
+    FragmentManager manager;
 
     /**
      * Implemented using the FragmentTabHost, associated fragments within each tabs are coded using the add method
      * Also with the help of a method removes the current fragment with the latest fragment so that overlaying is prevented
      */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_tab_main);
 
@@ -72,6 +76,16 @@ public class MainActivity extends ActionBarActivity {
 
         //loads up the home tab straight away
         tabHost.setCurrentTab(1);
+
+
+        tabHost.findViewById(R.id.horsePointer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplication(), "Horse pointer - Button is working", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
 
     }
 

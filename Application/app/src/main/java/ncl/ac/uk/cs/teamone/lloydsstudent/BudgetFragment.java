@@ -37,6 +37,7 @@ public class BudgetFragment extends Fragment {
         summaryUpdate(88, 72.11);
 
         return v;
+
     }
 
     /**

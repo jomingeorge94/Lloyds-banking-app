@@ -27,7 +27,7 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_items);
         spinner.setAdapter(adapter);
         spinner.setPrompt("Select an account");
-        //spinner.setOnItemSelectedListener(this);
+
 
         spinner = (Spinner)v.findViewById(R.id.spinner2);
         ArrayAdapter adapter2 = ArrayAdapter.createFromResource(getActivity(), R.array.accounts,R.layout.spinner_item);
