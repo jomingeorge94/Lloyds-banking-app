@@ -87,7 +87,7 @@ public class MainActivity extends ActionBarActivity {
                     HorsePointer horse = new HorsePointer();
                     horse.show(getSupportFragmentManager(), "Horse");
                 }else if(entry.getTag().equals("OverView")){
-                    Toast.makeText(getApplication(), "Horse pointer - Button is in here overvbiew ginsgers", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplication(), "Horse pointer - Button is in here in overview", Toast.LENGTH_SHORT).show();
                 }
 
 
