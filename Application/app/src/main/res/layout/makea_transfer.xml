@@ -73,7 +73,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:paddingTop="5dp"
-                android:spinnerMode="dropdown"
+                android:spinnerMode="dialog"
                 android:layout_marginTop="5dp"
                 android:entries="@array/accounts"
                 android:layout_marginBottom="5dp"
@@ -119,31 +119,6 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:paddingLeft="20dp" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pay Now"
-                    android:id="@+id/radioButton"
-                    android:textColor="#ff000000"
-                    android:textSize="18sp" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pay Later"
-                    android:id="@+id/radioButton2"
-                    android:textColor="#ff000000"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
 
 
         </LinearLayout>

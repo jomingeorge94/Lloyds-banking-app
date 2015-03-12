@@ -76,7 +76,7 @@
     <string name="makeatransferto">To:</string>
     <string-array name="accounts">
         <item>Current Account</item>
-        <item>Saving\'s Account</item>
+        <item>Savings Account</item>
         <item>Joined Account</item>
     </string-array>
 

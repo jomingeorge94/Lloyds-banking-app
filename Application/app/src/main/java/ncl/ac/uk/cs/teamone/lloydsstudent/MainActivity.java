@@ -84,7 +84,8 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Fragment entry = getSupportFragmentManager().findFragmentById(android.R.id.tabcontent);
                 if(entry.getTag().equals("tab2")){
-                    Toast.makeText(getApplication(), "Horse pointer - Button is working", Toast.LENGTH_SHORT).show();
+                    HorsePointer horse = new HorsePointer();
+                    horse.show(getSupportFragmentManager(), "Horse");
                 }else if(entry.getTag().equals("OverView")){
                     Toast.makeText(getApplication(), "Horse pointer - Button is in here overvbiew ginsgers", Toast.LENGTH_SHORT).show();
                 }

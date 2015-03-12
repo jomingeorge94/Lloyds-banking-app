@@ -71,7 +71,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
-                transaction.replace(android.R.id.tabcontent, new MakeaTransfer(), "MakeATransfer");
+                transaction.replace(android.R.id.tabcontent, new MakeaTransfer(), "");
                 transaction.commit();
             }
         });
