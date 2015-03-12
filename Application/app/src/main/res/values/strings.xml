@@ -79,5 +79,7 @@
         <item>Savings Account</item>
         <item>Joined Account</item>
     </string-array>
+    <string name="paycontacttitle">Enter the account details of the person you want to pay</string>
+    <string name="paycontactlimitandinfo">(Limit: Minimum £1, Maximum daily: £300)</string>
 
 </resources>

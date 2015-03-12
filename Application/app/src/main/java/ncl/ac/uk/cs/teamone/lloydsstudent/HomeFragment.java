@@ -12,7 +12,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by Jomin on 19/02/2015.
@@ -80,7 +79,10 @@ public class HomeFragment extends Fragment {
         paycontact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Pay a Contact Button is clicked", Toast.LENGTH_SHORT).show();
+                android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
+                transaction.replace(android.R.id.tabcontent, new PayaContact(), "");
+                transaction.commit();
             }
         });
 

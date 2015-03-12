@@ -20,13 +20,12 @@
             android:layout_height="fill_parent"
             android:paddingTop="5dp"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp"
             android:weightSum="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/makeatransfertitle"
+                android:text="@string/paycontacttitle"
                 android:id="@+id/textView10"
                 android:textSize="16sp"
                 android:textColor="#ff000000" />
@@ -68,19 +67,39 @@
                 android:paddingTop="10dp"
                 android:layout_marginLeft="5dp" />
 
-            <Spinner
+            <EditText
+                android:id="@+id/contactphonenumber"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/spinner2"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:paddingTop="5dp"
-                android:spinnerMode="dialog"
-                android:layout_marginTop="5dp"
-                android:entries="@array/accounts"
-                android:layout_marginBottom="5dp"
-                android:prompt="@string/gen_next">
-            </Spinner>
+                android:inputType="numberDecimal"
+                android:layout_height="40dp"
+                android:maxLength="13"
+                android:hint="Phone Number"
+                android:background="@drawable/abc_ab_share_pack_holo_light"
+                android:textColor="#ff000000"
+                android:textColorHint="#ffdbe1dc"
+                android:layout_marginTop="20dp"
+                android:password="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="30dp"
+                android:paddingLeft="20dp"/>
+
+            <EditText
+                android:id="@+id/sortcodepayacontact"
+                android:layout_width="match_parent"
+                android:inputType="numberDecimal"
+                android:layout_height="40dp"
+                android:maxLength="6"
+                android:hint="Sort Code"
+                android:background="@drawable/abc_ab_share_pack_holo_light"
+                android:textColor="#ff000000"
+                android:textColorHint="#ffdbe1dc"
+                android:layout_marginTop="20dp"
+                android:password="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="30dp"
+                android:paddingLeft="20dp"/>
+
+
 
 
             <View
@@ -105,6 +124,16 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:paddingLeft="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView14"
+                android:text="@string/paycontactlimitandinfo"
+                android:textColor="#ff000000"
+                android:textSize="14sp"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="5dp" />
 
             <EditText
                 android:id="@+id/userInputReference"
