@@ -50,7 +50,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="#5DAD68"/>
+            android:background="#E31B1B"/>
 
         <FrameLayout
             android:id="@android:id/tabcontent"

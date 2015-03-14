@@ -79,6 +79,9 @@ public class MainActivity extends ActionBarActivity {
         tabHost.setCurrentTab(1);
 
 
+
+
+
         tabHost.findViewById(R.id.horsePointer).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
