@@ -136,6 +136,7 @@
         android:background="#ffcacaca"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
+        android:enabled="true"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

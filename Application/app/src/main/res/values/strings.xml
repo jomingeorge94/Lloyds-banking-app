@@ -88,5 +88,8 @@
     Lloyds Bank plc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority under registration number 119278. Authorisation can be checked on the Financial Services Register at www.fca.org.uk. Lloyds Bank plc are members of the
         Financial Services Compensation Scheme and the Financial Ombudsman Service. We subscribe to the Lending Code;
         copies of the Code can be obtained from www.lendingstandardsboard.org.uk.</string>
-
+    <string name="transfermoneytitle">Transfer money between your accounts</string>
+    <string name="confirmdetails">Confirm your transaction details</string>
+    <string name="amount">Amount</string>
+    <string name="reference">Payment Reference</string>
 </resources>

@@ -13,7 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 /**
  * Created by Jomin on 07/03/2015.
@@ -60,16 +59,7 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
             @Override
             public void afterTextChanged(Editable s) {
 
-                if(amount.length() >=1){
-                    reviewButton.setEnabled(true);
-                    reviewButton.setBackgroundColor(Color.parseColor("#369742"));
-                } else  {
-                    reviewButton.setEnabled(false);
-                    reviewButton.setBackgroundColor(Color.parseColor("#ffcacaca"));
-                }
-
-
-                if(reference.length() >=5 ){
+                if(amount.length() >=1 && reference.length() >=5){
                     reviewButton.setEnabled(true);
                     reviewButton.setBackgroundColor(Color.parseColor("#369742"));
                 } else  {
@@ -85,7 +75,8 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
         v.findViewById(R.id.maketransferReviewButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Review button is clicked", Toast.LENGTH_SHORT).show();
+                MakeaTransferConfirm makeaTransferConfirm = new MakeaTransferConfirm();
+                makeaTransferConfirm.show(getFragmentManager(), "Horse");
             }
         });
 
