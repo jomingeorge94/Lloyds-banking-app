@@ -11,6 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 /**
@@ -35,16 +36,12 @@ public class HomeFragment extends Fragment {
 
         customerName.setText(data.customer.get("firstname") + " " + data.customer.get("lastname"));
 
-
-
         gestureDetector = new GestureDetector(getActivity(), new MyGestureDetector());
         gestureListener = new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
                 return gestureDetector.onTouchEvent(event);
             }
         };
-
-
 
         v.findViewById(R.id.moneyStuff).setOnTouchListener(gestureListener);
         v.findViewById(R.id.currentMoney).setOnTouchListener(gestureListener);
@@ -61,7 +58,6 @@ public class HomeFragment extends Fragment {
                 transaction.commit();
             }
         });
-
 
         //onclick event for the button - make a transfer
         final Button maketransfer = (Button)v.findViewById(R.id.makeTransferButton);
@@ -86,8 +82,6 @@ public class HomeFragment extends Fragment {
                 transaction.commit();
             }
         });
-
-
 
         this.v = v;
 
@@ -127,6 +121,17 @@ public class HomeFragment extends Fragment {
                             R.anim.left_to_right);
                     accountdetails.startAnimation(anim3);
 
+
+                    final ImageButton leftarrow = (ImageButton)v.findViewById(R.id.leftArrowAccount);
+                    Animation anim4 = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+                            R.anim.left_to_right);
+                    leftarrow.startAnimation(anim4);
+
+                    final ImageButton rightarrow = (ImageButton)v.findViewById(R.id.rightArrowAccount);
+                    Animation anim5 = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+                            R.anim.left_to_right);
+                    rightarrow.startAnimation(anim5);
+
                 }  else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
 
                     final TextView accounttype = (TextView) v.findViewById(R.id.accountType);
@@ -147,6 +152,16 @@ public class HomeFragment extends Fragment {
                     Animation anim3 = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
                             R.anim.right_to_left);
                     accountdetails.startAnimation(anim3);
+
+                    final ImageButton leftarrow = (ImageButton)v.findViewById(R.id.leftArrowAccount);
+                    Animation anim4 = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+                            R.anim.right_to_left);
+                    leftarrow.startAnimation(anim4);
+
+                    final ImageButton rightarrow = (ImageButton)v.findViewById(R.id.rightArrowAccount);
+                    Animation anim5 = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+                            R.anim.right_to_left);
+                    rightarrow.startAnimation(anim5);
                 }
             } catch (Exception e) {
                 // nothing
