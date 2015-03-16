@@ -2,6 +2,7 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.Gravity;
@@ -15,8 +16,6 @@ import android.widget.TextView;
  */
 public class MakeaTransferConfirm extends DialogFragment {
 
-    View v;
-
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -26,14 +25,14 @@ public class MakeaTransferConfirm extends DialogFragment {
         String strSelectedAccountToSpinner = getArguments().getString("spinnerAccountTo");
         String strSelectedAccountMakeaTransferAmountSpinner = getArguments().getString("spinnerAccountAmount");
         String strSelectedAccountMakeaTransferReferenceSpinner = getArguments().getString("spinnerAccountReference");
-        View theDIalog = inf.inflate(R.layout.makea_transfer_confirm, null);
+        final View theDIalog = inf.inflate(R.layout.makea_transfer_confirm, null);
         builder.setView(theDIalog);
 
         builder.setCancelable(true);
 
 
-        AlertDialog dialog = builder.create();
-        WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+        final AlertDialog firstdialog = builder.create();
+        WindowManager.LayoutParams params = firstdialog.getWindow().getAttributes();
         params.gravity = Gravity.TOP | Gravity.RIGHT;
         params.x = 0;
         params.y = 300;
@@ -52,13 +51,46 @@ public class MakeaTransferConfirm extends DialogFragment {
         TextView spinnerAccountMakeaTransferReference = (TextView) theDIalog.findViewById(R.id.makeaTransferconfirmationreference);
         spinnerAccountMakeaTransferReference.setText(strSelectedAccountMakeaTransferReferenceSpinner);
 
-        return dialog;
+
+        theDIalog.findViewById(R.id.makeaTransferOk).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                builder1.setTitle("Transaction Status");
+                builder1.setIcon(getResources().getDrawable(R.drawable.transfer_money_icon));
+                builder1.setMessage("The transaction amount has been successfully transferred to the other account. " +
+                        "The complete transaction amount of a charged transaction should appear in your bank account within one to two days of processing. ");
+                builder1.setCancelable(true);
+                builder1.setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                //put your code that needed to be executed when okay is clicked
+                                firstdialog.dismiss();
+
+                                android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                                transaction.replace(android.R.id.tabcontent, new MakeaTransfer(), "MakeaTransferConfirm");
+                                transaction.commit();
+
+
+                            }
+                        });
+
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+            }
+        });
+
+
+        theDIalog.findViewById(R.id.makeaTransferCancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firstdialog.dismiss();
+            }
+        });
+
+        return firstdialog;
     }
-
-
-
-
-
 
 
 }
