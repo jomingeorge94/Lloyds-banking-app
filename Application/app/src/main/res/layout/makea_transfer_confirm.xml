@@ -64,8 +64,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Saving&apos;s Account"
-                android:id="@+id/textView30"
+                android:id="@+id/makeatransferconfirmationFrom"
                 android:textColor="#ff000000"
                 android:drawableLeft="@drawable/transferaccount_icon"
                 android:drawablePadding="10dp"
@@ -87,8 +86,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Current Account"
-                android:id="@+id/textView32"
+                android:id="@+id/makeatransferconfirmationTo"
                 android:textColor="#ff000000"
                 android:drawableLeft="@drawable/transferaccount_icon"
                 android:drawablePadding="10dp"
@@ -110,14 +108,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView34"
+                android:id="@+id/makeaTransferconfirmationamount"
                 android:textColor="#ff000000"
                 android:drawableLeft="@drawable/pound_sign"
                 android:drawablePadding="10dp"
                 android:paddingLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:textSize="16sp"
-                android:text="100.00" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -133,12 +130,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView36"
+                android:id="@+id/makeaTransferconfirmationreference"
                 android:textColor="#ff000000"
                 android:paddingLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:textSize="16sp"
-                android:text="University Transaction" />
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:orientation="horizontal"

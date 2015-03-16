@@ -19,7 +19,8 @@ import android.widget.Spinner;
  */
 public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelectedListener {
 
-    Spinner spinner;
+    Spinner makeaTransferSpinnerAccountFrom;
+    Spinner MakeaTransferSpinnerAccountTo;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -27,22 +28,21 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
         final View v = inflater.inflate(R.layout.makea_transfer, container, false);
 
 
-        spinner = (Spinner)v.findViewById(R.id.spinner);
+        makeaTransferSpinnerAccountFrom = (Spinner)v.findViewById(R.id.spinnermakeaTransferAccountFrom);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.accounts,R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_items);
-        spinner.setAdapter(adapter);
-        spinner.setPrompt("Select an account");
+        makeaTransferSpinnerAccountFrom.setAdapter(adapter);
+        makeaTransferSpinnerAccountFrom.setPrompt("Select an account");
 
-        spinner = (Spinner)v.findViewById(R.id.spinner2);
+        MakeaTransferSpinnerAccountTo = (Spinner)v.findViewById(R.id.spinnermakeaTransferAccountTo);
         ArrayAdapter adapter2 = ArrayAdapter.createFromResource(getActivity(), R.array.accounts,R.layout.spinner_item);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_items);
-        spinner.setAdapter(adapter2);
-        spinner.setPrompt("Select an account");
+        adapter2.setDropDownViewResource(R.layout.spinner_dropdown_items);
+        MakeaTransferSpinnerAccountTo.setAdapter(adapter2);
+        MakeaTransferSpinnerAccountTo.setPrompt("Select an account");
 
-        final EditText amount = (EditText)v.findViewById(R.id.userInputAmount);
-        final EditText reference = (EditText)v.findViewById(R.id.userInputReference);
+        final EditText amount = (EditText)v.findViewById(R.id.spinnermakeaTransferAccountamount);
+        final EditText reference = (EditText)v.findViewById(R.id.spinnermakeaTransferAccountreference);
         final Button reviewButton = (Button)v.findViewById(R.id.maketransferReviewButton);
-
 
         final TextWatcher watcher = new TextWatcher() {
 
@@ -75,14 +75,29 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
         v.findViewById(R.id.maketransferReviewButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MakeaTransferConfirm makeaTransferConfirm = new MakeaTransferConfirm();
-                makeaTransferConfirm.show(getFragmentManager(), "Horse");
+
+                MakeaTransferConfirm fragment = new MakeaTransferConfirm();
+
+                Bundle args = new Bundle();
+                args.putString("spinnerAccountFrom", makeaTransferSpinnerAccountFrom.getSelectedItem().toString());
+                fragment.setArguments(args);
+
+                args.putString("spinnerAccountTo", MakeaTransferSpinnerAccountTo.getSelectedItem().toString());
+                fragment.setArguments(args);
+
+                args.putString("spinnerAccountAmount", amount.getText().toString());
+                fragment.setArguments(args);
+
+                args.putString("spinnerAccountReference", reference.getText().toString());
+                fragment.setArguments(args);
+
+                fragment.show(getFragmentManager(), "make a transfer dialog");
+
             }
         });
 
         return v;
     }
-
     /**
      * method for testing purpose to see what the user has selected from the drop down list
      */
@@ -90,10 +105,6 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
 
-
-
-       /* TextView mytext = (TextView) view;
-        Toast.makeText(getActivity(), "You have selected" +mytext.getText(), Toast.LENGTH_SHORT).show();*/
     }
 
     @Override

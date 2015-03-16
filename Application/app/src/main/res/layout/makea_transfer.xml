@@ -44,7 +44,7 @@
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner"
+                android:id="@+id/spinnermakeaTransferAccountFrom"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:paddingTop="5dp"
@@ -71,7 +71,7 @@
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner2"
+                android:id="@+id/spinnermakeaTransferAccountTo"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:paddingTop="5dp"
@@ -91,7 +91,7 @@
 
 
             <EditText
-                android:id="@+id/userInputAmount"
+                android:id="@+id/spinnermakeaTransferAccountamount"
                 android:layout_width="match_parent"
                 android:inputType="numberDecimal"
                 android:layout_height="40dp"
@@ -109,11 +109,11 @@
                 android:paddingLeft="20dp" />
 
             <EditText
-                android:id="@+id/userInputReference"
+                android:id="@+id/spinnermakeaTransferAccountreference"
                 android:layout_width="match_parent"
                 android:inputType="text"
                 android:layout_height="40dp"
-                android:maxLength="15"
+                android:maxLength="25"
                 android:hint="Payment Reference"
                 android:background="@drawable/abc_ab_share_pack_holo_light"
                 android:textColor="#ff000000"
@@ -136,7 +136,7 @@
         android:background="#ffcacaca"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
-        android:enabled="true"
+        android:enabled="false"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
