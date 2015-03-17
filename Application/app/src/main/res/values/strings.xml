@@ -92,4 +92,5 @@
     <string name="confirmdetails">Confirm your transaction details</string>
     <string name="amount">Amount</string>
     <string name="reference">Payment Reference</string>
+    <string name="payacontacttitle">Pay a Contact</string>
 </resources>

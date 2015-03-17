@@ -12,7 +12,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#ffffffff"
-        android:layout_above="@+id/maketransferReviewButton">
+        android:layout_above="@+id/payacontactReviewButton">
 
         <LinearLayout
             android:orientation="vertical"
@@ -43,7 +43,7 @@
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner"
+                android:id="@+id/payacontacts_pinner"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:paddingTop="5dp"
@@ -68,7 +68,7 @@
                 android:layout_marginLeft="5dp" />
 
             <EditText
-                android:id="@+id/contactphonenumber"
+                android:id="@+id/payacontact_contactphonenumber"
                 android:layout_width="match_parent"
                 android:inputType="numberDecimal"
                 android:layout_height="40dp"
@@ -84,11 +84,11 @@
                 android:paddingLeft="20dp"/>
 
             <EditText
-                android:id="@+id/sortcodepayacontact"
+                android:id="@+id/payacontact_sortcodepayacontact"
                 android:layout_width="match_parent"
                 android:inputType="numberDecimal"
                 android:layout_height="40dp"
-                android:maxLength="10"
+                android:maxLength="8"
                 android:hint="Sort Code"
                 android:background="@drawable/abc_ab_share_pack_holo_light"
                 android:textColor="#ff000000"
@@ -110,7 +110,7 @@
 
 
             <EditText
-                android:id="@+id/userInputAmount"
+                android:id="@+id/payacontact_userInputAmount"
                 android:layout_width="match_parent"
                 android:inputType="numberDecimal"
                 android:layout_height="40dp"
@@ -138,7 +138,7 @@
                 android:layout_marginLeft="5dp" />
 
             <EditText
-                android:id="@+id/userInputReference"
+                android:id="@+id/payacontact_userInputReference"
                 android:layout_width="match_parent"
                 android:inputType="text"
                 android:layout_height="40dp"
@@ -161,7 +161,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Review Payment"
-        android:id="@+id/maketransferReviewButton"
+        android:id="@+id/payacontactReviewButton"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

@@ -90,6 +90,13 @@
                 android:layout_marginTop="10dp" />
 
 
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone" />
+
             <EditText
                 android:id="@+id/spinnermakeaTransferAccountamount"
                 android:layout_width="match_parent"
