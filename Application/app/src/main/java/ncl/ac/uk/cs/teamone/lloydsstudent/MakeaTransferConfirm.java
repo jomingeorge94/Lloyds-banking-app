@@ -2,7 +2,7 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.Gravity;
@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Jomin on 15/03/2015.
@@ -55,30 +58,30 @@ public class MakeaTransferConfirm extends DialogFragment {
         theDIalog.findViewById(R.id.makeaTransferOk).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
-                builder1.setTitle("Transaction Status");
-                builder1.setIcon(getResources().getDrawable(R.drawable.transfer_money_icon));
-                builder1.setMessage("The transaction amount has been successfully transferred to the other account. " +
+
+                final ProgressDialog dialogpage = new ProgressDialog(getActivity());
+                dialogpage.setTitle("Transfer Success");
+                dialogpage.setMessage("The transaction amount has been successfully transferred to the other account. " +
                         "The complete transaction amount of a charged transaction should appear in your bank account within one to two days of processing. ");
-                builder1.setCancelable(true);
-                builder1.setPositiveButton("OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                //put your code that needed to be executed when okay is clicked
-                                firstdialog.dismiss();
+                dialogpage.setIcon(R.drawable.transfer_money_icon);
+                dialogpage.setIndeterminate(true);
+                dialogpage.setCancelable(false);
+                dialogpage.show();
 
-                                android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                                transaction.replace(android.R.id.tabcontent, new MakeaTransfer(), "MakeaTransferConfirm");
-                                transaction.commit();
+                long delayInMillis = 8000;
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        firstdialog.dismiss();
+                        dialogpage.dismiss();
+                        android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        transaction.replace(android.R.id.tabcontent, new MakeaTransfer(), "PayaContact");
+                        transaction.commit();
+                    }
+                }, delayInMillis);
 
-
-                            }
-                        });
-
-
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
-            }
+               }
         });
 
 
