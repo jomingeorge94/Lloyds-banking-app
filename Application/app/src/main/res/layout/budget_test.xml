@@ -1,142 +1,148 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
-    android:weightSum="1">
+    android:shrinkColumns="*"
+    android:stretchColumns="*"
+    android:background="#ffffff">
 
     <TableRow
-        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2" >
-
+        android:layout_width="fill_parent"
+        android:paddingTop="3dp"
+        android:gravity="center_horizontal">
         <TextView
             android:text="@string/budget_my_budget"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
             android:textSize="@dimen/abc_text_size_large_material"
             android:textColor="@color/text_dark"
-            android:fontFamily="sans-serif-light"
-            android:layout_column="0" />
+            android:fontFamily="sans-serif-light"/>
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="left"
             android:textColor="#369742"
             android:textSize="@dimen/abc_text_size_large_material"
             android:fontFamily="sans-serif-light"
-            android:id="@+id/budget_total_budget"
-            android:layout_column="1" />
-
+            android:id="@+id/budget_total_budget"/>
     </TableRow>
 
     <TableRow
+        android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
+        android:gravity="center_horizontal">
         <ProgressBar
             style="?android:attr/progressBarStyleHorizontal"
             android:paddingTop="10dp"
             android:paddingBottom="2dp"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/summary_bar"
-            android:layout_weight="1"
+            android:layout_span="3"
             android:progress="50"
-            android:max="100"
-            android:layout_column="0" />
-
+            android:max="100"/>
     </TableRow>
 
     <TableRow
+        android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
+        android:gravity="center_horizontal">
         <TextView
             android:text="£0"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="left"
             android:textSize="@dimen/abc_text_size_small_material"
             android:textColor="@color/text_dark"
-            android:fontFamily="sans-serif-light"
-            android:layout_column="0" />
+            android:fontFamily="sans-serif-light"/>
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
             android:textColor="@color/text_dark"
             android:textSize="@dimen/abc_text_size_small_material"
             android:fontFamily="sans-serif-light"
-            android:layout_column="1"
             android:id="@+id/right_label"/>
-
     </TableRow>
 
-    <TableLayout
-        android:stretchColumns="0,2"
-        android:shrinkColumns="1">
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <TableLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_span="3">
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+                <TextView
+                    android:text="@string/budget_remaining_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textSize="@dimen/abc_text_size_small_material"
+                    android:textColor="@color/text_dark"
+                    android:fontFamily="sans-serif-light"/>
 
-        <TableRow
-            android:layout_width="fill_parent"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/abc_text_size_small_material"
+                    android:fontFamily="sans-serif-light"
+                    android:id="@+id/budget_remaining"/>
+
+                <TextView
+                    android:text="@string/budget_remaining_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:textSize="@dimen/abc_text_size_small_material"
+                    android:textColor="@color/text_dark"
+                    android:fontFamily="sans-serif-light"/>
+            </TableRow>
+        </TableLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:weightSum="2" >
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/budget_pie_chart"
+            android:textColor="@color/text_dark"
+            android:id="@+id/textView30"
+            android:layout_span="3"
+            android:layout_gravity="center"/>
+    </TableRow>
 
-            <TextView
-                android:text="@string/budget_remaining_start"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:textSize="@dimen/abc_text_size_small_material"
-                android:textColor="@color/text_dark"
-                android:fontFamily="sans-serif-light"
-                android:layout_column="0" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="@dimen/abc_text_size_small_material"
-                android:fontFamily="sans-serif-light"
-                android:id="@+id/budget_remaining"
-                android:layout_column="1" />
-
-            <TextView
-                android:text="@string/budget_remaining_end"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:textSize="@dimen/abc_text_size_small_material"
-                android:textColor="@color/text_dark"
-                android:fontFamily="sans-serif-light"
-                android:layout_column="0" />
-
-        </TableRow>
-
-    </TableLayout>
-
-    <TableLayout>
-
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal">
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChart"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-    </TableLayout>
-
-
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_span="3"/>
+    </TableRow>
 
 </TableLayout>

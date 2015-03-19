@@ -16,6 +16,8 @@ import com.github.mikephil.charting.data.ChartData;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.utils.PercentFormatter;
+import com.github.mikephil.charting.utils.ValueFormatter;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.util.ArrayList;
@@ -96,6 +98,7 @@ public class BudgetFragment extends Fragment {
         chart.setHoleColorTransparent(true);
         chart.setUsePercentValues(true);
         chart.setDrawSliceText(false);
+        chart.setDescription(null);
 
         weeklyData.setColors(new int[] {getResources().getColor(R.color.food),
                               getResources().getColor(R.color.travel),
@@ -105,6 +108,8 @@ public class BudgetFragment extends Fragment {
                               getResources().getColor(R.color.clothes),
                               getResources().getColor(R.color.leisure),
                               getResources().getColor(R.color.other)});
+        weeklyData.setValueTextColor(getResources().getColor(R.color.white));
+        weeklyData.setValueFormatter(new PercentFormatter());
 
         Legend pieLegend = chart.getLegend();
         pieLegend.setEnabled(false);

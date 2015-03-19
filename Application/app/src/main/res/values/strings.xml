@@ -30,6 +30,9 @@
     <string name="budget_remaining_start">You\'ve got\u00A0\u00A0</string>
     <string name="budget_remaining_end">\u00A0 left this week</string>
 
+    // Chart Titles
+    <string name="budget_pie_chart">Where You\'re Spending</string>
+
     <string name="login_intro">Welcome to Lloyds Student. \n\nPlease enter your 4 digit pass code to Login and View your account</string>
     <string name="app_name">Lloyds Student</string>
     <string name="hello_world">Hello World</string>
