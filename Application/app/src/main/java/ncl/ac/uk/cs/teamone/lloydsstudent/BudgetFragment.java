@@ -10,6 +10,14 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.ChartData;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+
+import java.util.ArrayList;
+
 /**
  * Created by Jomin on 26/02/2015.
  */
@@ -35,6 +43,50 @@ public class BudgetFragment extends Fragment {
         remaining = (TextView) v.findViewById(R.id.budget_remaining);
 
         summaryUpdate(88, 72.11);
+
+        ArrayList<String> categoryNames = new ArrayList<>();
+        categoryNames.add("Food");
+        categoryNames.add("Travel");
+        categoryNames.add("Beauty & Hygiene");
+        categoryNames.add("Entertainment");
+        categoryNames.add("Home");
+        categoryNames.add("Clothes");
+        categoryNames.add("Leisure");
+        categoryNames.add("Other");
+
+        ArrayList<Entry> categorySpend = new ArrayList<>();
+
+        Entry food = new Entry(15.99f, 0);
+        categorySpend.add(food);
+
+        Entry travel = new Entry(3.5f, 1);
+        categorySpend.add(travel);
+
+        Entry beauty = new Entry(15.99f, 2);
+        categorySpend.add(beauty);
+
+        Entry entertainment = new Entry(3.99f, 3);
+        categorySpend.add(entertainment);
+
+        Entry home = new Entry(1.99f, 4);
+        categorySpend.add(home);
+
+        Entry clothes = new Entry(21.5f, 5);
+        categorySpend.add(clothes);
+
+        Entry leisure = new Entry(13.47f, 6);
+        categorySpend.add(leisure);
+
+        Entry other = new Entry(12.12f, 7);
+        categorySpend.add(other);
+
+        PieDataSet weeklyData = new PieDataSet(categorySpend, "Pie Data");
+
+        PieData weeklySpend = new PieData(categoryNames, weeklyData);
+
+        PieChart chart = (PieChart) v.findViewById(R.id.pieChart);
+        chart.setData(weeklySpend);
+        chart.invalidate();
 
         return v;
 
