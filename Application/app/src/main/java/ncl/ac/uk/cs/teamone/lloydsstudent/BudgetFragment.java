@@ -90,6 +90,15 @@ public class BudgetFragment extends Fragment {
         chart.setHoleColorTransparent(true);
         chart.setUsePercentValues(true);
 
+        weeklyData.setColors(new int[] {getResources().getColor(R.color.food),
+                              getResources().getColor(R.color.travel),
+                              getResources().getColor(R.color.beauty),
+                              getResources().getColor(R.color.entertainment),
+                              getResources().getColor(R.color.home),
+                              getResources().getColor(R.color.clothes),
+                              getResources().getColor(R.color.leisure),
+                              getResources().getColor(R.color.other)});
+
         return v;
 
     }

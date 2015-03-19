@@ -5,11 +5,22 @@
     // Default Colours
     <color name="dark_green">#369742</color>
     <color name="text_dark">#ff252525</color>
-    
+
+    // Spend Level Indicators
     <color name="spend_low">#59AB38</color>
     <color name="spend_half">#8DBF0D</color>
     <color name="spend_high">#F5C84C</color>
     <color name="spend_close">#E3571B</color>
     <color name="spend_over">#E31B1B</color>
+
+    // Category Colours
+    <color name="food">#42BFA5</color>
+    <color name="travel">#92278F</color>
+    <color name="beauty">#EE2A2D</color>
+    <color name="entertainment">#8BC63F</color>
+    <color name="home">#283891</color>
+    <color name="clothes">#F9F270</color>
+    <color name="leisure">#ABDEDF</color>
+    <color name="other">#54505B</color>
 
 </resources>
