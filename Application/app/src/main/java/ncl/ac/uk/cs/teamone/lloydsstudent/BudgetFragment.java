@@ -85,8 +85,10 @@ public class BudgetFragment extends Fragment {
         PieData weeklySpend = new PieData(categoryNames, weeklyData);
 
         PieChart chart = (PieChart) v.findViewById(R.id.pieChart);
+        chart.animateXY(1000, 1000);
         chart.setData(weeklySpend);
-        chart.invalidate();
+        chart.setHoleColorTransparent(true);
+        chart.setUsePercentValues(true);
 
         return v;
 
