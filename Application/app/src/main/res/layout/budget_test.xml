@@ -128,14 +128,14 @@
 
     </TableLayout>
 
-    <TableRow>
+    <TableLayout>
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChart"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
 
-    </TableRow>
+    </TableLayout>
 
 
 
