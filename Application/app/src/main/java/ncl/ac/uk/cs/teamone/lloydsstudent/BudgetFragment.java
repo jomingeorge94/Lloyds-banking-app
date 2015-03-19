@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.ChartData;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
@@ -85,6 +86,10 @@ public class BudgetFragment extends Fragment {
         PieData weeklySpend = new PieData(categoryNames, weeklyData);
 
         PieChart chart = (PieChart) v.findViewById(R.id.pieChart);
+
+
+
+
         chart.animateXY(1000, 1000);
         chart.setData(weeklySpend);
         chart.setHoleColorTransparent(true);
@@ -99,6 +104,9 @@ public class BudgetFragment extends Fragment {
                               getResources().getColor(R.color.clothes),
                               getResources().getColor(R.color.leisure),
                               getResources().getColor(R.color.other)});
+
+        Legend pieLegend = chart.getLegend();
+        pieLegend.setEnabled(false);
 
         return v;
 
