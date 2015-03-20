@@ -59,7 +59,6 @@ public class BudgetFragment extends Fragment {
         categoryNames.add("Other");
 
         ArrayList<Entry> categorySpend = new ArrayList<>();
-<<<<<<< HEAD
 
         Entry food = new Entry(15.99f, 0);
         categorySpend.add(food);
@@ -114,8 +113,6 @@ public class BudgetFragment extends Fragment {
 
         Legend pieLegend = chart.getLegend();
         pieLegend.setEnabled(false);
-=======
->>>>>>> parent of 4f4ce24... Added Swipe Pane To Charts
 
         Entry food = new Entry(15.99f, 0);
         categorySpend.add(food);
