@@ -1,17 +1,13 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.app.FragmentManager;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -20,8 +16,6 @@ import com.github.mikephil.charting.data.ChartData;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-import com.github.mikephil.charting.utils.Highlight;
 import com.github.mikephil.charting.utils.PercentFormatter;
 import com.github.mikephil.charting.utils.ValueFormatter;
 import com.github.mikephil.charting.utils.ViewPortHandler;
@@ -52,7 +46,7 @@ public class BudgetFragment extends Fragment {
         rightLabel = (TextView) v.findViewById(R.id.right_label);
         remaining = (TextView) v.findViewById(R.id.budget_remaining);
 
-        summaryUpdate(88, 12.11);
+        summaryUpdate(88, 72.11);
 
         ArrayList<String> categoryNames = new ArrayList<>();
         categoryNames.add("Food");
@@ -65,6 +59,7 @@ public class BudgetFragment extends Fragment {
         categoryNames.add("Other");
 
         ArrayList<Entry> categorySpend = new ArrayList<>();
+<<<<<<< HEAD
 
         Entry food = new Entry(15.99f, 0);
         categorySpend.add(food);
@@ -119,17 +114,62 @@ public class BudgetFragment extends Fragment {
 
         Legend pieLegend = chart.getLegend();
         pieLegend.setEnabled(false);
+=======
+>>>>>>> parent of 4f4ce24... Added Swipe Pane To Charts
 
-        ArrayList<Fragment>  fragmentList = new ArrayList<Fragment>();
-        fragmentList.add(new BudgetBarChart());
-        fragmentList.add(new BudgetLineChart());
-        fragmentList.add(new BudgetPieChart());
-        android.support.v4.app.FragmentManager manager = getFragmentManager();
-        ChartAdapter mAdapter = new ChartAdapter( manager, fragmentList);
-        ViewPager page = (ViewPager) v.findViewById(R.id.chart_view);
-        page.setCurrentItem(0);
-        page.setAdapter(mAdapter);
-        page.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener());
+        Entry food = new Entry(15.99f, 0);
+        categorySpend.add(food);
+
+        Entry travel = new Entry(3.5f, 1);
+        categorySpend.add(travel);
+
+        Entry beauty = new Entry(15.99f, 2);
+        categorySpend.add(beauty);
+
+        Entry entertainment = new Entry(3.99f, 3);
+        categorySpend.add(entertainment);
+
+        Entry home = new Entry(1.99f, 4);
+        categorySpend.add(home);
+
+        Entry clothes = new Entry(21.5f, 5);
+        categorySpend.add(clothes);
+
+        Entry leisure = new Entry(13.47f, 6);
+        categorySpend.add(leisure);
+
+        Entry other = new Entry(12.12f, 7);
+        categorySpend.add(other);
+
+        PieDataSet weeklyData = new PieDataSet(categorySpend, "Pie Data");
+
+        PieData weeklySpend = new PieData(categoryNames, weeklyData);
+
+        PieChart chart = (PieChart) v.findViewById(R.id.pieChart);
+
+
+
+
+        chart.animateXY(1000, 1000);
+        chart.setData(weeklySpend);
+        chart.setHoleColorTransparent(true);
+        chart.setUsePercentValues(true);
+        chart.setDrawSliceText(false);
+        chart.setDescription(null);
+
+        weeklyData.setColors(new int[] {getResources().getColor(R.color.food),
+                              getResources().getColor(R.color.travel),
+                              getResources().getColor(R.color.beauty),
+                              getResources().getColor(R.color.entertainment),
+                              getResources().getColor(R.color.home),
+                              getResources().getColor(R.color.clothes),
+                              getResources().getColor(R.color.leisure),
+                              getResources().getColor(R.color.other)});
+        weeklyData.setValueTextColor(getResources().getColor(R.color.white));
+        weeklyData.setValueFormatter(new PercentFormatter());
+
+        Legend pieLegend = chart.getLegend();
+        pieLegend.setEnabled(false);
 
         return v;
 
