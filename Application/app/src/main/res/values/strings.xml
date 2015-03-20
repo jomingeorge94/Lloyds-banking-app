@@ -96,4 +96,7 @@
     <string name="amount">Amount</string>
     <string name="reference">Payment Reference</string>
     <string name="payacontacttitle">Pay a Contact</string>
+    <string name="red_string">Red</string>
+    <string name="green_string">Green</string>
+    <string name="yellow_string">Yellow</string>
 </resources>

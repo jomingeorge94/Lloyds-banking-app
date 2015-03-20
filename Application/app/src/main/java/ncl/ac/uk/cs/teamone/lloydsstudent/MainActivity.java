@@ -1,6 +1,7 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.app.FragmentManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
@@ -10,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -78,10 +80,6 @@ public class MainActivity extends ActionBarActivity {
         //loads up the home tab straight away
         tabHost.setCurrentTab(1);
 
-
-
-
-
         tabHost.findViewById(R.id.horsePointer).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,8 +94,6 @@ public class MainActivity extends ActionBarActivity {
 
             }
         });
-
-
     }
 
     /**
@@ -125,7 +121,7 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
+        /*// Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
@@ -135,6 +131,42 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);*/
+
+        LinearLayout tabmainswitch = (LinearLayout)findViewById(R.id.tabmainswitch);
+
+        switch (item.getItemId()){
+            case R.id.menu_red:
+                if(item.isChecked())
+                    item.setChecked(false);
+                else
+                    item.setChecked(true);
+                tabmainswitch.setBackgroundColor(Color.RED);
+                return true;
+
+            case R.id.menu_green:
+                if(item.isChecked())
+                    item.setChecked(false);
+                else
+                    item.setChecked(true);
+                tabmainswitch.setBackgroundColor(Color.GREEN);
+                return true;
+
+            case R.id.menu_yellow:
+                if(item.isChecked())
+                    item.setChecked(false);
+                else
+                    item.setChecked(true);
+                tabmainswitch.setBackgroundColor(Color.YELLOW);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+
+        }
+
+
+
     }
 }
