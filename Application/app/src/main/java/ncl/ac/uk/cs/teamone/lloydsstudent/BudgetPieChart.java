@@ -69,15 +69,13 @@ public class BudgetPieChart extends Fragment {
 
         PieChart chart = (PieChart) v.findViewById(R.id.pieChart);
 
-
-
-
         chart.animateXY(1000, 1000);
         chart.setData(weeklySpend);
         chart.setHoleColorTransparent(true);
         chart.setUsePercentValues(true);
         chart.setDrawSliceText(false);
         chart.setDescription(null);
+        chart.setLogEnabled(true);
 
         weeklyData.setColors(new int[] {getResources().getColor(R.color.food),
                 getResources().getColor(R.color.travel),
