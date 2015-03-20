@@ -14,11 +14,22 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.utils.PercentFormatter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Dan on 19/03/2015.
  */
 public class BudgetPieChart extends Fragment {
+
+    private ArrayList<String> CATEGORIES = new ArrayList<>(Arrays.asList("Food",
+                                                                         "Travel",
+                                                                         "Beauty & Hygiene",
+                                                                         "Entertainment",
+                                                                         "Home",
+                                                                         "Clothes",
+                                                                         "Leisure",
+                                                                         "Other"));
+    private ArrayList<Entry> spend = new ArrayList<>();
 
     //method to switch the fragment, this method will switch the fragment to the budget layout xml file
     @Override
@@ -27,55 +38,40 @@ public class BudgetPieChart extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.budget_pie_chart, container, false);
 
-        ArrayList<String> categoryNames = new ArrayList<>();
-        categoryNames.add("Food");
-        categoryNames.add("Travel");
-        categoryNames.add("Beauty & Hygiene");
-        categoryNames.add("Entertainment");
-        categoryNames.add("Home");
-        categoryNames.add("Clothes");
-        categoryNames.add("Leisure");
-        categoryNames.add("Other");
+        formatData(new float[]{12.1f, 15.3f, 1.99f, 17.84f, 12.12f, 5.49f, 6.99f, 1.05f});
+        createChart(v);
+        return v;
+    }
 
-        ArrayList<Entry> categorySpend = new ArrayList<>();
+    public void formatData(float[] data) {
+        for(int i = 0; i < 8; i++) {
+            spend.add(new Entry(data[i], i));
+        }
+    }
 
-        Entry food = new Entry(15.99f, 0);
-        categorySpend.add(food);
-
-        Entry travel = new Entry(3.5f, 1);
-        categorySpend.add(travel);
-
-        Entry beauty = new Entry(15.99f, 2);
-        categorySpend.add(beauty);
-
-        Entry entertainment = new Entry(3.99f, 3);
-        categorySpend.add(entertainment);
-
-        Entry home = new Entry(1.99f, 4);
-        categorySpend.add(home);
-
-        Entry clothes = new Entry(21.5f, 5);
-        categorySpend.add(clothes);
-
-        Entry leisure = new Entry(13.47f, 6);
-        categorySpend.add(leisure);
-
-        Entry other = new Entry(12.12f, 7);
-        categorySpend.add(other);
-
-        PieDataSet weeklyData = new PieDataSet(categorySpend, "Pie Data");
-
-        PieData weeklySpend = new PieData(categoryNames, weeklyData);
-
+    public void createChart(View v) {
         PieChart chart = (PieChart) v.findViewById(R.id.pieChart);
 
+        PieData data = new PieData(CATEGORIES, formatData());
+
+        chart.setData(data);
         chart.animateXY(1000, 1000);
-        chart.setData(weeklySpend);
         chart.setHoleColorTransparent(true);
         chart.setUsePercentValues(true);
         chart.setDrawSliceText(false);
         chart.setDescription(null);
         chart.setLogEnabled(true);
+
+        Legend legend = chart.getLegend();
+
+        legend.setEnabled(false);
+    }
+
+    public PieDataSet formatData() {
+        PieDataSet weeklyData = new PieDataSet(spend, "Pie Data");
+
+        weeklyData.setValueTextColor(getResources().getColor(R.color.white));
+        weeklyData.setValueFormatter(new PercentFormatter());
 
         weeklyData.setColors(new int[] {getResources().getColor(R.color.food),
                 getResources().getColor(R.color.travel),
@@ -85,13 +81,8 @@ public class BudgetPieChart extends Fragment {
                 getResources().getColor(R.color.clothes),
                 getResources().getColor(R.color.leisure),
                 getResources().getColor(R.color.other)});
-        weeklyData.setValueTextColor(getResources().getColor(R.color.white));
-        weeklyData.setValueFormatter(new PercentFormatter());
 
-        Legend pieLegend = chart.getLegend();
-        pieLegend.setEnabled(false);
-
-        return v;
+        return weeklyData;
     }
 
 }

@@ -63,6 +63,7 @@ public class BudgetFragment extends Fragment {
         android.support.v4.app.FragmentManager manager = getFragmentManager();
         ChartAdapter mAdapter = new ChartAdapter( manager, fragmentList);
         ViewPager page = (ViewPager) v.findViewById(R.id.chart_view);
+        page.setOffscreenPageLimit(2);
         page.setCurrentItem(0);
         page.setAdapter(mAdapter);
         page.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener());

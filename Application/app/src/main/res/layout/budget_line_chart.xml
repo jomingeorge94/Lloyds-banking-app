@@ -7,13 +7,27 @@
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:gravity="center_horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LINE CHART"
-            android:textSize="@dimen/abc_text_size_large_material"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center"
             android:textColor="@color/text_dark"
-            android:fontFamily="sans-serif-light"/>
+            android:fontFamily="sans-serif-light"
+            android:text="Where You\'re Spending"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal">
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/pieChart"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
     </TableRow>
 
 </TableLayout>
