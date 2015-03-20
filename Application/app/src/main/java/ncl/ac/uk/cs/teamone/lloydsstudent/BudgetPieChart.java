@@ -27,8 +27,6 @@ public class BudgetPieChart extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.budget_pie_chart, container, false);
 
-
-
         ArrayList<String> categoryNames = new ArrayList<>();
         categoryNames.add("Food");
         categoryNames.add("Travel");

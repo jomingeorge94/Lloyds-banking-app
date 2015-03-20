@@ -118,6 +118,19 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_span="3"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/dark_green" />
+    </TableRow>
+
+    <TableRow
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:gravity="center_horizontal">
@@ -125,20 +138,32 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/budget_pie_chart"
+            android:textSize="@dimen/abc_text_size_large_material"
             android:textColor="@color/text_dark"
-            android:id="@+id/textView30"
-            android:layout_span="3"
-            android:layout_gravity="center"/>
+            android:fontFamily="sans-serif-light"/>
     </TableRow>
 
+    <!--
     <TableRow
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:gravity="center_horizontal">
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChart"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_span="3"/>
+    </TableRow>
+    -->
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/chart_view"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
