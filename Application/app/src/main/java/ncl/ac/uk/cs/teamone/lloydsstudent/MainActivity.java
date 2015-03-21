@@ -1,17 +1,27 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.app.FragmentManager;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +31,12 @@ public class MainActivity extends ActionBarActivity {
     public FragmentTabHost tabHost;
     private TextView click;
     FragmentManager manager;
+    private DrawerLayout drawerLayout;
+    ListView listView;
+    ArrayAdapter<String> adapter;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
+    private String [] listentry;
+    Boolean state=false;
 
     /**
      * Implemented using the FragmentTabHost, associated fragments within each tabs are coded using the add method
@@ -30,6 +46,25 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_tab_main);
+        listentry=getResources().getStringArray(R.array.countries);
+        drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
+        listView=(ListView)findViewById(R.id.drawer_list);
+        actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,R.drawable.ic_launcher,R.string.app_name,R.string.hello_world){
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                // TODO Auto-generated method stub
+                state=true;
+                supportInvalidateOptionsMenu();
+            }
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                // TODO Auto-generated method stub
+                state=false;
+                supportInvalidateOptionsMenu();
+            }
+        };
+
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
 
         // Refactor at your will.
         tabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
@@ -94,7 +129,39 @@ public class MainActivity extends ActionBarActivity {
 
             }
         });
+        adapter= new ArrayAdapter<String>(this,R.layout.drawer_layout,R.id.country,listentry) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                // TODO Auto-generated method stub
+                View view= super.getView(position, convertView, parent);
+                if(view==null){
+                    LayoutInflater vi = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    view = vi.inflate(R.layout.drawer_layout, null,true);
+
+                }
+                return view;
+            }
+        };
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+                                    long arg3) {
+                // TODO Auto-generated method stub
+
+
+
+                Intent s=new Intent(getApplicationContext(),SecondDetail.class);
+
+                startActivity(s);
+            }
+        });
+
     }
+
+
+
 
     /**
      * Back button method - currently nothing is implemented
@@ -121,17 +188,24 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        /*// Handle action bar item clicks here. The action bar will
+        // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            if(state==true){
+                drawerLayout.closeDrawer(Gravity.LEFT);
+                state=false;
+            }else {
+                drawerLayout.openDrawer(Gravity.LEFT);
+                state=true;
+            }
+
+
         }
 
-        return super.onOptionsItemSelected(item);*/
 
         LinearLayout tabmainswitch = (LinearLayout)findViewById(R.id.tabmainswitch);
 
