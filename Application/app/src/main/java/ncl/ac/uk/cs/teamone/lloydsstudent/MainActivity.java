@@ -3,7 +3,6 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
@@ -12,15 +11,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -46,7 +44,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_tab_main);
-        listentry=getResources().getStringArray(R.array.countries);
+        listentry=getResources().getStringArray(R.array.helpmenu);
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
         listView=(ListView)findViewById(R.id.drawer_list);
         actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,R.drawable.ic_launcher,R.string.app_name,R.string.hello_world){
@@ -63,6 +61,14 @@ public class MainActivity extends ActionBarActivity {
                 supportInvalidateOptionsMenu();
             }
         };
+
+
+
+
+
+
+
+
 
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
 
@@ -129,7 +135,10 @@ public class MainActivity extends ActionBarActivity {
 
             }
         });
-        adapter= new ArrayAdapter<String>(this,R.layout.drawer_layout,R.id.country,listentry) {
+
+
+
+        adapter= new ArrayAdapter<String>(this,R.layout.drawer_layout,R.id.helpmenu,listentry) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 // TODO Auto-generated method stub
@@ -148,15 +157,34 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
                                     long arg3) {
-                // TODO Auto-generated method stub
+
+
+                if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Account Management")){
+                    Intent s=new Intent(getApplicationContext(),SecondDetail.class);
+
+                    startActivity(s);
+                }
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Accessibility")){
+                    Toast.makeText(MainActivity.this,"bad boy your ",Toast.LENGTH_LONG).show();
+                }
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Settings")){
+                    Toast.makeText(MainActivity.this,"You are blind mate, go to specsavers",Toast.LENGTH_LONG).show();
+                }
+
+
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Log Out")){
+                    Toast.makeText(MainActivity.this,"Log Out",Toast.LENGTH_LONG).show();
+                }
 
 
 
-                Intent s=new Intent(getApplicationContext(),SecondDetail.class);
 
-                startActivity(s);
             }
         });
+
+
+
+
 
     }
 
@@ -185,62 +213,21 @@ public class MainActivity extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            if(state==true){
-                drawerLayout.closeDrawer(Gravity.LEFT);
-                state=false;
-            }else {
-                drawerLayout.openDrawer(Gravity.LEFT);
-                state=true;
-            }
-
-
+    public boolean onKeyDown(int keycode, KeyEvent e) {
+        switch(keycode) {
+            case KeyEvent.KEYCODE_MENU:
+                if(state==true){
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                    state=false;
+                }else {
+                    drawerLayout.openDrawer(Gravity.LEFT);
+                    state=true;
+                }
+                return true;
         }
 
-
-        LinearLayout tabmainswitch = (LinearLayout)findViewById(R.id.tabmainswitch);
-
-        switch (item.getItemId()){
-            case R.id.menu_red:
-                if(item.isChecked())
-                    item.setChecked(false);
-                else
-                    item.setChecked(true);
-                tabmainswitch.setBackgroundColor(Color.RED);
-                return true;
-
-            case R.id.menu_green:
-                if(item.isChecked())
-                    item.setChecked(false);
-                else
-                    item.setChecked(true);
-                tabmainswitch.setBackgroundColor(Color.GREEN);
-                return true;
-
-            case R.id.menu_yellow:
-                if(item.isChecked())
-                    item.setChecked(false);
-                else
-                    item.setChecked(true);
-                tabmainswitch.setBackgroundColor(Color.YELLOW);
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-
-
-        }
-
-
-
+        return super.onKeyDown(keycode, e);
     }
+
 }

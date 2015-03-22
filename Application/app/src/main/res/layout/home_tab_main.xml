@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer"
+    android:background="#5DAD68"
      >
 <android.support.v4.app.FragmentTabHost
     android:id="@android:id/tabhost"
@@ -81,7 +82,9 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:textSize="20sp"
-            android:text="Country"
+            android:text="Help Menu"
+            android:textColor="#ff000000"
+
             android:background="@drawable/drawer_title_shape" />
 
         <ListView
@@ -89,11 +92,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:choiceMode="singleChoice"
-            android:divider="@android:color/darker_gray"
-            android:dividerHeight="0.1dp"
+            android:divider="@android:color/background_dark"
+            android:dividerHeight="2.0dp"
+
             android:textColor="@android:color/white"
 
-            android:background="#fff" />
+            android:background="#ffe0e0e0" />
 
     </LinearLayout>
 

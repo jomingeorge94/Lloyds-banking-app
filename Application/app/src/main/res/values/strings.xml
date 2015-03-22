@@ -99,12 +99,18 @@
     <string name="red_string">Red</string>
     <string name="green_string">Green</string>
     <string name="yellow_string">Yellow</string>
-    <string-array name="countries">
-        <item>India</item>
-        <item>Pakistan</item>
-        <item>Sri Lanka</item>
-        <item>China</item>
-        <item>Bangladesh</item>
-        <item>Nepal</item>
+    <string-array name="helpmenu">
+        <item>Account Management</item>
+        <item>Accessibility</item>
+        <item>Settings</item>
+        <item>What\'s New </item>
+        <item>Contact Us</item>
+        <item>Terms and Conditions</item>
+        <item>FAQs</item>
+        <item>About</item>
+        <item>Log Out</item>
     </string-array>
+
+
+
 </resources>
