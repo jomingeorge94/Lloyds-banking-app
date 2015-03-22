@@ -53,7 +53,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".SecondDetail"
+            android:name=".ContactUs"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>

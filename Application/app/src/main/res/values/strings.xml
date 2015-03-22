@@ -114,7 +114,10 @@
     <string name="LogOutMessage">Are you sure you want to Quit ?</string>
     <string name="LogOutPositive">Yes</string>
     <string name="LogOutNegative">No</string>
-
+    <string name="ContactUsMessage">If you have any query regarding your online banking or report a card lost or stolen then you can use one of the below options. </string>
+    <string name="ContactUsEmail">Email</string>
+    <string name="ContactUsPhone">Call Us</string>
+    <string name="ContactUsLiveChat">Live Chat</string>
 
 
 

@@ -40,6 +40,7 @@ public class MainActivity extends ActionBarActivity {
      * Implemented using the FragmentTabHost, associated fragments within each tabs are coded using the add method
      * Also with the help of a method removes the current fragment with the latest fragment so that overlaying is prevented
      */
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,8 +124,6 @@ public class MainActivity extends ActionBarActivity {
                 }else if(entry.getTag().equals("OverView")){
                     Toast.makeText(getApplication(), "Horse pointer - Button is in here in overview", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         });
 
@@ -136,11 +135,11 @@ public class MainActivity extends ActionBarActivity {
                 if(view==null){
                     LayoutInflater vi = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                     view = vi.inflate(R.layout.drawer_layout, null,true);
-
                 }
                 return view;
             }
         };
+
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -150,9 +149,7 @@ public class MainActivity extends ActionBarActivity {
 
 
                 if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Account Management")){
-                    Intent s=new Intent(getApplicationContext(),SecondDetail.class);
-
-                    startActivity(s);
+                    Toast.makeText(MainActivity.this,"Account Management ",Toast.LENGTH_LONG).show();
                 }
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Accessibility")){
                     Toast.makeText(MainActivity.this,"Accessibility ",Toast.LENGTH_LONG).show();
@@ -166,7 +163,10 @@ public class MainActivity extends ActionBarActivity {
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Contact Us")){
-                    Toast.makeText(MainActivity.this,"Contact Us",Toast.LENGTH_LONG).show();
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                    Intent contactpage =new Intent(getApplicationContext(),ContactUs.class);
+                    startActivity(contactpage);
+
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Terms and Condition")){
@@ -181,22 +181,23 @@ public class MainActivity extends ActionBarActivity {
                     Toast.makeText(MainActivity.this,"About",Toast.LENGTH_LONG).show();
                 }
 
-
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Log Out")){
                     LogOutScreen logout = new LogOutScreen();
                     logout.show(getSupportFragmentManager(),"LogOut");
+
                 }
             }
         });
     }
+
     /**
      * Back button method - currently nothing is implemented
      */
+
     @Override
     public void onBackPressed() {
 
-
-
+        drawerLayout.closeDrawer(Gravity.LEFT);
     }
 
     //Simply prevents the app from being in the background, user has to enter passcode again!
@@ -213,6 +214,7 @@ public class MainActivity extends ActionBarActivity {
     }
     @Override
     public boolean onKeyDown(int keycode, KeyEvent e) {
+
         switch(keycode) {
             case KeyEvent.KEYCODE_MENU:
                 if(state==true){
@@ -224,8 +226,6 @@ public class MainActivity extends ActionBarActivity {
                 }
                 return true;
         }
-
         return super.onKeyDown(keycode, e);
     }
-
 }

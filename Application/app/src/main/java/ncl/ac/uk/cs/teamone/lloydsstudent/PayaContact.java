@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,8 +24,6 @@ public class PayaContact extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
     // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.paya_contact, container, false);
-
-
         spinner = (Spinner)v.findViewById(R.id.payacontacts_pinner);
         final ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.accounts,R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_items);
@@ -48,23 +45,17 @@ public class PayaContact extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
                 if (payacontactphoneNumber.getText().toString().matches("[^0]")){
                     payacontactphoneNumber.setText("");
                 }
-
-
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
                 if(payacontactphoneNumber.length() == 11 && payacontactsortCode.length() == 8 && payacontactamount.length() >=1 && payacontactreference.length() >= 3) {
-                    Log.i("Testing","Works");
                     payacontact_reviewButton.setEnabled(true);
                     payacontact_reviewButton.setBackgroundColor(Color.parseColor("#369742"));
                 } else  {
-                    Log.i("Testing","Not Working");
                     payacontact_reviewButton.setEnabled(false);
                     payacontact_reviewButton.setBackgroundColor(Color.parseColor("#ffcacaca"));
                 }
@@ -84,9 +75,7 @@ public class PayaContact extends Fragment {
         v.findViewById(R.id.payacontactReviewButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 PayaContactConfirm payacontactScreen = new PayaContactConfirm();
-
                 Bundle args = new Bundle();
 
                 args.putString("payacontactspinnerAccountFrom", spinner.getSelectedItem().toString());
@@ -105,7 +94,6 @@ public class PayaContact extends Fragment {
                 payacontactScreen.setArguments(args);
 
                 payacontactScreen.show(getFragmentManager(), "make a transfer dialog");
-
             }
         });
         return v;
