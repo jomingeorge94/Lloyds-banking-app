@@ -110,6 +110,11 @@
         <item>About</item>
         <item>Log Out</item>
     </string-array>
+    <string name="LogOutTitle">Log Out</string>
+    <string name="LogOutMessage">Are you sure you want to Quit ?</string>
+    <string name="LogOutPositive">Yes</string>
+    <string name="LogOutNegative">No</string>
+
 
 
 

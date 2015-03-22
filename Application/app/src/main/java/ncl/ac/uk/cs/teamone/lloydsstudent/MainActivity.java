@@ -62,14 +62,6 @@ public class MainActivity extends ActionBarActivity {
             }
         };
 
-
-
-
-
-
-
-
-
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
 
         // Refactor at your will.
@@ -136,9 +128,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-
-
-        adapter= new ArrayAdapter<String>(this,R.layout.drawer_layout,R.id.helpmenu,listentry) {
+         adapter= new ArrayAdapter<String>(this,R.layout.drawer_layout,R.id.helpmenu,listentry) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 // TODO Auto-generated method stub
@@ -165,32 +155,40 @@ public class MainActivity extends ActionBarActivity {
                     startActivity(s);
                 }
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Accessibility")){
-                    Toast.makeText(MainActivity.this,"bad boy your ",Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this,"Accessibility ",Toast.LENGTH_LONG).show();
                 }
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Settings")){
-                    Toast.makeText(MainActivity.this,"You are blind mate, go to specsavers",Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this,"Settings",Toast.LENGTH_LONG).show();
+                }
+
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("What's New")){
+                    Toast.makeText(MainActivity.this,"What's New",Toast.LENGTH_LONG).show();
+                }
+
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Contact Us")){
+                    Toast.makeText(MainActivity.this,"Contact Us",Toast.LENGTH_LONG).show();
+                }
+
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Terms and Condition")){
+                    Toast.makeText(MainActivity.this,"Terms and Condition",Toast.LENGTH_LONG).show();
+                }
+
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("FAQs")){
+                    Toast.makeText(MainActivity.this,"FAQs",Toast.LENGTH_LONG).show();
+                }
+
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("About")){
+                    Toast.makeText(MainActivity.this,"About",Toast.LENGTH_LONG).show();
                 }
 
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Log Out")){
-                    Toast.makeText(MainActivity.this,"Log Out",Toast.LENGTH_LONG).show();
+                    LogOutScreen logout = new LogOutScreen();
+                    logout.show(getSupportFragmentManager(),"LogOut");
                 }
-
-
-
-
             }
         });
-
-
-
-
-
     }
-
-
-
-
     /**
      * Back button method - currently nothing is implemented
      */
