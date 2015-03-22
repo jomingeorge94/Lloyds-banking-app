@@ -122,6 +122,9 @@
     <string name="ContactUsDialogMessage">Your call may be recorded for training or monitoring purposes. Call charges applies, Please check with your local provider for more information.</string>
     <string name="ContactUsCancel">Cancel</string>
     <string name="ContactUsCall">Call</string>
-
+    <string name="ContactUsEmalTitle">Email</string>
+    <string name="ContactUsEmalMessage">This will take you into an email app. We will respond back to you within 2 working days. </string>
+    <string name="ContactUsEmalCancel">Cancel</string>
+    <string name="ContactUsEmalOk">Email</string>
 
 </resources>
