@@ -1,15 +1,19 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.app.Activity;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.View;
+
 
 /**
  * Created by Jomin on 21/03/2015.
  */
 
-public class ContactUs extends Activity{
+public class ContactUs extends FragmentActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,18 @@ public class ContactUs extends Activity{
                 finish();
             }
         });
+
+        findViewById(R.id.callus).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Log.i("Jomin","sdsd");
+                CallUsDialogFragment CallUs = new CallUsDialogFragment();
+                CallUs.show(getSupportFragmentManager(), "sdsd");
+            }
+        });
+
+
 
     }
 

@@ -68,7 +68,7 @@
                 android:layout_width="288dp"
                 android:layout_height="40dp"
                 android:text="@string/ContactUsEmail"
-                android:id="@+id/button5"
+                android:id="@+id/email"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0.02"
                 android:layout_marginTop="10dp"
@@ -78,7 +78,7 @@
             <Button
                 android:layout_width="288dp"
                 android:layout_height="40dp"
-                android:id="@+id/button6"
+                android:id="@+id/callus"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0.02"
                 android:text="@string/ContactUsPhone"
@@ -89,7 +89,7 @@
             <Button
                 android:layout_width="288dp"
                 android:layout_height="40dp"
-                android:id="@+id/button7"
+                android:id="@+id/livechat"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0.02"
                 android:text="@string/ContactUsLiveChat"

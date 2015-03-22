@@ -118,7 +118,10 @@
     <string name="ContactUsEmail">Email</string>
     <string name="ContactUsPhone">Call Us</string>
     <string name="ContactUsLiveChat">Live Chat</string>
-
+    <string name="ContactUsTitle">Call the helpline</string>
+    <string name="ContactUsDialogMessage">Your call may be recorded for training or monitoring purposes. Call charges applies, Please check with your local provider for more information.</string>
+    <string name="ContactUsCancel">Cancel</string>
+    <string name="ContactUsCall">Call</string>
 
 
 </resources>
