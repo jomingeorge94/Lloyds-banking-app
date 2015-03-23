@@ -19,13 +19,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
-
     public FragmentTabHost tabHost;
     private TextView click;
     FragmentManager manager;
@@ -35,7 +35,6 @@ public class MainActivity extends ActionBarActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private String [] listentry;
     Boolean state=false;
-
     /**
      * Implemented using the FragmentTabHost, associated fragments within each tabs are coded using the add method
      * Also with the help of a method removes the current fragment with the latest fragment so that overlaying is prevented
@@ -136,6 +135,38 @@ public class MainActivity extends ActionBarActivity {
                     LayoutInflater vi = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                     view = vi.inflate(R.layout.drawer_layout, null,true);
                 }
+
+
+
+                ImageView iv= (ImageView)view.findViewById(R.id.flag);
+                TextView title=(TextView)view.findViewById(R.id.helpmenu);
+                if(title.getText().toString().equals("Account Management")){
+                    iv.setImageResource(R.drawable.account_management_icon);
+                }
+                else if(title.getText().toString().equals("Accessibility")) {
+                    iv.setImageResource(R.drawable.accessibility_icon);
+                }
+                else if(title.getText().toString().equals("Settings")) {
+                    iv.setImageResource(R.drawable.settings_icon);
+                }
+                else if(title.getText().toString().equals("What's New")) {
+                    iv.setImageResource(R.drawable.whatsnew_icon);
+                }
+                else if(title.getText().toString().equals("Contact Us")) {
+                    iv.setImageResource(R.drawable.contactus_icon);
+                }
+                else if(title.getText().toString().equals("Terms and Conditions")) {
+                    iv.setImageResource(R.drawable.termsandcondition_icon);
+                }
+                else if(title.getText().toString().equals("FAQs")) {
+                    iv.setImageResource(R.drawable.faqs_icon);
+                }
+                else if(title.getText().toString().equals("About")) {
+                    iv.setImageResource(R.drawable.i_icon);
+                }
+                else if(title.getText().toString().equals("Log Out")) {
+                    iv.setImageResource(R.drawable.logout_icon);
+                }
                 return view;
             }
         };
@@ -146,7 +177,6 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
                                     long arg3) {
-
 
                 if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Account Management")){
                     Toast.makeText(MainActivity.this,"Account Management ",Toast.LENGTH_LONG).show();
@@ -166,10 +196,9 @@ public class MainActivity extends ActionBarActivity {
                     drawerLayout.closeDrawer(Gravity.LEFT);
                     Intent contactpage =new Intent(getApplicationContext(),ContactUs.class);
                     startActivity(contactpage);
-
                 }
 
-                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Terms and Condition")){
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Terms and Conditions")){
                     Toast.makeText(MainActivity.this,"Terms and Condition",Toast.LENGTH_LONG).show();
                 }
 
