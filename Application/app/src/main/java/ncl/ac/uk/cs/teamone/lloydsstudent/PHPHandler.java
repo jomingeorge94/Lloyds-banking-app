@@ -133,6 +133,8 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //assign data to a string variable
             String result = sb.toString();
 
+            Log.v("Error", result);
+
             try {
                 checkForError(result);
             } catch (NumberFormatException nfe) {
@@ -193,8 +195,10 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 break;
             case 2:
                 Intent mainIntent;
-                mainIntent = new Intent(activity, FirstLoginActivity.class);
-                activity.startActivity(mainIntent);
+                Activity acti = (Activity) activity;
+                mainIntent = new Intent(acti, FirstLoginActivity.class);
+                acti.startActivity(mainIntent);
+                acti.finish();
                 break;
             case 3:
                 this.alertDialog.setTitle("Error Occurred");
@@ -219,8 +223,10 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 break;
             case 8:
                 Intent otherIntent;
-                otherIntent = new Intent(activity, LoginActivity.class);
-                activity.startActivity(otherIntent);
+                Activity act = (Activity) activity;
+                otherIntent = new Intent(act, LoginActivity.class);
+                act.startActivity(otherIntent);
+                act.finish();
                 break;
             case 9:
                 Activity ac = (Activity) activity;

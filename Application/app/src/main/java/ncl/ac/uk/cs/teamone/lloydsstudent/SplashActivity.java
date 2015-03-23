@@ -43,10 +43,11 @@ public class SplashActivity extends Activity {
                 String[] values = {telephonyManager.getDeviceId()};
 
                 //create an asynchronous object
-                final PHPHandler handler = new PHPHandler(activity, keys, values);
+                PHPHandler handler = new PHPHandler(activity, keys, values);
 
                 //execute the object
                 handler.execute(url);
+
             }
         }, SPLASH_DISPLAY_LENGTH);
 
