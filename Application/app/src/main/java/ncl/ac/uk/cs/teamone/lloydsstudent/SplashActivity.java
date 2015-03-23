@@ -1,9 +1,13 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.telephony.TelephonyManager;
+import android.util.Log;
 
 public class SplashActivity extends Activity {
 
@@ -16,36 +20,33 @@ public class SplashActivity extends Activity {
      the others should be set to false
      *******/
 
-    // Normal Start takes you to the login as if you are using the app as normal
-    private boolean normalStart = false;
-    // First Time Start takes you into the app as if you're a first time user
-    private boolean firstTimeStart = false;
-    // Skip Start takes you through to the home screen (Tabbed Screen)
-    private boolean skipStart = true;
-
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.activity_splash);
 
+        final Context activity = SplashActivity.this;
+
+        final TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+
         /* Creates New handler to start the login screen after wait */
-        new Handler().postDelayed(new Runnable(){
+
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                // Creates new intent to change view
-                Intent mainIntent;
+                //url to connect to
+                String url = "http://www.abunities.co.uk/t2022t1/check_mobile_banking.php";
 
-                if(normalStart == true) {
-                    mainIntent = new Intent(SplashActivity.this, LoginActivity.class);
-                } else if(firstTimeStart == true) {
-                    mainIntent = new Intent(SplashActivity.this, FirstLoginActivity.class);
-                } else {
-                    mainIntent = new Intent(SplashActivity.this, MainActivity.class);
-                }
+                //values to send to the PHP file
+                String[] keys = {"imei"};
+                String[] values = {telephonyManager.getDeviceId()};
 
-                SplashActivity.this.startActivity(mainIntent);
-                SplashActivity.this.finish();
+                //create an asynchronous object
+                final PHPHandler handler = new PHPHandler(activity, keys, values);
+
+                //execute the object
+                handler.execute(url);
             }
         }, SPLASH_DISPLAY_LENGTH);
 

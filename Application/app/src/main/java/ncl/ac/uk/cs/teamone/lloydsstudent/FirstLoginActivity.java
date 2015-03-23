@@ -1,13 +1,16 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,18 +32,6 @@ public class FirstLoginActivity extends ActionBarActivity {
     }
 
     public void setupOne() {
-        // Creates invalid credentials popup message
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        // Sets the error message for the popup
-        builder.setMessage(R.string.first_failed_login)
-                // Sets the buttons
-                .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {}
-                });
-        // Creates the alert object ready to be called
-        final AlertDialog loginFailed = builder.create();
-
         // Finds the editable text and assigns them variables
         final EditText user = (EditText) findViewById(R.id.userID);
         final EditText pass = (EditText) findViewById(R.id.userPass);
@@ -62,7 +53,7 @@ public class FirstLoginActivity extends ActionBarActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 // Compares the length of both fields
-                if (user.length() == 9 && pass.length() != 0) {
+                if (user.length() > 0 && pass.length() == 6) {
                     // Enables finished buttons
                     nextButton.setEnabled(true);
                     nextButton.setBackgroundColor(Color.parseColor("#369742"));
@@ -84,105 +75,30 @@ public class FirstLoginActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 // Check Credentials Against Database
-                if(loginCheck()) {
-                    // Change view to next set of inputs
-                    setContentView(R.layout.initial_setup_passcode);
-                    setupTwo();
-                } else {
-                    // Show alert to tell user the wrong credentials have been entered
-                    loginFailed.show();
-                    // Sets them back to null
-                    user.setText(null);
-                    pass.setText(null);
-                }
+                loginCheck(user, pass);
             }
         });
     }
 
+    public boolean loginCheck(EditText user, EditText pass) {
+        final TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        //url to connect to
+        String url = "http://www.abunities.co.uk/t2022t1/check_first_time_user.php";
 
+        //values to send to the PHP file
+        String[] keys = {"uid", "online_password", "imei"};
+        String[] values = {user.getText().toString(), pass.getText().toString(), telephonyManager.getDeviceId()};
 
-    public void setupTwo() {
+        //create an asynchronous object
+        final PHPHandler handler = new PHPHandler(FirstLoginActivity.this, keys, values) ;
 
-        // Creates invalid credentials popup message
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        // Sets the error message for the popup
-        builder.setMessage(R.string.first_failed_passcode)
-                // Sets the buttons
-                .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {}
-                });
-        // Creates the alert object ready to be called
-        final AlertDialog passNotMatch = builder.create();
+        //execute the object
+        handler.execute(url);
 
-        // Finds the editable text and assigns them variables
-        final EditText pass = (EditText) findViewById(R.id.first_passcode);
-        final EditText conf = (EditText) findViewById(R.id.first_confirm);
-
-        // Find the next button and assigns it a variable
-        final Button finishedButton = (Button) findViewById(R.id.first_finished);
-
-        // Creates a Text listener to detect if the both fields are filled to enable finished button
-        final TextWatcher watcher = new TextWatcher() {
-            // Ignore
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after)
-            {}
-            // Ignore
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count)
-            {}
-            // Once text has changed checks if both fields are full
-            @Override
-            public void afterTextChanged(Editable s) {
-                // Compares the length of both fields
-                if (pass.length() == 4 && conf.length() == 4) {
-                    // Enables finished buttons
-                    finishedButton.setEnabled(true);
-                    finishedButton.setBackgroundColor(Color.parseColor("#369742"));
-                }
-                else {
-                    // Disables finished buttons
-                    finishedButton.setEnabled(false);
-                    finishedButton.setBackgroundColor(Color.parseColor("#888888"));
-                }
-            }
-        };
-
-        // Adds the listener to the text fields
-        pass.addTextChangedListener(watcher);
-        conf.addTextChangedListener(watcher);
-
-        // Create button listener
-        finishedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check Credentials Against Database
-                if(passCheck(pass.getText().toString(), conf.getText().toString()) && pass.length() == 4) {
-                    Intent I = new Intent(FirstLoginActivity.this, MainActivity.class);
-                    startActivity(I);
-                } else {
-                    // Show alert to tell user the wrong credentials have been entered
-                    passNotMatch.show();
-                    // Sets them back to null
-                    pass.setText(null);
-                    conf.setText(null);
-                }
-            }
-        });
-
-    }
-
-    public boolean loginCheck() {
-        return true;
-    }
-
-    public boolean passCheck(String pass, String confirm) {
-        if(pass.equals(confirm)) {
-            // Passcodes match so added to database
+        if(handler.getError() == 9) {
             return true;
-        } else {
-            // Passcodes don't match don't add to database
+        }
+        else {
             return false;
         }
     }

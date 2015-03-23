@@ -42,7 +42,7 @@
 
 		if(!$result) {
 			//return error
-			echo $sql;
+			echo "failed";
 			return false;
 		}
 
@@ -80,9 +80,7 @@
 
 	function add($db_table, $columns, $values) {
 		$db_conn = connect();
-
 		if(!$db_conn) { return false; }
-
 		$v = "";
 
 		//appends neccessary values to v
@@ -98,7 +96,7 @@
 			   'VALUES (' . $v . ')';
 		
 		$success = mysqli_query($db_conn, $sql);
-
+		
 		if(!$success) {
 			echo '<p>Inserting to database has failed</p>';
 			close($db_conn);
@@ -106,7 +104,7 @@
 		}
 
 		close($db_conn);
-		return true;
+		return $success;
 	}
 
 	/**
@@ -120,7 +118,7 @@
 	 * @return bool, true = successful modification otherwise false
 	 */
 
-	function modify($column, $db_table, $value, $uid) {
+	function modify($db_table, $column, $value, $uid) {
 		//connect to the 'test' database
 		$db_conn = connect();
 		
@@ -137,7 +135,7 @@
 		//checks to see if the query was successful
 		if(!$isSuccessful) {
 			//Return JSON object
-			echo "Modifying column " . $column . " of uid " . $uid . " failed";
+			echo '<p>' . $sql . '</p>';
 			//close connection to database
 			close($db_conn);
 			
