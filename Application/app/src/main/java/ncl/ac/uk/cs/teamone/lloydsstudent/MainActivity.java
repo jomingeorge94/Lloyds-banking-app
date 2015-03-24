@@ -167,6 +167,9 @@ public class MainActivity extends ActionBarActivity {
                 else if(title.getText().toString().equals("Log Out")) {
                     iv.setImageResource(R.drawable.logout_icon);
                 }
+                else if(title.getText().toString().equals("Send feedback")) {
+                    iv.setImageResource(R.drawable.feedback_icon);
+                }
                 return view;
             }
         };
@@ -205,6 +208,12 @@ public class MainActivity extends ActionBarActivity {
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("FAQs")){
                     Toast.makeText(MainActivity.this,"FAQs",Toast.LENGTH_LONG).show();
                 }
+
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Send feedback")){
+                    Intent feedback =new Intent(getApplicationContext(),FeedbackSettings.class);
+                    startActivity(feedback);
+                }
+
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("About")){
                     Toast.makeText(MainActivity.this,"About",Toast.LENGTH_LONG).show();
