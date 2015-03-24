@@ -46,9 +46,6 @@ public class ContactUs extends FragmentActivity {
                 CallUs.show(getSupportFragmentManager(), "call");
             }
         });
-
-
-
     }
 
     @Override
