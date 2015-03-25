@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -92,8 +93,6 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
     public Map getData() {
         return data;
     }
-    //used to retrieve successful definitions
-    public int getError() { return error; }
 
     @Override
     protected String doInBackground(String... params) {
@@ -133,7 +132,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //assign data to a string variable
             String result = sb.toString();
 
-            Log.v("Error", result);
+            Log.v("ERROR", result);
 
             try {
                 checkForError(result);
@@ -145,12 +144,15 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
 
         } catch(UnsupportedEncodingException uee) {
             Log.v("UnsupportedEncodingException", uee.getMessage());
+            ((Activity) activity).finish();
         }
         catch(IOException ioe) {
             Log.v("IOException", ioe.getMessage());
+            ((Activity) activity).finish();
         }
         catch(JSONException je) {
             Log.v("JSONException", je.getMessage());
+            ((Activity) activity).finish();
         }
 
         return null;
@@ -172,6 +174,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //Start new activity
             Intent I = new Intent(activity, MainActivity.class);
             activity.startActivity(I);
+            ((Activity) activity).finish();
         }
     }
 
@@ -197,10 +200,9 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //New User
             case 2:
                 Intent mainIntent;
-                Activity acti = (Activity) activity;
-                mainIntent = new Intent(acti, FirstLoginActivity.class);
-                acti.startActivity(mainIntent);
-                acti.finish();
+                mainIntent = new Intent(activity, FirstLoginActivity.class);
+                activity.startActivity(mainIntent);
+                ((Activity) activity).finish();
                 break;
             //Error - Could be anything
             case 3:
@@ -230,106 +232,21 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //Mobile Banking - Successful set up
             case 8:
                 Intent otherIntent;
-                Activity act = (Activity) activity;
-                otherIntent = new Intent(act, LoginActivity.class);
-                act.startActivity(otherIntent);
-                act.finish();
+                otherIntent = new Intent(activity, LoginActivity.class);
+                activity.startActivity(otherIntent);
+                ((Activity) activity).finish();
                 break;
             //Is user first time using the mobile app? Success value
             case 9:
                 Activity ac = (Activity) activity;
                 // Change view to next set of inputs
                 ac.setContentView(R.layout.initial_setup_passcode);
-                passCodeSetup();
+                PassCodeActivity pca = new PassCodeActivity(ac);
                 break;
             //If unexpected error occurs then end any activity open
             default:
-                Activity activ = (Activity) activity;
-                activ.finish();
+                ((Activity) activity).finish();
         }
     }
 
-
-    public void passCodeSetup() {
-        final Activity a = (Activity) activity;
-        // Creates invalid credentials popup message
-        AlertDialog.Builder builder = new AlertDialog.Builder(a);
-        // Sets the error message for the popup
-        builder.setMessage(R.string.first_failed_passcode)
-                // Sets the buttons
-                .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {}
-                });
-        // Creates the alert object ready to be called
-        final AlertDialog passNotMatch = builder.create();
-
-        // Finds the editable text and assigns them variables
-        final EditText pass = (EditText) a.findViewById(R.id.first_passcode);
-        final EditText conf = (EditText) a.findViewById(R.id.first_confirm);
-
-        // Find the next button and assigns it a variable
-        final Button finishedButton = (Button) a.findViewById(R.id.first_finished);
-
-        // Creates a Text listener to detect if the both fields are filled to enable finished button
-        final TextWatcher watcher = new TextWatcher() {
-            // Ignore
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after)
-            {}
-            // Ignore
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count)
-            {}
-            // Once text has changed checks if both fields are full
-            @Override
-            public void afterTextChanged(Editable s) {
-                // Compares the length of both fields
-                if (pass.length() == 4 && conf.length() == 4) {
-                    // Enables finished buttons
-                    finishedButton.setEnabled(true);
-                    finishedButton.setBackgroundColor(Color.parseColor("#369742"));
-                }
-                else {
-                    // Disables finished buttons
-                    finishedButton.setEnabled(false);
-                    finishedButton.setBackgroundColor(Color.parseColor("#888888"));
-                }
-            }
-        };
-
-        // Adds the listener to the text fields
-        pass.addTextChangedListener(watcher);
-        conf.addTextChangedListener(watcher);
-
-        // Create button listener
-        finishedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check Credentials Against Database
-                if(passCheck(pass.getText().toString(), conf.getText().toString()) && pass.length() == 4) {
-                    Intent I = new Intent(a, MainActivity.class);
-                    a.startActivity(I);
-                } else {
-                    // Show alert to tell user the wrong credentials have been entered
-                    passNotMatch.show();
-                    // Sets them back to null
-                    pass.setText(null);
-                    conf.setText(null);
-                }
-            }
-        });
-
-    }
-
-
-    public boolean passCheck(String pass, String confirm) {
-        if(pass.equals(confirm)) {
-            // Passcodes match so added to database
-            return true;
-        } else {
-            // Passcodes don't match don't add to database
-            return false;
-        }
-    }
 }

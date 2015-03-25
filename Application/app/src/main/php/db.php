@@ -42,7 +42,7 @@
 
 		if(!$result) {
 			//return error
-			echo "failed";
+			echo false;
 			return false;
 		}
 

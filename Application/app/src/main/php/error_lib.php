@@ -1,5 +1,16 @@
 <?php
 
+	/**
+	 *
+	 * @file error_lib.php
+	 * @author Artemiy Bozhenok
+	 * @date 11/02/2015
+	 *
+	 * A library of definitions which are sent through the http
+	 * to the java code so the app can respond appropriatly
+	 *
+	 */
+
 	define('SUCCESS', '0');
 	define('WRONG_PASSCODE', '1');
 	define('NEW_USER', '2');

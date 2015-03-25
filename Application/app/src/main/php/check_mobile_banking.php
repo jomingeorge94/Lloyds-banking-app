@@ -34,10 +34,12 @@
 		//if nothing found then indicate that user hasnt set up mobile banking
 		if($result) {
 			for($i = 0; $i < sizeof($row); $i++) {
-				if($imei == decrypt($row[$i]) && !is_null($row[$i])) {
-					//go to login screen
-					echo SUCCESS_MOBILE_BANKING;
-					return;
+				if(!is_null($row[$i])) {
+					if(strpos(decrypt($row[$i]), $imei) !== false) {
+						//go to login screen
+						echo SUCCESS_MOBILE_BANKING;
+						return;
+					}
 				}
 			}
 			//direct user to set up mobile banking

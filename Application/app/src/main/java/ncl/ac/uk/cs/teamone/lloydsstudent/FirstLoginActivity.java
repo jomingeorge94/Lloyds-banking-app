@@ -75,13 +75,14 @@ public class FirstLoginActivity extends ActionBarActivity {
     }
 
     public void loginCheck(EditText user, EditText pass) {
-        final TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         //url to connect to
-        String url = "http://www.abunities.co.uk/t2022t1/check_first_time_user.php";
+        String url = "http://www.abunities.co.uk/t2022t1/initial_setup.php";
 
+        Data d = new Data();
+        d.setUid(user.getText().toString());
         //values to send to the PHP file
-        String[] keys = {"uid", "online_password", "imei"};
-        String[] values = {user.getText().toString(), pass.getText().toString(), telephonyManager.getDeviceId()};
+        String[] keys = {"uid", "online_password"};
+        String[] values = {d.getUid(), pass.getText().toString()};
 
         //create an asynchronous object
         final PHPHandler handler = new PHPHandler(FirstLoginActivity.this, keys, values) ;

@@ -16,8 +16,6 @@
 	$uid = $_POST['uid'];
 	//user entered password
 	$online_password = $_POST['online_password'];
-	//imei
-	$imei = $_POST['imei'];
 
 	if(isset($uid) && isset($online_password)) {
 
@@ -25,8 +23,6 @@
 
 		//check if the passwords match
 		if($online_password == $mobile_banking) {
-			//set IMEI of the device to the mobile_banking attribute - indicate it is assigned to one device
-			modify("Customer", "mobile_banking", $imei, $uid);
 			//return success
 			echo SUCCESS_FIRST_TIME;
 		}
