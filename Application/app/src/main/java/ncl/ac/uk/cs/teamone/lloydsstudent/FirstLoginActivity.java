@@ -26,12 +26,6 @@ public class FirstLoginActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.initial_setup_login);
 
-        setupOne();
-
-
-    }
-
-    public void setupOne() {
         // Finds the editable text and assigns them variables
         final EditText user = (EditText) findViewById(R.id.userID);
         final EditText pass = (EditText) findViewById(R.id.userPass);
@@ -53,7 +47,7 @@ public class FirstLoginActivity extends ActionBarActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 // Compares the length of both fields
-                if (user.length() > 0 && pass.length() == 6) {
+                if (user.length() > 0 && pass.length() >= 6) {
                     // Enables finished buttons
                     nextButton.setEnabled(true);
                     nextButton.setBackgroundColor(Color.parseColor("#369742"));
@@ -80,7 +74,7 @@ public class FirstLoginActivity extends ActionBarActivity {
         });
     }
 
-    public boolean loginCheck(EditText user, EditText pass) {
+    public void loginCheck(EditText user, EditText pass) {
         final TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         //url to connect to
         String url = "http://www.abunities.co.uk/t2022t1/check_first_time_user.php";
@@ -94,13 +88,6 @@ public class FirstLoginActivity extends ActionBarActivity {
 
         //execute the object
         handler.execute(url);
-
-        if(handler.getError() == 9) {
-            return true;
-        }
-        else {
-            return false;
-        }
     }
 
     //Simply prevents the app from being in the background, user has to enter passcode again!
