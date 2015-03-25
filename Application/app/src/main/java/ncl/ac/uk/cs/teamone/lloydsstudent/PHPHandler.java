@@ -242,6 +242,10 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 ac.setContentView(R.layout.initial_setup_passcode);
                 passCodeSetup();
                 break;
+            //If unexpected error occurs then end any activity open
+            default:
+                Activity activ = (Activity) activity;
+                activ.finish();
         }
     }
 
