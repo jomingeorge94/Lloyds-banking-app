@@ -40,7 +40,6 @@
 					return;
 				}
 			}
-
 			//direct user to set up mobile banking
 			echo NEW_USER;
 		}
