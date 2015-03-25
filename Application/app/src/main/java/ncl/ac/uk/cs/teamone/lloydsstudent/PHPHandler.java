@@ -189,10 +189,12 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
         }
 
         switch(this.error) {
+            //Wrong PassCode
             case 1:
                 this.alertDialog.setTitle("Wrong Passcode");
                 this.alertDialog.show();
                 break;
+            //New User
             case 2:
                 Intent mainIntent;
                 Activity acti = (Activity) activity;
@@ -200,18 +202,22 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 acti.startActivity(mainIntent);
                 acti.finish();
                 break;
+            //Error - Could be anything
             case 3:
                 this.alertDialog.setTitle("Error Occurred");
                 this.alertDialog.show();
                 break;
+            //No Internet Connection
             case 4:
                 this.alertDialog.setTitle("No Internet Connection");
                 this.alertDialog.show();
                 break;
+            //Connection to database error
             case 5:
                 this.alertDialog.setTitle("Error In Retrieving Data");
                 this.alertDialog.show();
                 break;
+            //Wrong passwords for setting up mobile banking
             case 7:
                 this.alertDialog.setTitle("Passwords did not match");
                 this.alertDialog.show();
@@ -221,6 +227,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 user.setText(null);
                 pass.setText(null);
                 break;
+            //Mobile Banking - Successful set up
             case 8:
                 Intent otherIntent;
                 Activity act = (Activity) activity;
@@ -228,6 +235,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 act.startActivity(otherIntent);
                 act.finish();
                 break;
+            //Is user first time using the mobile app? Success value
             case 9:
                 Activity ac = (Activity) activity;
                 // Change view to next set of inputs
