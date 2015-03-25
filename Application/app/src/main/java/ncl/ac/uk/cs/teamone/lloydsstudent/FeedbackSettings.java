@@ -43,16 +43,22 @@ public class FeedbackSettings extends FragmentActivity implements RatingBar.OnRa
     @Override
     public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
 
-        ratingStar.setText("Rating: " + rating + "\n");
+        ratingStar.setText("Rating: " + rating + "/ 5.0");
 
-        if (fromUser)
-            ratingStar.setText(ratingStar.getText().toString() + "Change by User");
-        else
-            ratingStar.setText(ratingStar.getText().toString() + "Change by function");
+
 
     }
 
     public void changeRating (View v){
         ratingbar.setRating(1.5f);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i=new Intent(FeedbackSettings.this,MainActivity.class);
+        startActivity(i);
+        finish();
+    }
+
 }

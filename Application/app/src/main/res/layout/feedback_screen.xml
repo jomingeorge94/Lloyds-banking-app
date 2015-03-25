@@ -31,27 +31,49 @@
 
         </LinearLayout>
 
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ratingBar"
-            android:layout_gravity="center_horizontal" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/ratingscore"
-            android:layout_gravity="center_horizontal"
-            android:textColor="#ff000000"
-            android:textSize="32sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/FeedbackMessage"
+                android:id="@+id/textView32"
+                android:textColor="#ff000000"
+                android:textSize="16sp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/ratingbutton"
-            android:layout_gravity="center_horizontal" />
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingBar"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingscore"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ff000000"
+                android:textSize="16sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:id="@+id/editText"
+                
+                android:background="#ffe7e7e7"
+                android:maxLength="100"
+                android:layout_marginTop="10dp"
+                android:lines="5"/>
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
