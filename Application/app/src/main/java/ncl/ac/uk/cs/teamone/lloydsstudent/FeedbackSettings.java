@@ -1,9 +1,14 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -29,6 +34,44 @@ public class FeedbackSettings extends FragmentActivity implements RatingBar.OnRa
                 finish();
             }
         });
+
+
+        final EditText commentbox = (EditText)findViewById(R.id.feedback_comment);
+        final RatingBar rating = (RatingBar)findViewById(R.id.ratingBar);
+        final Button feedbackbutton = (Button)findViewById(R.id.feedback_submit);
+
+
+        final TextWatcher watcher = new TextWatcher(){
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                if(commentbox.length() >= 3 && rating.getRating() >=0.5){
+                    feedbackbutton.setEnabled(true);
+                    feedbackbutton.setBackgroundColor(Color.parseColor("#369742"));
+                } else  {
+                    feedbackbutton.setEnabled(false);
+                    feedbackbutton.setBackgroundColor(Color.parseColor("#ffcacaca"));
+                }
+            }
+        };
+        commentbox.addTextChangedListener(watcher);
+        rating.setOnRatingBarChangeListener((this));
+
+
+
+
+
 
 
         ratingStar = (TextView)findViewById(R.id.ratingscore);

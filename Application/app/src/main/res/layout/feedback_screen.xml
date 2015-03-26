@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,8 +9,9 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:weightSum="1">
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:id="@+id/linearLayout2">
 
         <LinearLayout
             android:orientation="vertical"
@@ -34,7 +35,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="401dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,17 +66,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
-                android:id="@+id/editText"
-                
+                android:id="@+id/feedback_comment"
+                android:hint="Please enter your comment here"
                 android:background="#ffe7e7e7"
-                android:maxLength="100"
+                android:maxLines="5"
+                android:maxLength="300"
                 android:layout_marginTop="10dp"
-                android:lines="5"/>
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:singleLine="false"
+                android:password="false"
+                android:nestedScrollingEnabled="false" />
 
 
         </LinearLayout>
 
     </LinearLayout>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/FeedbackSubmit"
+        android:id="@+id/feedback_submit"
+        android:layout_alignParentBottom="true"
+        android:enabled="false"
+        android:layout_centerHorizontal="true"
+        android:background="#ffcacaca"
+        android:textColor="#ffffff" />
 
-</LinearLayout>
+
+</RelativeLayout>

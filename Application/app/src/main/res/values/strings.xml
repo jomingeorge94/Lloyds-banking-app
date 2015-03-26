@@ -129,5 +129,6 @@
     <string name="ContactUsEmalOk">Email</string>
     <string name="FeedbackMessage">We greatly value your feedback to help us maintain our current features. You could make a real difference to our service and it
     would really help us understand what we have to do in order to give a better service to our customer\'s. </string>
+    <string name="FeedbackSubmit">Submit</string>
 
 </resources>
