@@ -47,6 +47,14 @@
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/holo_green_dark"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp" />
+
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,9 +74,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
+                android:id="@+id/customer_feedback_name"
+                android:hint="Full Name"
+                android:background="#ffe7e7e7"
+                android:maxLength="13"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:singleLine="false"
+                android:password="false"
+                android:nestedScrollingEnabled="false" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
                 android:id="@+id/feedback_comment"
                 android:hint="Please enter your comment here"
                 android:background="#ffe7e7e7"
+                android:lines="5"
                 android:maxLines="5"
                 android:maxLength="300"
                 android:layout_marginTop="10dp"

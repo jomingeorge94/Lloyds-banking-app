@@ -2,6 +2,7 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
@@ -37,6 +38,8 @@ public class FeedbackSettings extends FragmentActivity implements RatingBar.OnRa
 
 
         final EditText commentbox = (EditText)findViewById(R.id.feedback_comment);
+        final EditText fullname = (EditText)findViewById(R.id.customer_feedback_name);
+        final TextView ratingscore = (TextView)findViewById(R.id.ratingscore);
         final RatingBar rating = (RatingBar)findViewById(R.id.ratingBar);
         final Button feedbackbutton = (Button)findViewById(R.id.feedback_submit);
 
@@ -56,7 +59,7 @@ public class FeedbackSettings extends FragmentActivity implements RatingBar.OnRa
             @Override
             public void afterTextChanged(Editable s) {
 
-                if(commentbox.length() >= 3 && rating.getRating() >=0.5){
+                if(commentbox.length() >= 3 && rating.getRating() >=0.5 && fullname.length() >=2){
                     feedbackbutton.setEnabled(true);
                     feedbackbutton.setBackgroundColor(Color.parseColor("#369742"));
                 } else  {
@@ -68,8 +71,15 @@ public class FeedbackSettings extends FragmentActivity implements RatingBar.OnRa
         commentbox.addTextChangedListener(watcher);
         rating.setOnRatingBarChangeListener((this));
 
-
-
+        findViewById(R.id.feedback_submit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "feedback@lloydsbankinggroup.co.uk", null));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+                intent.putExtra(Intent.EXTRA_TEXT, ratingscore.getText().toString() + "\nFull Name : " + fullname.getText().toString() + "\nComment : " + commentbox.getText().toString());
+                startActivity(Intent.createChooser(intent, "Choose an Email client :"));
+            }
+        });
 
 
 
