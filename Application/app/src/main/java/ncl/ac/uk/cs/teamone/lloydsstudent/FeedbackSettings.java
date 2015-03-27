@@ -75,7 +75,7 @@ public class FeedbackSettings extends FragmentActivity implements RatingBar.OnRa
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "feedback@lloydsbankinggroup.co.uk", null));
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback Review");
                 intent.putExtra(Intent.EXTRA_TEXT, ratingscore.getText().toString() + "\nFull Name : " + fullname.getText().toString() + "\nComment : " + commentbox.getText().toString());
                 startActivity(Intent.createChooser(intent, "Choose an Email client :"));
             }

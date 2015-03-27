@@ -103,7 +103,7 @@
         <item>Account Management</item>
         <item>Accessibility</item>
         <item>Settings</item>
-        <item>What\'s New </item>
+        <item>Lloyd\'s Banking Tour </item>
         <item>Contact Us</item>
         <item>Terms and Conditions</item>
         <item>FAQs</item>
@@ -130,5 +130,6 @@
     <string name="FeedbackMessage">We greatly value your feedback to help us maintain our current features. You could make a real difference to our service and it
     would really help us understand what we have to do in order to give a better service to our customer\'s. </string>
     <string name="FeedbackSubmit">Submit</string>
-
+    <string name="LloydsTourTitle">Welcome to your Lloyds Banking Tour</string>
+    <string name="LloydsTourmessage">We will go though each aspect of the Lloyds Mobile Banking Application. \nSwipe to find out more.</string>
 </resources>

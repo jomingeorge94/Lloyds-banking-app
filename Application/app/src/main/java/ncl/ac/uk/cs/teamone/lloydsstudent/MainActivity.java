@@ -149,7 +149,7 @@ public class MainActivity extends ActionBarActivity {
                 else if(title.getText().toString().equals("Settings")) {
                     iv.setImageResource(R.drawable.settings_icon);
                 }
-                else if(title.getText().toString().equals("What's New")) {
+                else if(title.getText().toString().equals("Lloyd's Banking Tour")) {
                     iv.setImageResource(R.drawable.whatsnew_icon);
                 }
                 else if(title.getText().toString().equals("Contact Us")) {
@@ -191,8 +191,10 @@ public class MainActivity extends ActionBarActivity {
                     Toast.makeText(MainActivity.this,"Settings",Toast.LENGTH_LONG).show();
                 }
 
-                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("What's New")){
-                    Toast.makeText(MainActivity.this,"What's New",Toast.LENGTH_LONG).show();
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Lloyd's Banking Tour")){
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                    Intent whatsnew =new Intent(getApplicationContext(),LloydsBankingTour.class);
+                    startActivity(whatsnew);
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Contact Us")){

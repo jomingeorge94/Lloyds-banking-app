@@ -6,106 +6,113 @@
     android:background="#fffcfdff"
     android:weightSum="1">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:weightSum="1"
-        android:id="@+id/linearLayout2">
+        android:id="@+id/scrollView5" >
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="#5DAD68">
+            android:weightSum="1"
+            android:id="@+id/linearLayout2">
 
-            <ImageButton
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/backbutton"
-                android:layout_weight="0.05"
-                android:src="@drawable/back_arrow_icon"
                 android:background="#5DAD68"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:paddingLeft="10dp" />
+                android:id="@+id/toppartofthescreen">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/backbutton"
+                    android:layout_weight="0.05"
+                    android:src="@drawable/back_arrow_icon"
+                    android:background="#5DAD68"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="401dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/FeedbackMessage"
+                    android:id="@+id/textView32"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@android:color/holo_green_dark"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ratingBar"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingTop="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ratingscore"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:id="@+id/customer_feedback_name"
+                    android:hint="Full Name"
+                    android:background="#ffe7e7e7"
+                    android:maxLength="13"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:singleLine="false"
+                    android:password="false"
+                    android:nestedScrollingEnabled="false" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:id="@+id/feedback_comment"
+                    android:hint="Please enter your comment here"
+                    android:background="#ffe7e7e7"
+                    android:lines="5"
+                    android:maxLines="5"
+                    android:maxLength="300"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:singleLine="false"
+                    android:password="false"
+                    android:nestedScrollingEnabled="false" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="401dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/FeedbackMessage"
-                android:id="@+id/textView32"
-                android:textColor="#ff000000"
-                android:textSize="16sp"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@android:color/holo_green_dark"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp" />
-
-            <RatingBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ratingBar"
-                android:layout_gravity="center_horizontal"
-                android:paddingTop="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ratingscore"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ff000000"
-                android:textSize="16sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:id="@+id/customer_feedback_name"
-                android:hint="Full Name"
-                android:background="#ffe7e7e7"
-                android:maxLength="13"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:singleLine="false"
-                android:password="false"
-                android:nestedScrollingEnabled="false" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:id="@+id/feedback_comment"
-                android:hint="Please enter your comment here"
-                android:background="#ffe7e7e7"
-                android:lines="5"
-                android:maxLines="5"
-                android:maxLength="300"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:singleLine="false"
-                android:password="false"
-                android:nestedScrollingEnabled="false" />
-
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
     <Button
         android:layout_width="match_parent"
