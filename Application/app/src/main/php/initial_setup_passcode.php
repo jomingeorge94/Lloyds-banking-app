@@ -31,7 +31,7 @@
 		//reference $value to enable alteration
 		foreach($customer as $key => &$value) {
 			if($key != 'uid') {
-				$value = fetch("Customer", $key, $customer->uid);
+				$value = fetch("Customer", $key, $customer->uid, CUSTOMER);
 			}
 		}
 

@@ -52,8 +52,10 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
     private Context activity = null;
     private AlertDialog alertDialog = null;
     private int error = 0;
+    private int table = 0;
 
-    public PHPHandler(Context activity, String[] keys, String[] values) {
+    public PHPHandler(Context activity, String[] keys, String[] values, int table) {
+        this.table = table;
         //set the current activity
         this.activity = activity;
         //set the keys and the mapping of the keys to use
@@ -170,12 +172,18 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
         }
 
         //starts new activity if data was retrieved
-        if(this.data.size() > 0) {
-            //Start new activity
-            Intent I = new Intent(activity, MainActivity.class);
-            activity.startActivity(I);
-            ((Activity) activity).finish();
+        switch(table) {
+            case 1:
+                //Start new activity
+                Intent I = new Intent(activity, MainActivity.class);
+                activity.startActivity(I);
+                ((Activity) activity).finish();
+                break;
+            case 2:
+                Retrieve r = new Retrieve(((Activity) activity), "http://www.abunities.co.uk/t2022t1/retrieve_accounts.php", 1);
+                break;
         }
+
     }
 
     private void checkForError(String error) throws NumberFormatException {

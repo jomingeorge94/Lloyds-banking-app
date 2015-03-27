@@ -15,6 +15,9 @@
 	require('config_db.php');
 	require('encryption.php');
 
+	define('CUSTOMER', 1);
+	define('ACCOUNTS', 2);
+
 	/**
 	 *
 	 * This function sends a query to the database, then the values variable will then 
@@ -27,16 +30,25 @@
 	 * @return array of key-pair values
 	 */
 
-	function fetch($db_table, $values, $uid) {
+	function fetch($db_table, $values, $uid, $constant) {
 		//opens connection to database
 		$db_conn = connect();
 
 		if(!$db_conn) { return false; }
 
+		switch($constant) {
+			case 1:
+				$where = " WHERE uid = '" . $uid . "'";
+				break;
+			case 2:
+				$where = " WHERE aid = '" . $uid . "'";
+				break;
+		}
+
 		//SQL query to fetch record
 		$sql = "SELECT " . $values . 
 			   " FROM " . $db_table . 
-			   " WHERE uid = '" . $uid . "'";
+			   $where;
 
 		$result = mysqli_query($db_conn, $sql);
 

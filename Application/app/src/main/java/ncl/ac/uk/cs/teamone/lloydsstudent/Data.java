@@ -12,6 +12,9 @@ public class Data {
 
     public static Map<String, String> customer = new HashMap<>();
 
+    public static Map<String, String> accounts = new HashMap<>();
+
+    public static Map<String, String> transactions = new HashMap<>();
 
     public void setUid(String uid) {
         this.uid = uid;

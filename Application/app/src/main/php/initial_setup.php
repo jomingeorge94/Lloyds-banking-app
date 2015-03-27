@@ -19,7 +19,7 @@
 
 	if(isset($uid) && isset($online_password)) {
 
-		$mobile_banking = fetch("Customer", "online_password", $uid);
+		$mobile_banking = fetch("Customer", "online_password", $uid, CUSTOMER);
 
 		//check if the passwords match
 		if($online_password == $mobile_banking) {

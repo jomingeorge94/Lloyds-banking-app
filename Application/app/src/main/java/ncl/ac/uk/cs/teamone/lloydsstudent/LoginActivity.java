@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,13 +40,14 @@ public class LoginActivity extends ActionBarActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //checks if the passcode has been entered
                 if(s.length() == 4) {
+                    TelephonyManager telephonyManager = (TelephonyManager) activity.getSystemService(Context.TELEPHONY_SERVICE);
                     //url to connect to
                     String url = "http://www.abunities.co.uk/t2022t1/validation.php";
                     //values to send to the PHP file
-                    String[] keys = {"uid", "passcode"};
-                    String[] values = {"1", passCode.getText().toString()};
+                    String[] keys = {"imei", "passcode"};
+                    String[] values = {telephonyManager.getDeviceId(), passCode.getText().toString()};
                     //create an asynchronous object
-                    PHPHandler handler = new PHPHandler(activity, keys, values) ;
+                    PHPHandler handler = new PHPHandler(activity, keys, values, 2) ;
                     //execute the object
                     handler.execute(url);
                     //Resets text

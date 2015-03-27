@@ -85,7 +85,7 @@ public class FirstLoginActivity extends ActionBarActivity {
         String[] values = {d.getUid(), pass.getText().toString()};
 
         //create an asynchronous object
-        final PHPHandler handler = new PHPHandler(FirstLoginActivity.this, keys, values) ;
+        final PHPHandler handler = new PHPHandler(FirstLoginActivity.this, keys, values, 0) ;
 
         //execute the object
         handler.execute(url);
