@@ -22,6 +22,15 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 return new LloydsBankingTourTwo();
             case 2:
                 return new LloydsBankingTourThree();
+            case 3:
+                return new LloydsBankingTourFour();
+            case 4:
+                return new LloydsBankingTourFive();
+            case 5:
+                return new LloydsBankingTourSix();
+            case 6:
+                return new LloydsBankingTourSeven();
+
         }
 
         return null;
@@ -29,6 +38,6 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 7;
     }
 }
