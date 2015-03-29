@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.widget.Toast;
 
 /**
  * Created by Jomin on 27/03/2015.
@@ -22,6 +23,35 @@ public class AccountManagementScreen extends FragmentActivity  {
                 finish();
             }
         });
+
+        findViewById(R.id.AccountManagement_Personal).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(AccountManagementScreen.this, "Update your detail ", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        findViewById(R.id.AccountManagement_Security).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(AccountManagementScreen.this, "Change your Passcode ", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        findViewById(R.id.AccountManagement_AccountName).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(AccountManagementScreen.this, "Change your Account Name ", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        findViewById(R.id.AccountManagement_ChangeBackground).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(AccountManagementScreen.this, "Change the background ", Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 
     @Override

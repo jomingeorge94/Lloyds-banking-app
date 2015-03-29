@@ -140,5 +140,7 @@
     <string name="AccountManagementAccountName">Change Account name</string>
     <string name="AccountManagementBackground">Change Background</string>
     <string name="title_activity_network_error">NetworkErrorActivity</string>
+    <string name="ReportLost">Lost/Stole</string>
+    <string name="ReportIssue">Having an issue</string>
 
 </resources>
