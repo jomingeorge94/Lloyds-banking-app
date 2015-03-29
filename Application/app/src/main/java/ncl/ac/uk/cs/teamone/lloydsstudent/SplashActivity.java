@@ -16,15 +16,7 @@ public class SplashActivity extends Activity {
     /** Duration of wait **/
     private final int SPLASH_DISPLAY_LENGTH = 1000;
 
-
     final Context activity = SplashActivity.this;
-
-    /*******
-     Debug variables, depending on which mode you want to be in alter the states of these variables.
-     One variable should be set to true - this should be the debug option you wish to enter - all
-     the others should be set to false
-     *******/
-    private boolean skip = true;
 
     /** Called when the activity is first created. */
     @Override
