@@ -24,6 +24,7 @@ public class SplashActivity extends Activity {
      One variable should be set to true - this should be the debug option you wish to enter - all
      the others should be set to false
      *******/
+    private boolean skip = true;
 
     /** Called when the activity is first created. */
     @Override
