@@ -182,7 +182,9 @@ public class MainActivity extends ActionBarActivity {
                                     long arg3) {
 
                 if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Account Management")){
-                    Toast.makeText(MainActivity.this,"Account Management ",Toast.LENGTH_LONG).show();
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                    Intent accountmanagement =new Intent(getApplicationContext(),AccountManagementScreen.class);
+                    startActivity(accountmanagement);
                 }
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Accessibility")){
                     Toast.makeText(MainActivity.this,"Accessibility ",Toast.LENGTH_LONG).show();
@@ -212,6 +214,7 @@ public class MainActivity extends ActionBarActivity {
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Send feedback")){
+                    drawerLayout.closeDrawer(Gravity.LEFT);
                     Intent feedback =new Intent(getApplicationContext(),FeedbackSettings.class);
                     startActivity(feedback);
                 }
@@ -222,6 +225,7 @@ public class MainActivity extends ActionBarActivity {
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Log Out")){
+                    drawerLayout.closeDrawer(Gravity.LEFT);
                     LogOutScreen logout = new LogOutScreen();
                     logout.show(getSupportFragmentManager(),"LogOut");
 

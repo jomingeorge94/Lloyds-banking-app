@@ -141,5 +141,10 @@
     to our Fraud Team with a touch of a button. </string>
     <string name="LloydsTour6Message">Now it\'s been made easier for you to transfer money to a payee with using our Lloyds Banking App. Transactions are carried out instantly and within minutes it will appear on
     your Account Overview. </string>
+    <string name="AccountManagementPersonal">Update your details </string>
+    <string name="AccountManagementSecurity">Change Passcode</string>
+    <string name="AccountManagementAccountName">Change Account name</string>
+    <string name="AccountManagementBackground">Change Background</string>
+
 
 </resources>
