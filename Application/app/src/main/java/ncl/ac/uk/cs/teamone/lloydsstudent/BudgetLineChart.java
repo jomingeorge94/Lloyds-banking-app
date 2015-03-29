@@ -86,10 +86,10 @@ public class BudgetLineChart extends Fragment {
         YAxis yRight = chart.getAxisRight();
 
         yLeft.setEnabled(true);
-        yLeft.setValueFormatter(new CurrencyFormatter());
+        yLeft.setValueFormatter(new NoDecimalFormatter());
 
         yRight.setEnabled(true);
-        yRight.setValueFormatter(new CurrencyFormatter());
+        yRight.setValueFormatter(new NoDecimalFormatter());
 
         Legend legend = chart.getLegend();
         //legend.setEnabled(false);
