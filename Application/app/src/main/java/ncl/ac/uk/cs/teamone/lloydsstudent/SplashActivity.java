@@ -19,6 +19,7 @@ public class SplashActivity extends Activity {
      One variable should be set to true - this should be the debug option you wish to enter - all
      the others should be set to false
      *******/
+    private boolean skip = true;
 
     /** Called when the activity is first created. */
     @Override
@@ -35,19 +36,26 @@ public class SplashActivity extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //url to connect to
-                String url = "http://www.abunities.co.uk/t2022t1/check_mobile_banking.php";
 
-                //values to send to the PHP file
-                String[] keys = {"imei"};
-                String[] values = {telephonyManager.getDeviceId()};
+                if(skip = true) {
+                    Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
+                    SplashActivity.this.startActivity(mainIntent);
+                    SplashActivity.this.finish();
+                }
+                else {
+                    //url to connect to
+                    String url = "http://www.abunities.co.uk/t2022t1/check_mobile_banking.php";
 
-                //create an asynchronous object
-                PHPHandler handler = new PHPHandler(activity, keys, values, 0);
+                    //values to send to the PHP file
+                    String[] keys = {"imei"};
+                    String[] values = {telephonyManager.getDeviceId()};
 
-                //execute the object
-                handler.execute(url);
+                    //create an asynchronous object
+                    PHPHandler handler = new PHPHandler(activity, keys, values, 0);
 
+                    //execute the object
+                    handler.execute(url);
+                }
             }
         }, SPLASH_DISPLAY_LENGTH);
 
