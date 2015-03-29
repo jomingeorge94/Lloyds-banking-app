@@ -8,21 +8,47 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:weightSum="1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#ffc9c9c9">
+        android:background="#ffc9c9c9"
+        android:layout_above="@+id/imageButton7">
 
         <ImageButton
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton7"
+            android:id="@+id/imageButton12"
+            android:src="@drawable/lloyds_tour_page5"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.07"
-            android:src="@drawable/lloydstour_dots3"
+            android:layout_marginTop="10dp"
             android:background="#ffc9c9c9" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/LloydsTour5Message"
+            android:id="@+id/textView41"
+            android:textColor="#ff000000"
+            android:textSize="16sp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp" />
+
     </LinearLayout>
+
+    <ImageButton
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton7"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.07"
+        android:src="@drawable/lloydstour_dots5"
+        android:background="#ffc9c9c9"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingBottom="10dp" />
 
 </RelativeLayout>

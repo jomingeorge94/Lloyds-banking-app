@@ -135,4 +135,11 @@
     <string name="LloydsTourPageTwomessage">You can switch between tabs easily with a touch of a button. There are three buttons at the top of the screen which will take you to different
     aspect of the Lloyds Banking App. </string>
     <string name="LloydsTour7Message">You are ready to try the app for yourself. Feel free to come again and go through these tour to familiarise your self with what Lloyds Banking Group offers. </string>
+    <string name="LloydsTour3Message">Swipe to the right of the screen to access the Help Menu. Here you will find all the necessary settings and functions which are associated with Lloyds Banking Group.</string>
+    <string name="LloydsTour4Message">Manage and access your money instantly. With the help of Lloyds Banking App, you get to view your account balance, transactions and also get to switch between other accounts.  </string>
+    <string name="LloydsTour5Message">Fraud Detection feature in place to keep your money safe. If you don\'t recognise a transaction on your Account Overview, you can report it straightaway
+    to our Fraud Team with a touch of a button. </string>
+    <string name="LloydsTour6Message">Now it\'s been made easier for you to transfer money to a payee with using our Lloyds Banking App. Transactions are carried out instantly and within minutes it will appear on
+    your Account Overview. </string>
+
 </resources>
