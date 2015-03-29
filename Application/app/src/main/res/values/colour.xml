@@ -5,6 +5,7 @@
     // Default Colours
     <color name="dark_green">#369742</color>
     <color name="text_dark">#ff252525</color>
+    <color name="grey">#EEEEEE</color>
     <color name="white">#FFFFFF</color>
 
     // Spend Level Indicators

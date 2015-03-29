@@ -50,7 +50,7 @@ public class BudgetPieChart extends Fragment {
     }
 
     public void createChart(View v) {
-        PieChart chart = (PieChart) v.findViewById(R.id.pieChart);
+        PieChart chart = (PieChart) v.findViewById(R.id.pie_chart);
 
         PieData data = new PieData(CATEGORIES, formatData());
 

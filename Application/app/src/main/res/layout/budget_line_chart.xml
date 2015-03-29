@@ -6,8 +6,8 @@
     <TableRow
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:gravity="center_horizontal">
-
+        android:gravity="center_horizontal"
+        android:layout_weight="1">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -15,17 +15,18 @@
             android:layout_gravity="center"
             android:textColor="@color/text_dark"
             android:fontFamily="sans-serif-light"
-            android:text="Where You\'re Spending"/>
+            android:text="Weekly Spend"/>
     </TableRow>
 
     <TableRow
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:layout_weight="100">
         <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/pieChart"
-            android:layout_width="400dp"
-            android:layout_height="400dp"
+            android:id="@+id/line_chart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"/>
     </TableRow>
