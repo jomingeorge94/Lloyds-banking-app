@@ -25,9 +25,6 @@ public class DealsFragment extends Fragment {
         // Inflate the layout for this fragment
         final View v =  inflater.inflate(R.layout.deals_test, container, false);
 
-
-
-
         return v;
     }
 
