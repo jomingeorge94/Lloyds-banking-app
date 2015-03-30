@@ -92,7 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:choiceMode="singleChoice"
-            android:divider="@android:color/background_dark"
+            android:divider="@android:color/holo_green_dark"
             android:dividerHeight="2.0dp"
 
             android:textColor="@android:color/white"
