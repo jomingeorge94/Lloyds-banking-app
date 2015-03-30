@@ -38,7 +38,7 @@
 		//Searches the returned mobile banking imeis and sets uid if a match is found
 		for($i = 0; $i < sizeof($row); $i++) {
 			if(strpos(decrypt($row[$i]), $imei) !== false) {
-				$uid = ($i + 1);
+				$uid = ($i == 10) ? "1000000" : "10000000" . ($i + 1);
 				break;
 			}
 		}

@@ -135,6 +135,8 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //assign data to a string variable
             String result = sb.toString();
 
+            Log.v("Error", result);
+
             try {
                 checkForError(result);
             } catch (NumberFormatException nfe) {
@@ -229,8 +231,6 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 break;
             //Error - Could be anything
             case 3:
-                this.alertDialog.setTitle("Error Occurred");
-                this.alertDialog.show();
                 ((Activity) activity).finish();
                 break;
             //No Internet Connection
