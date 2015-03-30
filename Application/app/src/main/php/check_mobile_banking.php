@@ -45,7 +45,6 @@
 			//direct user to set up mobile banking
 			echo NEW_USER;
 		}
-		//direct user to set up mobile banking
 		else {
 			echo ERROR;
 		}

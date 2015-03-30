@@ -47,7 +47,7 @@ public class FirstLoginActivity extends ActionBarActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 // Compares the length of both fields
-                if (user.length() > 0 && pass.length() >= 6) {
+                if (user.length() == 9 && pass.length() >= 6) {
                     // Enables finished buttons
                     nextButton.setEnabled(true);
                     nextButton.setBackgroundColor(Color.parseColor("#369742"));

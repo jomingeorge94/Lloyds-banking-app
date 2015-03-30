@@ -231,6 +231,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             case 3:
                 this.alertDialog.setTitle("Error Occurred");
                 this.alertDialog.show();
+                ((Activity) activity).finish();
                 break;
             //No Internet Connection
             case 4:
