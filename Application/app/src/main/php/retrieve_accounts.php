@@ -1,37 +1,45 @@
 <?php
 
-	require('db.php');
-	//require('config_db.php');
+	require('config_db.php');
+	require('encryption.php');
 	require('accounts.php');
 
 	$uid = $_POST['uid'];
 
 	if(isset($uid)) {
-/*		$data = array();
-
-		$sql = "SELECT COUNT(*) FROM Accounts";
+		$accounts = array();
+		$i = 0;
 		//opens connection to database
 		$db_conn = connect();
 
 		if(!$db_conn) { return false; }
 
+		//SQL query to fetch record
+		$sql = "SELECT account_number,sortcode,type_of_account,total_money,available_money,overdraft" .
+			   " FROM Accounts" .
+			   " WHERE aid = '" . $uid . "'";
+
 		$result = mysqli_query($db_conn, $sql);
 
-		$row = mysqli_fetch_array($result, MYSQLI_NUM);
-*/
-		$accounts = new Accounts();
-		//set the user id of the object
-		$accounts->aid = $uid;
-		//goes through every property and fetchs the neccesary result from db
-		//reference $value to enable alteration
-		foreach($accounts as $key => &$value) {
-			//ensures that uid is not fetched from the table
-			if($key != 'aid') {
-				$value = fetch("Accounts", $key, $uid, ACCOUNTS);
+		while ($row = mysqli_fetch_assoc($result)) {
+			$a = new Accounts();
+
+			foreach($a as $key => &$value) {
+				if($key == 'aid') {
+					//make aid = to the uid since it doesnt need to be decrypted
+					$a->aid = $uid;
+				}
+				else {
+					$value = trim(decrypt($row[$key]));
+				}
 			}
+
+			$accounts[$i] = $a;
+			$i++;
 		}
 
-		//$data[$n] = json_encode($accounts);
+		close($db_conn);
+
 		//serializes json object into a string and output the result
 		echo json_encode($accounts);
 	}

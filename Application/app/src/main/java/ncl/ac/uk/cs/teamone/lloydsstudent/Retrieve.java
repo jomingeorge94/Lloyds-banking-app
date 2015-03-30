@@ -24,18 +24,5 @@ public class Retrieve {
         PHPHandler handler = new PHPHandler(a, keys, values, table);
 
         handler.execute(url);
-
-        Data d = new Data();
-
-        switch(table) {
-            //Accounts
-            case 2:
-                d.accounts = handler.getData();
-                break;
-            //Transactions
-            case 3:
-                d.transactions = handler.getData();
-                break;
-        }
     }
 }

@@ -1,6 +1,8 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -12,7 +14,7 @@ public class Data {
 
     public static Map<String, String> customer = new HashMap<>();
 
-    public static Map<String, String> accounts = new HashMap<>();
+    public static List<Map<String, String>> accounts = new ArrayList<Map<String, String>>();
 
     public static Map<String, String> transactions = new HashMap<>();
 

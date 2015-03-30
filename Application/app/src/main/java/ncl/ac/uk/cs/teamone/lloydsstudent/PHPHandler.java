@@ -24,6 +24,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -134,14 +135,28 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //assign data to a string variable
             String result = sb.toString();
 
-            Log.v("ERROR", result);
-
             try {
                 checkForError(result);
             } catch (NumberFormatException nfe) {
-                JSONObject data = new JSONObject(result);
-                //places the retrieved data into a java data structure
-                setData(data);
+                //different ways of handling data
+                if(params[0].contains("retrieve_accounts.php")) {
+                    JSONArray jsonA = new JSONArray(result);
+
+                    Data d = new Data();
+
+                    for(int i = 0; i < jsonA.length(); i++) {
+                        JSONObject jsonO = jsonA.getJSONObject(i);
+
+                        setData(jsonO);
+
+                        d.accounts.add(data);
+                    }
+                }
+                else {
+                    JSONObject data = new JSONObject(result);
+                    //places the retrieved data into a java data structure
+                    setData(data);
+                }
             }
 
         } catch(UnsupportedEncodingException uee) {
