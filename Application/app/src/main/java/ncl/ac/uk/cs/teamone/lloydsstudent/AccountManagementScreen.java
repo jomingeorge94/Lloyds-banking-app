@@ -10,6 +10,7 @@ import android.widget.Toast;
  * Created by Jomin on 27/03/2015.
  */
 public class AccountManagementScreen extends FragmentActivity  {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,9 @@ public class AccountManagementScreen extends FragmentActivity  {
         findViewById(R.id.AccountManagement_Personal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AccountManagementScreen.this, "Update your detail ", Toast.LENGTH_LONG).show();
+                Intent i=new Intent(AccountManagementScreen.this,UpdateYourDetails.class);
+                startActivity(i);
+                finish();
             }
         });
 

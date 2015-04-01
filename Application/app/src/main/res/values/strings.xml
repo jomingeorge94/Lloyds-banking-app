@@ -143,5 +143,8 @@
     <string name="title_activity_network_error">NetworkErrorActivity</string>
     <string name="ReportLost">Lost/Stole</string>
     <string name="ReportIssue">Having an issue</string>
+    <string name="UpdateYourDetailsTitle">Update your Personal Details</string>
+    <string name="UpdateYourDetailsimportant">Customer\'s are advice to change their personal details using our Lloyd\'s App. Edit you details below and submit your request by clicking on the Update button.
+    Please allow 48 hours for changes to take effect. </string>
 
 </resources>
