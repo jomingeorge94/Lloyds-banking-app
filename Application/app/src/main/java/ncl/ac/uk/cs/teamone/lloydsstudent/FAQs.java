@@ -7,18 +7,18 @@ import android.view.View;
 
 /**
  * Created by Jomin on 27/03/2015.
- * Reference - http://www.lloydsbank.com/assets/media/pdfs/banking_with_us/personal_banking_terms_and_conditions_from14August2013.pdf
+ * Reference - http://lloydsbank.creativevirtual.com/Lloyds/bot.htm?isJSEnabled=1&isJSEnabled=1&entry=Enter%20your%20question%20here
  */
-public class TermsandCondition extends FragmentActivity  {
+public class FAQs extends FragmentActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.termsandcondition_screen);
+        setContentView(R.layout.faqs_screen);
 
         findViewById(R.id.backbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(TermsandCondition.this,MainActivity.class);
+                Intent i=new Intent(FAQs.this,MainActivity.class);
                 startActivity(i);
                 finish();
             }
@@ -28,7 +28,7 @@ public class TermsandCondition extends FragmentActivity  {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i=new Intent(TermsandCondition.this,MainActivity.class);
+        Intent i=new Intent(FAQs.this,MainActivity.class);
         startActivity(i);
         finish();
     }

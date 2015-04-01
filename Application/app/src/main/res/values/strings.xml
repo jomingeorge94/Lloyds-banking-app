@@ -94,7 +94,6 @@
 
     <string-array name="helpmenu">
         <item>Account Management</item>
-        <item>Accessibility</item>
         <item>Settings</item>
         <item>Budget Notification</item>
         <item>Lloyd\'s Banking Tour </item>
@@ -205,4 +204,23 @@
         Regulation Authority under registration\n
         number 119278.\n
         \nInformation correct as at April 2014.</string>
+
+    <string name="FAQSmessage" >Welcome to our help centre. Here you can find answers to out Frequently Asked Questions. If for any reason you couldn\'t find what you are looking for, then
+    please do try and get in touch with us either via phone or email. </string>
+    <string name="FAQQuestion1">How can I contact my local branch?</string>
+    <string name="FAQAnswer1"> To contact us by phone, please call us on 0845 3 000 000 (calls may be recorded). Our UK-based advisers are able to answer a wide range of banking queries and are available 24 hours a day, 7 days a week. They are able to put you in touch with your local branch if required.</string>
+    <string name="FAQQuestion2">I don\'t recognise a transaction on my account - what do I do?</string>
+    <string name="FAQAnswer2">You can use our Fraud Detection feature we have introduced new to our app. Next to every transaction there is a question mark symbol next to it, if you believe that
+    that transaction is not been made by you then click on the symbol and follow the wizard on the screen. </string>
+    <string name="FAQQuestion3">Who can I contact if I have a query on my balance and transaction?</string>
+    <string name="FAQAnswer3">If you want to talk to us about your balance or transactions, call Phonebank on 0845 3 000 000 or go to any Lloyds Bank branch. </string>
+    <string name="FAQQuestion4">How do I transfer money to another person?</string>
+    <string name="FAQAnswer4">If you\'re registered for Mobile Banking, you can transfer money between accounts and also make payments to pay a bill or another person through your phone, please do have a look on our
+        Lloyds Banking Tour to familiarise your self with how to go about it.</string>
+    <string name="FAQQuestion5">Can I change my Passcode?</string>
+    <string name="FAQAnswer5">Yes you can, click on the Account Management option inside the Help Menu. This will take you to another window where you will have the option to change your Passcode. </string>
+
+
+
+
 </resources>

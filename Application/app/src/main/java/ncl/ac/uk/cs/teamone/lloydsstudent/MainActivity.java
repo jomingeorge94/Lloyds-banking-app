@@ -143,9 +143,6 @@ public class MainActivity extends ActionBarActivity {
                 if(title.getText().toString().equals("Account Management")){
                     iv.setImageResource(R.drawable.account_management_icon);
                 }
-                else if(title.getText().toString().equals("Accessibility")) {
-                    iv.setImageResource(R.drawable.accessibility_icon);
-                }
                 else if(title.getText().toString().equals("Settings")) {
                     iv.setImageResource(R.drawable.settings_icon);
                 }
@@ -189,9 +186,6 @@ public class MainActivity extends ActionBarActivity {
                     Intent accountmanagement =new Intent(getApplicationContext(),AccountManagementScreen.class);
                     startActivity(accountmanagement);
                 }
-                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Accessibility")){
-                    Toast.makeText(MainActivity.this,"Accessibility ",Toast.LENGTH_LONG).show();
-                }
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Settings")){
                     Toast.makeText(MainActivity.this,"Settings",Toast.LENGTH_LONG).show();
                 }
@@ -219,7 +213,9 @@ public class MainActivity extends ActionBarActivity {
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("FAQs")){
-                    Toast.makeText(MainActivity.this,"FAQs",Toast.LENGTH_LONG).show();
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                    Intent faqs =new Intent(getApplicationContext(),FAQs.class);
+                    startActivity(faqs);
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Send feedback")){

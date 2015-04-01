@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.78"
+            android:layout_weight="0.91"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingTop="10dp">
@@ -65,37 +65,25 @@
                 android:background="@android:color/holo_green_dark"/>
 
             <Button
-                android:layout_width="288dp"
+                android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:text="@string/ContactUsEmail"
                 android:id="@+id/email"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="0.02"
                 android:layout_marginTop="10dp"
                 android:background="#369742"
                 android:textColor="#ffffffff" />
 
             <Button
-                android:layout_width="288dp"
+                android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:id="@+id/callus"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="0.02"
                 android:text="@string/ContactUsPhone"
                 android:background="#369742"
                 android:layout_marginTop="10dp"
                 android:textColor="#ffffffff" />
 
-            <Button
-                android:layout_width="288dp"
-                android:layout_height="40dp"
-                android:id="@+id/livechat"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="0.02"
-                android:text="@string/ContactUsLiveChat"
-                android:background="#369742"
-                android:layout_marginTop="10dp"
-                android:textColor="#ffffffff" />
         </LinearLayout>
 
     </LinearLayout>
