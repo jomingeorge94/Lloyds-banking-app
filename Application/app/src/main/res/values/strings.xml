@@ -146,7 +146,63 @@
     <string name="UpdateYourDetailsTitle">Update your Personal Details</string>
     <string name="UpdateYourDetailsimportant">Customer\'s are advice to change their personal details using our Lloyd\'s App. Edit you details below and submit your request by clicking on the Update button.
     Please allow 48 hours for changes to take effect. </string>
-    <string name="TermsandConditionTitle">Mobile Banking Terms and Condition</string>
-    <string name="TermsandConditionMessage"></string>
-
+    <string name="TermsandConditionTitle">Terms and Condition</string>
+    <string name="TermsandConditionMessageSectionA1">1.1 This document sets out the general conditions for our sterling bank accounts and related banking services for personal customers resident in the
+    United Kingdom (‘UK’). These accounts and services may also have additional conditions (see condition 2 for more details). If we offer other services in the future, we will make it clear at the
+    time if these general conditions will apply to them.</string>
+    <string name="TermsandConditionMessageSectionA">Once you have registered, we can also provide Mobile Banking. This includes a range of text alert services
+    where we send you text messages with information about your current accounts and Mobile Banking which allows you to access information on your
+    accounts and give us certain instructions using your mobile phone.</string>
+    <string name="TermsandConditionMessageSectionA2">1.2 You may not be eligible for all of our accounts or services or all the features they have – for example, we will not give you a Planned Overdraft if you
+    are under 18. We may also limit the number of accounts or services you can hold with us.</string>
+    <string name="TermsandConditionMessageSectionA3">1.3 An important part of our role as your bank is to provide you with services to help you manage your finances. We do not generally provide advice,
+    but we can use information we have about you to suggest other services we think might interest you. To find out more about how we and other Lloyds Banking Group companies use your personal
+    information, please read the section at the end of these terms and conditions headed ‘Important information about your personal information’. Please ask us if you have any questions about this
+    agreement or any other matter by visiting one of our branches, calling us or writing to us.</string>
+    <string name="TermsandConditionMessageSectionA2.1">2.1 This agreement for the above bank accounts and related banking services is made up of the ‘general conditions’ in this document and any ‘additional
+    conditions’ we give you for these accounts or services. We will tell you if these general conditions apply when you take a new product or service from us.</string>
+    <string name="TermsandConditionMessageSectionA2.2">2.2 If any additional condition conflicts with any general condition in this document, the additional condition will apply. For example a savings account may have different terms for working out or paying
+    interest, so those terms will apply instead of the conflicting terms in these general conditions.</string>
+    <string name="TermsandConditionMessageSectionB3.1">3.1 Our contact details are in the contact details section at the beginning of this document.</string>
+    <string name="TermsandConditionMessageSectionB3.2">3.2 You can contact us and give us instructions in branch, through Telephone Banking, Internet Banking or Mobile Banking (once you have registered for them), or by using a card.
+    Any instructions you give us are not effective until we actually receive them. You can usually use our Telephone, Internet and Mobile Banking services and Cashpoint machines at all times
+    but occasionally repairs, updates and routine maintenance on our systems and those of our suppliers may mean that a particular service cannot be used for a short time (usually just minutes).</string>
+    <string name="TermsandConditionMessageSectionB3.3">3.3 We may contact you by post, telephone and electronically using the contact details you give us (including any electronic address that we
+    agree with you will be used to send you electronic communications). When we use the words ‘electronic’ or ‘electronically’ in this agreement we mean any form of message made by any type of
+    telecommunication, digital or IT device (including the internet, digital television, email and text message). You must tell us if your name or contact details change. If you do not tell us, we will go on
+    using the details you last gave us, and we will not be responsible if we fail to contact you or if we send confidential information to the wrong address using out of date details. We will charge you our reasonable costs of finding you (or trying to find
+    you) if your contact details are not up to date. </string>
+    <string name="TermsandConditionMessageSectionB3.4">3.4 We may listen into or record any phone calls with you to check we have carried out your instructions correctly, to help improve our service, check that we comply with our regulatory obligations, and to
+    help detect or prevent fraud or other crimes.</string>
+    <string name="TermsandConditionMessageSectionB4.1">4.1 When we contact you or you contact us we need to check your identity before you can give us instructions or we can disclose or discuss confidential information about your accounts.
+    For this reason:</string>
+     <string name="TermsandConditionMessageSectionB4.1a">a.  you must sign instructions given on paper;</string>
+    <string name="TermsandConditionMessageSectionB4.1b">b.  when you are in a branch, we may ask you for identification; and</string>
+    <string name="TermsandConditionMessageSectionB4.1c">c.  if you are contacting us or giving us instructions by any other method (for example by using a card, Telephone Banking, Internet Banking or
+    by Mobile Banking) you must do so using the ‘Security Details’ we have given to you or agreed with you personally.</string>
+    <string name="TermsandConditionMessageSectionC5.1">5.1 General conditions about payments into your account.</string>
+    <string name="TermsandConditionMessageSectionC5.1a">a.  In this condition we explain the timing of different types of payment into your account.</string>
+    <string name="TermsandConditionMessageSectionC5.1b">b.  On some of our current accounts we offer instant cheque value, which means we will start paying you any interest straight away for the first
+    £1,000 of cheques you pay in over the counter at one of our branches before the cut-off time on a working day. For amounts over £1,000 or where we do not offer instant cheque value. </string>
+    <string name="TermsandConditionMessageSectionC5.1c">c.  if you are contacting us or giving us instructions by any other method (for example by using a card, Telephone Banking, Internet Banking or
+    by Mobile Banking) you must do so using the ‘Security Details’ we have given to you or agreed with you personally.</string>
+    <string name="TermsandConditionMessageSectionD6.1">6.1 If two or more of you are party to this agreement, the following terms apply:</string>
+    <string name="TermsandConditionMessageSectionD6.1a">a.  Any of you can give us instructions independently of the others on your joint accounts. This means any one of you can, for example, withdraw all or any money on an
+    account without the knowledge of the others, close an account or end a service, ask for statements and correspondence to be given electronically alone or by paper too, and apply for overdrafts, cards and other services or different accounts with benefits packages which
+    are covered by this agreement, and which are available on your joint accounts. We will not normally make enquiries about the purpose of any payment instruction or other instruction
+    or confirm the instructions with the other joint customers. </string>
+    <string name="TermsandConditionMessageSectionD6.1b">b.  Any one of you can replace an account or service with another account or service covered by these general conditions on behalf of all of you. </string>
+    <string name="TermsandConditionMessageSectionD6.1c">c.  We may give any information about your joint account and the payments on it to any one of you, although you can ask us to send
+    you separate current account statements if you live at different addresses. We can act on information about you which any of you gives us.</string>
+    <string name="TermsandConditionMessageSectionD6.1d">c.  If any of you die, we can, but are not bound to, continue to act on the instructions of the remaining joint customers in relation to any joint accounts held by you, including allowing them
+    to withdraw any or all money from the accounts and provide instructions relating to any services or benefits associated with the accounts.</string>
+    <string name="TermsandConditionAddress">Lloyds Bank plc. Registered Office:\n
+        25 Gresham Street, London EC2V 7HN.\n
+        Registered in England and Wales no. 2065.\n
+        Lloyds Bank plc is authorised by the Prudential\n
+        Regulation Authority and regulated by the\n
+        Financial Conduct Authority and the Prudential\n
+        Regulation Authority under registration\n
+        number 119278.\n
+        \nInformation correct as at April 2014.</string>
 </resources>

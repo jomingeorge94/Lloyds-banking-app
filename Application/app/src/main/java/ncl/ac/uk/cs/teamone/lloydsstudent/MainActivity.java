@@ -213,7 +213,9 @@ public class MainActivity extends ActionBarActivity {
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Terms and Conditions")){
-                    Toast.makeText(MainActivity.this,"Terms and Condition",Toast.LENGTH_LONG).show();
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                    Intent termsandcondition =new Intent(getApplicationContext(),TermsandCondition.class);
+                    startActivity(termsandcondition);
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("FAQs")){
