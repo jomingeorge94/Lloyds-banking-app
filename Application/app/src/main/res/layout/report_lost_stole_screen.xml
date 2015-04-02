@@ -44,7 +44,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/linearLayout2"
-        android:layout_above="@+id/button5">
+        android:layout_above="@+id/report_Button">
 
         <LinearLayout
             android:orientation="vertical"
@@ -79,9 +79,10 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView104"
+                android:id="@+id/report_AccountNumber"
                 android:background="@drawable/file"
                 android:hint="Account Number"
+                android:maxLength="8"
                 android:inputType="number"
                 android:layout_marginTop="15dp"
                 android:padding="5dp" />
@@ -89,8 +90,9 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText"
+                android:id="@+id/report_SortCode"
                 android:inputType="number"
+                android:maxLength="6"
                 android:background="@drawable/file"
                 android:hint="Sort Code"
                 android:layout_marginTop="15dp"
@@ -99,7 +101,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText"
+                android:id="@+id/report_Brief"
                 android:inputType="textMultiLine"
                 android:lines="5"
                 android:maxLines="5"
@@ -134,7 +136,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Report"
-        android:id="@+id/button5"
+        android:id="@+id/report_Button"
         android:background="#ffcacaca"
         android:textColor="#ffffff"
         android:enabled="false"
