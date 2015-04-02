@@ -15,7 +15,7 @@
             android:layout_gravity="center"
             android:textColor="@color/text_dark"
             android:fontFamily="sans-serif-light"
-            android:text="Weekly Spend"/>
+            android:text="@string/budget_line_title"/>
     </TableRow>
 
     <TableRow

@@ -15,7 +15,7 @@
             android:layout_gravity="center"
             android:textColor="@color/text_dark"
             android:fontFamily="sans-serif-light"
-            android:text="Where You\'re Spending"/>
+            android:text="@string/budget_pie_title"/>
     </TableRow>
 
     <TableRow

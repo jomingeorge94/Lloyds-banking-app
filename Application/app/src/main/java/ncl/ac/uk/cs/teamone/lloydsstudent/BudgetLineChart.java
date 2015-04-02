@@ -92,7 +92,7 @@ public class BudgetLineChart extends Fragment {
         yRight.setValueFormatter(new NoDecimalFormatter());
 
         Legend legend = chart.getLegend();
-        legend.setEnabled(false);
+        legend.setEnabled(true);
 
         chart.invalidate();
 

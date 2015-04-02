@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    // Generics    <string name="gen_next">Next</string>
+    // Generics
+    <string name="gen_next">Next</string>
     <string name="gen_finished">Finished</string>
-    // Login Activity    <string name="login_title">Login Lloyds Student</string>
-    // First Time Setup    <string name="first_title">Lloyds Student Setup</string>
+
+    // Login Activity
+    <string name="login_title">Login Lloyds Student</string>
+
+    // First Time Setup
+    <string name="first_title">Lloyds Student Setup</string>
     <string name="first_intro">Welcome to Lloyds Student your all-in-one finance solution during Uni
                                ! \n\nIn order to set up your Lloyds Student App we need to take a few
                                details to link your bank account with the app and get you started</string>
@@ -17,13 +22,22 @@
     <string name="first_passcode_confirm">Confirm:</string>
     <string name="first_failed_login">Sorry but your online login details didn\'t match our records (Make sure you\'re using your Online Banking Login)</string>
     <string name="first_failed_passcode">Sorry but your inputs didn\'t match. Please try again making sure you enter both passcodes the same</string>
-    // Budget Activity    <string name="budget_my_budget">My Weekly Budget Is\u00A0</string>
+
+    // Budget Activity
+    <string name="budget_my_budget">My Weekly Budget Is\u00A0</string>
     <string name="budget_you_spent">You\'ve spent</string>
     <string name="budget_thank">less than last week</string>
     <string name="budget_remaining_start">You\'ve got\u00A0\u00A0</string>
     <string name="budget_remaining_end">\u00A0 left this week</string>
-    // Chart Titles    <string name="budget_pie_chart">Where You\'re Spending</string>
+    <string name="budget_cash_button">Add Cash Entry</string>
+    <string name="budget_settings_button">Budget Settings</string>
+
+    // Chart Titles
+    <string name="budget_pie_title">Where You\'re Spending</string>
+    <string name="budget_line_title">Weekly Spend</string>
+    <string name="budget_overview">Weekly Overview</string>
     <string name="login_intro">Welcome to Lloyds Student. \n\nPlease enter your 4 digit pass code to Login and View your account</string>
+
     <string name="app_name">Lloyds Student</string>
     <string name="hello_world">Hello World</string>
     <string name="menu_login">Menu Login</string>

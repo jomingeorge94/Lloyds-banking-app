@@ -130,20 +130,6 @@
             android:background="@color/dark_green" />
     </TableRow>
 
-    <!--
-    <TableRow
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:gravity="center_horizontal">
-        <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/pieChart"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_span="3"/>
-    </TableRow>
-    -->
-
     <TableRow
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
