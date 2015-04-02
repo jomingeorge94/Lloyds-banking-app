@@ -83,7 +83,7 @@
                     android:id="@+id/customer_feedback_name"
                     android:hint="Full Name"
                     android:background="#ffe7e7e7"
-                    android:maxLength="13"
+                    android:maxLength="25"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"

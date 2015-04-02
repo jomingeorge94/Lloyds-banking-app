@@ -201,14 +201,14 @@
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/imageButton14"
+                        android:id="@+id/AccountManagement_Lost_Stole"
                         android:src="@drawable/report_lost"
                         android:background="#FFFFFFFF" />
 
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/imageButton15"
+                        android:id="@+id/AccountManagement_Having_Issue"
                         android:src="@drawable/report_issue"
                         android:background="#FFFFFFFF"
                         android:layout_marginLeft="60dp" />

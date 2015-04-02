@@ -77,12 +77,22 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name=".LostorStole_Screen"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".LloydsBankingTour"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".FAQs"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ReportLostorStole"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>

@@ -55,6 +55,22 @@ public class AccountManagementScreen extends FragmentActivity  {
             }
         });
 
+        findViewById(R.id.AccountManagement_Lost_Stole).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent lostorstole=new Intent(AccountManagementScreen.this,LostorStole_Screen.class);
+                startActivity(lostorstole);
+                finish();
+            }
+        });
+
+        findViewById(R.id.AccountManagement_Having_Issue).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(AccountManagementScreen.this, "Having Issue ", Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 
     @Override

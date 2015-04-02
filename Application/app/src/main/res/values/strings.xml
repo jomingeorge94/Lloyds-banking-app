@@ -252,8 +252,12 @@
         Lloyds Banking Tour to familiarise your self with how to go about it.</string>
     <string name="FAQQuestion5">Can I change my Passcode?</string>
     <string name="FAQAnswer5">Yes you can, click on the Account Management option inside the Help Menu. This will take you to another window where you will have the option to change your Passcode. </string>
-
-
-
-
+    <string name="ReportOnline">Report Online</string>
+    <string name="LostorStoleTitle">Lost or stolen cards</string>
+    <string name="LostorStoleMessage">If your Lloyds Bank credit or debit card has been lost or stolen you should report it immediately. You can report it through this app or by calling us.\n
+    \nIf your Visa Debit Card is lost or stolen, we’ll cancel your old card and deliver a new one to you usually within 3-5 working days. If your card is declined, there are transactions that
+    you don’t recognise or you need a new PIN, call us by clicking on the button below.</string>
+    <string name="Reportlostorstoledownmessage">We guarantee to refund your money in the unlikely event you experience fraud with our Internet Banking service – as long as you’ve been careful, for example, by taking reasonable steps to keep your security information safe.</string>
+    <string name="RportLostorStolelastMessage">We will trace your report and get in touch with you to inform the outcome. One of our member from the Fraud Department will be in touch with you and this usually happens
+    within the 12 hour period that you have reported to us. </string>
 </resources>
