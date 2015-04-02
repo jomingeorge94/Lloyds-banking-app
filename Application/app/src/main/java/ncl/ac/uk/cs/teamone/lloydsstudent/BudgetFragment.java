@@ -42,7 +42,7 @@ public class BudgetFragment extends Fragment {
 
 
         ArrayList<Fragment>  fragmentList = new ArrayList<Fragment>();
-        fragmentList.add(new BudgetBarChart());
+        fragmentList.add(new BudgetOverview());
         fragmentList.add(new BudgetLineChart());
         fragmentList.add(new BudgetPieChart());
         android.support.v4.app.FragmentManager manager = getFragmentManager();
