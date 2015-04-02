@@ -20,14 +20,14 @@ public class BudgetOverview extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.budget_overview, container, false);
 
-        Button cash = (Button) v.findViewById(R.id.first_next);
+        //Button cash = (Button) v.findViewById(R.id.first_next);
 
         // Create button listner
-        cash.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
+        //cash.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //    }
+        //});
 
         return v;
     }
