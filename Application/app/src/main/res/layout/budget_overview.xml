@@ -16,7 +16,7 @@
             android:gravity="center"
             android:id="@+id/budget_overview_title"
             android:layout_marginBottom="20dp"/>
-
+<!--
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,7 +99,17 @@
             android:layout_below="@+id/budget_cash_untagged"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:id="@+id/budget_cash_untagged_value" />
+            android:id="@+id/budget_cash_untagged_value" />-->
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/bar_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_above="@+id/budget_enter_button"
+            android:layout_below="@+id/budget_overview_title" />
 
 
         <Button
@@ -111,8 +121,8 @@
             android:textColor="@color/white"
             android:layout_marginBottom="4dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/cash_entry_button"
-            android:layout_above="@+id/settings_button"
+            android:id="@+id/budget_enter_button"
+            android:layout_above="@+id/budget_settings_button"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"/>
 
@@ -124,7 +134,7 @@
             android:background="@color/dark_green"
             android:textColor="@color/white"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/settings_button"
+            android:id="@+id/budget_settings_button"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"/>

@@ -58,9 +58,8 @@ public class BudgetPieChart extends Fragment {
         chart.animateXY(1000, 1000);
         chart.setHoleColorTransparent(true);
         chart.setUsePercentValues(true);
-        chart.setDrawSliceText(false);
+        chart.setDrawSliceText(true);
         chart.setDescription(null);
-        chart.setLogEnabled(true);
 
         Legend legend = chart.getLegend();
 
