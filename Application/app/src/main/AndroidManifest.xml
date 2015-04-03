@@ -57,6 +57,12 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" >
         </activity>
         <activity
+            android:name=".About_Us_Screen"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
+        </activity>
+        <activity
             android:name=".ContactUs"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >

@@ -226,7 +226,9 @@ public class MainActivity extends ActionBarActivity {
 
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("About")){
-                    Toast.makeText(MainActivity.this,"About",Toast.LENGTH_LONG).show();
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                    Intent about =new Intent(getApplicationContext(),About_Us_Screen.class);
+                    startActivity(about);
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Log Out")){
