@@ -137,7 +137,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/AccountManagement_ChangeBackground"
+                    android:id="@+id/AccountManagement_ManageStatements"
                     android:src="@drawable/account_management_changebackground"
                     android:background="#FFFFFFFF"
                     android:layout_marginLeft="60dp" />
@@ -163,7 +163,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/AccountManagementBackground"
+                    android:text="Manage Statements"
                     android:id="@+id/textView47"
                     android:textColor="#ff6a6a6a"
                     android:layout_marginLeft="20dp"

@@ -10,34 +10,34 @@ import android.widget.Spinner;
 /**
  * Created by Jomin on 21/03/2015.
  */
-public class UpdateYourDetails extends FragmentActivity {
+public class ManageStatements extends FragmentActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.update_your_details);
+        setContentView(R.layout.manage_statements_screen);
 
-        final Spinner dropdown = (Spinner)findViewById(R.id.spinnerUpdateContactMethod);
+        final Spinner dropdown = (Spinner)findViewById(R.id.spinner_statements);
         String[] items = new String[]{"Phone", "Email"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>  (this,R.layout.spinner_layout, items);
         dropdown.setAdapter(adapter);
 
-
-        findViewById(R.id.update_selectacontactmethod).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.statementtextdropdown).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findViewById(R.id.spinnerUpdateContactMethod).setVisibility(View.VISIBLE);
-                findViewById(R.id.update_selectacontactmethod).setVisibility(View.GONE);
+                findViewById(R.id.spinner_statements).setVisibility(View.VISIBLE);
+                findViewById(R.id.statementtextdropdown).setVisibility(View.GONE);
                 dropdown.performClick();
             }
         });
 
 
-
         findViewById(R.id.backbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(UpdateYourDetails.this,AccountManagementScreen.class);
+                Intent i=new Intent(ManageStatements.this,AccountManagementScreen.class);
                 startActivity(i);
                 finish();
             }
@@ -48,7 +48,7 @@ public class UpdateYourDetails extends FragmentActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i=new Intent(UpdateYourDetails.this,AccountManagementScreen.class);
+        Intent i=new Intent(ManageStatements.this,AccountManagementScreen.class);
         startActivity(i);
         finish();
     }

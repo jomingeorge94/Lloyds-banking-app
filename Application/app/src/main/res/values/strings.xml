@@ -268,5 +268,10 @@
     <string name="AboutUsChecklistList2">Prevent spam </string>
     <string name="AboutUsChecklistList3">Secure your wireless connection</string>
     <string name="AboutUsChecklistList4">Keep your operating system up to date</string>
+    <string name="ManageStatementMessage">Make fast, easy transfers between Lloyds Bank accounts and easily access your credit card, current account and savings account statements online or either by paper statement. </string>
+    <string name="ManageStatement1">Switch to paperless and receive your credit card, current account and savings statements safely and easily online. </string>
+    <string name="ManageStatement2">Why get your statements online?</string>
+    <string name="ManageStatement2a">You can safely access your account statements online.</string>
+    <string name="ManageStatement2b">Easily search your account statements by date, amount or payment type.</string>
 
 </resources>

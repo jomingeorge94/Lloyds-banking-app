@@ -48,10 +48,12 @@ public class AccountManagementScreen extends FragmentActivity  {
             }
         });
 
-        findViewById(R.id.AccountManagement_ChangeBackground).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.AccountManagement_ManageStatements).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AccountManagementScreen.this, "Change the background ", Toast.LENGTH_LONG).show();
+                Intent managestatements=new Intent(AccountManagementScreen.this,ManageStatements.class);
+                startActivity(managestatements);
+                finish();
             }
         });
 

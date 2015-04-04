@@ -15,7 +15,7 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="381dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#5DAD68"
             android:id="@+id/toppartofthescreen">
@@ -102,7 +102,6 @@
                     android:background="@drawable/file"
                     android:text="Select your Contact Preference "
                     android:drawableRight="@drawable/icon_arrow_down"
-
                     android:layout_marginTop="15dp"
 
                     android:padding="10dp" />
