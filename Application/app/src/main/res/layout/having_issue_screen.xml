@@ -39,12 +39,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView7"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/linearLayout2">
+        android:layout_below="@+id/linearLayout2"
+        android:layout_above="@+id/update_button">
 
         <LinearLayout
             android:orientation="vertical"
@@ -52,118 +52,65 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Manage your Statements"
-                android:id="@+id/textView50"
-                android:textColor="#ff000000"
-                android:textStyle="bold"
-                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ManageStatementMessage"
-                android:id="@+id/textView116"
+                android:text="@string/HavinganIssueTItle"
+                android:id="@+id/textView122"
+                android:textColor="#ff000000"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/HavinganIssueMEssage"
+                android:id="@+id/textView123"
                 android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="10dp"
                 android:textColor="#ff000000"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:layout_weight="1.13" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/statementtextdropdown"
+                android:id="@+id/havinganissue_dropdownlist"
                 android:background="@drawable/file"
                 android:textColor="#ff000000"
-                android:text="Manage Statements"
+                android:text="Select the issue category "
                 android:drawableRight="@drawable/icon_arrow_down"
                 android:layout_marginTop="15dp"
                 android:padding="10dp" />
 
-
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner_statements"
+                android:id="@+id/spinner_havinganissue"
                 android:background="@drawable/file"
                 android:spinnerMode="dropdown"
                 android:visibility="gone"
                 android:layout_marginTop="15dp"
                 android:touchscreenBlocksFocus="false" />
 
-            <View
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@android:color/holo_green_dark"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Go Paperless"
-                android:id="@+id/textView117"
+                android:id="@+id/havinganissue_brifinfo"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:maxLines="5"
+                android:maxLength="300"
+                android:background="@drawable/file"
                 android:textColor="#ff000000"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_marginTop="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ManageStatement1"
-                android:id="@+id/textView118"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="10dp"
-                android:textColor="#ff000000"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ManageStatement2"
-                android:drawableLeft="@drawable/lightbulbgreen"
-                android:drawablePadding="5dp"
-                android:id="@+id/textView119"
-                android:textColor="#ff000000"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_marginTop="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ManageStatement2a"
-                android:drawableLeft="@drawable/dot_icon"
-                android:drawablePadding="5dp"
-                android:id="@+id/textView120"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="10dp"
-                android:textColor="#ff000000"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ManageStatement2b"
-                android:drawableLeft="@drawable/dot_icon"
-                android:drawablePadding="5dp"
-                android:id="@+id/textView121"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="10dp"
-                android:textColor="#ff000000"
-                android:textSize="16sp" />
-
+                android:hint="Briefly explain the issue you are having "
+                android:textColorHint="#FFCDCDCD"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:layout_marginBottom="20dp" />
 
         </LinearLayout>
     </ScrollView>
@@ -171,8 +118,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save"
-        android:id="@+id/update_button"
+        android:text="Submit "
+        android:id="@+id/havinganissue_button"
         android:background="#ffcacaca"
         android:textColor="#ffffff"
         android:enabled="false"

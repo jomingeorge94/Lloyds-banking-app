@@ -69,7 +69,9 @@ public class AccountManagementScreen extends FragmentActivity  {
         findViewById(R.id.AccountManagement_Having_Issue).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AccountManagementScreen.this, "Having Issue ", Toast.LENGTH_LONG).show();
+                Intent havingissue=new Intent(AccountManagementScreen.this,HavingIssues.class);
+                startActivity(havingissue);
+                finish();
             }
         });
 

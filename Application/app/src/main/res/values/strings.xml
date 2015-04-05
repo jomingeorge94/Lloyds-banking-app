@@ -273,5 +273,20 @@
     <string name="ManageStatement2">Why get your statements online?</string>
     <string name="ManageStatement2a">You can safely access your account statements online.</string>
     <string name="ManageStatement2b">Easily search your account statements by date, amount or payment type.</string>
+    <string name="HavinganIssueTItle">Having an issue</string>
+    <string name="HavinganIssueMEssage">It is important to us to make sure that our customer\'s are getting a good service and that they are staying safe while using Mobile Banking with Lloyds Banking Group.
+    f you been experiencing any sort of difficulties while using Lloyds mobile banking app please use this section of the app to get in touch with us. \n
+    \nOne of our staff from the Customer Service will be in touch with you to resolve your issue, this doesn\'t take any more than 12 hour from when you have completed our online process. </string>
+    <string-array name="havingissuecategory">
+        <item>General Enquiries (colour, font size)</item>
+        <item>Account Management</item>
+        <item>Login</item>
+        <item>Pay a contact</item>
+        <item>Banking Facilities</item>
+        <item>Transaction</item>
+        <item>Budget</item>
+        <item>Deals</item>
+        <item>Tutorial Menu</item>
+    </string-array>
 
 </resources>
