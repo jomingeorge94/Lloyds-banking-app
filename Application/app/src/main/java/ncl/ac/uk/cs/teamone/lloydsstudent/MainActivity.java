@@ -155,6 +155,11 @@ public class MainActivity extends ActionBarActivity {
                 else if(title.getText().toString().equals("Contact Us")) {
                     iv.setImageResource(R.drawable.contactus_icon);
                 }
+
+                else if(title.getText().toString().equals("Other Products")) {
+                    iv.setImageResource(R.drawable.icon_cart);
+                }
+
                 else if(title.getText().toString().equals("Terms and Conditions")) {
                     iv.setImageResource(R.drawable.termsandcondition_icon);
                 }
@@ -204,6 +209,12 @@ public class MainActivity extends ActionBarActivity {
                     drawerLayout.closeDrawer(Gravity.LEFT);
                     Intent contactpage =new Intent(getApplicationContext(),ContactUs.class);
                     startActivity(contactpage);
+                }
+
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Other Products")){
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                    Intent otherproducts =new Intent(getApplicationContext(),OtherProducts.class);
+                    startActivity(otherproducts);
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Terms and Conditions")){

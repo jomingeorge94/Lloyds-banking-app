@@ -80,6 +80,31 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name=".CreditCard"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Insurance"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Loans"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Mortgages"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".OtherProducts"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".AccountManagementScreen"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >

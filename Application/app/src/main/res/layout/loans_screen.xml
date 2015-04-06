@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fffcfdff"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:id="@+id/linearLayout2">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#5DAD68"
+            android:id="@+id/toppartofthescreen">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/backbutton"
+                android:layout_weight="0.05"
+                android:src="@drawable/back_arrow_icon"
+                android:background="#5DAD68"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:paddingLeft="10dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView7"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loans"
+                    android:id="@+id/textView130"
+                    android:textColor="#ff000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/OtherProductsLoansMesage"
+                    android:id="@+id/textView131"
+                    android:drawableRight="@drawable/loan_icon"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:editable="false"
+                    android:layout_weight="0.73" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/OtherProductsLoansinfo"
+                    android:id="@+id/loan_link"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#ff1611ff"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="0.07"
+                    android:layout_marginTop="20dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

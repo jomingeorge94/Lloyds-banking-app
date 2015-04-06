@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fffcfdff"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:id="@+id/linearLayout2">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#5DAD68"
+            android:id="@+id/toppartofthescreen">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/backbutton"
+                android:layout_weight="0.05"
+                android:src="@drawable/back_arrow_icon"
+                android:background="#5DAD68"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:paddingLeft="10dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView7"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout2"
+        android:background="#ffffffff"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Other Products"
+                    android:id="@+id/textView124"
+                    android:textColor="#ff000000"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@android:color/holo_green_dark"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/OtherProductsMessage"
+                    android:id="@+id/textView125"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:layout_weight="1.16" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp">
+
+                <ImageButton
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton14"
+                    android:layout_below="@+id/linearLayout2"
+                    android:layout_centerHorizontal="true"
+                    android:background="#FFFFFFFF"
+                    android:src="@drawable/banking_feature_title" />
+
+                <ImageButton
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/feature_mortgage"
+                    android:src="@drawable/house"
+                    android:background="#ffffffff" />
+
+                <ImageButton
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/feature_creditcards"
+                    android:src="@drawable/creditcard"
+                    android:background="#ffffffff"
+                    android:layout_marginTop="10dp" />
+
+                <ImageButton
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/feature_loan"
+                    android:src="@drawable/loans"
+                    android:background="#ffffffff"
+                    android:layout_marginTop="10dp" />
+
+                <ImageButton
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/feature_insurance"
+                    android:src="@drawable/insurance"
+                    android:background="#ffffffff"
+                    android:layout_marginBottom="15dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -131,6 +131,7 @@
         <item>Budget Notification</item>
         <item>Lloyd\'s Banking Tour </item>
         <item>Contact Us</item>
+        <item>Other Products</item>
         <item>Terms and Conditions</item>
         <item>FAQs</item>
         <item>Send feedback</item>
@@ -288,5 +289,35 @@
         <item>Deals</item>
         <item>Tutorial Menu</item>
     </string-array>
+    <string name="OtherProductsMessage">We\’ll give you all the information you need to find your way around each section with images, tips and advices.</string>
+    <string name="OtherPorductsMortgage">Whether you\'re buying your first home, looking for a better deal or simply want to know more about mortgages, we can help.\n
+    \nOur mortgage basics guide covers what you will need to think about when looking for a home and applying for a mortgage;\n
 
+ \n - Mortgage promise\n
+- Moving costs\n
+ - Property types\n
+ - Valuation schemes\n
+ - Repayment methods\n
+ - Mortgage products\n
+ - Legal work</string>
+    <string name="OtherProductsMortgageinfo"><u>Find out more about Mortgages</u></string>
+    <string name="OtherProductsCreditCardinfo"><u>Find out more about Credit Cards</u></string>
+    <string name="OtherProductsCreditCardMessage">Managed properly, a credit card can be a safe and convenient way to pay for things – from a weekly shop to a summer holiday.\n
+    \nBefore you apply\n
+        \n - Check that you’re registered to vote
+        \n - Make sure other accounts have your current address details
+        \n - Have important personal details to hand
+    </string>
+    <string name="OtherProductsLoansinfo"><u>Find out more about Loans</u></string>
+    <string name="OtherProductsLoansMesage">Used wisely, loans are a powerful financial tool that can help you get what you want out of life.\n
+    \nOne of the best ways of comparing different loans of different interest rates and lengths is to look at the total amount repayable.
+    This tells you, over the entire life of the loan, how much you will have to repay in total.\n
+    \nIn summary, make sure you know the repayment terms of your loan before signing up and make sure you\’ll have enough income to make the repayments
+        on time and without any worries.</string>
+    <string name="OtherProductsInsuranceinfo"><u>Find out more about Insurance</u></string>
+    <string name="OtherProductsInsuranceMessage">Get useful tips and help with understanding your insurance and protecting the things you care about.\n
+    \n - Winter-proof your home\n
+    - Protect your home against burglars\n
+    - Find out what wear and tear means\n
+    - Protect your home against floods</string>
 </resources>
