@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/cash_name"
-        android:id="@+id/cash_name"
+        android:id="@+id/cash_name_label"
         android:textColor="@color/text_dark"
         android:layout_below="@+id/cash_underline"
         android:layout_alignParentLeft="true"
@@ -40,11 +40,12 @@
 
 
     <EditText
+        style="@style/LloydsEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/cash_name_input"
         android:textColor="@color/text_dark"
-        android:layout_below="@+id/cash_name"
+        android:layout_below="@+id/cash_name_label"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -61,19 +62,19 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/cash_category"
-        android:id="@+id/cash_category"
+        android:id="@+id/cash_category_label"
         android:textColor="@color/text_dark"
         android:layout_below="@+id/cash_name_input"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Spinner
-        android:id="@+id/cash_category_spinner"
+        android:id="@+id/cash_category_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:prompt="@string/cash_category_prompt"
         android:textColor="@color/text_dark"
-        android:layout_below="@+id/cash_category"
+        android:layout_below="@+id/cash_category_label"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -84,7 +85,7 @@
         android:text="Cash"
         android:id="@+id/cash_available_label"
         android:textColor="@color/text_dark"
-        android:layout_below="@+id/cash_category_spinner"
+        android:layout_below="@+id/cash_category_input"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -107,8 +108,8 @@
         android:textColor="@color/text_dark"
         android:id="@+id/cash_purchase_label"
         android:layout_above="@+id/cash_available"
-        android:layout_alignRight="@+id/cash_category_spinner"
-        android:layout_alignEnd="@+id/cash_category_spinner" />
+        android:layout_alignRight="@+id/cash_category_input"
+        android:layout_alignEnd="@+id/cash_category_input" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -116,7 +117,7 @@
         android:inputType="numberDecimal"
         android:textColor="@color/text_dark"
         android:ems="10"
-        android:id="@+id/cash_purchase"
+        android:id="@+id/cash_purchase_input"
         android:layout_alignTop="@+id/cash_available"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -132,25 +133,21 @@
         android:layout_alignParentBottom="true">
         <TableRow>
             <Button
+                style="@style/LloydsButtonActive"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/cash_cancel"
-                android:background="@color/dark_green"
-                android:textColor="@color/white"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/budget_cash_cancel"
+                android:id="@+id/cash_cancel_button"
                 android:layout_alignParentBottom="true"
                 android:paddingRight="2dp"
                 android:layout_alignParentLeft="true"/>
 
             <Button
+                style="@style/LloydsButtonDisabled"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/cash_add"
-                android:background="@color/dark_green"
-                android:textColor="@color/white"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/budget_cash_cancel"
+                android:id="@+id/cash_add_button"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="2dp"/>
