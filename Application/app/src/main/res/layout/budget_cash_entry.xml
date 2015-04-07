@@ -10,13 +10,12 @@
     android:background="#ffffff">
 
     <TextView
+        android:id="@+id/cash_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cash_title"
-        android:id="@+id/cash_title"
         android:autoText="false"
-        android:textColor="@color/text_dark"
-        android:textSize="@dimen/abc_text_size_display_1_material"/>
+        style="@style/LloydsTextSmall"/>
 
     <View
         android:layout_width="fill_parent"
@@ -39,15 +38,23 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/cash_name_input"
+        android:textColor="@color/text_dark"
         android:layout_below="@+id/cash_name"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:fontFamily="sans-serif-light"
+        android:maxLength="20"
+        android:autoText="true"
+        android:editable="true"
+        android:enabled="true"
+        android:maxLines="1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,42 +68,93 @@
         android:layout_alignParentStart="true" />
 
     <Spinner
-        android:id="@+id/cash_category"
+        android:id="@+id/cash_category_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:prompt="@string/cash_category_prompt"
+        android:textColor="@color/text_dark"
         android:layout_below="@+id/cash_category"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <!--
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Cash"
+        android:id="@+id/cash_available_label"
+        android:textColor="@color/text_dark"
+        android:layout_below="@+id/cash_category_spinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cash_available"
+        android:text="£10.11"
+        android:paddingLeft="10dp"
+        android:textColor="@color/text_dark"
+        android:layout_below="@+id/cash_available_label"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Purchase"
+        android:textColor="@color/text_dark"
+        android:id="@+id/cash_purchase_label"
+        android:layout_above="@+id/cash_available"
+        android:layout_alignRight="@+id/cash_category_spinner"
+        android:layout_alignEnd="@+id/cash_category_spinner" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:textColor="@color/text_dark"
+        android:ems="10"
+        android:id="@+id/cash_purchase"
+        android:layout_alignTop="@+id/cash_available"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/cash_purchase_label"
+        android:layout_alignStart="@+id/cash_purchase_label" />
+
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/cash_cancel"
-            android:background="@color/dark_green"
-            android:textColor="@color/white"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/budget_cash_cancel"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"/>
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true">
+        <TableRow>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cash_cancel"
+                android:background="@color/dark_green"
+                android:textColor="@color/white"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/budget_cash_cancel"
+                android:layout_alignParentBottom="true"
+                android:paddingRight="2dp"
+                android:layout_alignParentLeft="true"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/cash_add"
-            android:background="@color/dark_green"
-            android:textColor="@color/white"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/budget_cash_cancel"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"/>
-    </TableLayout>-->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cash_add"
+                android:background="@color/dark_green"
+                android:textColor="@color/white"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/budget_cash_cancel"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="2dp"/>
+        </TableRow>
+    </TableLayout>
 
 </RelativeLayout>

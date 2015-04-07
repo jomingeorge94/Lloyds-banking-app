@@ -43,11 +43,12 @@ public class BudgetFragment extends Fragment {
         fragmentList.add(new BudgetLineChart());
         fragmentList.add(new BudgetOverview());
         fragmentList.add(new BudgetPieChart());
+        fragmentList.add(new BudgetCashEntry());
 
         android.support.v4.app.FragmentManager manager = getFragmentManager();
         ChartAdapter mAdapter = new ChartAdapter( manager, fragmentList);
         ViewPager page = (ViewPager) v.findViewById(R.id.chart_view);
-        page.setOffscreenPageLimit(2);
+        page.setOffscreenPageLimit(3);
         page.setCurrentItem(1);
         page.setAdapter(mAdapter);
         page.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener());
