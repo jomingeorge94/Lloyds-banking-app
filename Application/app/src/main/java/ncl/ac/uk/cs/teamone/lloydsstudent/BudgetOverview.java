@@ -55,6 +55,8 @@ public class BudgetOverview extends Fragment {
         chart.setData(chartData);
         chart.setDescription(null);
         chart.setDrawGridBackground(false);
+        chart.setPinchZoom(false);
+        chart.setDoubleTapToZoomEnabled(false);
         chart.animateXY(1000, 1000);
 
         XAxis xAxis = chart.getXAxis();
