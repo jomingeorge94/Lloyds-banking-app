@@ -28,6 +28,18 @@
         android:id="@+id/cash_underline" />
 
     <TextView
+        style="@style/LloydsTextSmall"
+        android:id="@+id/cash_desctiption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cash_description"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/cash_underline"/>
+
+    <TextView
         style="@style/LloydsTitleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +47,7 @@
         android:text="@string/cash_name"
         android:id="@+id/cash_name_label"
         android:textColor="@color/text_dark"
-        android:layout_below="@+id/cash_underline"
+        android:layout_below="@+id/cash_desctiption"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -68,7 +80,8 @@
         android:textColor="@color/text_dark"
         android:layout_below="@+id/cash_name_input"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
 
     <Spinner
         style="@style/LloydsSpinner"
@@ -86,36 +99,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Cash"
-        android:id="@+id/cash_available_label"
-        android:textColor="@color/text_dark"
-        android:layout_below="@+id/cash_category_input"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        style="@style/LloydsTextSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/cash_available"
-        android:text="£10.11"
-        android:paddingLeft="10dp"
-        android:textColor="@color/text_dark"
-        android:layout_below="@+id/cash_available_label"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        style="@style/LloydsTitleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Purchase"
+        android:text="@string/cash_amount"
         android:textColor="@color/text_dark"
         android:id="@+id/cash_purchase_label"
-        android:layout_above="@+id/cash_available"
-        android:layout_alignRight="@+id/cash_category_input"
-        android:layout_alignEnd="@+id/cash_category_input" />
+        android:layout_below="@+id/cash_category_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp" />
 
     <EditText
         style="@style/LloydsEditText"
@@ -125,11 +114,8 @@
         android:textColor="@color/text_dark"
         android:ems="10"
         android:id="@+id/cash_purchase_input"
-        android:layout_alignTop="@+id/cash_available"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/cash_purchase_label"
-        android:layout_alignStart="@+id/cash_purchase_label" />
+        android:layout_below="@+id/cash_purchase_label"
+        android:layout_centerHorizontal="true" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -137,7 +123,8 @@
         android:stretchColumns="*"
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:id="@+id/tableLayout">
         <TableRow>
             <Button
                 style="@style/LloydsButtonActive"

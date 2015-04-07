@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -19,12 +20,13 @@ import android.widget.Spinner;
 /**
  * Created by Dan on 19/03/2015.
  */
-public class BudgetCashEntry extends Fragment {
+public class BudgetCashEntry extends DialogFragment {
 
     private EditText name;
     private EditText purchase;
     private Spinner category;
     private Button add;
+    private Button close;
 
     private float cashBalance;
     private float purchaseBalance;
@@ -48,6 +50,7 @@ public class BudgetCashEntry extends Fragment {
         purchase = (EditText) v.findViewById(R.id.cash_purchase_input);
 
         add = (Button) v.findViewById(R.id.cash_add_button);
+        close = (Button) v.findViewById(R.id.cash_cancel_button);
 
         // Creates a Text listener to detect if the Add button should be enabled
         final TextWatcher watcher = new TextWatcher() {
@@ -89,6 +92,15 @@ public class BudgetCashEntry extends Fragment {
             }
         });
 
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
+
+
+
         return v;
     }
 
@@ -105,8 +117,8 @@ public class BudgetCashEntry extends Fragment {
                             dialog.dismiss();
                         }
                     })
-                    .setNegativeButton("Continue",new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog,int id) {
+                    .setNegativeButton("Continue", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
                             addCashPurcahse();
                         }
                     });

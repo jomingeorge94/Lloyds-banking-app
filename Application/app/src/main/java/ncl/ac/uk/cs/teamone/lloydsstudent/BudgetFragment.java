@@ -1,13 +1,18 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -43,7 +48,6 @@ public class BudgetFragment extends Fragment {
         fragmentList.add(new BudgetLineChart());
         fragmentList.add(new BudgetOverview());
         fragmentList.add(new BudgetPieChart());
-        fragmentList.add(new BudgetCashEntry());
 
         android.support.v4.app.FragmentManager manager = getFragmentManager();
         ChartAdapter mAdapter = new ChartAdapter( manager, fragmentList);

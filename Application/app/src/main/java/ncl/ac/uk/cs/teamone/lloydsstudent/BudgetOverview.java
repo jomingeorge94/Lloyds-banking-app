@@ -2,6 +2,7 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -83,12 +84,20 @@ public class BudgetOverview extends Fragment {
 
         chart.invalidate();
 
+        FragmentManager f = getFragmentManager();
+        final FragmentTransaction ft = f.beginTransaction();
+        Fragment prev = f.findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+
         Button cash = (Button) v.findViewById(R.id.budget_enter_button);
-        // Create button listner
         cash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                DialogFragment newFragment = new BudgetCashEntry();
+                newFragment.show(ft, "Add Cash Entry");
             }
         });
 

@@ -39,10 +39,12 @@
     <string name="login_intro">Welcome to Lloyds Student. \n\nPlease enter your 4 digit pass code to Login and View your account</string>
 
     // Cash Entry
-    <string name="cash_title">Enter A Cash Purchase</string>
+    <string name="cash_title">Cash Purchase</string>
+    <string name="cash_description">Use this dialouge to log any cash purchases you\'ve made so your budgeting advice can be as accurate as possible ! If you don\'t log your cash purchases then the ATM transactions will just show up in the Misc category of your budgeting</string>
     <string name="cash_name">Purchase Name</string>
     <string name="cash_category">Category</string>
     <string name="cash_amount">Amount</string>
+    <string name="cash_balance">Balance</string>
     <string name="cash_cancel">Cancel</string>
     <string name="cash_add">Add</string>
     <string name="cash_category_prompt">Choose a country</string>
