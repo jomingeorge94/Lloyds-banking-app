@@ -9,7 +9,7 @@
     <color name="medium_grey">#888888</color>
     <color name="light_grey">#EEEEEE</color>
     <color name="white">#FFFFFF</color>
-    <color name="lloydsedittext_color">#7AC36E</color>
+    <color name="inputs_color">#369742</color>
 
     // Spend Level Indicators
     <color name="spend_low">#59AB38</color>

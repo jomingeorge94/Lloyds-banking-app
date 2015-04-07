@@ -1,49 +1,33 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.components.YAxis;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineDataSet;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import javax.mail.Quota;
 
 /**
  * Created by Dan on 19/03/2015.
  */
 public class BudgetCashEntry extends Fragment {
+
+    private EditText name;
+    private EditText purchase;
+    private Spinner category;
+    private Button add;
+
+    private float cashBalance;
+    private float purchaseBalance;
 
     //method to switch the fragment, this method will switch the fragment to the budget layout xml file
     @Override
@@ -59,11 +43,11 @@ public class BudgetCashEntry extends Fragment {
         spinner.setAdapter(adapter);
         spinner.setPrompt("Select an account");
 
-        final EditText name = (EditText) v.findViewById(R.id.cash_name_input);
-        final Spinner category = (Spinner) v.findViewById(R.id.cash_category_input);
-        final EditText purchase = (EditText) v.findViewById(R.id.cash_purchase_input);
+        name = (EditText) v.findViewById(R.id.cash_name_input);
+        category = (Spinner) v.findViewById(R.id.cash_category_input);
+        purchase = (EditText) v.findViewById(R.id.cash_purchase_input);
 
-        final Button add = (Button) v.findViewById(R.id.cash_add_button);
+        add = (Button) v.findViewById(R.id.cash_add_button);
 
         // Creates a Text listener to detect if the Add button should be enabled
         final TextWatcher watcher = new TextWatcher() {
@@ -96,7 +80,44 @@ public class BudgetCashEntry extends Fragment {
         name.addTextChangedListener(watcher);
         purchase.addTextChangedListener(watcher);
 
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cashBalance = 10.11f;
+                purchaseBalance = Float.parseFloat(purchase.getText().toString());
+                addCheck(v);
+            }
+        });
+
         return v;
+    }
+
+    private void addCheck(View v) {
+        if(purchaseBalance > cashBalance) {
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(v.getContext());
+            alertDialogBuilder.setTitle("Warning");
+            alertDialogBuilder
+                    .setMessage("Your purchase is over the amount of cash you have currently withdrawn. If you wish to continue with this purchase your cash balance will be set to £0 and your full cash amount will be added to your transactions")
+                    .setCancelable(false)
+                    .setPositiveButton("Edit",new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog,int id) {
+                            dialog.dismiss();
+                        }
+                    })
+                    .setNegativeButton("Continue",new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog,int id) {
+                            addCashPurcahse();
+                        }
+                    });
+
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+        }
+    }
+
+    private void addCashPurcahse() {
+        // Backend method for adding a cash purchase
     }
 
 }

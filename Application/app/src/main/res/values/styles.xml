@@ -22,6 +22,12 @@
         <item name="android:textSize">22sp</item>
     </style>
 
+    <style name="LloydsTitleXLarge">
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">34sp</item>
+    </style>
+
     <style name="LloydsTextSmall">
         <item name="android:textColor">@color/text_dark</item>
         <item name="android:textSize">14sp</item>
@@ -47,8 +53,13 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="LloydsEditText" parent="android:Widget.EditText">
-        <item name="android:background">@drawable/lloydsedittext_edit_text_holo_light</item>
+    <style name="LloydsSpinner" parent="android:Widget.Holo.Light.Spinner">
+        <item name="android:background">@drawable/inputs_spinner_background_holo_light</item>
+        <item name="android:dropDownSelector">@drawable/inputs_list_selector_holo_light</item>
+    </style>
+
+    <style name="LloydsEditText" parent="android:Widget.Holo.Light.EditText">
+        <item name="android:background">@drawable/inputs_edit_text_holo_light</item>
         <item name="android:textColor">@color/text_dark</item>
     </style>
 

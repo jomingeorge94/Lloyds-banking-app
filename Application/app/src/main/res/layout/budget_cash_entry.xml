@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="@string/cash_title"
         android:autoText="false"
-        style="@style/LloydsTextSmall"/>
+        style="@style/LloydsTitleXLarge"/>
 
     <View
         android:layout_width="fill_parent"
@@ -28,6 +28,7 @@
         android:id="@+id/cash_underline" />
 
     <TextView
+        style="@style/LloydsTitleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -58,6 +59,7 @@
         android:maxLines="1" />
 
     <TextView
+        style="@style/LloydsTitleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -69,6 +71,7 @@
         android:layout_alignParentStart="true" />
 
     <Spinner
+        style="@style/LloydsSpinner"
         android:id="@+id/cash_category_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -79,6 +82,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
+        style="@style/LloydsTitleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -90,6 +94,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
+        style="@style/LloydsTextSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/cash_available"
@@ -101,6 +106,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
+        style="@style/LloydsTitleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -112,6 +118,7 @@
         android:layout_alignEnd="@+id/cash_category_input" />
 
     <EditText
+        style="@style/LloydsEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
