@@ -70,7 +70,7 @@ public class DealsFragment extends Fragment implements View.OnClickListener {
         public View getView(int position, View convertView, ViewGroup parent){
                View itemView = convertView;
                if (itemView == null){
-                   itemView = getActivity().getLayoutInflater().inflate(R.layout.deal_items, parent, false);
+                   itemView = getActivity().getLayoutInflater().inflate(R.layout.deal_list, parent, false);
                }
 
                //Find the deal to work with
