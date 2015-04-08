@@ -17,6 +17,7 @@
 
 	define('CUSTOMER', 1);
 	define('ACCOUNTS', 2);
+	define('BUDGET', 3);
 
 	/**
 	 *
@@ -42,6 +43,9 @@
 				break;
 			case 2:
 				$where = " WHERE aid = '" . $uid . "'";
+				break;
+			case 2:
+				$where = " WHERE bid = '" . $uid . "'";
 				break;
 		}
 
