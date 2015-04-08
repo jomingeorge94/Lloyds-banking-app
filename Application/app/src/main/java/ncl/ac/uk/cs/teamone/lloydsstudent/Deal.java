@@ -20,6 +20,7 @@ public class Deal {
         this.iconId = iconId;
     }
 
+    public String getName() { return  name; }
 
     public int getDistance() {
         return distance;

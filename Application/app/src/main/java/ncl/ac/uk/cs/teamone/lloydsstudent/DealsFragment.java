@@ -82,6 +82,23 @@ public class DealsFragment extends Fragment implements View.OnClickListener {
                ImageView imageView = (ImageView) itemView.findViewById(R.id.itemIcon);
                imageView.setImageResource(currentDeal.getIconId());
 
+
+               //Make:
+               TextView makeText = (TextView) itemView.findViewById(R.id.textDescription);
+               makeText.setText(currentDeal.getName());
+
+               TextView lovesText = (TextView) itemView.findViewById(R.id.itemLoves);
+               lovesText.setText("" + currentDeal.getLoves());
+
+               TextView loathesText = (TextView) itemView.findViewById(R.id.itemLoathes);
+               loathesText.setText("" + currentDeal.getLoathes());
+
+               TextView distanceText = (TextView) itemView.findViewById(R.id.itemDistance);
+               distanceText.setText("" + currentDeal.getDistance());
+
+               TextView distanceMeasureText = (TextView) itemView.findViewById(R.id.distanceMeasure);
+               distanceMeasureText.setText(currentDeal.getDistanceMeasure());
+
                return itemView;
            }
     }

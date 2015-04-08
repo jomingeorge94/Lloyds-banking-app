@@ -21,7 +21,8 @@
         android:layout_toRightOf="@+id/itemIcon"
         android:layout_toEndOf="@+id/itemIcon"
         android:maxWidth="280dp"
-        android:maxHeight="30dp" />
+        android:maxHeight="30dp"
+        android:textColor="#ff000000" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,7 +32,8 @@
         android:id="@+id/itemDistance"
         android:layout_below="@+id/textDescription"
         android:layout_alignRight="@+id/textDescription"
-        android:layout_alignEnd="@+id/textDescription" />
+        android:layout_alignEnd="@+id/textDescription"
+        android:textColor="#ff000000" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +43,8 @@
         android:id="@+id/distanceMeasure"
         android:layout_below="@+id/itemDistance"
         android:layout_alignLeft="@+id/itemDistance"
-        android:layout_alignStart="@+id/itemDistance" />
+        android:layout_alignStart="@+id/itemDistance"
+        android:textColor="#ff000000" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,7 +53,8 @@
         android:text="10"
         android:id="@+id/itemLoves"
         android:layout_below="@+id/textDescription"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#ff000000" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -62,7 +66,8 @@
         android:layout_marginStart="36dp"
         android:layout_below="@+id/textDescription"
         android:layout_toRightOf="@+id/loveHeart"
-        android:layout_toEndOf="@+id/loveHeart" />
+        android:layout_toEndOf="@+id/loveHeart"
+        android:textColor="#ff000000" />
 
     <ImageView
         android:layout_width="wrap_content"
