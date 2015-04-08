@@ -40,10 +40,19 @@ public class MainActivity extends ActionBarActivity {
      * Also with the help of a method removes the current fragment with the latest fragment so that overlaying is prevented
      */
 
+    //357864058310754
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_tab_main);
+
+        String[] keys = {"uid"};
+        String[] values = {new Data().customer.get(keys[0])};
+        PHPHandler handler = new PHPHandler(MainActivity.this, keys, values, 0);
+        handler.execute("http://www.abunities.co.uk/t2022t1/retrieve_budget.php");
+        new Data().budget = handler.getData();
+
         listentry=getResources().getStringArray(R.array.helpmenu);
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
         listView=(ListView)findViewById(R.id.drawer_list);
@@ -83,7 +92,6 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onTabChanged(String tabId) {
                 if(tabHost.getCurrentTabTag().equals("tab1")) {
-
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     ((FrameLayout)findViewById(android.R.id.tabcontent)).removeAllViews();
                     transaction.addToBackStack(null);

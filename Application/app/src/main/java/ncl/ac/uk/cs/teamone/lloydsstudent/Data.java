@@ -14,6 +14,8 @@ public class Data {
 
     public static Map<String, String> customer = new HashMap<>();
 
+    public static Map<String, String> budget = new HashMap<>();
+
     public static List<Map<String, String>> accounts = new ArrayList<Map<String, String>>();
 
     public static Map<String, String> transactions = new HashMap<>();

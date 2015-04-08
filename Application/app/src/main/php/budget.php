@@ -16,7 +16,7 @@
 		//Primary key
 		public $bid = "";
 		//The date that the budget was set for
-		public $date = "";
+		public $dateofbudget = "";
 		//The budget figure
 		public $amount = "";
 		//Total spending

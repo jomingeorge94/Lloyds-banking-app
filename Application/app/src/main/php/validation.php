@@ -33,14 +33,13 @@
 
 		$result = mysqli_query($db_conn, $sql);
 
-		$row = mysqli_fetch_array($result, MYSQLI_NUM);
-
 		//Searches the returned mobile banking imeis and sets uid if a match is found
-		for($i = 0; $i < sizeof($row); $i++) {
-			if(strpos(decrypt($row[$i]), $imei) !== false) {
-				$uid = ($i == 10) ? "1000000" : "10000000" . ($i + 1);
+		while ($row = mysqli_fetch_assoc($result)) {
+			if(strpos(trim(decrypt($row['mobile_banking'])), $imei) !== false) {
+				$uid = ($i == 10) ? "1000000" : "10000000" . ($i+1);
 				break;
 			}
+			$i++;
 		}
 
 		if($uid <= 0) {

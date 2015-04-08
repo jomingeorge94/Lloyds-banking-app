@@ -29,17 +29,13 @@
 
 		$result = mysqli_query($db_conn, $sql);
 
-		$row = mysqli_fetch_array($result, MYSQLI_NUM);
-
 		//if nothing found then indicate that user hasnt set up mobile banking
 		if($result) {
-			for($i = 0; $i < sizeof($row); $i++) {
-				if(!is_null($row[$i])) {
-					if(strpos(decrypt($row[$i]), $imei) !== false) {
-						//go to login screen
-						echo SUCCESS_MOBILE_BANKING;
-						return;
-					}
+			while ($row = mysqli_fetch_assoc($result)) {
+				if(strpos(trim(decrypt($row['mobile_banking'])), $imei) !== false) {
+					//go to login screen
+					echo SUCCESS_MOBILE_BANKING;
+					return;
 				}
 			}
 			//direct user to set up mobile banking

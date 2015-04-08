@@ -46,8 +46,10 @@ public class BudgetOverview extends Fragment {
         BarChart chart = (BarChart) v.findViewById(R.id.bar_chart);
         ArrayList<BarEntry> values = new ArrayList<BarEntry>();
 
+        Data d = new Data();
+
         values.add(new BarEntry(69.23f, 0));
-        values.add(new BarEntry(41.88f, 1));
+        values.add(new BarEntry(Float.parseFloat(d.budget.get("spend")), 1));
 
         BarDataSet data = new BarDataSet(values, "Spending");
 

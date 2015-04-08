@@ -70,11 +70,11 @@ public class BudgetFragment extends Fragment {
      * @param spent the amount spent in the current week by the user
      */
     public void summaryUpdate(double budget, double spent) {
-
+        Data d = new Data();
         // Update text labels
-        total.setText("£" + String.format("%.2f", budget));
-        rightLabel.setText("£" + String.format("%.2f", budget));
-        remaining.setText("£" + String.format("%.2f", budget - spent));
+        total.setText("£" + String.format("%.2f", Float.parseFloat(d.budget.get("amount"))));
+        rightLabel.setText("£" + String.format("%.2f", Float.parseFloat(d.budget.get("amount"))));
+        remaining.setText("£" + String.format("%.2f", Float.parseFloat(d.budget.get("amount")) - Float.parseFloat(d.budget.get("spend"))));
 
         // Gets the resource files for the progress bar
         resource = getResources();

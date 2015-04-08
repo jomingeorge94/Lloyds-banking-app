@@ -44,7 +44,7 @@
 			case 2:
 				$where = " WHERE aid = '" . $uid . "'";
 				break;
-			case 2:
+			case 3:
 				$where = " WHERE bid = '" . $uid . "'";
 				break;
 		}
@@ -75,7 +75,7 @@
 		$f_values = array();
 
 		for($i = 0; $i < sizeof($arr_values); $i++) {
-			$f_values[$arr_values[$i]] = decrypt($row[$i]);
+			$f_values[$arr_values[$i]] = trim(decrypt($row[$i]));
 		}
 
 		close($db_conn);
