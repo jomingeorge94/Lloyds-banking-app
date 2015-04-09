@@ -322,4 +322,5 @@
     - Protect your home against burglars\n
     - Find out what wear and tear means\n
     - Protect your home against floods</string>
+    <string name="title_activity_budget_settings">BudgetSettings</string>
 </resources>
