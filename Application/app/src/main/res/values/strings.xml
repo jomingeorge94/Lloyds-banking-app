@@ -96,9 +96,10 @@
     <string name="transactionstorename4">Cash Withdrawal</string>
     <string name="transactioncost4">-£100.00</string>
     <string name="AlertTitle">Don\'t Recognise This ?</string>
-    <string name="CallUsButton">Call Us Now</string>
+    <string name="CallUsButton">Proceed</string>
+    <string name="CallUsButtonCancel">Cancel</string>
     <string name="AlertMessage">If you don\'t recognise this payment/transfer we might need to take some action. To keep your money safe we need you to call our Fraud
-    Team right away to investigate this transaction. </string>
+    Team or fill a case online right now and it will be dealt with one of our staffs right away to investigate this transaction. </string>
     <string name="makeatransfertitle">Transfer money between your Lloyd\'s accounts</string>
     <string name="makeatransferfrom">From:</string>
     <string name="makeatransferto">To:</string>
@@ -323,4 +324,16 @@
     - Find out what wear and tear means\n
     - Protect your home against floods</string>
     <string name="title_activity_budget_settings">BudgetSettings</string>
+    <string name="FraudScrenMessage1">We guarantee to refund your money in the unlikely event you experience fraud with our Internet Banking service -
+    as long as you’ve been careful, for example, by taking reasonable steps to keep your security information safe.</string>
+    <string name="FraudScreenMessage1a">Keep your password secure and do not let anyone else make use of your security details</string>
+    <string name="FraudScreenMessage1b">Do not let anyone watch you enter your security details</string>
+    <string name="FraudScreenMessage1c">After each session make sure to log out off the system</string>
+    <string name="FraudScreenMEssage"> With Lloyds Bank you have the confidence that shopping on the Internet is as safe and easy as shopping on the high street.
+        That\'s because we promise you that whenever you use your Lloyds Bank credit or debit card to shop online, you\'ll be protected against fraud
+</string>
+    <string name="FraudScreenMEssage1">Whenever you buy goods or services online with participating retailers, Lloyds Bank ClickSafe® will give you extra protection against card crime.</string>
+
+
+
 </resources>

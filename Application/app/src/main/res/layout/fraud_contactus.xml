@@ -1,14 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="195dp"
-        android:text="Fraud COntact"
-        android:id="@+id/textView20"
-        android:textColor="#ff000000"
-        android:textSize="60sp" />
-</LinearLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView7"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Online Fraud Help Centre"
+                android:id="@+id/textView20"
+                android:textColor="#ff000000"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/FraudScrenMessage1"
+                android:id="@+id/textView133"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:textColor="#ff000000"
+                android:textSize="16sp"
+                android:layout_weight="1.13" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/FraudScreenMessage1a"
+                android:id="@+id/textView134"
+                android:drawableLeft="@drawable/dot_icon"
+                android:drawablePadding="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:textColor="#ff000000"
+                android:textSize="16sp"
+                android:layout_weight="1.13" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/FraudScreenMessage1b"
+                android:id="@+id/textView135"
+                android:drawableLeft="@drawable/dot_icon"
+                android:drawablePadding="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:textColor="#ff000000"
+                android:textSize="16sp"
+                android:layout_weight="1.13" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/FraudScreenMessage1c"
+                android:id="@+id/textView136"
+                android:drawableLeft="@drawable/dot_icon"
+                android:drawablePadding="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:textColor="#ff000000"
+                android:textSize="16sp"
+                android:layout_weight="1.13" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Find out more about how to protect yourself online "
+                android:id="@+id/fraudlink"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="#ff1611ff"
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="0.07"
+                android:layout_marginTop="20dp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/holo_green_dark"
+                android:id="@+id/view"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:text="Call Us"
+                android:background="#369742"
+                android:textColor="#ffffffff"
+                android:id="@+id/fraudcallus"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:text="Report to us"
+                android:id="@+id/fraudreportus"
+                android:layout_gravity="center_horizontal"
+                android:background="#369742"
+                android:textColor="#ffffffff"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

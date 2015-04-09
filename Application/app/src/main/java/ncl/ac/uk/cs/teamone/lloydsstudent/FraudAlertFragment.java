@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 /**
  * Created by Jomin on 03/03/2015.
@@ -19,6 +20,16 @@ public class FraudAlertFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fraud_contactus, container, false);
+
+        v.findViewById(R.id.fraudreportus).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
+                transaction.replace(android.R.id.tabcontent, new FraudReport(), "FraudReportOnline");
+                transaction.commit();
+            }
+        });
 
         return v;
 
