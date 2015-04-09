@@ -134,16 +134,28 @@
 	 * @return bool, true = successful modification otherwise false
 	 */
 
-	function modify($db_table, $column, $value, $uid) {
+	function modify($db_table, $column, $value, $uid, $constant) {
 		//connect to the 'test' database
 		$db_conn = connect();
 		
 		if(!$db_conn) { return false; }
 
+		switch($constant) {
+			case 1:
+				$where = " WHERE uid = '" . $uid . "'";
+				break;
+			case 2:
+				$where = " WHERE aid = '" . $uid . "'";
+				break;
+			case 3:
+				$where = " WHERE bid = '" . $uid . "'";
+				break;
+		}
+
 		//SQL for modification
 		$sql = "UPDATE " . $db_table .
 			   " SET " . $column . "='" . encrypt($value) .
-			   "' WHERE uid = " . $uid;
+			   $where;
 		
 		//get the return value of the query
 		$isSuccessful = mysqli_query($db_conn, $sql);

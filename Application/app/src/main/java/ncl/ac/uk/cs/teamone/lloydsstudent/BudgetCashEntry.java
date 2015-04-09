@@ -1,6 +1,7 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -121,7 +123,7 @@ public class BudgetCashEntry extends DialogFragment {
                     })
                     .setNegativeButton("Continue", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            addCashPurcahse();
+                            addCashPurchase();
                         }
                     });
 
@@ -130,8 +132,19 @@ public class BudgetCashEntry extends DialogFragment {
         }
     }
 
-    private void addCashPurcahse() {
-        // Backend method for adding a cash purchase
+    private void addCashPurchase() {
+        //url to connect to
+        String url = "http://www.abunities.co.uk/t2022t1/add_entry.php";
+
+        //values to send to the PHP file
+        String[] keys = {"uid", "purchase", "category"};
+        String[] values = {new Data().getUid(), Float.toString(purchaseBalance), category.getSelectedItem().toString()};
+
+        //create an asynchronous object
+        PHPHandler handler = new PHPHandler(getActivity(), keys, values, 0);
+
+        //execute the object
+        handler.execute(url);
     }
 
 }

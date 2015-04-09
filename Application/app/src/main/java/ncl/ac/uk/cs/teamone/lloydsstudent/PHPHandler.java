@@ -276,6 +276,12 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 ac.setContentView(R.layout.initial_setup_passcode);
                 PassCodeActivity pca = new PassCodeActivity(ac);
                 break;
+            //when add entry is successful
+            case 10:
+                Intent oi = new Intent(activity, LoginActivity.class);
+                activity.startActivity(oi);
+                ((Activity) activity).finish();
+                break;
             //If unexpected error occurs then end any activity open
             default:
                 ((Activity) activity).finish();

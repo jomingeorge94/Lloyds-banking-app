@@ -21,5 +21,6 @@
 	define('ONLINE_PASSWORD_DO_NOT_MATCH', '7');
 	define('SUCCESS_MOBILE_BANKING', '8');
 	define('SUCCESS_FIRST_TIME', '9');
+	define('ADD_ENTRY_COMPLETE', '10');
 
 ?>
