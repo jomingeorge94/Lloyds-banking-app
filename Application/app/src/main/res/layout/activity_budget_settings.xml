@@ -26,7 +26,7 @@
 
             <TextView
                 style="@style/LloydsTitleLarge"
-                android:id="@+id/bs_budget_label"
+                android:id="@+id/bs_budget_value"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="left"
@@ -118,7 +118,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_food_progress"
                 android:layout_toStartOf="@+id/bs_food_progress"
-                android:progress="50" />
+                android:progress="12" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -151,7 +151,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_travel_progress"
                 android:layout_toStartOf="@+id/bs_travel_progress"
-                android:progress="50" />
+                android:progress="12" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -184,7 +184,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_beauty_progress"
                 android:layout_toStartOf="@+id/bs_beauty_progress"
-                android:progress="50" />
+                android:progress="12" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -217,7 +217,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_entertainment_progress"
                 android:layout_toStartOf="@+id/bs_entertainment_progress"
-                android:progress="50" />
+                android:progress="12" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -250,7 +250,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_home_progress"
                 android:layout_toStartOf="@+id/bs_home_progress"
-                android:progress="50" />
+                android:progress="12" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -283,7 +283,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_clothes_progress"
                 android:layout_toStartOf="@+id/bs_clothes_progress"
-                android:progress="50" />
+                android:progress="12" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -316,7 +316,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_leisure_progress"
                 android:layout_toStartOf="@+id/bs_leisure_progress"
-                android:progress="50" />
+                android:progress="12" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -349,7 +349,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_other_progress"
                 android:layout_toStartOf="@+id/bs_other_progress"
-                android:progress="50" />
+                android:progress="12" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -361,6 +361,29 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@id/bs_other_seek"
                 android:layout_alignBottom="@id/bs_other_seek"
+                android:gravity="center"
+                android:text="£10.11" />
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/bs_remaining_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_other_progress"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/bs_remaining_value"
+                android:layout_toStartOf="@+id/bs_remaining_value"
+                android:text="Unassigned Budget "/>
+
+            <TextView
+                style="@style/LloydsTitleSmall"
+                android:id="@+id/bs_remaining_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_other_progress"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:gravity="center"
                 android:text="£10.11" />
 
