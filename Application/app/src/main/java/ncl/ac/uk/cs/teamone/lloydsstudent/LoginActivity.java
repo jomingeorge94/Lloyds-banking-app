@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.text.*;
 
-
 public class LoginActivity extends ActionBarActivity {
 
     @Override

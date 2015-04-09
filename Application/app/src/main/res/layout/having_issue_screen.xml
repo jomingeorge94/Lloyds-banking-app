@@ -44,7 +44,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/linearLayout2"
-        android:layout_above="@+id/update_button">
+        android:layout_above="@+id/havinganissue_button">
 
         <LinearLayout
             android:orientation="vertical"
