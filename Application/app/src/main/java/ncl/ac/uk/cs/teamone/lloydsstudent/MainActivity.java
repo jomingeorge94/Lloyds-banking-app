@@ -248,16 +248,6 @@ public class MainActivity extends ActionBarActivity {
         this.finish();
     }
 
-    //Go back to login screen when phone goes to sleep
-    @Override
-    protected void onPause(){
-        super.onPause();
-        //Start new activity
-        Intent I = new Intent(MainActivity.this, LoginActivity.class);
-        this.startActivity(I);
-        this.finish();
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
