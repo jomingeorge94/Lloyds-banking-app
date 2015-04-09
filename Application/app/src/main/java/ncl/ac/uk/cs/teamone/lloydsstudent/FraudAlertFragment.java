@@ -1,5 +1,7 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -28,6 +30,15 @@ public class FraudAlertFragment extends Fragment {
                 ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
                 transaction.replace(android.R.id.tabcontent, new FraudReport(), "FraudReportOnline");
                 transaction.commit();
+            }
+        });
+
+        v.findViewById(R.id.fraudcallus).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri number = Uri.parse("tel:0845 3000 116");
+                Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
+                startActivity(callIntent);
             }
         });
 
