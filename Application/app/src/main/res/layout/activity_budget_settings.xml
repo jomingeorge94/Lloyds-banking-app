@@ -6,289 +6,397 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="ncl.ac.uk.cs.teamone.lloydsstudent.BudgetSettings">
 
-    <TextView
-        android:id="@+id/bs_budget_label"
+    <TableLayout
+        android:id="@+id/bs_budget_table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Budget Amount" />
+        android:stretchColumns="*">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/LloydsTitleLarge"
+                android:id="@+id/bs_budget_label"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:text="Budget " />
+
+            <TextView
+                style="@style/LloydsTitleLarge"
+                android:id="@+id/bs_budget_label"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:text="£10.12" />
+
+        </TableRow>
+
+    </TableLayout>
+
 
     <SeekBar
         android:id="@+id/bs_budget_seek"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bs_budget_label"
+        android:layout_below="@id/bs_budget_table"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:progress="50"/>
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/bs_lower_bound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bs_budget_seek"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="£10" />
+
+    <TextView
+        android:id="@+id/bs_mid_bound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bs_budget_seek"
+        android:layout_alignLeft="@+id/bs_lower_bound"
+        android:layout_alignRight="@+id/bs_upper_bound"
+        android:gravity="center"
+        android:text="£20" />
+
+    <TextView
+        android:id="@+id/bs_upper_bound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bs_budget_seek"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="£30" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/bs_lower_bound"
+        android:layout_marginTop="8dp"
+        android:background="@color/dark_green"
+        android:id="@+id/bs_underline" />
+
+    <ScrollView
+        android:id="@+id/bs_category_scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/bs_underline"
+        android:layout_above="@+id/bs_button_table"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" >
 
-        <TextView
-            style="@style/LloydsTitleMedium"
-            android:id="@+id/bs_food_label"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Food"
-            android:gravity="center" />
+            android:layout_height="match_parent" >
 
-        <SeekBar
-            android:id="@+id/bs_food_seek"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_food_label"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/bs_food_progress"
-            android:layout_toStartOf="@+id/bs_food_progress"
-            android:progress="50" />
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/bs_food_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Food"
+                android:gravity="center" />
 
-        <TextView
-            style="@style/LloydsTitleSmall"
-            android:id="@+id/bs_food_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_food_label"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/bs_food_seek"
-            android:layout_alignBottom="@id/bs_food_seek"
-            android:gravity="center"
-            android:text="£10.11" />
+            <SeekBar
+                android:id="@+id/bs_food_seek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_food_label"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/bs_food_progress"
+                android:layout_toStartOf="@+id/bs_food_progress"
+                android:progress="50" />
 
-        <TextView
-            style="@style/LloydsTitleMedium"
-            android:id="@+id/bs_travel_label"
+            <TextView
+                style="@style/LloydsTitleSmall"
+                android:id="@+id/bs_food_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_food_label"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/bs_food_seek"
+                android:layout_alignBottom="@id/bs_food_seek"
+                android:gravity="center"
+                android:text="£10.11" />
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/bs_travel_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_food_seek"
+                android:text="Travel"
+                android:gravity="center" />
+
+            <SeekBar
+                android:id="@+id/bs_travel_seek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_travel_label"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/bs_travel_progress"
+                android:layout_toStartOf="@+id/bs_travel_progress"
+                android:progress="50" />
+
+            <TextView
+                style="@style/LloydsTitleSmall"
+                android:id="@+id/bs_travel_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_travel_label"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/bs_travel_seek"
+                android:layout_alignBottom="@id/bs_travel_seek"
+                android:gravity="center"
+                android:text="£10.11" />
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/bs_beauty_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_travel_seek"
+                android:text="Beauty"
+                android:gravity="center"/>
+
+            <SeekBar
+                android:id="@+id/bs_beauty_seek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_beauty_label"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/bs_beauty_progress"
+                android:layout_toStartOf="@+id/bs_beauty_progress"
+                android:progress="50" />
+
+            <TextView
+                style="@style/LloydsTitleSmall"
+                android:id="@+id/bs_beauty_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_beauty_label"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/bs_beauty_seek"
+                android:layout_alignBottom="@id/bs_beauty_seek"
+                android:gravity="center"
+                android:text="£10.11" />
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/bs_entertainment_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_beauty_seek"
+                android:text="Entertainment"
+                android:gravity="center" />
+
+            <SeekBar
+                android:id="@+id/bs_entertainment_seek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_entertainment_label"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/bs_entertainment_progress"
+                android:layout_toStartOf="@+id/bs_entertainment_progress"
+                android:progress="50" />
+
+            <TextView
+                style="@style/LloydsTitleSmall"
+                android:id="@+id/bs_entertainment_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_entertainment_label"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/bs_entertainment_seek"
+                android:layout_alignBottom="@id/bs_entertainment_seek"
+                android:gravity="center"
+                android:text="£10.11" />
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/bs_home_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_entertainment_seek"
+                android:text="Home"
+                android:gravity="center" />
+
+            <SeekBar
+                android:id="@+id/bs_home_seek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_home_label"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/bs_home_progress"
+                android:layout_toStartOf="@+id/bs_home_progress"
+                android:progress="50" />
+
+            <TextView
+                style="@style/LloydsTitleSmall"
+                android:id="@+id/bs_home_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_home_label"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/bs_home_seek"
+                android:layout_alignBottom="@id/bs_home_seek"
+                android:gravity="center"
+                android:text="£10.11" />
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/bs_clothes_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_home_seek"
+                android:text="Clothes"
+                android:gravity="center" />
+
+            <SeekBar
+                android:id="@+id/bs_clothes_seek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_clothes_label"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/bs_clothes_progress"
+                android:layout_toStartOf="@+id/bs_clothes_progress"
+                android:progress="50" />
+
+            <TextView
+                style="@style/LloydsTitleSmall"
+                android:id="@+id/bs_clothes_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_clothes_label"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/bs_clothes_seek"
+                android:layout_alignBottom="@id/bs_clothes_seek"
+                android:gravity="center"
+                android:text="£10.11" />
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/bs_lesiure_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_clothes_seek"
+                android:text="Leisure"
+                android:gravity="center"/>
+
+            <SeekBar
+                android:id="@+id/bs_leisure_seek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_lesiure_label"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/bs_leisure_progress"
+                android:layout_toStartOf="@+id/bs_leisure_progress"
+                android:progress="50" />
+
+            <TextView
+                style="@style/LloydsTitleSmall"
+                android:id="@+id/bs_leisure_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_lesiure_label"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/bs_leisure_seek"
+                android:layout_alignBottom="@id/bs_leisure_seek"
+                android:gravity="center"
+                android:text="£10.11" />
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/bs_other_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_leisure_seek"
+                android:text="Other"
+                android:gravity="center" />
+
+            <SeekBar
+                android:id="@+id/bs_other_seek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_other_label"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/bs_other_progress"
+                android:layout_toStartOf="@+id/bs_other_progress"
+                android:progress="50" />
+
+            <TextView
+                style="@style/LloydsTitleSmall"
+                android:id="@+id/bs_other_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bs_other_label"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/bs_other_seek"
+                android:layout_alignBottom="@id/bs_other_seek"
+                android:gravity="center"
+                android:text="£10.11" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <TableLayout
+        android:id="@+id/bs_button_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:stretchColumns="*">
+
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_food_seek"
-            android:text="Travel"
-            android:gravity="center" />
+            android:layout_height="match_parent">
 
-        <SeekBar
-            android:id="@+id/bs_travel_seek"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_travel_label"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/bs_travel_progress"
-            android:layout_toStartOf="@+id/bs_travel_progress"
-            android:progress="50" />
+            <Button
+                style="@style/LloydsButtonActive"
+                android:id="@+id/bs_button_discard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="4dp"
+                android:text="Discard"/>
 
-        <TextView
-            style="@style/LloydsTitleSmall"
-            android:id="@+id/bs_travel_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_travel_label"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/bs_travel_seek"
-            android:layout_alignBottom="@id/bs_travel_seek"
-            android:gravity="center"
-            android:text="£10.11" />
+            <Button
+                style="@style/LloydsButtonActive"
+                android:id="@+id/bs_button_save"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:text="Save"/>
 
-        <TextView
-            style="@style/LloydsTitleMedium"
-            android:id="@+id/bs_beauty_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_travel_seek"
-            android:text="Beauty"
-            android:gravity="center"/>
+        </TableRow>
 
-        <SeekBar
-            android:id="@+id/bs_beauty_seek"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_beauty_label"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/bs_beauty_progress"
-            android:layout_toStartOf="@+id/bs_beauty_progress"
-            android:progress="50" />
-
-        <TextView
-            style="@style/LloydsTitleSmall"
-            android:id="@+id/bs_beauty_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_beauty_label"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/bs_beauty_seek"
-            android:layout_alignBottom="@id/bs_beauty_seek"
-            android:gravity="center"
-            android:text="£10.11" />
-
-        <TextView
-            style="@style/LloydsTitleMedium"
-            android:id="@+id/bs_entertainment_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_beauty_seek"
-            android:text="Entertainment"
-            android:gravity="center" />
-
-        <SeekBar
-            android:id="@+id/bs_entertainment_seek"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_entertainment_label"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/bs_entertainment_progress"
-            android:layout_toStartOf="@+id/bs_entertainment_progress"
-            android:progress="50" />
-
-        <TextView
-            style="@style/LloydsTitleSmall"
-            android:id="@+id/bs_entertainment_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_entertainment_label"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/bs_entertainment_seek"
-            android:layout_alignBottom="@id/bs_entertainment_seek"
-            android:gravity="center"
-            android:text="£10.11" />
-
-        <TextView
-            style="@style/LloydsTitleMedium"
-            android:id="@+id/bs_home_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_entertainment_seek"
-            android:text="Home"
-            android:gravity="center" />
-
-        <SeekBar
-            android:id="@+id/bs_home_seek"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_home_label"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/bs_home_progress"
-            android:layout_toStartOf="@+id/bs_home_progress"
-            android:progress="50" />
-
-        <TextView
-            style="@style/LloydsTitleSmall"
-            android:id="@+id/bs_home_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_home_label"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/bs_home_seek"
-            android:layout_alignBottom="@id/bs_home_seek"
-            android:gravity="center"
-            android:text="£10.11" />
-
-        <TextView
-            style="@style/LloydsTitleMedium"
-            android:id="@+id/bs_clothes_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_home_seek"
-            android:text="Clothes"
-            android:gravity="center" />
-
-        <SeekBar
-            android:id="@+id/bs_clothes_seek"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_clothes_label"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/bs_clothes_progress"
-            android:layout_toStartOf="@+id/bs_clothes_progress"
-            android:progress="50" />
-
-        <TextView
-            style="@style/LloydsTitleSmall"
-            android:id="@+id/bs_clothes_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_clothes_label"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/bs_clothes_seek"
-            android:layout_alignBottom="@id/bs_clothes_seek"
-            android:gravity="center"
-            android:text="£10.11" />
-
-        <TextView
-            style="@style/LloydsTitleMedium"
-            android:id="@+id/bs_lesiure_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_clothes_seek"
-            android:text="Leisure"
-            android:gravity="center"/>
-
-        <SeekBar
-            android:id="@+id/bs_leisure_seek"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_lesiure_label"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/bs_leisure_progress"
-            android:layout_toStartOf="@+id/bs_leisure_progress"
-            android:progress="50" />
-
-        <TextView
-            style="@style/LloydsTitleSmall"
-            android:id="@+id/bs_leisure_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_lesiure_label"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/bs_leisure_seek"
-            android:layout_alignBottom="@id/bs_leisure_seek"
-            android:gravity="center"
-            android:text="£10.11" />
-
-        <TextView
-            style="@style/LloydsTitleMedium"
-            android:id="@+id/bs_other_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_leisure_seek"
-            android:text="Other"
-            android:gravity="center" />
-
-        <SeekBar
-            android:id="@+id/bs_other_seek"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_other_label"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/bs_other_progress"
-            android:layout_toStartOf="@+id/bs_other_progress"
-            android:progress="50" />
-
-        <TextView
-            style="@style/LloydsTitleSmall"
-            android:id="@+id/bs_other_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bs_other_label"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/bs_other_seek"
-            android:layout_alignBottom="@id/bs_other_seek"
-            android:gravity="center"
-            android:text="£10.11" />
-
-    </RelativeLayout>
+    </TableLayout>
 
 </RelativeLayout>
