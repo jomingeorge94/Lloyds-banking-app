@@ -142,13 +142,13 @@
 
 		switch($constant) {
 			case 1:
-				$where = " WHERE uid = '" . $uid . "'";
+				$where = "' WHERE uid = '" . $uid . "'";
 				break;
 			case 2:
-				$where = " WHERE aid = '" . $uid . "'";
+				$where = "' WHERE aid = '" . $uid . "'";
 				break;
 			case 3:
-				$where = " WHERE bid = '" . $uid . "'";
+				$where = "' WHERE bid = '" . $uid . "'";
 				break;
 		}
 

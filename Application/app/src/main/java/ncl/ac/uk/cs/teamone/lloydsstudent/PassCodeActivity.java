@@ -25,9 +25,9 @@ public class PassCodeActivity {
     }
 
     public void passCodeSetup() {
-        final Activity ac = (Activity) a;
+        final Activity ac = (Activity) this.a;
         // Creates invalid credentials popup message
-        AlertDialog.Builder builder = new AlertDialog.Builder(a);
+        AlertDialog.Builder builder = new AlertDialog.Builder(ac);
         // Sets the error message for the popup
         builder.setMessage(R.string.first_failed_passcode)
                 // Sets the buttons

@@ -20,9 +20,9 @@
 
 	if(isset($uid) && isset($passcode) && isset($imei)) {
 		//set the passcode that the user has entered into the app
-		modify("Customer", "passcode", $passcode, $uid);
+		modify("Customer", "passcode", $passcode, $uid, CUSTOMER);
 		//set IMEI of the device to the mobile_banking attribute - indicate it is assigned to one device
-		modify("Customer", "mobile_banking", $imei, $uid);
+		modify("Customer", "mobile_banking", $imei, $uid, CUSTOMER);
 		//data
 		$customer = new Customer();
 		//set the user id of the object
