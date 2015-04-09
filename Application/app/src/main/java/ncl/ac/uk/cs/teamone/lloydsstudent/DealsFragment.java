@@ -2,7 +2,10 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -166,6 +169,19 @@ public class DealsFragment extends Fragment implements View.OnClickListener {
                 dealForDisplay = dealClicked;
                 //Set boolean to true to show that the details page of the deal needs to be opened
                 opened = true;
+
+                FragmentManager f = getFragmentManager();
+                final FragmentTransaction ft = f.beginTransaction();
+                Fragment prev = f.findFragmentByTag("dialog");
+                if (prev != null) {
+                    ft.remove(prev);
+                }
+                ft.addToBackStack(null);
+
+                DealsDetail newFragment = new DealsDetail();
+                newFragment.addVariables(dealClicked.getName(), dealClicked.getDistance(), dealClicked.getDistanceMeasure(), dealClicked.getLoves(), dealClicked.getLoathes(), dealClicked.getIconId() );
+                DialogFragment frag = newFragment;
+                frag.show(ft, "Deals Detailed");
 
                 //Create a pop up window in response to menu click
                 //Needs to be altered to show further detail of the deal rather than a pop up message
