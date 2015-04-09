@@ -1,11 +1,8 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
@@ -28,51 +25,25 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
     public FragmentTabHost tabHost;
-    private TextView click;
-    FragmentManager manager;
     private DrawerLayout drawerLayout;
     ListView listView;
     ArrayAdapter<String> adapter;
-    private ActionBarDrawerToggle actionBarDrawerToggle;
     private String [] listentry;
-    Boolean state=false;
+    Boolean state = false;
+
     /**
      * Implemented using the FragmentTabHost, associated fragments within each tabs are coded using the add method
      * Also with the help of a method removes the current fragment with the latest fragment so that overlaying is prevented
      */
-
-    //357864058310754
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_tab_main);
 
-        String[] keys = {"uid"};
-        String[] values = {new Data().customer.get(keys[0])};
-        PHPHandler handler = new PHPHandler(MainActivity.this, keys, values, 0);
-        handler.execute("http://www.abunities.co.uk/t2022t1/retrieve_budget.php");
-        new Data().budget = handler.getData();
-
         listentry=getResources().getStringArray(R.array.helpmenu);
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
         listView=(ListView)findViewById(R.id.drawer_list);
-        actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,R.drawable.ic_launcher,R.string.app_name,R.string.hello_world){
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                // TODO Auto-generated method stub
-                state=true;
-                supportInvalidateOptionsMenu();
-            }
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                // TODO Auto-generated method stub
-                state=false;
-                supportInvalidateOptionsMenu();
-            }
-        };
-
-        drawerLayout.setDrawerListener(actionBarDrawerToggle);
 
         // Refactor at your will.
         tabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
@@ -280,6 +251,7 @@ public class MainActivity extends ActionBarActivity {
     //Go back to login screen when phone goes to sleep
     @Override
     protected void onPause(){
+        super.onPause();
         //Start new activity
         Intent I = new Intent(MainActivity.this, LoginActivity.class);
         this.startActivity(I);

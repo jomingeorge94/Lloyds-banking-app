@@ -29,6 +29,7 @@ public class HomeFragment extends Fragment {
 
         // Inflate the layout for this fragment
         final View v =  inflater.inflate(R.layout.tab2_main, container, false);
+
         //get the customer data
         Data data = new Data();
         //Set the customer name

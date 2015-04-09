@@ -18,7 +18,7 @@ public class Retrieve {
             case 2:
                 this.table = 1;
                 break;
-            //Transactions
+            //Budget
             case 3:
                 this.table = 2;
                 break;

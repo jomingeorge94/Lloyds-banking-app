@@ -160,6 +160,10 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                     JSONObject data = new JSONObject(result);
                     //places the retrieved data into a java data structure
                     setData(data);
+
+                    if(params[0].contains("retrieve_budget.php")) {
+                        new Data().budget = getData();
+                    }
                 }
             }
 
@@ -200,6 +204,9 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 break;
             case 2:
                 Retrieve r = new Retrieve(((Activity) activity), "http://www.abunities.co.uk/t2022t1/retrieve_accounts.php", 1);
+                break;
+            case 3:
+                Retrieve r2 = new Retrieve(((Activity) activity), "http://www.abunities.co.uk/t2022t1/retrieve_budget.php", 3);
                 break;
         }
 
