@@ -85,6 +85,16 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name=".ChangePasscode_Screen"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ChangeAccountName_Screen"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".Insurance"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
