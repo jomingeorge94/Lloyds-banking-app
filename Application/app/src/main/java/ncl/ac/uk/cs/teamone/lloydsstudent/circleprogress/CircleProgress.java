@@ -13,7 +13,6 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 
-import ncl.ac.uk.cs.teamone.lloydsstudent.Data;
 import ncl.ac.uk.cs.teamone.lloydsstudent.R;
 
 /**
@@ -25,7 +24,7 @@ public class CircleProgress extends View {
 
     private float textSize;
     private int textColor;
-    private int progress = 0;
+    private int progress = 20;
     private int max;
     private int finishedColor;
     private int unfinishedColor;
@@ -79,7 +78,7 @@ public class CircleProgress extends View {
         textSize = attributes.getDimension(R.styleable.CircleProgress_circle_text_size, default_text_size);
 
         setMax(attributes.getInt(R.styleable.CircleProgress_circle_max, default_max));
-        setProgress(attributes.getInt(R.styleable.CircleProgress_circle_progress, 0));
+        setProgress(attributes.getInt(R.styleable.CircleProgress_circle_progress, 20));
 
         if (attributes.getString(R.styleable.CircleProgress_circle_prefix_text) != null) {
             setPrefixText(attributes.getString(R.styleable.CircleProgress_circle_prefix_text));

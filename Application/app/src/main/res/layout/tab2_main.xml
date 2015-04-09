@@ -155,7 +155,6 @@
                     android:id="@+id/circle_progress"
                     android:layout_width="213dp"
                     android:layout_height="207dp"
-                    custom:circle_progress="20"
                     android:layout_gravity="center"
                     android:layout_row="9"
                     android:layout_column="21" />

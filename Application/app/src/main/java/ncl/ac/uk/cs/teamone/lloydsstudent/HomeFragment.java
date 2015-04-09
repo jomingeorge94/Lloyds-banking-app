@@ -87,6 +87,10 @@ public class HomeFragment extends Fragment {
         this.v = v;
 
         return v;
+
+
+
+
     }
 
     View.OnTouchListener gestureListener;
