@@ -97,12 +97,6 @@ public class FirstLoginActivity extends ActionBarActivity {
         this.finish();
     }
 
-    //Kill app if phone goes to sleep during setup
-    @Override
-    protected void onPause(){
-        this.finish();
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
