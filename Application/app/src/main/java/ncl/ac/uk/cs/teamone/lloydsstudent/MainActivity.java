@@ -1,5 +1,6 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
@@ -273,6 +274,15 @@ public class MainActivity extends ActionBarActivity {
     //Simply prevents the app from being in the background, user has to enter passcode again!
     @Override
     protected void onUserLeaveHint() {
+        this.finish();
+    }
+
+    //Go back to login screen when phone goes to sleep
+    @Override
+    protected void onPause(){
+        //Start new activity
+        Intent I = new Intent(MainActivity.this, LoginActivity.class);
+        this.startActivity(I);
         this.finish();
     }
 

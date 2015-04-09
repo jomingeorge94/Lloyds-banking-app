@@ -38,7 +38,18 @@ public class BudgetPieChart extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.budget_pie_chart, container, false);
 
-        formatData(new float[]{12.1f, 15.3f, 1.99f, 17.84f, 12.12f, 5.49f, 6.99f, 1.05f});
+        Data d = new Data();
+
+        float food = Float.parseFloat(d.budget.get("groceries_spend")) + Float.parseFloat(d.budget.get("eating_out_spend"));
+        float travel = Float.parseFloat(d.budget.get("travel_spend"));
+        float beauty = Float.parseFloat(d.budget.get("beauty_and_hygiene_spend"));
+        float entertainment = Float.parseFloat(d.budget.get("entertainment_spend"));
+        float home = Float.parseFloat(d.budget.get("home_spend"));
+        float clothes = Float.parseFloat(d.budget.get("clothes_spend"));
+        float leisure = Float.parseFloat(d.budget.get("leisurely_activities_spend"));
+        float other = Float.parseFloat(d.budget.get("other_spend"));
+
+        formatData(new float[]{food, travel, beauty, entertainment, home, clothes, leisure, other});
         createChart(v);
         return v;
     }

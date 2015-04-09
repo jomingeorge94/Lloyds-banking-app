@@ -19,20 +19,10 @@ public class LoginActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final Button skipButton = (Button) findViewById(R.id.skip);
         //Locates the text edit box and creates an editable object
         final EditText passCode = (EditText) findViewById(R.id.login_passcode_input);
         //Create the activity
         final Context activity = LoginActivity.this;
-
-        //Skip button listener - Temporary
-        skipButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent I = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(I);
-            }
-        });
 
         passCode.addTextChangedListener(new TextWatcher() {
             @Override
