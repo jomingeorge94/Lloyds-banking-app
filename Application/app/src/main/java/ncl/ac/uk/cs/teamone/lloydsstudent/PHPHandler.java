@@ -194,7 +194,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
         switch(table) {
             case 1:
                 //Start new activity
-                Intent I = new Intent(activity, BudgetSettings.class);
+                Intent I = new Intent(activity, MainActivity.class);
                 activity.startActivity(I);
                 ((Activity) activity).finish();
                 break;
