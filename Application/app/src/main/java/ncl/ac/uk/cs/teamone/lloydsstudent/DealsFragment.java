@@ -31,6 +31,8 @@ public class DealsFragment extends Fragment implements View.OnClickListener {
     private static final int SWIPE_MAX_OFF_PATH = 250;
     private static final int SWIPE_THRESHOLD_VELOCITY = 200;
     private GestureDetector gestureDetector;
+    Deal dealForDisplay;
+    boolean opened;
 
     //method to switch the fragment, this method will switch the fragment to the deals layout xml file
     @Override
@@ -38,12 +40,25 @@ public class DealsFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View v =  inflater.inflate(R.layout.deals_test, container, false);
+        opened = false;
 
+        //NEED TO MAKE IT SO THIS ONLY CALLS ONCE OTHERWISE THE LIST REPOPULATES EVERY TIME
+        //THE PAGE IS VISITED
         //Populate deals list
         populateDealsList();
-        populateDealListView(v);
+
+        //Build adapter
+        ArrayAdapter<Deal> adapter = new MyListAdapter();
+        ListView list = (ListView) v.findViewById(R.id.listViewMain);
+        list.setAdapter(adapter);
+
         //So that when clicked something can happen
-       // registerClickCallBack(v, adapter);
+        registerClickCallBack(v);
+
+        //change main fragment
+        /*if (opened){
+           //Open new fragment
+        }*/
 
         return v;
     }
@@ -54,12 +69,14 @@ public class DealsFragment extends Fragment implements View.OnClickListener {
     }
 
     //Method to populate the listView with list
-    private void populateDealListView(View v){
+/*    private void populateDealListView(View v){
         //Build adapter
         ArrayAdapter<Deal> adapter = new MyListAdapter();
         ListView list = (ListView) v.findViewById(R.id.listViewMain);
         list.setAdapter(adapter);
-    }
+        //So that when clicked something can happen
+        registerClickCallBack(v, adapter);
+    }*/
 
     private class MyListAdapter extends ArrayAdapter<Deal>{
 
@@ -116,11 +133,8 @@ public class DealsFragment extends Fragment implements View.OnClickListener {
 
                 // right to left swipe
 
-                /*final TextView accounttype = (TextView) v.findViewById(R.id.accountType);
-                accounttype.setText("Student Account");
-                Animation anim = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
-                        R.anim.left_to_right);
-                accounttype.startAnimation(anim);*/
+                Toast.makeText(getActivity().getApplicationContext(), "This works", Toast.LENGTH_LONG).show();
+
 
                 if(e1.getX() - e2.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
 
@@ -140,23 +154,26 @@ public class DealsFragment extends Fragment implements View.OnClickListener {
 
 
     //Method to register a click on menu
-    public void registerClickCallBack(View v, Adapter adapter){
-        ListView list = (ListView) v.findViewById(R.id.listViewMain);
+    public void registerClickCallBack(View v){
+        final ListView list = (ListView) v.findViewById(R.id.listViewMain);
         //Listener for item click
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView textView = (TextView) view;
-                String message = "You clicked # " + position + ", which is string: " + textView.getText().toString();
+                //Finds the deal clicked from the deals list
+                Deal dealClicked = deals.get(position);
+                //Set the global variable deal to the selected deal
+                dealForDisplay = dealClicked;
+                //Set boolean to true to show that the details page of the deal needs to be opened
+                opened = true;
 
                 //Create a pop up window in response to menu click
                 //Needs to be altered to show further detail of the deal rather than a pop up message
+                // Test worked.
+                String message = "You clicked # " + position + ", which is deal: " + dealClicked.getName();
                 Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
             }
         });
-
-
-
     }
 
     public void onClick(View v) {
@@ -166,6 +183,6 @@ public class DealsFragment extends Fragment implements View.OnClickListener {
 
 
 
-    
+
 }
 
