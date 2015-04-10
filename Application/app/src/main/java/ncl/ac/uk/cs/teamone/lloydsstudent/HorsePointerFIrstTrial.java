@@ -16,7 +16,7 @@ import com.github.amlcurran.showcaseview.targets.ViewTarget;
 public class HorsePointerFIrstTrial extends ActionBarActivity implements View.OnClickListener {
 
     private ShowcaseView showcaseView;
-    private int contador = 0;
+    private int counter = 0;
     private Target t1,t2,t3;
 
 
@@ -43,7 +43,7 @@ public class HorsePointerFIrstTrial extends ActionBarActivity implements View.On
 
     @Override
     public void onClick(View v) {
-        switch (contador){
+        switch (counter){
             case 0:
                 showcaseView.setShowcase(t1,true);
                 showcaseView.setContentTitle("First");
@@ -69,7 +69,7 @@ public class HorsePointerFIrstTrial extends ActionBarActivity implements View.On
                 startActivity(home);
                 break;
         }
-        contador ++;
+        counter ++;
 
     }
 }
