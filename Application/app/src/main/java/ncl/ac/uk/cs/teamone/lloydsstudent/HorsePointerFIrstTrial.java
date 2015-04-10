@@ -29,7 +29,7 @@ public class HorsePointerFIrstTrial extends ActionBarActivity implements View.On
         t2 = new ViewTarget(R.id.payContactButton,this);
         t3 = new ViewTarget(R.id.circle_progress,this);
 
-        showcaseView = new ShowcaseView.Builder(this).setTarget(Target.NONE).setOnClickListener(this).setContentTitle("Tutorial").setContentText("Universal Education").setStyle(R.style.Transparencia).build();
+        showcaseView = new ShowcaseView.Builder(this).setTarget(Target.NONE).setOnClickListener(this).setContentTitle("Tutorial").setContentText("Universal Education").setStyle(R.style.Transparency).build();
         showcaseView.setButtonText("Click Me");
     }
 
