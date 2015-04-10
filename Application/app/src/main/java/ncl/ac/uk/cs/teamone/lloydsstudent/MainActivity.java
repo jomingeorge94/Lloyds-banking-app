@@ -174,11 +174,15 @@ public class MainActivity extends ActionBarActivity {
                     startActivity(accountmanagement);
                 }
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Settings")){
-                    Toast.makeText(MainActivity.this,"Settings",Toast.LENGTH_LONG).show();
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                    Intent settings =new Intent(getApplicationContext(),Settings_Screen.class);
+                    startActivity(settings);
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Budget Notification")){
-                    Toast.makeText(MainActivity.this,"Budget Notification",Toast.LENGTH_LONG).show();
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                    Intent budgetnotification =new Intent(getApplicationContext(),Budget_Notification.class);
+                    startActivity(budgetnotification);
                 }
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Lloyd's Banking Tour")){

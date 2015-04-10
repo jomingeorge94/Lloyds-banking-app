@@ -80,7 +80,17 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name=".Budget_Notification"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".CreditCard"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Settings_Screen"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>
