@@ -17,29 +17,33 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
+ * Fragment that generates the Pie chart for the chart ViewPager. All of the GUI is styled and
+ * generated, the charts are dynamically filled in the fragment from arrays
+ *
  * Created by Dan on 19/03/2015.
  */
 public class BudgetPieChart extends Fragment {
 
-    private ArrayList<String> CATEGORIES = new ArrayList<>(Arrays.asList("Food",
-                                                                         "Travel",
+    // Creates an array of categories to be used as Y-Axis values
+    private ArrayList<String> CATEGORIES = new ArrayList<>(Arrays.asList("Food", "Travel",
                                                                          "Beauty & Hygiene",
-                                                                         "Entertainment",
-                                                                         "Home",
-                                                                         "Clothes",
-                                                                         "Leisure",
+                                                                         "Entertainment", "Home",
+                                                                         "Clothes", "Leisure",
                                                                          "Other"));
+    // Creates and array to hold the data
     private ArrayList<Entry> spend = new ArrayList<>();
 
-    //method to switch the fragment, this method will switch the fragment to the budget layout xml file
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+        // Creates a variable to initialise the view for the fragment
         View v = inflater.inflate(R.layout.budget_pie_chart, container, false);
 
+        // Creates a variable to store the data received
         Data d = new Data();
 
+        // Defines a float for each category and assigns a value
         float food = Float.parseFloat(d.budget.get("groceries_spend")) + Float.parseFloat(d.budget.get("eating_out_spend"));
         float travel = Float.parseFloat(d.budget.get("travel_spend"));
         float beauty = Float.parseFloat(d.budget.get("beauty_and_hygiene_spend"));
@@ -49,40 +53,80 @@ public class BudgetPieChart extends Fragment {
         float leisure = Float.parseFloat(d.budget.get("leisurely_activities_spend"));
         float other = Float.parseFloat(d.budget.get("other_spend"));
 
+        // Calls the format method to put the data in the correct format for the chart
         formatData(new float[]{food, travel, beauty, entertainment, home, clothes, leisure, other});
+
+        // Calls the create chart method to generate the chart in the view
         createChart(v);
+
+        // Returns the view
         return v;
+
     }
 
+    /**
+     * Method that fills the spend array with newly generated Entry Objects ready to add toa  chart
+     *
+     * @param data an array of 8 floats to be added to the chart
+     */
     public void formatData(float[] data) {
+        // Loops through the array of 8 floats
         for(int i = 0; i < 8; i++) {
+            // Adds and generates Entry Objects to the spend array
             spend.add(new Entry(data[i], i));
         }
     }
 
+    /**
+     * Method which takes a view and searches for a PieChart holder and formats the data in the
+     * fragment and generates a visual chart
+     *
+     * @param v the view where the Pie Chart holder is
+     */
     public void createChart(View v) {
-        PieChart chart = (PieChart) v.findViewById(R.id.pie_chart);
 
+        // Searches the XML file for the PieChart holder and assigns it to a variable
+        PieChart chart = (PieChart) v.findViewById(R.id.pie_chart);
+        // Creates a PieData variable which can be added to a PieChart
         PieData data = new PieData(CATEGORIES, formatData());
 
+        // Assigns the values to the charts
         chart.setData(data);
+        // Animates the X and Y axis of the chart
         chart.animateXY(1000, 1000);
+        // Makes the center of the pie chart transparent
         chart.setHoleColorTransparent(true);
+        // Displays the label for each sector as a percentage
         chart.setUsePercentValues(true);
+        // Draws the X axis lables for each segment
         chart.setDrawSliceText(true);
+        // Disables the chart description
         chart.setDescription(null);
 
+        // Gets the legend from the chart and assigns it to a variable
         Legend legend = chart.getLegend();
-
+        // Prevents the legend from being drawn
         legend.setEnabled(false);
+
     }
 
+    /**
+     * Takes the partially formatted data stored in the fragment and adds formatting to the
+     * entries. It then returns a PieDataSet object which can be added to a PieChart
+     *
+     * @return a PieChartData set which can be added to a PieChart
+     */
     public PieDataSet formatData() {
+
+        // Creates and label's a set of data ready to be added to a chart
         PieDataSet weeklyData = new PieDataSet(spend, "Pie Data");
 
+        // Sets the colour of the labels
         weeklyData.setValueTextColor(getResources().getColor(R.color.white));
+        // Formats the labels as percentage values
         weeklyData.setValueFormatter(new PercentFormatter());
 
+        // Assignes each category a colour
         weeklyData.setColors(new int[] {getResources().getColor(R.color.food),
                 getResources().getColor(R.color.travel),
                 getResources().getColor(R.color.beauty),
@@ -92,7 +136,9 @@ public class BudgetPieChart extends Fragment {
                 getResources().getColor(R.color.leisure),
                 getResources().getColor(R.color.other)});
 
+        // Returns the data ready to be added to the chart
         return weeklyData;
+
     }
 
 }
