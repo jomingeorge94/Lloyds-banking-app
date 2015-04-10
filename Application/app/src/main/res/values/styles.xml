@@ -63,14 +63,10 @@
         <item name="android:textColor">@color/text_dark</item>
     </style>
 
-
-
-
     <style name= "Title" parent="TextAppearance.ShowcaseView.Title">
         <item name="android:textColor">#FFF</item>
         <item name="android:textSize">32sp</item>
         <item name="android:textStyle">bold</item>
-
     </style>
 
     <style name="Transparency" parent="ShowcaseView.Light">
@@ -78,7 +74,5 @@
         <item name="sv_showcaseColor">#000</item>
         <item name="sv_titleTextAppearance">@style/Title</item>
     </style>
-
-
 
 </resources>

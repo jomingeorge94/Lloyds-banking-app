@@ -1,18 +1,14 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -23,6 +19,7 @@ import java.util.ArrayList;
  */
 public class BudgetFragment extends Fragment {
 
+    // Variables to be used in the fragment to create the layout
     private View v;
     private TextView total;
     private ProgressBar summary;
@@ -31,32 +28,48 @@ public class BudgetFragment extends Fragment {
     private Rect bounds;
     private TextView remaining;
 
-    //method to switch the fragment, this method will switch the fragment to the budget layout xml file
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Create the view for this fragment
         v =  inflater.inflate(R.layout.budget_test, container, false);
+
+        // Initialise layout variables from XML file
         total = (TextView) v.findViewById(R.id.budget_total_budget);
         summary = (ProgressBar) v.findViewById(R.id.summary_bar);
         rightLabel = (TextView) v.findViewById(R.id.right_label);
         remaining = (TextView) v.findViewById(R.id.budget_remaining);
 
+        // Update Summary section of the page
         summaryUpdate(88, 12.11);
 
+        // Creates a list of fragments which will be dispalyed in the scrolling pane
         ArrayList<Fragment>  fragmentList = new ArrayList<Fragment>();
+
+        // Add fragments to the list
         fragmentList.add(new BudgetLineChart());
         fragmentList.add(new BudgetOverview());
         fragmentList.add(new BudgetPieChart());
 
-        android.support.v4.app.FragmentManager manager = getFragmentManager();
-        ChartAdapter mAdapter = new ChartAdapter( manager, fragmentList);
-        ViewPager page = (ViewPager) v.findViewById(R.id.chart_view);
-        page.setOffscreenPageLimit(3);
-        page.setCurrentItem(1);
-        page.setAdapter(mAdapter);
-        page.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener());
+        // Create fragment manager to control popup fragment
+        FragmentManager manager = getFragmentManager();
 
+        // Create chart adapter to fill ViewPager
+        ChartAdapter adapter = new ChartAdapter(manager, fragmentList);
+
+        // Create ViewPager form XML file
+        ViewPager page = (ViewPager) v.findViewById(R.id.chart_view);
+
+        // Dictates the number of fragments to keep loaded
+        page.setOffscreenPageLimit(3);
+        // Sets the start position of the ViewPager
+        page.setCurrentItem(1);
+
+        // Add adapter to ViewPager which shows the fragment
+        page.setAdapter(adapter);
+
+
+        // Returns the view
         return v;
 
     }
@@ -70,7 +83,10 @@ public class BudgetFragment extends Fragment {
      * @param spent the amount spent in the current week by the user
      */
     public void summaryUpdate(double budget, double spent) {
+
+        // Variable to hold data received
         Data d = new Data();
+
         // Update text labels
         total.setText("£" + String.format("%.2f", Float.parseFloat(d.budget.get("amount"))));
         rightLabel.setText("£" + String.format("%.2f", Float.parseFloat(d.budget.get("amount"))));
@@ -113,6 +129,7 @@ public class BudgetFragment extends Fragment {
 
         // Sets the range of the progress bar to the weekly budget
         summary.setMax((int) budget);
+
         // Sets the progress of the bar to the amount spent
         if(spent <= budget) {
             summary.setProgress((int) spent);
@@ -124,26 +141,6 @@ public class BudgetFragment extends Fragment {
             summary.getProgressDrawable().setBounds(bounds);
         }
 
-    }
-
-    public float[] generateChartData(float[] spend) {
-
-        // Temp value to store total spend
-        float total = 0;
-
-        // Sum of all the values in the array
-        for (float value : spend) {
-            total += value;
-        }
-
-        /* Works out the number of degrees to be assigned to arc by calculating the percentage
-        from the individual spend and the total */
-        for (float value : spend) {
-            value = 360 * (value / total);
-        }
-
-        // Returns an array containing the degree values for each arc
-        return spend;
     }
 
 }
