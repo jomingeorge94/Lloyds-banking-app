@@ -26,5 +26,6 @@ dependencies {
     compile files ('libs/activation.jar')
     compile files ('libs/additionnal.jar')
     compile files ('libs/mail.jar')
+    compile 'com.github.amlcurran.showcaseview:library:5.0.0'
 
 }

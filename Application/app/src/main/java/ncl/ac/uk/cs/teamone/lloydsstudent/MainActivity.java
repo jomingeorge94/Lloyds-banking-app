@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
+
     public FragmentTabHost tabHost;
     private DrawerLayout drawerLayout;
     ListView listView;
@@ -98,8 +99,9 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Fragment entry = getSupportFragmentManager().findFragmentById(android.R.id.tabcontent);
                 if(entry.getTag().equals("tab2")){
-                    HorsePointer horse = new HorsePointer();
-                    horse.show(getSupportFragmentManager(), "Horse");
+                    Intent horse =new Intent(getApplicationContext(),HorsePointerFIrstTrial.class);
+                    startActivity(horse);
+
                 }else if(entry.getTag().equals("OverView")){
                     Toast.makeText(getApplication(), "Horse pointer - Button is in here in overview", Toast.LENGTH_SHORT).show();
                 }

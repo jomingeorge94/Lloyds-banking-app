@@ -85,6 +85,11 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name=".HorsePointerFIrstTrial"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".ChangePasscode_Screen"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
