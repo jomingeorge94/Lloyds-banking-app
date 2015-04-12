@@ -16,6 +16,8 @@ public class HomeScreenSecondAccount extends Fragment {
 
         final View v = inflater.inflate(R.layout.home_screenmain_secondaccount, container, false);
 
+
+
         return v;
     }
 

@@ -33,19 +33,6 @@ public class HomeFragment extends Fragment {
         AccountSwitching accountSwitching = new AccountSwitching(getFragmentManager());
         viewPager.setAdapter(accountSwitching);
 
-
-
-        //on click event for the text - current money which will change the fragment to Overview Fragment.
-        /*v.findViewById(R.id.currentMoney).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
-                transaction.replace(android.R.id.tabcontent, new OverviewFragment(), "OverView");
-                transaction.commit();
-            }
-        });*/
-
         //onclick event for the button - make a transfer
         final Button maketransfer = (Button)v.findViewById(R.id.makeTransferButton);
         maketransfer.setOnClickListener(new View.OnClickListener() {

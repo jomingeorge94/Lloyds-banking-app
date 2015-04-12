@@ -53,7 +53,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/currentMoney"
             android:fontFamily="sans-serif-light"
-            android:id="@+id/textView140"
+            android:id="@+id/firstaccountoverview"
             android:paddingTop="5dp"
             android:layout_gravity="center_horizontal"
             android:textColor="#ff000000"
