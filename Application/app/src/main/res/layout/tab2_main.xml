@@ -5,7 +5,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/tabmainswitch"
-    android:background="#ffffffff">
+    android:background="#ffffffff"
+    android:weightSum="1">
 
 
 
@@ -38,77 +39,13 @@
             android:layout_marginRight="20dp"
             android:background="@android:color/holo_green_dark"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/accountType"
-            android:paddingTop="20dp"
-            android:id="@+id/accountType"
-            android:layout_gravity="center_horizontal"
-            android:textSize="22sp"
-            android:textColor="#ff808677" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/accountswitching"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@+id/toppartofthescreen" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1">
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1"
-                android:paddingLeft="40dp"
-                android:nestedScrollingEnabled="false"
-                android:id="@+id/moneyStuff">
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="49dp"
-                    android:id="@+id/leftArrowAccount"
-                    android:layout_weight="0.18"
-                    android:src="@drawable/ic_leftarrow"
-                    android:background="#ffffffff"
-                    android:paddingRight="30dp"
-                    android:layout_marginTop="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/currentMoney"
-                    android:fontFamily="sans-serif-light"
-                    android:id="@+id/currentMoney"
-                    android:paddingTop="5dp"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="#ff000000"
-                    android:textSize="40dp" />
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="49dp"
-                    android:id="@+id/rightArrowAccount"
-                    android:layout_weight="0.18"
-                    android:background="#ffffffff"
-                    android:src="@drawable/ic_rightarrow"
-                    android:paddingLeft="30dp"
-                    android:layout_marginTop="10dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/accountDetails"
-            android:id="@+id/accountDetails"
-            android:layout_gravity="center_horizontal"
-            android:textColor="#ff808677"
-            android:textSize="16sp" />
-
-        <LinearLayout
+    <LinearLayout
             android:orientation="vertical"
             android:layout_width="331dp"
             android:layout_height="wrap_content"
