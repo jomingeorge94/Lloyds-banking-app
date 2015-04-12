@@ -1,4 +1,4 @@
-package ncl.ac.uk.cs.teamone.lloydsstudent.circleprogress;
+package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.content.res.Resources;
 

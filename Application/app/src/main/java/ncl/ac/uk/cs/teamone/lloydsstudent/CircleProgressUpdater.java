@@ -1,4 +1,4 @@
-package ncl.ac.uk.cs.teamone.lloydsstudent.circleprogress;
+package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,18 +13,16 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 
-import ncl.ac.uk.cs.teamone.lloydsstudent.R;
-
 /**
  * Created by bruce on 11/4/14.
  */
-public class CircleProgress extends View {
+public class CircleProgressUpdater extends View {
     private Paint textPaint;
     private RectF rectF = new RectF();
 
     private float textSize;
     private int textColor;
-    private int progress = 20;
+    private int progress = 65;
     private int max;
     private int finishedColor;
     private int unfinishedColor;
@@ -50,18 +48,18 @@ public class CircleProgress extends View {
 
     private Paint paint = new Paint();
 
-    public CircleProgress(Context context) {
+    public CircleProgressUpdater(Context context) {
         this(context, null);
     }
 
-    public CircleProgress(Context context, AttributeSet attrs) {
+    public CircleProgressUpdater(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public CircleProgress(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CircleProgressUpdater(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        default_text_size = ncl.ac.uk.cs.teamone.lloydsstudent.circleprogress.Utils.sp2px(getResources(), 18);
+        default_text_size = Utils.sp2px(getResources(), 18);
         min_size = (int) Utils.dp2px(getResources(), 100);
 
         final TypedArray attributes = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CircleProgress, defStyleAttr, 0);
@@ -78,7 +76,7 @@ public class CircleProgress extends View {
         textSize = attributes.getDimension(R.styleable.CircleProgress_circle_text_size, default_text_size);
 
         setMax(attributes.getInt(R.styleable.CircleProgress_circle_max, default_max));
-        setProgress(attributes.getInt(R.styleable.CircleProgress_circle_progress, 20));
+        setProgress(attributes.getInt(R.styleable.CircleProgress_circle_progress, progress));
 
         if (attributes.getString(R.styleable.CircleProgress_circle_prefix_text) != null) {
             setPrefixText(attributes.getString(R.styleable.CircleProgress_circle_prefix_text));
