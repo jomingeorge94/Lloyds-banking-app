@@ -2,10 +2,11 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 /**
  * Created by Jomin on 27/03/2015.
@@ -20,9 +21,9 @@ public class HomeScreenFirstAccount extends Fragment {
         v.findViewById(R.id.firstaccountoverview).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
-                transaction.replace(android.R.id.tabcontent, new OverviewFragment(), "OverView");
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                ((LinearLayout)getActivity().findViewById(R.id.tabmainswitch)).removeAllViews();
+                transaction.replace(R.id.tabmainswitch, new OverviewFragment(), "");
                 transaction.commit();
             }
         });

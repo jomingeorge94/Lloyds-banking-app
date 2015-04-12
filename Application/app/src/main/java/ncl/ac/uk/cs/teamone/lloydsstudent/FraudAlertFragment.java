@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 /**
  * Created by Jomin on 03/03/2015.
@@ -27,8 +27,8 @@ public class FraudAlertFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
-                transaction.replace(android.R.id.tabcontent, new FraudReport(), "FraudReportOnline");
+                ((LinearLayout)getActivity().findViewById(R.id.tabmainswitch)).removeAllViews();
+                transaction.replace(R.id.tabmainswitch, new FraudReport(), "FraudReportOnline");
                 transaction.commit();
             }
         });

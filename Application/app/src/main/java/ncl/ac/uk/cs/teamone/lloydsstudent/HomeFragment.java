@@ -30,7 +30,7 @@ public class HomeFragment extends Fragment {
         customerName.setText(data.customer.get("firstname") + " " + data.customer.get("lastname"));
 
         viewPager = (ViewPager)v.findViewById(R.id.accountswitching);
-        AccountSwitching accountSwitching = new AccountSwitching(getFragmentManager());
+        AccountSwitching accountSwitching = new AccountSwitching(getChildFragmentManager());
         viewPager.setAdapter(accountSwitching);
 
         //onclick event for the button - make a transfer
