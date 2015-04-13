@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
  */
 public class FraudAlertFragment extends Fragment {
 
+
     /**
      * method to change the fragment to the fraud contact us xml layout
      */
@@ -41,6 +42,7 @@ public class FraudAlertFragment extends Fragment {
                 startActivity(callIntent);
             }
         });
+
 
         return v;
 
