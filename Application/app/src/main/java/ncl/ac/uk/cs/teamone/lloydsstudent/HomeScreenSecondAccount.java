@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * Created by Jomin on 27/03/2015.
@@ -17,6 +18,17 @@ public class HomeScreenSecondAccount extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
         final View v = inflater.inflate(R.layout.home_screenmain_secondaccount, container, false);
+
+        Data d = new Data();
+
+        TextView type_of_account = (TextView) v.findViewById(R.id.textView139);
+        type_of_account.setText(d.accounts.get(1).get("type_of_account"));
+
+        TextView total_money = (TextView) v.findViewById(R.id.savingsaccountoverview);
+        total_money.setText(d.accounts.get(1).get("total_money"));
+
+        TextView account_number_and_sortcode = (TextView) v.findViewById(R.id.textView141);
+        account_number_and_sortcode.setText(d.accounts.get(1).get("sortcode") + " | " + d.accounts.get(1).get("account_number"));
 
         v.findViewById(R.id.savingsaccountoverview).setOnClickListener(new View.OnClickListener() {
             @Override

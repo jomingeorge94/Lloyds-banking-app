@@ -153,7 +153,9 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
 
                         setData(jsonO);
 
-                        d.accounts.add(data);
+                        d.accounts.add(this.data);
+                        //clear the previous set data
+                        this.data = new HashMap<>();
                     }
                 }
                 else {
