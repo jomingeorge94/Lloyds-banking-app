@@ -48,7 +48,9 @@ public class BudgetOverview extends Fragment {
         Data d = new Data();
 
         // Add the received data to the values array
+        //last week
         values.add(new BarEntry(69.23f, 0));
+        //this week
         values.add(new BarEntry(Float.parseFloat(d.budget.get("spend")), 1));
 
         // Creates a BarDataSet to store the data array

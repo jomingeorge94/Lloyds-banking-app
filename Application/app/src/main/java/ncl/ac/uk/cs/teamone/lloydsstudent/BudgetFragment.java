@@ -40,8 +40,11 @@ public class BudgetFragment extends Fragment {
         rightLabel = (TextView) v.findViewById(R.id.right_label);
         remaining = (TextView) v.findViewById(R.id.budget_remaining);
 
+        // Variable to hold data received
+        Data d = new Data();
+
         // Update Summary section of the page
-        summaryUpdate(88, 12.11);
+        summaryUpdate(Float.parseFloat(d.budget.get("amount")), Float.parseFloat(d.budget.get("spend")));
 
         // Creates a list of fragments which will be dispalyed in the scrolling pane
         ArrayList<Fragment>  fragmentList = new ArrayList<Fragment>();
@@ -84,13 +87,10 @@ public class BudgetFragment extends Fragment {
      */
     public void summaryUpdate(double budget, double spent) {
 
-        // Variable to hold data received
-        Data d = new Data();
-
         // Update text labels
-        total.setText("£" + String.format("%.2f", Float.parseFloat(d.budget.get("amount"))));
-        rightLabel.setText("£" + String.format("%.2f", Float.parseFloat(d.budget.get("amount"))));
-        remaining.setText("£" + String.format("%.2f", Float.parseFloat(d.budget.get("amount")) - Float.parseFloat(d.budget.get("spend"))));
+        total.setText("£" + String.format("%.2f", budget));
+        rightLabel.setText("£" + String.format("%.2f", budget));
+        remaining.setText("£" + String.format("%.2f", budget - spent));
 
         // Gets the resource files for the progress bar
         resource = getResources();
