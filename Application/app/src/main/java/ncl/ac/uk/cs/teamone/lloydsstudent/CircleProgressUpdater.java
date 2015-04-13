@@ -20,9 +20,11 @@ public class CircleProgressUpdater extends View {
     private Paint textPaint;
     private RectF rectF = new RectF();
 
+    private Data d = new Data();
+
     private float textSize;
     private int textColor;
-    private int progress = 65;
+    private int progress = Math.round(Float.parseFloat(d.budget.get("spend")));
     private int max;
     private int finishedColor;
     private int unfinishedColor;
@@ -32,7 +34,7 @@ public class CircleProgressUpdater extends View {
     private final int default_finished_color = Color.rgb(93,173,104);
     private final int default_unfinished_color = Color.rgb(226, 237, 222);
     private final int default_text_color = Color.WHITE;
-    private final int default_max = 100;
+    private final int default_max = Math.round(Float.parseFloat(d.budget.get("amount")));
     private final float default_text_size;
     private final int min_size;
 
