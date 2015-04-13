@@ -151,7 +151,7 @@
             android:layout_height="fill_parent"
             android:layout_marginTop="15dp">
 
-            <ncl.ac.uk.cs.teamone.lloydsstudent.circleprogress.CircleProgress
+            <ncl.ac.uk.cs.teamone.lloydsstudent.CircleProgressUpdater
                 android:id="@+id/circle_progress"
                 android:layout_width="213dp"
                 android:layout_height="207dp"
