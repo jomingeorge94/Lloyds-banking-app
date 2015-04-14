@@ -166,6 +166,9 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                     if(params[0].contains("retrieve_budget.php")) {
                         new Data().budget = getData();
                     }
+                    else if(params[0].contains("retrieve_last_week_budget.php")) {
+                        new Data().previousBudget = getData();
+                    }
                 }
             }
 
@@ -209,6 +212,9 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 break;
             case 3:
                 Retrieve r2 = new Retrieve(((Activity) activity), "http://www.abunities.co.uk/t2022t1/retrieve_budget.php", 3);
+                break;
+            case 4:
+                Retrieve r3 = new Retrieve(((Activity) activity), "http://www.abunities.co.uk/t2022t1/retrieve_last_week_budget.php", 4);
                 break;
         }
 
