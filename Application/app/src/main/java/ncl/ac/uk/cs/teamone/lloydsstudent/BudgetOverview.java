@@ -49,7 +49,7 @@ public class BudgetOverview extends Fragment {
 
         // Add the received data to the values array
         //last week
-        values.add(new BarEntry(69.23f, 0));
+        values.add(new BarEntry(Float.parseFloat(d.previousBudget.get("spend")), 0));
         //this week
         values.add(new BarEntry(Float.parseFloat(d.budget.get("spend")), 1));
 

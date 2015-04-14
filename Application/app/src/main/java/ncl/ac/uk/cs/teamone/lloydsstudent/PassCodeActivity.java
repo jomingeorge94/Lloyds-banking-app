@@ -90,7 +90,7 @@ public class PassCodeActivity {
                     Data d = new Data();
                     String[] values = {d.getUid(), pass.getText().toString(), telephonyManager.getDeviceId()};
                     //create an asynchronous object
-                    PHPHandler handler = new PHPHandler(ac, keys, values, 3) ;
+                    PHPHandler handler = new PHPHandler(ac, keys, values, 4) ;
                     //execute the object
                     handler.execute(url);
                     //set the info within the data class

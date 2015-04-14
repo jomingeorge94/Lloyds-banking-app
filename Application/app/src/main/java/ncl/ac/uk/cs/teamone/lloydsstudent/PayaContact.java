@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+
 /**
  * Created by Jomin on 12/03/2015.
  */
@@ -24,6 +26,7 @@ public class PayaContact extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
     // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.paya_contact, container, false);
+
         spinner = (Spinner)v.findViewById(R.id.payacontacts_pinner);
         final ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.accounts,R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_items);

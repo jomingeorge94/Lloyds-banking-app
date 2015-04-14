@@ -47,6 +47,14 @@
 		public $rent_spend = "";
 		public $groceries_spend = "";
 		public $eating_out_spend = "";
+		//week days
+		public $monday_spend = "";
+		public $tuesday_spend = "";
+		public $wednesday_spend = "";
+		public $thursday_spend = "";
+		public $friday_spend = "";
+		public $saturday_spend = "";
+		public $sunday_spend = "";
 	}
 
 ?>

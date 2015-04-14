@@ -36,7 +36,7 @@ public class LoginActivity extends ActionBarActivity {
                     String[] keys = {"imei", "passcode"};
                     String[] values = {telephonyManager.getDeviceId(), passCode.getText().toString()};
                     //create an asynchronous object
-                    PHPHandler handler = new PHPHandler(activity, keys, values, 3) ;
+                    PHPHandler handler = new PHPHandler(activity, keys, values, 4) ;
                     //execute the object
                     handler.execute(url);
                     //Resets text

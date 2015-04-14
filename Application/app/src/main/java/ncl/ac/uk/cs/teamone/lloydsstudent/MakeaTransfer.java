@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+
 /**
  * Created by Jomin on 07/03/2015.
  */
@@ -27,6 +29,10 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.makea_transfer, container, false);
 
+        ArrayList<String> list = new ArrayList<String>();
+        Data d = new Data();
+        list.add(d.accounts.get(0).get("type_of_account"));
+        list.add(d.accounts.get(1).get("type_of_account"));
 
         makeaTransferSpinnerAccountFrom = (Spinner)v.findViewById(R.id.spinnermakeaTransferAccountFrom);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.accounts,R.layout.spinner_item);

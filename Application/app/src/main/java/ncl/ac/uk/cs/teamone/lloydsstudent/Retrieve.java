@@ -22,6 +22,10 @@ public class Retrieve {
             case 3:
                 this.table = 2;
                 break;
+            //Previous Budget
+            case 4:
+                this.table = 3;
+                break;
         }
 
         PHPHandler handler = new PHPHandler(a, keys, values, this.table);

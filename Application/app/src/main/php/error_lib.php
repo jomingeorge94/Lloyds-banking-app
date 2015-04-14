@@ -22,5 +22,6 @@
 	define('SUCCESS_MOBILE_BANKING', '8');
 	define('SUCCESS_FIRST_TIME', '9');
 	define('ADD_ENTRY_COMPLETE', '10');
+	define('NO_TRANSACTIONS', '11');
 
 ?>
