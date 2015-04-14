@@ -236,7 +236,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //New User
             case 2:
                 Intent mainIntent;
-                mainIntent = new Intent(activity, FirstLoginActivity.class);
+                mainIntent = new Intent(activity, BudgetSettings.class);
                 activity.startActivity(mainIntent);
                 ((Activity) activity).finish();
                 break;
@@ -267,7 +267,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //Mobile Banking - Successful set up
             case 8:
                 Intent otherIntent;
-                otherIntent = new Intent(activity, LoginActivity.class);
+                otherIntent = new Intent(activity, BudgetSettings.class);
                 activity.startActivity(otherIntent);
                 ((Activity) activity).finish();
                 break;
@@ -280,7 +280,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 break;
             //when add entry is successful
             case 10:
-                Intent oi = new Intent(activity, LoginActivity.class);
+                Intent oi = new Intent(activity, BudgetSettings.class);
                 activity.startActivity(oi);
                 ((Activity) activity).finish();
                 break;

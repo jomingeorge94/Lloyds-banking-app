@@ -29,8 +29,7 @@
                 android:id="@+id/bs_budget_value"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="left"
-                android:text="£10.12" />
+                android:gravity="left" />
 
         </TableRow>
 
@@ -45,8 +44,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:progress="50"/>
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/bs_lower_bound"
@@ -54,8 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/bs_budget_seek"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="£10" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/bs_mid_bound"
@@ -64,8 +61,7 @@
         android:layout_below="@id/bs_budget_seek"
         android:layout_alignLeft="@+id/bs_lower_bound"
         android:layout_alignRight="@+id/bs_upper_bound"
-        android:gravity="center"
-        android:text="£20" />
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/bs_upper_bound"
@@ -73,8 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/bs_budget_seek"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:text="£30" />
+        android:layout_alignParentEnd="true" />
 
     <View
         android:layout_width="fill_parent"
@@ -106,8 +101,8 @@
                 android:id="@+id/bs_food_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Food"
-                android:gravity="center" />
+                android:gravity="center"
+                android:text="Food" />
 
             <SeekBar
                 android:id="@+id/bs_food_seek"
@@ -117,8 +112,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_food_progress"
-                android:layout_toStartOf="@+id/bs_food_progress"
-                android:progress="12" />
+                android:layout_toStartOf="@+id/bs_food_progress" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -130,8 +124,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@id/bs_food_seek"
                 android:layout_alignBottom="@id/bs_food_seek"
-                android:gravity="center"
-                android:text="£10.11" />
+                android:gravity="center" />
 
             <TextView
                 style="@style/LloydsTitleMedium"
@@ -139,8 +132,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/bs_food_seek"
-                android:text="Travel"
-                android:gravity="center" />
+                android:gravity="center"
+                android:text="Travel" />
 
             <SeekBar
                 android:id="@+id/bs_travel_seek"
@@ -150,8 +143,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_travel_progress"
-                android:layout_toStartOf="@+id/bs_travel_progress"
-                android:progress="12" />
+                android:layout_toStartOf="@+id/bs_travel_progress" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -163,8 +155,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@id/bs_travel_seek"
                 android:layout_alignBottom="@id/bs_travel_seek"
-                android:gravity="center"
-                android:text="£10.11" />
+                android:gravity="center" />
 
             <TextView
                 style="@style/LloydsTitleMedium"
@@ -172,8 +163,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/bs_travel_seek"
-                android:text="Beauty"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:text="Beauty" />
 
             <SeekBar
                 android:id="@+id/bs_beauty_seek"
@@ -183,8 +174,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_beauty_progress"
-                android:layout_toStartOf="@+id/bs_beauty_progress"
-                android:progress="12" />
+                android:layout_toStartOf="@+id/bs_beauty_progress" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -196,8 +186,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@id/bs_beauty_seek"
                 android:layout_alignBottom="@id/bs_beauty_seek"
-                android:gravity="center"
-                android:text="£10.11" />
+                android:gravity="center" />
 
             <TextView
                 style="@style/LloydsTitleMedium"
@@ -205,8 +194,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/bs_beauty_seek"
-                android:text="Entertainment"
-                android:gravity="center" />
+                android:gravity="center"
+                android:text="Entertainment" />
 
             <SeekBar
                 android:id="@+id/bs_entertainment_seek"
@@ -216,8 +205,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_entertainment_progress"
-                android:layout_toStartOf="@+id/bs_entertainment_progress"
-                android:progress="12" />
+                android:layout_toStartOf="@+id/bs_entertainment_progress" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -229,8 +217,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@id/bs_entertainment_seek"
                 android:layout_alignBottom="@id/bs_entertainment_seek"
-                android:gravity="center"
-                android:text="£10.11" />
+                android:gravity="center" />
 
             <TextView
                 style="@style/LloydsTitleMedium"
@@ -238,8 +225,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/bs_entertainment_seek"
-                android:text="Home"
-                android:gravity="center" />
+                android:gravity="center"
+                android:text="Home" />
 
             <SeekBar
                 android:id="@+id/bs_home_seek"
@@ -249,8 +236,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_home_progress"
-                android:layout_toStartOf="@+id/bs_home_progress"
-                android:progress="12" />
+                android:layout_toStartOf="@+id/bs_home_progress" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -262,8 +248,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@id/bs_home_seek"
                 android:layout_alignBottom="@id/bs_home_seek"
-                android:gravity="center"
-                android:text="£10.11" />
+                android:gravity="center" />
 
             <TextView
                 style="@style/LloydsTitleMedium"
@@ -271,8 +256,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/bs_home_seek"
-                android:text="Clothes"
-                android:gravity="center" />
+                android:gravity="center"
+                android:text="Clothes" />
 
             <SeekBar
                 android:id="@+id/bs_clothes_seek"
@@ -282,8 +267,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_clothes_progress"
-                android:layout_toStartOf="@+id/bs_clothes_progress"
-                android:progress="12" />
+                android:layout_toStartOf="@+id/bs_clothes_progress" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -295,8 +279,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@id/bs_clothes_seek"
                 android:layout_alignBottom="@id/bs_clothes_seek"
-                android:gravity="center"
-                android:text="£10.11" />
+                android:gravity="center" />
 
             <TextView
                 style="@style/LloydsTitleMedium"
@@ -304,8 +287,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/bs_clothes_seek"
-                android:text="Leisure"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:text="Leisure" />
 
             <SeekBar
                 android:id="@+id/bs_leisure_seek"
@@ -315,8 +298,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_leisure_progress"
-                android:layout_toStartOf="@+id/bs_leisure_progress"
-                android:progress="12" />
+                android:layout_toStartOf="@+id/bs_leisure_progress" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -328,8 +310,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@id/bs_leisure_seek"
                 android:layout_alignBottom="@id/bs_leisure_seek"
-                android:gravity="center"
-                android:text="£10.11" />
+                android:gravity="center" />
 
             <TextView
                 style="@style/LloydsTitleMedium"
@@ -337,8 +318,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/bs_leisure_seek"
-                android:text="Other"
-                android:gravity="center" />
+                android:gravity="center"
+                android:text="Other" />
 
             <SeekBar
                 android:id="@+id/bs_other_seek"
@@ -348,8 +329,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/bs_other_progress"
-                android:layout_toStartOf="@+id/bs_other_progress"
-                android:progress="12" />
+                android:layout_toStartOf="@+id/bs_other_progress" />
 
             <TextView
                 style="@style/LloydsTitleSmall"
@@ -361,8 +341,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@id/bs_other_seek"
                 android:layout_alignBottom="@id/bs_other_seek"
-                android:gravity="center"
-                android:text="£10.11" />
+                android:gravity="center" />
 
             <TextView
                 style="@style/LloydsTitleMedium"
@@ -384,8 +363,7 @@
                 android:layout_below="@id/bs_other_progress"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:gravity="center"
-                android:text="£10.11" />
+                android:gravity="center" />
 
         </RelativeLayout>
 
