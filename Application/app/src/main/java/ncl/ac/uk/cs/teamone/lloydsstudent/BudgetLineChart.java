@@ -45,8 +45,19 @@ public class BudgetLineChart extends Fragment {
                                                                            "Thu", "Fri", "Sat",
                                                                            "Sun"));
 
+        Data d = new Data();
+
+        // Defines a float for each day and assigns a value
+        float monday = Float.parseFloat(d.budget.get("monday_spend"));
+        float tuesday = Float.parseFloat(d.budget.get("tuesday_spend"));
+        float wednesday = Float.parseFloat(d.budget.get("wednesday_spend"));
+        float thursday = Float.parseFloat(d.budget.get("thursday_spend"));
+        float friday = Float.parseFloat(d.budget.get("friday_spend"));
+        float saturday = Float.parseFloat(d.budget.get("saturday_spend"));
+        float sunday = Float.parseFloat(d.budget.get("sunday_spend"));
+
         // Fills the arrays witht he raw data
-        float[] currentData = new float[]{8.56f, 4.69f, 2.45f};
+        float[] currentData = new float[]{monday, tuesday, wednesday, thursday, friday, saturday, sunday};
         float[] previousData = new float[]{12.1f, 7.02f, 5.11f, 1.27f, 8.56f, 4.69f, 2.45f};
 
         // Converts raw data to Entry objects for first set of data
