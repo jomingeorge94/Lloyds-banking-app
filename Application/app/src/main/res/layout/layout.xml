@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/add_deal_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add A Deal"
+        android:autoText="false"
+        style="@style/LloydsTitleXLarge"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@color/dark_green"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/add_deal_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/add_deal_underline" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/add_deal_underline"
+        android:layout_alignParentLeft="true">
+
+        <EditText
+            style="@style/LloydsEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deal_description_input"
+            android:textColor="@color/text_dark"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="sans-serif-light"
+            android:maxLength="20"
+            android:autoText="true"
+            android:editable="true"
+            android:enabled="true"
+            android:maxLines="1" />
+
+        <EditText
+            style="@style/LloydsEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deal_name_input"
+            android:textColor="@color/text_dark"
+            android:layout_below="@+id/deal_description_input"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="sans-serif-light"
+            android:maxLength="20"
+            android:autoText="true"
+            android:editable="true"
+            android:enabled="true"
+            android:maxLines="1" />
+
+        <TextView
+        style="@style/LloydsTitleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Drop a pin on your deal"
+        android:id="@+id/map_label"
+        android:textColor="@color/text_dark"
+        android:layout_below="@+id/deal_name_input"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+        <ImageView
+            style="@style/LloydsTitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/map_display"
+            android:layout_below="@+id/map_label"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/map_draw" />
+
+        <TextView
+            style="@style/LloydsTitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Add A Photo"
+            android:id="@+id/photo_label"
+            android:textColor="@color/text_dark"
+            android:layout_below="@+id/map_display"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/cash_buttons">
+        <TableRow>
+            <Button
+                style="@style/LloydsButtonActive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:id="@+id/deal_add_button"
+                android:layout_alignParentBottom="true"
+                android:paddingRight="2dp"
+                android:layout_alignParentLeft="true"/>
+
+            <Button
+                style="@style/LloydsButtonDisabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:id="@+id/deal_cancel_button"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="2dp"/>
+        </TableRow>
+    </TableLayout>
+
+
+</RelativeLayout>
