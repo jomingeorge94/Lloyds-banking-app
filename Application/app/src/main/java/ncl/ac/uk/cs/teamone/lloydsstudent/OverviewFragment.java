@@ -3,6 +3,7 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,11 +23,10 @@ public class OverviewFragment extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.home_tab_transactionhistory, container, false);
 
-        viewPager = (ViewPager)v.findViewById(R.id.accountswitchingoverview);
+        viewPager = (ViewPager) v.findViewById(R.id.accountswitchingoverview);
         AccountSwitchingOverview accountSwitching = new AccountSwitchingOverview(getChildFragmentManager());
+
         viewPager.setAdapter(accountSwitching);
-
-
 
         return v;
     }

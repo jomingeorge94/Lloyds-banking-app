@@ -31,18 +31,24 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
 
         ArrayList<String> list = new ArrayList<String>();
         Data d = new Data();
-        list.add(d.accounts.get(0).get("type_of_account"));
-        list.add(d.accounts.get(1).get("type_of_account"));
 
-        makeaTransferSpinnerAccountFrom = (Spinner)v.findViewById(R.id.spinnermakeaTransferAccountFrom);
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.accounts,R.layout.spinner_item);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_items);
+        for(int i = 0; i < d.accounts.size(); i++) {
+            list.add(d.accounts.get(i).get("type_of_account"));
+        }
+
+        //initialize the spinner
+        makeaTransferSpinnerAccountFrom = (Spinner) v.findViewById(R.id.spinnermakeaTransferAccountFrom);
+        //initialize the adapter with values in list
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, list);
+        //set the adapter and the prompt for the user
         makeaTransferSpinnerAccountFrom.setAdapter(adapter);
         makeaTransferSpinnerAccountFrom.setPrompt("Select an account");
 
-        MakeaTransferSpinnerAccountTo = (Spinner)v.findViewById(R.id.spinnermakeaTransferAccountTo);
-        ArrayAdapter adapter2 = ArrayAdapter.createFromResource(getActivity(), R.array.accounts,R.layout.spinner_item);
-        adapter2.setDropDownViewResource(R.layout.spinner_dropdown_items);
+        //initialize second spinner
+        MakeaTransferSpinnerAccountTo = (Spinner) v.findViewById(R.id.spinnermakeaTransferAccountTo);
+        //same as above
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, list);
+        //set the adapter and the prompt for the user
         MakeaTransferSpinnerAccountTo.setAdapter(adapter2);
         MakeaTransferSpinnerAccountTo.setPrompt("Select an account");
 
@@ -65,7 +71,7 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
             @Override
             public void afterTextChanged(Editable s) {
 
-                if(amount.length() >=1 && reference.length() >=5){
+                if(amount.length() >= 1 && reference.length() >= 5){
                     reviewButton.setEnabled(true);
                     reviewButton.setBackgroundColor(Color.parseColor("#369742"));
                 } else  {
@@ -101,10 +107,6 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
 
             }
         });
-
-
-
-
 
         return v;
     }

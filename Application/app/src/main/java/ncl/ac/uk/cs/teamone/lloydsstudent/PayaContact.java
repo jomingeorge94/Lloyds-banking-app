@@ -27,9 +27,17 @@ public class PayaContact extends Fragment {
     // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.paya_contact, container, false);
 
-        spinner = (Spinner)v.findViewById(R.id.payacontacts_pinner);
-        final ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.accounts,R.layout.spinner_item);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_items);
+        ArrayList<String> list = new ArrayList<String>();
+        Data d = new Data();
+
+        for(int i = 0; i < d.accounts.size(); i++) {
+            list.add(d.accounts.get(i).get("type_of_account"));
+        }
+
+        spinner = (Spinner) v.findViewById(R.id.payacontacts_pinner);
+        //initialize adapter with the contents of the list
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, list);
+        //set the adapt and prompt
         spinner.setAdapter(adapter);
         spinner.setPrompt("Select an account");
 
