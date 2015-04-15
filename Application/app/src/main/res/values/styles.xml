@@ -61,13 +61,15 @@
     <style name="LloydsEditText" parent="android:Widget.Holo.Light.EditText">
         <item name="android:background">@drawable/inputs_edit_text_holo_light</item>
         <item name="android:textColor">@color/text_dark</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="LloydsEditSeekLabel" parent="android:Widget.Holo.Light.EditText">
         <item name="android:background">@drawable/inputs_edit_text_holo_light</item>
         <item name="android:textColor">@color/text_dark</item>
         <item name="android:fontFamily">sans-serif-light</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name= "Title" parent="TextAppearance.ShowcaseView.Title">
