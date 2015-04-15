@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
@@ -39,8 +38,8 @@ public class PassCodeActivity {
         final AlertDialog passNotMatch = builder.create();
 
         // Finds the editable text and assigns them variables
-        final EditText pass = (EditText) ac.findViewById(R.id.first_passcode);
-        final EditText conf = (EditText) ac.findViewById(R.id.first_confirm);
+        final EditText pass = (EditText) ac.findViewById(R.id.login_second_passcode);
+        final EditText conf = (EditText) ac.findViewById(R.id.login_second_confirm);
 
         // Find the next button and assigns it a variable
         final Button finishedButton = (Button) ac.findViewById(R.id.first_finished);

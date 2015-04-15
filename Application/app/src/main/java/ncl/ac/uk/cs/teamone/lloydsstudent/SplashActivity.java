@@ -3,62 +3,73 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 
+/**
+ * A class that deals with the initial loading of the application. As well as loading the scripts
+ * the page creates a basic GUI which dismays a logo to the user and a loading animation so they
+ * are aware the application is loading
+ *
+ * This Activity is the one declared in the AppManifest as the first one to run so the application
+ * always loads to this page when started
+ */
 public class SplashActivity extends Activity {
 
-    /** Duration of wait **/
+    // Length of delay for splash screen, currently 1 second
     private final int SPLASH_DISPLAY_LENGTH = 1000;
 
     final Context activity = SplashActivity.this;
 
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle icicle) {
+
+        // Call to the super class
         super.onCreate(icicle);
+        // Creates the view from the XML file specified
         setContentView(R.layout.activity_splash);
 
         final TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
 
-        /* Creates New handler to start the login screen after wait */
-
+        // Create handler which creates the delay for the Activity
         new Handler().postDelayed(new Runnable() {
+
             @Override
             public void run() {
+                // Check if WiFi, 3G, 4G or any internet connection is available
                 if(isNetworkAvailable()) {
-                    //url to connect to
+                    // Url to connect to
                     String url = "http://www.abunities.co.uk/t2022t1/check_mobile_banking.php";
 
-                    //values to send to the PHP file
+                    // Values to send to the PHP file
                     String[] keys = {"imei"};
                     String[] values = {telephonyManager.getDeviceId()};
 
-                    //create an asynchronous object
+                    // Create an asynchronous object
                     PHPHandler handler = new PHPHandler(activity, keys, values, 0);
 
-                    //execute the object
+                    // Execute the object
                     handler.execute(url);
                 }
-                //go to an error activity
+                // If no connectivity found go to Error Activity
                 else {
-                    Intent otherIntent;
-                    otherIntent = new Intent(activity, NetworkErrorActivity.class);
+                    // Create intent to start Error Activity class
+                    Intent otherIntent = new Intent(activity, NetworkErrorActivity.class);
+                    // Start the intent
                     activity.startActivity(otherIntent);
+                    // Finish current activity
                     ((Activity) activity).finish();
                 }
             }
+            
         }, SPLASH_DISPLAY_LENGTH);
 
     }
 
     /**
-     *
      * Reads the phones network status and returns a boolean depending whether the
      * phone has any internet connection or not
      *
@@ -68,10 +79,12 @@ public class SplashActivity extends Activity {
      */
 
     private boolean isNetworkAvailable() {
+
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(activity.CONNECTIVITY_SERVICE);
 
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
 
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+
     }
 }

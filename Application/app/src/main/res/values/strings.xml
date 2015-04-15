@@ -12,8 +12,8 @@
     <string name="first_intro">Welcome to Lloyds Student your all-in-one finance solution during Uni
                                ! \n\nIn order to set up your Lloyds Student App we need to take a few
                                details to link your bank account with the app and get you started</string>
-    <string name="first_label_1">1. Online Banking User ID</string>
-    <string name="first_label_2">2. Online Banking Password</string>
+    <string name="first_username_label">1. Online Banking User ID</string>
+    <string name="first_password_label">2. Online Banking Password</string>
     <string name="first_passcode_info">Next we need you to set-up a four digit passcode which you\'ll
                                        use each time you log into the app to keep your details
                                        secure try to make your passcode memorable but also

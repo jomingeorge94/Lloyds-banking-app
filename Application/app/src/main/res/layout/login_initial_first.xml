@@ -1,0 +1,95 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ncl.ac.uk.cs.teamone.lloydsstudent.FirstLoginActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/white" >
+
+    <TextView
+        style="@style/LloydsTitleXLarge"
+        android:id="@+id/login_first_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/first_title" />
+
+    <View
+        android:id="@+id/login_first_underline"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@+id/login_first_title"
+        android:background="@color/dark_green" />
+
+    <TextView
+        style="@style/LloydsTextSmall"
+        android:id="@+id/login_first_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/login_first_underline"
+        android:text="@string/first_intro" />
+
+    <TextView
+        style="@style/LloydsTitleMedium"
+        android:id="@+id/login_username_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/login_first_description"
+        android:text="@string/first_username_label" />
+
+    <EditText
+        style="@style/LloydsEditText"
+        android:id="@+id/login_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/login_password_label"
+        android:layout_below="@+id/login_username_label"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
+        android:maxLength="9" />
+
+    <TextView
+        style="@style/LloydsTitleMedium"
+        android:id="@+id/login_password_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/login_username"
+        android:layout_marginTop="16dp"
+        android:text="@string/first_password_label" />
+
+    <EditText
+        style="@style/LloydsEditText"
+        android:id="@+id/login_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/login_password_label"
+        android:layout_below="@+id/login_password_label"
+        android:layout_marginTop="8dp"
+        android:inputType="textPassword" />
+
+    <Button
+        style="@style/LloydsButtonDisabled"
+        android:id="@+id/login_first_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:enabled="false"
+        android:text="@string/gen_next"/>
+
+</RelativeLayout>

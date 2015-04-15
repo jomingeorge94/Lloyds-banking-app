@@ -1,16 +1,10 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,14 +18,14 @@ public class FirstLoginActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.initial_setup_login);
+        setContentView(R.layout.login_initial_first);
 
         // Finds the editable text and assigns them variables
-        final EditText user = (EditText) findViewById(R.id.userID);
-        final EditText pass = (EditText) findViewById(R.id.userPass);
+        final EditText user = (EditText) findViewById(R.id.login_username);
+        final EditText pass = (EditText) findViewById(R.id.login_password);
 
         // Find the next button and assigns it a variable
-        final Button nextButton = (Button) findViewById(R.id.first_next);
+        final Button nextButton = (Button) findViewById(R.id.login_first_next);
 
         // Creates a Text listener to detect if the both fields are filled to enable finished button
         final TextWatcher watcher = new TextWatcher() {

@@ -6,17 +6,9 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
-import android.support.v4.app.FragmentTransaction;
-import android.telephony.TelephonyManager;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -281,8 +273,8 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 this.alertDialog.setTitle("Passwords did not match");
                 this.alertDialog.show();
                 Activity a = (Activity) activity;
-                EditText user = (EditText) a.findViewById(R.id.userID);
-                EditText pass = (EditText) a.findViewById(R.id.userPass);
+                EditText user = (EditText) a.findViewById(R.id.login_username);
+                EditText pass = (EditText) a.findViewById(R.id.login_password);
                 user.setText(null);
                 pass.setText(null);
                 break;
@@ -297,7 +289,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             case 9:
                 Activity ac = (Activity) activity;
                 // Change view to next set of inputs
-                ac.setContentView(R.layout.initial_setup_passcode);
+                ac.setContentView(R.layout.login_initial_second);
                 PassCodeActivity pca = new PassCodeActivity(ac);
                 break;
             //when add entry is successful

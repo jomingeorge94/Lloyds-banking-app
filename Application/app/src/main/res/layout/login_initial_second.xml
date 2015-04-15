@@ -1,0 +1,101 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ncl.ac.uk.cs.teamone.lloydsstudent.FirstLoginActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/white" >
+
+    <TextView
+        style="@style/LloydsTitleXLarge"
+        android:id="@+id/login_second_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/first_title" />
+
+    <View
+        android:id="@+id/login_second_underline"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@+id/login_second_title"
+        android:background="@color/dark_green" />
+
+    <TextView
+        style="@style/LloydsTextSmall"
+        android:id="@+id/login_second_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/login_second_underline"
+        android:text="@string/first_passcode_info" />
+
+    <TextView
+        style="@style/LloydsTitleLarge"
+        android:id="@+id/login_second_passcode_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/login_second_description"
+        android:text="@string/first_passcode_label"
+        android:gravity="center" />
+
+    <EditText
+        style="@style/LloydsEditPasscode"
+        android:id="@+id/login_second_passcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/login_second_passcode_label"
+        android:inputType="number"
+        android:password="true"
+        android:maxLength="4"
+        android:gravity="center" />
+
+    <TextView
+        style="@style/LloydsTitleLarge"
+        android:id="@+id/login_second_confirm_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/login_second_passcode"
+        android:text="@string/first_passcode_confirm"
+        android:gravity="center" />
+
+    <EditText
+        style="@style/LloydsEditPasscode"
+        android:id="@+id/login_second_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/login_second_confirm_label"
+        android:inputType="number"
+        android:password="true"
+        android:maxLength="4"
+        android:gravity="center" />
+
+    <Button
+        style="@style/LloydsButtonDisabled"
+        android:id="@+id/first_finished"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/gen_finished" />
+
+</RelativeLayout>
