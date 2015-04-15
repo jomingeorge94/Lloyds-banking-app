@@ -145,7 +145,7 @@
 				$where = "' WHERE uid = '" . $uid . "'";
 				break;
 			case 2:
-				$where = "' WHERE aid = '" . $uid . "'";
+				$where = "' WHERE row = '" . $uid . "'";
 				break;
 			case 3:
 				$where = "' WHERE bid = '" . $uid . "'";
@@ -156,7 +156,7 @@
 		$sql = "UPDATE " . $db_table .
 			   " SET " . $column . "='" . encrypt($value) .
 			   $where;
-		
+
 		//get the return value of the query
 		$isSuccessful = mysqli_query($db_conn, $sql);
 

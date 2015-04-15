@@ -26,7 +26,7 @@ public class MakeaTransferConfirm extends DialogFragment {
         LayoutInflater inf = getActivity().getLayoutInflater();
         String strSelectedAccountFromSpinner = getArguments().getString("spinnerAccountFrom");
         String strSelectedAccountToSpinner = getArguments().getString("spinnerAccountTo");
-        String strSelectedAccountMakeaTransferAmountSpinner = getArguments().getString("spinnerAccountAmount");
+        final String strSelectedAccountMakeaTransferAmountSpinner = getArguments().getString("spinnerAccountAmount");
         String strSelectedAccountMakeaTransferReferenceSpinner = getArguments().getString("spinnerAccountReference");
         final View theDIalog = inf.inflate(R.layout.makea_transfer_confirm, null);
         builder.setView(theDIalog);
@@ -39,8 +39,6 @@ public class MakeaTransferConfirm extends DialogFragment {
         params.gravity = Gravity.TOP | Gravity.RIGHT;
         params.x = 0;
         params.y = 300;
-
-
 
         TextView spinnerAccountFromText = (TextView) theDIalog.findViewById(R.id.makeatransferconfirmationFrom);
         spinnerAccountFromText.setText(strSelectedAccountFromSpinner);
@@ -58,29 +56,12 @@ public class MakeaTransferConfirm extends DialogFragment {
         theDIalog.findViewById(R.id.makeaTransferOk).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                final ProgressDialog dialogpage = new ProgressDialog(getActivity());
-                dialogpage.setTitle("Transfer Success");
-                dialogpage.setMessage("The transaction amount has been successfully transferred to the other account. " +
-                        "The complete transaction amount of a charged transaction should appear in your bank account within one to two days of processing. ");
-                dialogpage.setIcon(R.drawable.transfer_money_icon);
-                dialogpage.setIndeterminate(true);
-                dialogpage.setCancelable(false);
-                dialogpage.show();
-
-                long delayInMillis = 8000;
-                Timer timer = new Timer();
-                timer.schedule(new TimerTask() {
-                    @Override
-                    public void run() {
-                        firstdialog.dismiss();
-                        dialogpage.dismiss();
-                        android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                        transaction.replace(android.R.id.tabcontent, new MakeaTransfer(), "PayaContact");
-                        transaction.commit();
-                    }
-                }, delayInMillis);
-
+                    //initialize the async task
+                    String[] keys = {"uid", "from", "from_money", "to", "to_money", "amount"};
+                    String[] values = {new Data().customer.get("uid"), getArguments().getString("from"), getArguments().getString("from_money"), getArguments().getString("to"), getArguments().getString("to_money"), strSelectedAccountMakeaTransferAmountSpinner};
+                    PHPHandler handler = new PHPHandler(getActivity(), keys, values, 5);
+                    //execute the script
+                    handler.execute("http://www.abunities.co.uk/t2022t1/maketransfer.php");
                }
         });
 

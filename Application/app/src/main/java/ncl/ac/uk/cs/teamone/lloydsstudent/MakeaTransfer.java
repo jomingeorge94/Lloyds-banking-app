@@ -1,5 +1,7 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -30,7 +32,7 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
         final View v = inflater.inflate(R.layout.makea_transfer, container, false);
 
         ArrayList<String> list = new ArrayList<String>();
-        Data d = new Data();
+        final Data d = new Data();
 
         for(int i = 0; i < d.accounts.size(); i++) {
             list.add(d.accounts.get(i).get("type_of_account"));
@@ -87,24 +89,62 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
         v.findViewById(R.id.maketransferReviewButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //total money of the account in the 'From' spinner
+                float from = Float.parseFloat(d.accounts.get(makeaTransferSpinnerAccountFrom.getSelectedItemPosition()).get("total_money"));
+                float fromOverdraft = Float.parseFloat(d.accounts.get(makeaTransferSpinnerAccountFrom.getSelectedItemPosition()).get("overdraft"));
+                //total money of the account in the 'To' spinner
+                float to = Float.parseFloat(d.accounts.get(MakeaTransferSpinnerAccountTo.getSelectedItemPosition()).get("total_money"));
+                //the amount to transfer
+                float transferAmount = Float.parseFloat(amount.getText().toString());
 
-                MakeaTransferConfirm fragment = new MakeaTransferConfirm();
+                //checks to make sure that the current money + overdraft do not go less than 0 before opening confirmation box
+                if((from + fromOverdraft) - transferAmount > 0) {
 
-                Bundle args = new Bundle();
-                args.putString("spinnerAccountFrom", makeaTransferSpinnerAccountFrom.getSelectedItem().toString());
-                fragment.setArguments(args);
+                    MakeaTransferConfirm fragment = new MakeaTransferConfirm();
 
-                args.putString("spinnerAccountTo", MakeaTransferSpinnerAccountTo.getSelectedItem().toString());
-                fragment.setArguments(args);
+                    Bundle args = new Bundle();
+                    args.putString("spinnerAccountFrom", makeaTransferSpinnerAccountFrom.getSelectedItem().toString());
+                    fragment.setArguments(args);
 
-                args.putString("spinnerAccountAmount", amount.getText().toString());
-                fragment.setArguments(args);
+                    args.putString("spinnerAccountTo", MakeaTransferSpinnerAccountTo.getSelectedItem().toString());
+                    fragment.setArguments(args);
 
-                args.putString("spinnerAccountReference", reference.getText().toString());
-                fragment.setArguments(args);
+                    args.putString("spinnerAccountAmount", amount.getText().toString());
+                    fragment.setArguments(args);
 
-                fragment.show(getFragmentManager(), "make a transfer dialog");
+                    args.putString("spinnerAccountReference", reference.getText().toString());
+                    fragment.setArguments(args);
 
+                    //sets the account number 'From'
+                    args.putString("from", d.accounts.get(makeaTransferSpinnerAccountFrom.getSelectedItemPosition()).get("account_number"));
+                    fragment.setArguments(args);
+                    //sets the money 'From'
+                    args.putString("from_money", Float.toString(from));
+                    fragment.setArguments(args);
+                    //sets the account number 'To'
+                    args.putString("to", d.accounts.get(MakeaTransferSpinnerAccountTo.getSelectedItemPosition()).get("account_number"));
+                    fragment.setArguments(args);
+                    //sets the money 'To'
+                    args.putString("to_money", Float.toString(to));
+                    fragment.setArguments(args);
+                    //the transfer amount
+                    args.putString("transferAmount", Float.toString(transferAmount));
+                    fragment.setArguments(args);
+
+                    fragment.show(getFragmentManager(), "make a transfer dialog");
+
+                }
+                else {
+                    //creates an alert dialog
+                    AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+                    alertDialog.setTitle("Not Enough Money");
+                    alertDialog.setButton(DialogInterface.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialog.show();
+                }
             }
         });
 

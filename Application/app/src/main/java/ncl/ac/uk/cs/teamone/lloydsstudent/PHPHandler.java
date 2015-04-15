@@ -71,9 +71,17 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
         this.progressDialog.setContentView(R.layout.progressdialog);
         //creates an alert dialog
         this.alertDialog = new AlertDialog.Builder(this.activity).create();
+        final int isTransfer = table;
+        final Context tActivity = activity;
         this.alertDialog.setButton(DialogInterface.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                dialog.dismiss();
+                //checks if user is making a transfer
+                if(isTransfer == 5) {
+                    Retrieve r = new Retrieve(((Activity) tActivity), "http://www.abunities.co.uk/t2022t1/retrieve_accounts.php", 1);
+                }
+                else {
+                    dialog.dismiss();
+                }
             }
         });
     }
@@ -140,20 +148,27 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             Log.v("Error", result);
 
             try {
+                //see if an error was returned from the PHP Script
                 checkForError(result);
             } catch (NumberFormatException nfe) {
+                Data d = new Data();
                 //different ways of handling data
                 if(params[0].contains("retrieve_accounts.php")) {
+                    //check if the account is not empty
+                    if(!d.accounts.isEmpty()) {
+                        //create a new list
+                        d.accounts = new ArrayList<Map<String, String>>();
+                    }
+                    //initialize the JSON array which was returned
                     JSONArray jsonA = new JSONArray(result);
-
-                    Data d = new Data();
-
+                    //go through the array
                     for(int i = 0; i < jsonA.length(); i++) {
+                        //retrieve the JSON object in position i
                         JSONObject jsonO = jsonA.getJSONObject(i);
-
+                        //set the data
                         setData(jsonO);
-
-                        d.accounts.add(this.data);
+                        //add data to accounts
+                        d.accounts.add(getData());
                         //clear the previous set data
                         this.data = new HashMap<>();
                     }
@@ -164,14 +179,15 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                     setData(data);
 
                     if(params[0].contains("retrieve_budget.php")) {
-                        new Data().budget = getData();
+                        d.budget = getData();
                     }
                     else if(params[0].contains("retrieve_last_week_budget.php")) {
-                        new Data().previousBudget = getData();
+                        d.previousBudget = getData();
                     }
                 }
             }
 
+        //catches various exceptions and will shut down the app if any occur
         } catch(UnsupportedEncodingException uee) {
             Log.v("UnsupportedEncodingException", uee.getMessage());
             ((Activity) activity).finish();
@@ -289,6 +305,10 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 Intent oi = new Intent(activity, LoginActivity.class);
                 activity.startActivity(oi);
                 ((Activity) activity).finish();
+                break;
+            case 11:
+                this.alertDialog.setTitle("Transfer Successful");
+                this.alertDialog.show();
                 break;
             //If unexpected error occurs then end any activity open
             default:
