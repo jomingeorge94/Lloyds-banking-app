@@ -1,5 +1,7 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -128,7 +130,7 @@ public class BudgetOverview extends Fragment {
         // Generates the Button object from the XML file
         Button cash = (Button) v.findViewById(R.id.budget_enter_button);
 
-        // Creates a Listener and adds it to the Cash button
+        // Creates a Listener to take the user to the cash entry dialog
         cash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,6 +138,17 @@ public class BudgetOverview extends Fragment {
                 DialogFragment cashEntry = new BudgetCashEntry();
                 // Show the new dialog
                 cashEntry.show(ft, "Add Cash Entry");
+            }
+        });
+
+        Button settings = (Button) v.findViewById(R.id.budget_settings_button);
+
+        // Creates a Listener and adds it to the settings page
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextScreen = new Intent(getActivity(), BudgetSettings.class);
+                startActivity(nextScreen);
             }
         });
 

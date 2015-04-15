@@ -2,24 +2,37 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+/**
+ * A class which produces a GUI that give the user options to alter their budget settings using
+ * sliders to control it
+ *
+ * Created by Dan Gardner
+ */
 public class BudgetSettings extends ActionBarActivity {
 
     // Create the variables to store the values and layout components for the fragment
     private float budgetValue;
     private float[] values = new float[8];
 
+    // Variables which store the budget slider infomation
     private SeekBar budgetSlider;
     private SeekBar[] sliders = new SeekBar[8];
+    private float max;
+    private float min;
 
+    // Variable to store buttons from XML
     private Button discard;
     private Button save;
 
+    // Variables which store references to the XML TextViews
     private TextView budgetView;
     private TextView lowerView;
     private TextView middleView;
@@ -34,14 +47,14 @@ public class BudgetSettings extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         // Sets the layout file to be used in the Fragment
         setContentView(R.layout.activity_budget_settings);
-        // Calls the initialiseInterface method to update layout components
-        initialiseInterface();
-        budgetSlider.setMax((int) budgetValue);
+        // Calls the initialiseVariable method to update layout components
+        initialiseVariables();
 
         budgetSlider.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    budgetView.setText(currencyFormatter(budgetSlider.getProgress()));
+                // Changes the budget label in real time with the suer altering the slider
+                budgetView.setText(currencyFormatter(budgetSlider.getProgress() + min));
             }
 
             @Override
@@ -51,7 +64,19 @@ public class BudgetSettings extends ActionBarActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                // Adds the oftest (lowerValue) to the slider value to get the true budget value
+                budgetValue = budgetSlider.getProgress() + min;
 
+                // Updates the minimum and maximum values
+                min = getMin();
+                max = budgetValue + 25 - min;
+
+                // Centers the slider
+                budgetSlider.setProgress((int) max / 2);
+                budgetSlider.setMax((int) max);
+
+                // Updates the rest of the GUI
+                updateView();
             }
         });
 
@@ -59,7 +84,8 @@ public class BudgetSettings extends ActionBarActivity {
             sliders[i].setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    getSliderValues();
+                    // Updates all of the labels while the user drags the seek bar
+                    updateView();
                 }
 
                 @Override
@@ -74,6 +100,30 @@ public class BudgetSettings extends ActionBarActivity {
             });
         }
 
+        // Adds a listener to the save button to save the budget changes
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Calls the update budget method to save the changes
+                updateBudget();
+            }
+        });
+
+        discard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+    }
+
+    /**
+     * Method that commits the vlad changes to the budget to the database so it can be recalled
+     * later for other sections in the budgeting
+     */
+    private void updateBudget() {
+
     }
 
     /**
@@ -81,14 +131,19 @@ public class BudgetSettings extends ActionBarActivity {
      * called it is for the initial setup of the budget, when editing the budget a differnet method
      * will be called and filled from the existing data
      */
-    private void initialiseInterface() {
+    private void initialiseVariables() {
 
-        // Assigns the budget to a local value
+        /***** DEBUG *****/
+        // Get the current budget from the database
         budgetValue = 88f;
+        max = budgetValue + 25;
+        min = getMin();
 
         // Initialises the SeekBar's as local variables
         budgetSlider = (SeekBar) findViewById(R.id.bs_budget_seek);
-        budgetSlider.setProgress(50);
+        budgetSlider.setProgress((int) max / 2);
+
+        // Initialise all of the SeekBar variables from the XML files
         sliders[0] = (SeekBar) findViewById(R.id.bs_food_seek);
         sliders[1] = (SeekBar) findViewById(R.id.bs_travel_seek);
         sliders[2] = (SeekBar) findViewById(R.id.bs_beauty_seek);
@@ -98,20 +153,16 @@ public class BudgetSettings extends ActionBarActivity {
         sliders[6] = (SeekBar) findViewById(R.id.bs_leisure_seek);
         sliders[7] = (SeekBar) findViewById(R.id.bs_other_seek);
 
-        // Initialises the TextView to display the budget
+        // Initialises TextView variables from the XML files
         budgetView = (TextView) findViewById(R.id.bs_budget_value);
-
-        // Initialises the TextView to display the lower slider bound
         lowerView = (TextView) findViewById(R.id.bs_lower_bound);
-
-        // Initialises the TextView to display to the mid value
         middleView = (TextView) findViewById(R.id.bs_mid_bound);
-
-        // Initialises the TextView to display to the upper value
         upperView = (TextView) findViewById(R.id.bs_upper_bound);
-
-        // Initialises the TextView to display to the unassigned budget remaining
         unassignedView = (TextView) findViewById(R.id.bs_remaining_value);
+
+        // Find and assign to local variables buttons from XML file
+        save = (Button) findViewById(R.id.bs_button_save);
+        discard = (Button) findViewById(R.id.bs_button_discard);
 
         // Initialises all of the text views for the categories
         views[0] = (TextView) findViewById(R.id.bs_food_progress);
@@ -123,58 +174,79 @@ public class BudgetSettings extends ActionBarActivity {
         views[6] = (TextView) findViewById(R.id.bs_leisure_progress);
         views[7] = (TextView) findViewById(R.id.bs_other_progress);
 
-        getSliderValues();
-
-    }
-
-    private void getSliderValues() {
-
-        int value = 0;
-
-        for(int i = 0; i < 8; i++) {
-
-            value = (int) (budgetValue * sliders[i].getProgress() / 100);
-            values[i] = (float) value;
-
-        }
-
         updateView();
 
     }
 
+    /**
+     * Method which updates all of the TextViews and progress bars in the GUI. Calling this method
+     * also updates the values of the sliders to match the current budget
+     */
     private void updateView() {
 
         // Updates the main text label at the top of the page
         budgetView.setText(currencyFormatter(budgetValue));
 
+        // Updates the minimum value
+        min = getMin();
+
         // Updates the text labels underneath the budget bar
-        setLowerView();
+        lowerView.setText(currencyFormatter(min));
         middleView.setText(currencyFormatter(budgetValue));
         upperView.setText(currencyFormatter(budgetValue + 25));
 
         // Updates the text label showing the remaining amount of the budget
         unassignedView.setText(currencyFormatter(getUnassignedValue()));
+        // If there is remaining budget the save button will be disabled
+        if(getUnassignedValue() > 0) {
+            unassignedView.setTextColor(getResources().getColor(R.color.dark_green));
+            save.setEnabled(false);
+            save.setBackgroundColor(getResources().getColor(R.color.medium_grey));
+        }
+        // If the total value of the categories is over the budget save button will be disabled
+        else if(getUnassignedValue() < 0) {
+            unassignedView.setTextColor(getResources().getColor(R.color.spend_over));
+            save.setEnabled(false);
+            save.setBackgroundColor(getResources().getColor(R.color.medium_grey));
+        }
+        // If the budget matches the categories then the save button is enabled
+        else {
+            unassignedView.setTextColor(getResources().getColor(R.color.text_dark));
+            save.setEnabled(true);
+            save.setBackgroundColor(getResources().getColor(R.color.dark_green));
+        }
+
+        for(int i = 0; i < 8; i++) {
+            values[i] = (float) sliders[i].getProgress() ;
+        }
 
         // Updates the category spend categories to the text labels
         for(int i = 0; i < 8; i++) {
-            views[i].setText(currencyFormatter(values[i]));
+            sliders[i].setMax((int) budgetValue);
+            views[i].setText(currencyFormatter((float) values[i]));
         }
 
     }
 
     /**
-     * Performs a check to see if the lower value will eb greater than 0 and if it is, assigns the
-     * label as normal, and if not assigns it £0
+     * A method which ensures that the lower bound of the budget does not go negative. If the lower
+     * bound does go into negative then the value will be ignored and set to 0, which is the lowest
+     * possible valid value
+     *
+     * @return the minimum budget bound
      */
-    private void setLowerView() {
+    private float getMin() {
+        float min;
         // Performs the check to see if lower bound will be greater than or equal to zero
         if(budgetValue - 25 <= 0) {
             // If yes assign the value
-            lowerView.setText(currencyFormatter(0f));
+            min = 0;
         } else {
             // If no assign a 0 value
-            lowerView.setText(currencyFormatter(budgetValue - 25));
+            min = budgetValue - 25;
         }
+        // Returns the minimum value
+        return min;
     }
 
     /**
@@ -227,4 +299,5 @@ public class BudgetSettings extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
