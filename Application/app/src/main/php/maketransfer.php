@@ -1,5 +1,17 @@
 <?php
 
+	/**
+	 *
+	 * @file maketransfer.php
+	 * @author Artemiy Bozhenok
+	 * @date 15/04/2015
+	 * @version 0.1.1
+	 *
+	 * This will retrieve the account number and rows of the user uid. Then matches the row number with the account
+	 * number provided from the java (the selected accounts) and transfers the money between them
+	 *
+	 */
+
 	require('error_lib.php');
 	require('db.php');
 
@@ -14,7 +26,7 @@
 	$amount = $_POST['amount'];
 
 	if(isset($uid) && isset($from) && isset($to) && isset($from_money) && isset($to_money) && isset($amount)) {
-
+		//used to identify which row to update
 		$f_row = 0;
 		$t_row = 0;
 		//opens connection to database
@@ -28,8 +40,9 @@
 			   " WHERE aid = '" . $uid . "'";
 
 		$result = mysqli_query($db_conn, $sql);
-
+		//iterates throught the results
 		while ($row = mysqli_fetch_assoc($result)) {
+			//checks if the results account number matches the given account number and then updates the row number
 			if(intval($from) == intval(trim(decrypt($row['account_number'])))) {
 				$f_row = $row['row'];
 			}
@@ -44,7 +57,7 @@
 		modify("Accounts", "total_money", trim((string) (floatval($from_money) - floatval($amount))), $f_row, ACCOUNTS);
 		//add and update - account transfering to
 		modify("Accounts", "total_money", trim((string) (floatval($to_money) + floatval($amount))), $t_row, ACCOUNTS);
-
+		//indicate that the transfer was successful
 		echo TRANSFER_SUCCESSFUL;
 	}
 	else {
