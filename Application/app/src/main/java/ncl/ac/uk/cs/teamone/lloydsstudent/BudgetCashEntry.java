@@ -9,15 +9,22 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import static android.widget.AdapterView.OnItemSelectedListener;
 
 
 /**
@@ -25,6 +32,7 @@ import android.widget.Spinner;
  */
 public class BudgetCashEntry extends DialogFragment {
 
+    // Declare variable to be used in the Dialog
     private EditText name;
     private EditText purchase;
     private Spinner category;
@@ -34,25 +42,37 @@ public class BudgetCashEntry extends DialogFragment {
     private float cashBalance;
     private float purchaseBalance;
 
+    // Boolean condition to check if the view has just been created (to prevent early onitemselected call)
+    private boolean start = true;
+
     //method to switch the fragment, this method will switch the fragment to the budget layout xml file
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.budget_cash_entry, container, false);
+        final View v = inflater.inflate(R.layout.budget_cash_entry, container, false);
+        // Get an input manager to mange soft keyboard during inputs
+        final InputMethodManager keyboard = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        // Prevent the title bar from being shown
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 
-        Spinner spinner = (Spinner) v.findViewById(R.id.cash_category_input);
-        Resources res = getResources();
-        ArrayAdapter adapter = new ArrayAdapter<>(getActivity(), R.layout.cash_entry_dropdown, res.getStringArray(R.array.cash_categories) );
-        adapter.setDropDownViewResource(R.layout.cash_entry_item);
-        spinner.setAdapter(adapter);
-        spinner.setPrompt("Select an account");
-
-        name = (EditText) v.findViewById(R.id.cash_name_input);
+        // Gets the spinner from the XML resource file and assigns it to a local variable
         category = (Spinner) v.findViewById(R.id.cash_category_input);
+        // Creates a resource variable for pulling the array of strings
+        Resources res = getResources();
+        // Creates an array adapter to generate spinner items
+        ArrayAdapter adapter = new ArrayAdapter<>(getActivity(), R.layout.cash_entry_dropdown, res.getStringArray(R.array.cash_categories) );
+        // Assigns a view to the spinner to style the items
+        adapter.setDropDownViewResource(R.layout.cash_entry_item);
+        // Assigns the formatted view filled with items to the spinner
+        category.setAdapter(adapter);
+
+        // Gets input methods from the XML file and assigns them to local variables
+        name = (EditText) v.findViewById(R.id.cash_name_input);
         purchase = (EditText) v.findViewById(R.id.cash_purchase_input);
 
+        // Gets the buttons from the XML file and assigns them to local variables
         add = (Button) v.findViewById(R.id.cash_add_button);
         close = (Button) v.findViewById(R.id.cash_cancel_button);
 
@@ -84,26 +104,75 @@ public class BudgetCashEntry extends DialogFragment {
             }
         };
 
+        // Assigns text changed listeners
         name.addTextChangedListener(watcher);
         purchase.addTextChangedListener(watcher);
 
+        // Adds listener to add button to confirm the cash entry
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /******* Debug Assignment *******/
                 cashBalance = 10.11f;
+                // Retrieves the value inputted
                 purchaseBalance = Float.parseFloat(purchase.getText().toString());
+                // Performs a check to see if cash entered is over cash balance
                 addCheck(v);
             }
         });
 
+        // Adds listener to close button to close fragment when clicked
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Close fragment
                 dismiss();
             }
         });
 
+        name.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId == EditorInfo.IME_ACTION_NEXT) {
+                    start = false;
+                    keyboard.hideSoftInputFromWindow(name.getWindowToken(), 0);
+                    v.clearFocus();
+                    category.requestFocus();
+                    category.performClick();
+                }
+                return true;
+            }
+        });
 
+        category.setSelection(0);
+        category.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // Check the call has not been made to early, so focus will only change if inputs have previously been selcted
+                if(!start) {
+                    parent.clearFocus();
+                    purchase.requestFocus();
+                    keyboard.showSoftInput(purchase, InputMethodManager.SHOW_IMPLICIT);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        purchase.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    keyboard.hideSoftInputFromWindow(purchase.getWindowToken(), 0);
+                    v.clearFocus();
+                }
+                return true;
+            }
+        });
 
         return v;
     }

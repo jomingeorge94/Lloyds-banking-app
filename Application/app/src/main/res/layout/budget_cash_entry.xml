@@ -75,6 +75,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:fontFamily="sans-serif-light"
+        android:inputType="text"
         android:maxLength="20"
         android:autoText="true"
         android:editable="true"
@@ -113,9 +114,10 @@
         android:text="@string/cash_amount"
         android:textColor="@color/text_dark"
         android:id="@+id/cash_purchase_label"
+        android:layout_marginTop="21dp"
         android:layout_below="@+id/cash_category_input"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         style="@style/LloydsEditText"
@@ -126,8 +128,13 @@
         android:ems="10"
         android:id="@+id/cash_purchase_input"
         android:layout_below="@+id/cash_purchase_label"
-        android:layout_centerHorizontal="true" />
-    </RelativeLayout></ScrollView>
+        android:imeOptions="actionDone"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/cash_category_label"
+        android:layout_alignEnd="@+id/cash_category_label" />
+    </RelativeLayout>
+    </ScrollView>
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
