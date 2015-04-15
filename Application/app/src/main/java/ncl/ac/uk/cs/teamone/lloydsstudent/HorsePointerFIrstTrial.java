@@ -29,7 +29,7 @@ public class HorsePointerFIrstTrial extends ActionBarActivity implements View.On
         t2 = new ViewTarget(R.id.payContactButton,this);
         t3 = new ViewTarget(R.id.circle_progress,this);
 
-        showcaseView = new ShowcaseView.Builder(this).setTarget(Target.NONE).setOnClickListener(this).setContentTitle("Tutorial").setContentText("Universal Education").setStyle(R.style.Transparency).build();
+        showcaseView = new ShowcaseView.Builder(this).setTarget(Target.NONE).setOnClickListener(this).setContentTitle("Welcome to Tutorial mode!").setContentText("This helpful companion will attempt to answer any queries you might have about this app").setStyle(R.style.Transparency).build();
         showcaseView.setButtonText("Click Me");
     }
 
@@ -45,9 +45,8 @@ public class HorsePointerFIrstTrial extends ActionBarActivity implements View.On
     public void onClick(View v) {
         switch (counter){
             case 0:
-                showcaseView.setShowcase(t1,true);
-                showcaseView.setContentTitle("First");
-                showcaseView.setContentTitle("This is a button with the text saying First");
+                showcaseView.setContentTitle(" ");
+                showcaseView.setContentTitle("This is the main screen of the app, where you have some basic details of your bank account and buttons to navigate to other areas in the app");
                 break;
 
             case 1:
