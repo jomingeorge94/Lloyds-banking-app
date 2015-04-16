@@ -17,16 +17,6 @@
         android:layout_alignParentTop="true"
         android:gravity="center" />
 
-    <ImageButton
-        android:id="@+id/main_second_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/ic_leftarrow"
-        android:background="@color/white" />
-
     <TextView
         style="@style/LloydsTitleXLarge"
         android:id="@+id/main_second_balance"
@@ -34,16 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/main_second_name" />
-
-    <ImageButton
-        android:id="@+id/main_second_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/ic_rightarrow"
-        android:background="@color/white" />
 
     <TextView
         style="@style/LloydsSubTitle"

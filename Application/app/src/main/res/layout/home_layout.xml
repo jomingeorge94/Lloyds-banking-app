@@ -48,6 +48,29 @@
         android:layout_below="@id/main_tab_underline"
         android:layout_gravity="center_vertical"/>
 
+    <ImageButton
+        android:id="@+id/main_first_left_overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_leftarrow"
+        android:background="@color/white"
+        android:layout_below="@+id/main_tab_underline"
+        android:layout_toLeftOf="@+id/main_tag_circle_progress"
+        android:layout_toStartOf="@+id/main_tag_circle_progress"
+        android:layout_marginRight="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="40dp" />
+
+    <ImageButton
+        android:id="@+id/main_second_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_rightarrow"
+        android:background="@color/white"
+        android:layout_alignTop="@+id/main_first_left_overview"
+        android:layout_alignRight="@+id/main_tag_account_switcher"
+        android:layout_alignEnd="@+id/main_tag_account_switcher" />
+
     <TableLayout
         android:id="@+id/main_tab_button_layout"
         android:layout_width="match_parent"
