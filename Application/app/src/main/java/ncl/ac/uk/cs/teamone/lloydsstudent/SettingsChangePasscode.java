@@ -209,7 +209,7 @@ public class SettingsChangePasscode extends Fragment {
                     // Clears the focus of the current box
                     box[3].clearFocus();
                     // Request the focus of the next box
-                    changePasscode();
+                    changePasscode(String.format("%s%s%s%s", box[0].getText().toString(), box[1].getText().toString(), box[2].getText().toString(), box[3].getText().toString()));
                 }
 
                 @Override
@@ -237,7 +237,7 @@ public class SettingsChangePasscode extends Fragment {
          * Method which should check the current passcode against the checked passcode, and if they
          * match commit the changed passcode to the database
          */
-        private void changePasscode() {
+        private void changePasscode(String passcode) {
             // Assigns the passcode the user wishes to change to to a local variable
             String newPasscode = getArguments().getString("passcode");
         }
