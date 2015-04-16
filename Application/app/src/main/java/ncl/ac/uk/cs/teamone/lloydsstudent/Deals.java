@@ -22,7 +22,6 @@ public class Deals extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
 
         View v=inflater.inflate(R.layout.viewpager_main,container,false);
         viewPager=(ViewPager)v.findViewById(R.id.pager);
@@ -43,6 +42,5 @@ public class Deals extends Fragment{
         indicator.setFooterColor(Color.parseColor("#2FB3E3"));
 
         return v;
-
     }
 }

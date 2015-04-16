@@ -2,6 +2,7 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 /**
  * Created by Jomin on 15/04/2015.
+ * Purpose - This java file has been used to carry out most part of the deals section.
  */
 
 import android.os.Bundle;
@@ -48,12 +49,7 @@ public class NewDeals extends Fragment {
             COUNTER++;
         }
 
-
         adapter=new ItemAdapter(getActivity(),R.layout.loathed,itemData);
-
-
-
-
 
         deal.setOnTouchListener(new View.OnTouchListener() {
 
@@ -65,15 +61,12 @@ public class NewDeals extends Fragment {
             }
         });
 
-
-
         deal.setSwipeListViewListener(new BaseSwipeListViewListener() {
 
 
 
             @Override
             public void onClickBackView(int position) {
-
 
                 final ArrayList<Integer> fix = new ArrayList<Integer>();
                 fix.add(position);
@@ -102,8 +95,6 @@ public class NewDeals extends Fragment {
                         deal.closeOpenedItems();
                     }
                 });
-
-
             }
 
 
@@ -111,15 +102,7 @@ public class NewDeals extends Fragment {
 
 
         });
-
-
         deal.setAdapter(adapter);
         return v;
     }
-
-
-
-
-
-
 }
