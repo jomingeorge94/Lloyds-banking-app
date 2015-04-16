@@ -1,20 +1,24 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -38,7 +42,7 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
         final View v = inflater.inflate(R.layout.home_transfer, container, false);
 
         // Initialise variable to store spinner values
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
 
         // Creates a local variable and gets the data from the database
         final Data d = new Data();
@@ -49,11 +53,11 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
         }
 
         // Initialize the spinners from XML
-        Spinner from = (Spinner) v.findViewById(R.id.transfer_from_spinner);
-        Spinner to = (Spinner) v.findViewById(R.id.transfer_to_spinner);
+        from = (Spinner) v.findViewById(R.id.transfer_from_spinner);
+        to = (Spinner) v.findViewById(R.id.transfer_to_spinner);
 
         // Create an Array Adapter and populate it ready to pass to the spinner
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, list);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), R.layout.spinner_item, list);
 
         // Populate the spinner with the values from the Array Adapter
         from.setAdapter(adapter);
@@ -100,7 +104,7 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
         reference.addTextChangedListener(watcher);
 
         // Create a new onClickListener for the review button to handle inputted data on a click
-        reviewButton.setOnClickListener(new View.OnClickListener() {
+        v.findViewById(R.id.transfer_confirm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -115,7 +119,7 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
                 float transferAmount = Float.parseFloat(amount.getText().toString());
 
                 // Checks to make sure that the current money + overdraft do not go less than 0 before opening confirmation box
-                if((from + fromOverdraft) - transferAmount > 0) {
+                if ((from + fromOverdraft) - transferAmount > 0) {
 
                     // Creates a new confirm transfer fragment and initialises it to a variable
                     HomeTransferConfirm fragment = new HomeTransferConfirm();
@@ -154,8 +158,7 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
                     // Starts the new fragment
                     fragment.show(getFragmentManager(), "Make a Transfer");
 
-                }
-                else {
+                } else {
 
                     // Constructs an alert dialog
                     AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
@@ -187,6 +190,102 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    /**
+     * A Dialog Fragment which is used to create a graphical pop up for the user to show a summary of
+     * the transaction they have just inputted and give them the option to either edit the transaction
+     * or go ahead and perform it
+     *
+     * Created by Jomin on 15/03/2015.
+     */
+    public static class HomeTransferConfirm extends DialogFragment {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+            // Create and inflater to inflate the view and align the inflated view to a local variable
+            final LayoutInflater inflater = getActivity().getLayoutInflater();
+            final View dialog = inflater.inflate(R.layout.home_transfer_confirm, null);
+
+            // Create strings from arguments passed to dialog
+            final String from = getArguments().getString("spinnerAccountFrom");
+            final String to = getArguments().getString("spinnerAccountTo");
+            final String reference = getArguments().getString("spinnerAccountReference");
+            // Call to currency formatter method to convert string into a string in format £xx.xx
+            final String amount = currencyFormatter(Float.parseFloat(getArguments().getString("spinnerAccountAmount")));
+
+            // Initialises a dilouge builder to disaply the dialouge
+            final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            // Assigns the view to the builder
+            builder.setView(dialog);
+            // To allow the dialouge to be closed
+            builder.setCancelable(true);
+
+            // Uses the diaolouge builder to create the dialouge
+            final AlertDialog firstdialog = builder.create();
+
+            // Get and set the position of the window and align with parent
+            WindowManager.LayoutParams params = firstdialog.getWindow().getAttributes();
+            params.gravity = Gravity.TOP | Gravity.RIGHT;
+            params.x = 0;
+            params.y = 300;
+
+            // Assign received values to label
+            TextView fromView = (TextView) dialog.findViewById(R.id.transfer_confirm_from);
+            fromView.setText(from);
+
+            TextView toView = (TextView) dialog.findViewById(R.id.transfer_confirm_to);
+            toView.setText(to);
+
+            TextView amountView = (TextView) dialog.findViewById(R.id.transfer_confirm_amount);
+            amountView.setText(amount);
+
+            TextView referenceView = (TextView) dialog.findViewById(R.id.transfer_confirm_reference);
+            referenceView.setText(reference);
+
+            // Assigns listener to dialog positive button to submit request to database handler
+            dialog.findViewById(R.id.transfer_confirm_ok).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    // Initialize the async task
+                    String[] keys = {"uid", "from", "from_money", "to", "to_money", "amount"};
+                    String[] values = {new Data().customer.get("uid"), getArguments().getString("from"), getArguments().getString("from_money"), getArguments().getString("to"), getArguments().getString("to_money"), amount};
+
+                    // New PHPHandler object to deal with request
+                    PHPHandler handler = new PHPHandler(getActivity(), keys, values, 5);
+
+                    // Execute the script
+                    handler.execute("http://www.abunities.co.uk/t2022t1/maketransfer.php");
+
+                }
+            });
+
+            // Assigns listener to negative button to return to previous screen
+            dialog.findViewById(R.id.transfer_confirm_edit).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    // Close dialog
+                    firstdialog.dismiss();
+
+                }
+            });
+
+            // Return the view
+            return firstdialog;
+        }
+
+        /**
+         * Takes a float and returns a formatted crrency output in the form £xx.xx ready to be outputted
+         * to the GUI
+         *
+         * @param value takes the float to be formatted
+         * @return returns the formatted float as a String
+         */
+        private String currencyFormatter(float value) { return String.format("£%.2f", value); }
 
     }
 }
