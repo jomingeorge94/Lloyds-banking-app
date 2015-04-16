@@ -1,77 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#ffffffff"
-    android:paddingLeft="10dp"
-    android:paddingTop="10dp"
-    android:paddingRight="10dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/main_tab_switch"
+    android:background="#ffffffff">
 
-    <ScrollView
-    android:layout_width="252dp"
-    android:layout_height="500dp"
-    android:id="@+id/scrollView2"
-        android:layout_weight="0.44"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/main_tab_customer"
+        android:fontFamily="sans-serif-light"
+        android:id="@+id/main_tag_customer"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ff000000"
+        android:textSize="48sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/main_tab_login"
+        android:paddingBottom="5dp"
+        android:id="@+id/main_lag_last_login"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#ff808677"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@android:color/holo_green_dark"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accountType"
+        android:paddingTop="20dp"
+        android:id="@+id/accountType"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
+        android:textColor="#ff808677" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
 
         <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:paddingTop="5dp"
-            android:paddingLeft="10dp"
-            android:weightSum="1">
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:paddingLeft="40dp"
+            android:nestedScrollingEnabled="false"
+            android:id="@+id/moneyStuff">
 
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:id="@+id/leftArrowAccount"
+                android:layout_weight="0.18"
+                android:src="@drawable/ic_leftarrow"
+                android:background="#ffffffff"
+                android:paddingRight="30dp"
+                android:layout_marginTop="10dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/textView25"
+                android:text="@string/currentMoney"
+                android:fontFamily="sans-serif-light"
+                android:id="@+id/currentMoney"
+                android:paddingTop="5dp"
+                android:layout_gravity="center_horizontal"
                 android:textColor="#ff000000"
-                android:textSize="18dp"
-                android:text="@string/horsepointerHomeTitle"
-                android:textStyle="bold" />
+                android:textSize="36dp" />
 
-            <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/horsepointerHomeMessage"
-            android:id="@+id/textView26"
-            android:textColor="#ff000000" />
-
-            <Button
+            <ImageButton
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/button" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/button2" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/button3" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/button4" />
+                android:layout_height="49dp"
+                android:id="@+id/rightArrowAccount"
+                android:layout_weight="0.18"
+                android:background="#ffffffff"
+                android:src="@drawable/ic_rightarrow"
+                android:paddingLeft="30dp"
+                android:layout_marginTop="10dp" />
 
         </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accountDetails"
+        android:id="@+id/accountDetails"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ff808677"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="8dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/main_tab_transfer"
+                android:id="@+id/main_tab_transfer"
+                android:background="#5DAD68" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:text="@string/spaceinbetweenthebuttons"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:visibility="invisible" />
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/main_tab_contact"
+                android:id="@+id/main_tab_contact"
+                android:background="#5DAD68" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="15dp">
+
+            <ncl.ac.uk.cs.teamone.lloydsstudent.CircleProgressUpdater
+                android:id="@+id/main_tag_circle_progress"
+                android:layout_width="213dp"
+                android:layout_height="207dp"
+                android:layout_gravity="center"
+                android:layout_row="9"
+                android:layout_column="21" />
+        </FrameLayout>
+    </LinearLayout>
 
 
-</RelativeLayout>
+
+</LinearLayout>
