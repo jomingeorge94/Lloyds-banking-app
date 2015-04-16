@@ -25,9 +25,9 @@ public class HorsePointerFIrstTrial extends ActionBarActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.horse_first_trial);
 
-        t1 = new ViewTarget(R.id.makeTransferButton,this);
-        t2 = new ViewTarget(R.id.payContactButton,this);
-        t3 = new ViewTarget(R.id.circle_progress,this);
+        t1 = new ViewTarget(R.id.main_tab_transfer,this);
+        t2 = new ViewTarget(R.id.main_tab_contact,this);
+        t3 = new ViewTarget(R.id.main_tag_circle_progress,this);
         t4 = new ViewTarget(R.id.currentMoney,this);
 
         showcaseView = new ShowcaseView.Builder(this).setTarget(Target.NONE).setOnClickListener(this).setContentTitle("Welcome to Tutorial mode!").setContentText("This helpful companion will attempt to answer any queries you might have about this app").setStyle(R.style.Transparency).build();

@@ -27,8 +27,8 @@ public class FraudAlertDialogBox extends android.support.v4.app.DialogFragment {
 
 
                 android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                ((LinearLayout)getActivity().findViewById(R.id.tabmainswitch)).removeAllViews();
-                transaction.replace(R.id.tabmainswitch, new FraudAlertFragment(), "FraudAlert");
+                ((LinearLayout)getActivity().findViewById(R.id.main_tab_switch)).removeAllViews();
+                transaction.replace(R.id.main_tab_switch, new FraudAlertFragment(), "FraudAlert");
                 transaction.commit();
 
             }

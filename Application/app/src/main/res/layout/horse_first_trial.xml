@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:id="@+id/tabmainswitch"
+    android:id="@+id/main_tab_switch"
     android:background="#ffffffff">
 
 
@@ -13,9 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/customerName"
+        android:text="@string/main_tab_customer"
         android:fontFamily="sans-serif-light"
-        android:id="@+id/customerName"
+        android:id="@+id/main_tag_customer"
         android:layout_gravity="center_horizontal"
         android:textColor="#ff000000"
         android:textSize="54sp" />
@@ -26,7 +26,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/lastLogin"
         android:paddingBottom="5dp"
-        android:id="@+id/lastLogin"
+        android:id="@+id/main_lag_last_login"
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ff808677"
         android:textSize="18sp" />
@@ -125,7 +125,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="@string/makeTransferButton"
-                android:id="@+id/makeTransferButton"
+                android:id="@+id/main_tab_transfer"
                 android:background="#5DAD68" />
 
             <TextView
@@ -141,7 +141,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="@string/payContactButton"
-                android:id="@+id/payContactButton"
+                android:id="@+id/main_tab_contact"
                 android:background="#5DAD68" />
 
         </LinearLayout>
@@ -152,7 +152,7 @@
             android:layout_marginTop="15dp">
 
             <ncl.ac.uk.cs.teamone.lloydsstudent.CircleProgressUpdater
-                android:id="@+id/circle_progress"
+                android:id="@+id/main_tag_circle_progress"
                 android:layout_width="213dp"
                 android:layout_height="207dp"
                 android:layout_gravity="center"

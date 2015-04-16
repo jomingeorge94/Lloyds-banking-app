@@ -28,8 +28,8 @@ public class FraudAlertFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                ((LinearLayout)getActivity().findViewById(R.id.tabmainswitch)).removeAllViews();
-                transaction.replace(R.id.tabmainswitch, new FraudReport(), "FraudReportOnline");
+                ((LinearLayout)getActivity().findViewById(R.id.main_tab_switch)).removeAllViews();
+                transaction.replace(R.id.main_tab_switch, new FraudReport(), "FraudReportOnline");
                 transaction.commit();
             }
         });

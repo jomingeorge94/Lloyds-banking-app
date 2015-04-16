@@ -20,21 +20,21 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        final View v =  inflater.inflate(R.layout.tab2_main, container, false);
+        final View v =  inflater.inflate(R.layout.main_layout, container, false);
 
         //get the customer data
         Data data = new Data();
         //Set the customer name
-        TextView customerName = (TextView) v.findViewById(R.id.customerName);
+        TextView customerName = (TextView) v.findViewById(R.id.main_tag_customer);
 
         customerName.setText(data.customer.get("firstname") + " " + data.customer.get("lastname"));
 
-        viewPager = (ViewPager)v.findViewById(R.id.accountswitching);
+        viewPager = (ViewPager)v.findViewById(R.id.main_tag_account_switcher);
         AccountSwitching accountSwitching = new AccountSwitching(getChildFragmentManager());
         viewPager.setAdapter(accountSwitching);
 
         //onclick event for the button - make a transfer
-        final Button maketransfer = (Button)v.findViewById(R.id.makeTransferButton);
+        final Button maketransfer = (Button)v.findViewById(R.id.main_tab_transfer);
         maketransfer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +45,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        final Button paycontact = (Button)v.findViewById(R.id.payContactButton);
+        final Button paycontact = (Button)v.findViewById(R.id.main_tab_contact);
         paycontact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

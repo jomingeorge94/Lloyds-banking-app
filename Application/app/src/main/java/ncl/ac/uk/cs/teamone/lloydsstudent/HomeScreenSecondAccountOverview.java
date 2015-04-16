@@ -15,7 +15,7 @@ public class HomeScreenSecondAccountOverview extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
-        final View v = inflater.inflate(R.layout.home_screenmain_secondaccount_overview, container, false);
+        final View v = inflater.inflate(R.layout.main_second_account_overview, container, false);
 
         Data d = new Data();
 

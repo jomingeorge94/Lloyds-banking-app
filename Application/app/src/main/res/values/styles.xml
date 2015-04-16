@@ -28,6 +28,18 @@
         <item name="android:textSize">34sp</item>
     </style>
 
+    <style name="LloydsTitleXXLarge">
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">54sp</item>
+    </style>
+
+    <style name="LloydsSubTitle">
+        <item name="android:textColor">@color/medium_grey</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="LloydsTextSmall">
         <item name="android:textColor">@color/text_dark</item>
         <item name="android:textSize">14sp</item>
