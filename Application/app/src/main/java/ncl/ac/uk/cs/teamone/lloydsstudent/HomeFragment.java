@@ -101,7 +101,7 @@ public class HomeFragment extends Fragment {
 
             // Change the text of the fields to data pulled from the server
             type_of_account.setText(d.accounts.get(0).get("type_of_account"));
-            total_money.setText(d.accounts.get(0).get("total_money"));
+            total_money.setText(currencyFormatter(Float.parseFloat(d.accounts.get(0).get("total_money"))));
             account_number_and_sortcode.setText(d.accounts.get(0).get("sortcode") + " | " + d.accounts.get(0).get("account_number"));
 
             // Add listener to balance to detect when a user clicks the balance
@@ -151,7 +151,7 @@ public class HomeFragment extends Fragment {
 
             // Assign their values from the database
             type_of_account.setText(d.accounts.get(0).get("type_of_account"));
-            total_money.setText(d.accounts.get(0).get("total_money"));
+            total_money.setText(currencyFormatter(Float.parseFloat(d.accounts.get(0).get("total_money"))));
             account_number_and_sortcode.setText(d.accounts.get(0).get("sortcode") + " | " + d.accounts.get(0).get("account_number"));
             overdraft.setText(d.accounts.get(0).get("overdraft"));
 
@@ -278,7 +278,7 @@ public class HomeFragment extends Fragment {
 
             // Assign their values from the database
             type_of_account.setText(d.accounts.get(1).get("type_of_account"));
-            total_money.setText(d.accounts.get(1).get("total_money"));
+            total_money.setText(currencyFormatter(Float.parseFloat(d.accounts.get(1).get("total_money"))));
             account_number_and_sortcode.setText(d.accounts.get(1).get("sortcode") + " | " + d.accounts.get(1).get("account_number"));
             overdraft.setText(d.accounts.get(1).get("overdraft"));
 
@@ -331,5 +331,15 @@ public class HomeFragment extends Fragment {
         }
 
     }
+
+    /**
+     * Takes a float and returns a formatted crrency output in the form £xx.xx ready to be outputted
+     * to the GUI
+     *
+     * @param value takes the float to be formatted
+     * @return returns the formatted float as a String
+     */
+    private static String currencyFormatter(float value) { return String.format("£%.2f", value); }
+
 }
 

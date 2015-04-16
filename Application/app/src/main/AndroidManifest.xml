@@ -37,7 +37,7 @@
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
             android:name=".MainActivity"
@@ -173,13 +173,17 @@
         <activity
             android:name=".NetworkErrorActivity"
             android:label="@string/title_activity_network_error"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".BudgetSettings"
             android:label="@string/title_activity_budget_settings"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".SettingsChangePasscode"
+            android:label="@string/title_activity_settings_change_passcode" >
         </activity>
     </application>
 
