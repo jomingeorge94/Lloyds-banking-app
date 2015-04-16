@@ -48,7 +48,7 @@ public class HomeFragment extends Fragment {
                 // Clears the previous parent container
                 ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
                 // Adds the fragment to be show to the transaction
-                transaction.replace(android.R.id.tabcontent, new MakeaTransfer(), "");
+                transaction.replace(android.R.id.tabcontent, new HomeTransfer(), "");
                 // Replaces the fragment
                 transaction.commit();
             }

@@ -141,17 +141,6 @@ public class BudgetOverview extends Fragment {
             }
         });
 
-        Button settings = (Button) v.findViewById(R.id.budget_settings_button);
-
-        // Creates a Listener and adds it to the settings page
-        settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent nextScreen = new Intent(getActivity(), BudgetSettings.class);
-                startActivity(nextScreen);
-            }
-        });
-
         // Returns the fragment View
         return v;
 

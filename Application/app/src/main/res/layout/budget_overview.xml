@@ -122,21 +122,10 @@
             android:layout_marginBottom="4dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/budget_enter_button"
-            android:layout_above="@+id/budget_settings_button"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true" />
 
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/budget_settings_button"
-            android:background="@color/dark_green"
-            android:textColor="@color/white"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/budget_settings_button"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"/>
 
 </RelativeLayout>
