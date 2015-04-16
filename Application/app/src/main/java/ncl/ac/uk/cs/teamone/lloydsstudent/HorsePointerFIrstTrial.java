@@ -89,4 +89,12 @@ public class HorsePointerFIrstTrial extends ActionBarActivity implements View.On
         counter ++;
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i=new Intent(HorsePointerFIrstTrial.this,MainActivity.class);
+        startActivity(i);
+        finish();
+    }
 }
