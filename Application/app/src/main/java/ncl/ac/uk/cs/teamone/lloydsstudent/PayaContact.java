@@ -34,18 +34,18 @@ public class PayaContact extends Fragment {
             list.add(d.accounts.get(i).get("type_of_account"));
         }
 
-        spinner = (Spinner) v.findViewById(R.id.payacontacts_pinner);
+        spinner = (Spinner) v.findViewById(R.id.pay_from_spinner);
         //initialize adapter with the contents of the list
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, list);
         //set the adapt and prompt
         spinner.setAdapter(adapter);
         spinner.setPrompt("Select an account");
 
-        final EditText payacontactphoneNumber = (EditText)v.findViewById(R.id.payacontact_contactphonenumber);
-        final EditText payacontactsortCode = (EditText)v.findViewById(R.id.payacontact_sortcodepayacontact);
-        final EditText payacontactamount = (EditText)v.findViewById(R.id.payacontact_userInputAmount);
-        final EditText payacontactreference = (EditText)v.findViewById(R.id.payacontact_userInputReference);
-        final Button payacontact_reviewButton = (Button)v.findViewById(R.id.payacontactReviewButton);
+        final EditText payacontactphoneNumber = (EditText)v.findViewById(R.id.pay_to_number);
+        final EditText payacontactsortCode = (EditText)v.findViewById(R.id.pay_to_sort);
+        final EditText payacontactamount = (EditText)v.findViewById(R.id.pay_to_amount);
+        final EditText payacontactreference = (EditText)v.findViewById(R.id.pay_to_reference);
+        final Button payacontact_reviewButton = (Button)v.findViewById(R.id.pay_review);
 
         final TextWatcher watcher = new TextWatcher() {
 
@@ -79,7 +79,7 @@ public class PayaContact extends Fragment {
         payacontactamount.addTextChangedListener(watcher);
         payacontactreference.addTextChangedListener(watcher);
 
-        v.findViewById(R.id.payacontactReviewButton).setOnClickListener(new View.OnClickListener() {
+        v.findViewById(R.id.pay_review).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PayaContactConfirm payacontactScreen = new PayaContactConfirm();

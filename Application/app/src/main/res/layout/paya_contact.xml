@@ -1,171 +1,188 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:background="@color/white" >
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:id="@+id/pay_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="#ffffffff"
-        android:layout_above="@+id/payacontactReviewButton">
+        android:background="@color/white">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:paddingTop="5dp"
-            android:paddingLeft="10dp"
-            android:weightSum="1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
+                style="@style/LloydsTitleXLarge"
+                android:id="@+id/pay_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/paycontacttitle"
-                android:id="@+id/transfer_title"
-                android:textSize="16sp"
-                android:textColor="#ff000000" />
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/pay_title"
+                android:gravity="center" />
+
+            <View
+                android:id="@+id/pay_underline"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_below="@+id/pay_title"
+                android:background="@color/dark_green" />
 
             <TextView
+                style="@style/LloydsTitleLarge"
+                android:id="@+id/pay_from_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/transfer_from_label"
-                android:text="@string/transaction_transfer_from"
-                android:textColor="#ff000000"
-                android:textSize="20sp"
-                android:paddingTop="10dp"
-                android:layout_marginLeft="5dp" />
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/pay_underline"
+                android:text="@string/transaction_transfer_from" />
 
             <Spinner
+                style="@style/LloydsSpinner"
+                android:id="@+id/pay_from_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/payacontacts_pinner"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:paddingTop="5dp"
-                android:spinnerMode="dialog"
-                android:layout_marginTop="5dp"
-                android:touchscreenBlocksFocus="false" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/pay_from_label" />
 
             <View
-                android:layout_width="match_parent"
+                android:id="@+id/pay_underline_mid"
+                android:layout_width="fill_parent"
                 android:layout_height="2dp"
-                android:background="#ffe0e0e0"
-                android:layout_marginTop="10dp" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_below="@+id/pay_from_spinner"
+                android:background="@color/dark_green" />
 
             <TextView
+                style="@style/LloydsTextLarge"
+                android:id="@+id/pay_to_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView13"
-                android:text="@string/transaction_transfer_to"
-                android:textColor="#ff000000"
-                android:textSize="20sp"
-                android:paddingTop="10dp"
-                android:layout_marginLeft="5dp" />
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/pay_underline_mid"
+                android:text="@string/transaction_transfer_to" />
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/pay_phone_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/pay_to_label"
+                android:text="@string/pay_phone" />
 
             <EditText
-                android:id="@+id/payacontact_contactphonenumber"
+                style="@style/LloydsEditText"
+                android:id="@+id/pay_to_number"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/pay_phone_label"
                 android:inputType="numberDecimal"
-                android:layout_height="40dp"
                 android:maxLength="11"
-                android:hint="Phone Number"
-                android:background="@drawable/abc_ab_share_pack_holo_light"
-                android:textColor="#ff000000"
-                android:textColorHint="#ffdbe1dc"
-                android:layout_marginTop="20dp"
-                android:password="false"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
-                android:paddingLeft="20dp"/>
-
-            <EditText
-                android:id="@+id/payacontact_sortcodepayacontact"
-                android:layout_width="match_parent"
-                android:inputType="numberDecimal"
-                android:layout_height="40dp"
-                android:maxLength="8"
-                android:hint="Sort Code"
-                android:background="@drawable/abc_ab_share_pack_holo_light"
-                android:textColor="#ff000000"
-                android:textColorHint="#ffdbe1dc"
-                android:layout_marginTop="20dp"
-                android:password="false"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
-                android:paddingLeft="20dp"/>
-
-
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#ffe0e0e0"
-                android:layout_marginTop="10dp" />
-
-
-            <EditText
-                android:id="@+id/payacontact_userInputAmount"
-                android:layout_width="match_parent"
-                android:inputType="numberDecimal"
-                android:layout_height="40dp"
-                android:maxLength="6"
-                android:hint="Amount"
-                android:background="@drawable/abc_ab_share_pack_holo_light"
-                android:textColor="#ff000000"
-                android:textColorHint="#ffdbe1dc"
-                android:layout_marginTop="20dp"
-                android:password="false"
-                android:drawableLeft="@drawable/pound_sign"
-                android:drawablePadding="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
-                android:paddingLeft="20dp" />
+                android:hint="@string/pay_phone"/>
 
             <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/pay_sortcode_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView14"
-                android:text="@string/paycontactlimitandinfo"
-                android:textColor="#ff000000"
-                android:textSize="14sp"
-                android:paddingTop="10dp"
-                android:layout_marginLeft="5dp" />
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/pay_to_number"
+                android:text="@string/pay_sortcode" />
 
             <EditText
-                android:id="@+id/payacontact_userInputReference"
+                style="@style/LloydsEditText"
+                android:id="@+id/pay_to_sort"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/pay_sortcode_label"
+                android:inputType="numberDecimal"
+                android:maxLength="8"
+                android:hint="@string/pay_sortcode"/>
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/pay_to_reference_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/pay_to_sort"
+                android:text="@string/transaction_reference" />
+
+            <EditText
+                style="@style/LloydsEditText"
+                android:id="@+id/pay_to_reference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/pay_to_reference_label"
                 android:inputType="text"
-                android:layout_height="40dp"
-                android:maxLength="15"
-                android:hint="Payment Reference"
-                android:background="@drawable/abc_ab_share_pack_holo_light"
-                android:textColor="#ff000000"
-                android:textColorHint="#ffdbe1dc"
-                android:layout_marginTop="20dp"
-                android:password="false"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
-                android:paddingLeft="20dp" />
+                android:maxLength="25"
+                android:hint="@string/transaction_reference" />
 
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/pay_to_amount_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/pay_to_reference"
+                android:text="@string/transaction_amount" />
 
-        </LinearLayout>
+            <EditText
+                style="@style/LloydsEditText"
+                android:id="@+id/pay_to_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/pay_to_amount_label"
+                android:inputType="numberDecimal"
+                android:maxLength="6"
+                android:hint="@string/transaction_amount"/>
+
+            <TextView
+                style="@style/LloydsTextSmall"
+                android:id="@+id/pay_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pay_to_amount"
+                android:text="@string/pay_note" />
+
+        </RelativeLayout>
+
     </ScrollView>
 
     <Button
+        style="@style/LloydsButtonDisabled"
+        android:id="@+id/pay_review"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Review Payment"
-        android:id="@+id/payacontactReviewButton"
-        android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:enabled="false"
-        android:background="#ffcacaca" />
+        android:text="@string/transaction_review" />
 
 </RelativeLayout>

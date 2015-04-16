@@ -86,14 +86,18 @@
     <string name="transaction_reference">Payment Reference</string>"
     <string name="transaction_amount">Amount</string>
     <string name="transaction_review">Review Payment</string>
-    
+    <string name="pay_title">Pay A Contact</string>
+    <string name="pay_note">(Limit: Minimum £1, Maximum daily: £300)</string>
+    <string name="pay_phone">Phone Number</string>
+    <string name="pay_sortcode">Sort Code</string>
+
     // Settings Change Password
     <string name="settings_change_title">Change Passcode</string>
     <string name="settings_change_description">If you want to change your passcode enter your desired passcode below, you will be asked to confirm your current password before you can save your changes</string>
     <string name="settings_change_passcode">New Passcode</string>
     <string name="settings_change_confirm">Confirm Passcode</string>
     <string name="settings_verify_passcode">Enter Your Old Passcode</string>
-    
+
     
 
     <string name="app_name">Lloyds Student</string>
@@ -140,7 +144,7 @@
     </string-array>
 
     <string name="paycontacttitle">Enter the account details of the person you want to pay</string>
-    <string name="paycontactlimitandinfo">(Limit: Minimum £1, Maximum daily: £300)</string>
+
     <string name="horsepointerHomeTitle">Home</string>
     <string name="horsepointerHomeMessage">Banking should always be as safe as possible. We use the latest online security measures to protect your money, your personal information and your privacy.
     We guarantee to refund your money in the unlikely event you experience fraud with our Internet Banking service - as long as you\'ve been careful,
