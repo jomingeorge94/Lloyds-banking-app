@@ -69,6 +69,7 @@
     <string name="main_tab_contact">Pay a Contact</string>
 
     // Account View
+    <string name="main_account_title">Account Overview</string>
     <string name="main_account_balance">Balance</string>
     <string name="main_account_interest">Interest Rate</string>
     <string name="main_account_overdraft">Overdraft Limit</string>
@@ -86,7 +87,12 @@
     <string name="transaction_amount">Amount</string>
     <string name="transaction_review">Review Payment</string>
     
-    
+    // Settings Change Password
+    <string name="settings_change_title">Change Passcode</string>
+    <string name="settings_change_description">If you want to change your passcode enter your desired passcode below, you will be asked to confirm your current password before you can save your changes</string>
+    <string name="settings_change_passcode">New Passcode</string>
+    <string name="settings_change_confirm">Confirm Passcode</string>
+    <string name="settings_verify_passcode">Enter Your Old Passcode</string>
     
     
 
@@ -102,7 +108,7 @@
     <string name="accountDetails">20-14-19 | 12345678</string>
     <string name="main_title">Homepage</string>
     <string name="spaceinbetweenthebuttons"></string>
-    <string name="accountTypeInfo">Account Overview</string>
+
     <string name="balanceAvailable">Balance</string>
 
     <string name="interestRate">0.5%</string>
@@ -355,6 +361,10 @@
         That\'s because we promise you that whenever you use your Lloyds Bank credit or debit card to shop online, you\'ll be protected against fraud
 </string>
     <string name="FraudScreenMEssage1">Whenever you buy goods or services online with participating retailers, Lloyds Bank ClickSafe® will give you extra protection against card crime.</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings_change_passcode">SettingsChangePasscode</string>
 
 
 

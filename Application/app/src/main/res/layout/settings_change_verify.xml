@@ -1,0 +1,96 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:background="@color/white" >
+
+    <TextView
+        style="@style/LloydsTitleMedium"
+        android:id="@+id/settings_verify_passcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/settings_verify_passcode"
+        android:gravity="center" />
+
+    <TableLayout
+        android:id="@+id/settings_verify_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@id/settings_verify_passcode"
+        android:stretchColumns="*" >
+
+        <TableRow>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp" />
+
+            <EditText
+                style="@style/LloydsEditPasscode"
+                android:id="@+id/settings_change_passcode_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:imeOptions="actionNone"
+                android:password="true"
+                android:maxLength="1"
+                android:gravity="center" />
+
+            <EditText
+                style="@style/LloydsEditPasscode"
+                android:id="@+id/settings_change_passcode_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:imeOptions="actionNone"
+                android:password="true"
+                android:maxLength="1"
+                android:gravity="center" />
+
+            <EditText
+                style="@style/LloydsEditPasscode"
+                android:id="@+id/settings_change_passcode_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:imeOptions="actionNone"
+                android:password="true"
+                android:maxLength="1"
+                android:gravity="center" />
+
+            <EditText
+                style="@style/LloydsEditPasscode"
+                android:id="@+id/settings_change_passcode_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:imeOptions="actionNone"
+                android:password="true"
+                android:maxLength="1"
+                android:gravity="center" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        style="@style/LloydsButtonActive"
+        android:id="@+id/transfer_confirm_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_verify_table"
+        android:text="@string/gen_ok" />
+
+</RelativeLayout>
