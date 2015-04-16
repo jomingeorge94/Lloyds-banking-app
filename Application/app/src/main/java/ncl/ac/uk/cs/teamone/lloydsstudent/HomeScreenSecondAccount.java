@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
@@ -34,7 +34,7 @@ public class HomeScreenSecondAccount extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                ((LinearLayout)getActivity().findViewById(R.id.main_tab_switch)).removeAllViews();
+                ((RelativeLayout)getActivity().findViewById(R.id.main_tab_switch)).removeAllViews();
                 transaction.replace(R.id.main_tab_switch, new OverviewFragment());
                 transaction.commit();
             }
