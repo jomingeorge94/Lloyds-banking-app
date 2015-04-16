@@ -22,7 +22,7 @@ public class LloydsBankingTour extends FragmentActivity  {
         PagerAdapter padaper = new PagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(padaper);
 
-        findViewById(R.id.backbutton).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(LloydsBankingTour.this,MainActivity.class);

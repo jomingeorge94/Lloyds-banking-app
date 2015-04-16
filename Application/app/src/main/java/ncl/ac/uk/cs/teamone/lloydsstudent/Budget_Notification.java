@@ -15,7 +15,7 @@ public class Budget_Notification extends FragmentActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.budget_notification);
 
-        findViewById(R.id.backbutton).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(Budget_Notification.this,MainActivity.class);

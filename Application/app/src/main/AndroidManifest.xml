@@ -101,7 +101,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".ChangePasscode_Screen"
+            android:name=".SettingsChangePasscode"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>

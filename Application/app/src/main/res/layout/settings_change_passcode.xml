@@ -1,6 +1,30 @@
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_first_overview"
+    android:id="@+id/settings_change_top_bar"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_green"
+        android:id="@+id/toppartofthescreen">
+
+    <ImageButton
+        android:id="@+id/settings_change_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back_arrow_icon"
+        android:background="@color/dark_green"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="10dp" />
+
+</LinearLayout>
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="8dp"
@@ -195,3 +219,5 @@
     </TableLayout>
 
 </RelativeLayout>
+
+</LinearLayout>

@@ -16,7 +16,7 @@ public class Loans extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loans_screen);
 
-        findViewById(R.id.backbutton).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(Loans.this,OtherProducts.class);

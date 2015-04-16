@@ -15,7 +15,7 @@ public class AccountManagementScreen extends FragmentActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account_management_screen);
 
-        findViewById(R.id.backbutton).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(AccountManagementScreen.this,MainActivity.class);
@@ -36,7 +36,7 @@ public class AccountManagementScreen extends FragmentActivity  {
         findViewById(R.id.AccountManagement_Security).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent changepasscode=new Intent(AccountManagementScreen.this,ChangePasscode_Screen.class);
+                Intent changepasscode=new Intent(AccountManagementScreen.this,SettingsChangePasscode.class);
                 startActivity(changepasscode);
                 finish();
             }

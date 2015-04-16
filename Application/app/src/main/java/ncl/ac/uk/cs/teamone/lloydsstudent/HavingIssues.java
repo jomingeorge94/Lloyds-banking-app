@@ -84,7 +84,7 @@ public class HavingIssues extends FragmentActivity {
 
 
 
-        findViewById(R.id.backbutton).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(HavingIssues.this,AccountManagementScreen.class);

@@ -17,7 +17,7 @@ public class LostorStole_Screen extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lost_stole_screen);
 
-        findViewById(R.id.backbutton).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(LostorStole_Screen.this,AccountManagementScreen.class);

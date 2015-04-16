@@ -15,7 +15,7 @@ public class OtherProducts extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.other_products_screen_main);
 
-        findViewById(R.id.backbutton).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(OtherProducts.this,MainActivity.class);

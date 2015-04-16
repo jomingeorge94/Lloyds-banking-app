@@ -11,7 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:weightSum="1"
-        android:id="@+id/linearLayout2">
+        android:id="@+id/settings_change_top_bar">
 
         <LinearLayout
             android:orientation="vertical"
@@ -23,7 +23,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/backbutton"
+                android:id="@+id/settings_change_back"
                 android:layout_weight="0.05"
                 android:src="@drawable/back_arrow_icon"
                 android:background="#5DAD68"
@@ -43,7 +43,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/linearLayout2"
+        android:layout_below="@+id/settings_change_top_bar"
         android:layout_above="@+id/havinganissue_button">
 
         <LinearLayout

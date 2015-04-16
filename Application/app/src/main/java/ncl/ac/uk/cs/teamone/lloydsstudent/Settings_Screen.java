@@ -15,7 +15,7 @@ public class Settings_Screen extends FragmentActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_screen_helpmenu);
 
-        findViewById(R.id.backbutton).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(Settings_Screen.this,MainActivity.class);
