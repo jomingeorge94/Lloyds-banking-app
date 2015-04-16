@@ -5,7 +5,6 @@
 	 * @file check_mobile_banking.php
 	 * @author Artemiy Bozhenok
 	 * @date 23/03/2015
-	 * @version 0.0.1
 	 *
 	 * Tries to match the devices IMEI to determine if mobile
 	 * banking has been set up on the device or not
@@ -32,6 +31,7 @@
 		//if nothing found then indicate that user hasnt set up mobile banking
 		if($result) {
 			while ($row = mysqli_fetch_assoc($result)) {
+				//checks if the imei match
 				if(strpos(trim(decrypt($row['mobile_banking'])), $imei) !== false) {
 					//go to login screen
 					echo SUCCESS_MOBILE_BANKING;

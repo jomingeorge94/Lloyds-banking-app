@@ -1,5 +1,14 @@
 <?php
 
+	/**
+	 *
+	 * @file retrieve_accounts.php
+	 * @author Artemiy Bozhenok
+	 * @date 14/04/2015
+	 *
+	 * Retrieves the previous weeks budget
+	 */
+
 	require('db.php');
 
 	$uid = $_POST['uid'];

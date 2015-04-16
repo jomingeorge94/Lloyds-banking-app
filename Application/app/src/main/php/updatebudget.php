@@ -1,9 +1,19 @@
 <?php
 
+	/**
+	 *
+	 * @file updatebudget.php
+	 * @author Artemiy Bozhenok
+	 * @date 16/04/2015
+	 *
+	 * A script which is used to update the budget
+	 *
+	 */
+
 	require('db.php');
-
+	//retrieves the uid
 	$uid = $_POST['uid'];
-
+	//stores various data that is sent into an array
 	$values = array(
 		$_POST['amount'],
 		$_POST['food'],
@@ -15,7 +25,7 @@
 		$_POST['leisure'],
 		$_POST['other']
 	);
-
+	//name of the attributes in the table
 	$key = array(
 		"amount",
 		"groceries_amount",
@@ -27,7 +37,7 @@
 		"leisurely_activities_amount",
 		"other_amount"
 	);
-
+	//checks if the global variables have been set
 	if(isset($uid) && isset($values) && isset($key)) {
 		//modify every budget category
 		for($i = 0; $i < sizeof($values); $i++) {

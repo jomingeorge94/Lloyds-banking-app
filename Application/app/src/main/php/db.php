@@ -34,9 +34,9 @@
 	function fetch($db_table, $values, $uid, $constant) {
 		//opens connection to database
 		$db_conn = connect();
-
+		//check if connection was successful
 		if(!$db_conn) { return false; }
-
+		//insert a WHERE depending on which table is being fetched from
 		switch($constant) {
 			case 1:
 				$where = " WHERE uid = '" . $uid . "'";
@@ -61,26 +61,26 @@
 			echo false;
 			return false;
 		}
-
+		//break up the select values
 		$arr_values = explode(",", $values);
 
 		$row = mysqli_fetch_array($result, MYSQLI_NUM);
-
+		//check if data has been retrieved
 		if(is_null($row[0])) {
 			//error
-			echo "Record not found";
-			return false;
+			echo ERROR;
+			return;
 		}
 
 		$f_values = array();
-
+		//add the decrypted data to the array
 		for($i = 0; $i < sizeof($arr_values); $i++) {
 			$f_values[$arr_values[$i]] = trim(decrypt($row[$i]));
 		}
 
 		close($db_conn);
 
-		//returns one value as a string or an array
+		//returns one value as a string or an array of values
 		return (sizeof($f_values) < 2) ? trim($f_values[$values]) : $f_values;
 	}
 
@@ -95,7 +95,9 @@
 	 */
 
 	function add($db_table, $columns, $values) {
+		//connect to the database
 		$db_conn = connect();
+		//check connection established was successful
 		if(!$db_conn) { return false; }
 		$v = "";
 
@@ -114,12 +116,13 @@
 		$success = mysqli_query($db_conn, $sql);
 		
 		if(!$success) {
-			echo '<p>Inserting to database has failed</p>';
+			echo ERROR;
 			close($db_conn);
-			return $success;
+			return;
 		}
 
 		close($db_conn);
+
 		return $success;
 	}
 
@@ -135,11 +138,11 @@
 	 */
 
 	function modify($db_table, $column, $value, $uid, $constant) {
-		//connect to the 'test' database
+		//connect to the database
 		$db_conn = connect();
-		
+		//check connection established was successful
 		if(!$db_conn) { return false; }
-
+		//insert a WHERE depending on which table is being fetched from
 		switch($constant) {
 			case 1:
 				$where = "' WHERE uid = '" . $uid . "'";

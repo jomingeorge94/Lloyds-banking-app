@@ -5,7 +5,6 @@
 	 * @file initial_setup_passcode.php
 	 * @author Artemiy Bozhenok
 	 * @date 25/03/2015
-	 * @version 0.0.1
 	 *
 	 * sets the passcode and imei and also retrieves the necessary data
 	 *

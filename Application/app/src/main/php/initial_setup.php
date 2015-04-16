@@ -5,7 +5,6 @@
 	 * @file check_first_time_user.php
 	 * @author Artemiy Bozhenok
 	 * @date 23/03/2015
-	 * @version 0.0.1
 	 *
 	 * Checks users inputs when trying to set up mobile banking
 	 *
@@ -27,6 +26,7 @@
 			echo SUCCESS_FIRST_TIME;
 		}
 		else {
+			//passwords did not match error
 			echo ONLINE_PASSWORD_DO_NOT_MATCH;
 		}
 	}

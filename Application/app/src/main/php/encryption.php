@@ -6,7 +6,6 @@
 	 * @file encryption.php
 	 * @author Artemiy Bozhenok
 	 * @date 01/02/2015
-	 * @version 0.0.1
 	 *
 	 * Uses a AES-256 bit cipher to encrypt data and then uses 2 layers of encryption
 	 * for added security. ECB (Electronic Codebook) and CBC (Cipher Blocking Chaining)

@@ -135,7 +135,7 @@ public class BudgetSettings extends ActionBarActivity {
         String[] values = {new Data().customer.get("uid"), Float.toString(budgetValue), views[0].getText().toString().replaceAll("£",""), views[1].getText().toString().replaceAll("£",""), views[2].getText().toString().replaceAll("£",""), views[3].getText().toString().replaceAll("£",""), views[4].getText().toString().replaceAll("£",""), views[5].getText().toString().replaceAll("£",""), views[6].getText().toString().replaceAll("£",""), views[7].getText().toString().replaceAll("£","")};
 
         // Create an asynchronous object
-        PHPHandler handler = new PHPHandler(BudgetSettings.this, keys, values, 1);
+        PHPHandler handler = new PHPHandler(BudgetSettings.this, keys, values, 6);
 
         // Execute the object
         handler.execute(url);
@@ -149,8 +149,22 @@ public class BudgetSettings extends ActionBarActivity {
     private void initialiseVariables() {
 
         /***** DEBUG *****/
+
+        //used to pre load existing budget data
+        Data d = new Data();
+        String budget = d.budget.get("amount");
+        //food
+        String food = d.budget.get("groceries_amount");
+        String travel = d.budget.get("travel_amount");
+        String beauty = d.budget.get("beauty_and_hygiene_amount");
+        String entertainment = d.budget.get("entertainment_amount");
+        String home = d.budget.get("home_amount");
+        String clothes = d.budget.get("clothes_amount");
+        String leisure = d.budget.get("leisurely_activities_amount");
+        String other = d.budget.get("other_amount");
+
         // Get the current budget from the database
-        budgetValue = 88f;
+        budgetValue = Float.parseFloat(budget);
         max = budgetValue + 25;
         min = getMin();
 
@@ -160,13 +174,21 @@ public class BudgetSettings extends ActionBarActivity {
 
         // Initialise all of the SeekBar variables from the XML files
         sliders[0] = (SeekBar) findViewById(R.id.bs_food_seek);
+        sliders[0].setProgress(Math.round(Float.parseFloat(food)));
         sliders[1] = (SeekBar) findViewById(R.id.bs_travel_seek);
+        sliders[1].setProgress(Math.round(Float.parseFloat(travel)));
         sliders[2] = (SeekBar) findViewById(R.id.bs_beauty_seek);
+        sliders[2].setProgress(Math.round(Float.parseFloat(beauty)));
         sliders[3] = (SeekBar) findViewById(R.id.bs_entertainment_seek);
+        sliders[3].setProgress(Math.round(Float.parseFloat(entertainment)));
         sliders[4] = (SeekBar) findViewById(R.id.bs_home_seek);
+        sliders[4].setProgress(Math.round(Float.parseFloat(home)));
         sliders[5] = (SeekBar) findViewById(R.id.bs_clothes_seek);
+        sliders[5].setProgress(Math.round(Float.parseFloat(clothes)));
         sliders[6] = (SeekBar) findViewById(R.id.bs_leisure_seek);
+        sliders[6].setProgress(Math.round(Float.parseFloat(leisure)));
         sliders[7] = (SeekBar) findViewById(R.id.bs_other_seek);
+        sliders[7].setProgress(Math.round(Float.parseFloat(other)));
 
         // Initialises TextView variables from the XML files
         budgetView = (TextView) findViewById(R.id.bs_budget_value);
@@ -181,13 +203,21 @@ public class BudgetSettings extends ActionBarActivity {
 
         // Initialises all of the text views for the categories
         views[0] = (TextView) findViewById(R.id.bs_food_progress);
+        views[0].setText(food);
         views[1] = (TextView) findViewById(R.id.bs_travel_progress);
+        views[0].setText(travel);
         views[2] = (TextView) findViewById(R.id.bs_beauty_progress);
+        views[0].setText(beauty);
         views[3] = (TextView) findViewById(R.id.bs_entertainment_progress);
+        views[0].setText(entertainment);
         views[4] = (TextView) findViewById(R.id.bs_home_progress);
+        views[0].setText(home);
         views[5] = (TextView) findViewById(R.id.bs_clothes_progress);
+        views[0].setText(clothes);
         views[6] = (TextView) findViewById(R.id.bs_leisure_progress);
+        views[0].setText(leisure);
         views[7] = (TextView) findViewById(R.id.bs_other_progress);
+        views[0].setText(other);
 
         updateView();
 

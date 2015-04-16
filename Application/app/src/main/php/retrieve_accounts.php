@@ -1,5 +1,14 @@
 <?php
 
+	/**
+	 *
+	 * @file retrieve_accounts.php
+	 * @author Artemiy Bozhenok
+	 * @date 13/04/2015
+	 *
+	 * Retrieves all the users accounts from the database
+	 */
+
 	require('config_db.php');
 	require('encryption.php');
 	require('accounts.php');
@@ -20,10 +29,10 @@
 			   " WHERE aid = '" . $uid . "'";
 
 		$result = mysqli_query($db_conn, $sql);
-
+		//go through the multiple results
 		while ($row = mysqli_fetch_assoc($result)) {
 			$a = new Accounts();
-
+			//go through the class and update the variables in the class
 			foreach($a as $key => &$value) {
 				if($key == 'aid') {
 					//make aid = to the uid since it doesnt need to be decrypted
@@ -33,8 +42,9 @@
 					$value = trim(decrypt($row[$key]));
 				}
 			}
-
+			//add the filled class to the array
 			$accounts[$i] = $a;
+			//increment counter
 			$i++;
 		}
 

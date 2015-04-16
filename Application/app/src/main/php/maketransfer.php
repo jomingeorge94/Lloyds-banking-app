@@ -5,7 +5,6 @@
 	 * @file maketransfer.php
 	 * @author Artemiy Bozhenok
 	 * @date 15/04/2015
-	 * @version 0.1.1
 	 *
 	 * This will retrieve the account number and rows of the user uid. Then matches the row number with the account
 	 * number provided from the java (the selected accounts) and transfers the money between them
@@ -31,7 +30,7 @@
 		$t_row = 0;
 		//opens connection to database
 		$db_conn = connect();
-
+		//has the connection been established
 		if(!$db_conn) { return false; }
 
 		//SQL query to fetch record

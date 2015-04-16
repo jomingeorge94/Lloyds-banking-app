@@ -63,13 +63,17 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
         this.progressDialog.setContentView(R.layout.progressdialog);
         //creates an alert dialog
         this.alertDialog = new AlertDialog.Builder(this.activity).create();
-        final int isTransfer = table;
+        //final variables used in the alert dialog
+        final int num = table;
         final Context tActivity = activity;
         this.alertDialog.setButton(DialogInterface.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 //checks if user is making a transfer
-                if(isTransfer == 5) {
+                if(num == 5) {
                     Retrieve r = new Retrieve(((Activity) tActivity), "http://www.abunities.co.uk/t2022t1/retrieve_accounts.php", 1);
+                }
+                else if(num == 6) {
+                    Retrieve r2 = new Retrieve(((Activity) tActivity), "http://www.abunities.co.uk/t2022t1/retrieve_budget.php", 1);
                 }
                 else {
                     dialog.dismiss();
@@ -78,6 +82,14 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
         });
     }
 
+
+    /**
+     *
+     * iterates through the JSONObject and fills the private data variable with data from the Object
+     *
+     * @param data a JSON Object
+     * @throws JSONException
+     */
 
     public void setData(JSONObject data) throws JSONException {
         //defensive programming to prevent an empty array from adding nothing
@@ -137,8 +149,6 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //assign data to a string variable
             String result = sb.toString();
 
-            Log.v("Error", result);
-
             try {
                 //see if an error was returned from the PHP Script
                 checkForError(result);
@@ -169,7 +179,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                     JSONObject data = new JSONObject(result);
                     //places the retrieved data into a java data structure
                     setData(data);
-
+                    //sets data depending on which php script was used
                     if(params[0].contains("retrieve_budget.php")) {
                         d.budget = getData();
                     }
@@ -198,10 +208,12 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
+        //remove the loading dialog if its open
         if(progressDialog.isShowing()) {
             progressDialog.dismiss();
         }
 
+        //checks if the error has been set
         if(this.error > 0) {
             catchError();
             return;
@@ -209,24 +221,35 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
 
         //starts new activity if data was retrieved
         switch(table) {
+            //goes to the home page
             case 1:
-                //Start new activity
                 Intent I = new Intent(activity, MainActivity.class);
                 activity.startActivity(I);
                 ((Activity) activity).finish();
                 break;
+            //retrieves account data
             case 2:
                 Retrieve r = new Retrieve(((Activity) activity), "http://www.abunities.co.uk/t2022t1/retrieve_accounts.php", 1);
                 break;
+            //retrieves budget data
             case 3:
                 Retrieve r2 = new Retrieve(((Activity) activity), "http://www.abunities.co.uk/t2022t1/retrieve_budget.php", 3);
                 break;
+            //retrieves last week budget data
             case 4:
                 Retrieve r3 = new Retrieve(((Activity) activity), "http://www.abunities.co.uk/t2022t1/retrieve_last_week_budget.php", 4);
                 break;
         }
 
     }
+
+    /**
+     *
+     * Converts the error from a string to an int and sets the error variable
+     *
+     * @param error in the form of a number and will throw exception if data is returned
+     * @throws NumberFormatException
+     */
 
     private void checkForError(String error) throws NumberFormatException {
         int err = Integer.parseInt(error.trim());
@@ -236,7 +259,7 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
     }
 
     private void catchError() {
-
+        //remove the loading dialog if its open
         if(progressDialog.isShowing()) {
             progressDialog.dismiss();
         }
@@ -298,12 +321,15 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 activity.startActivity(oi);
                 ((Activity) activity).finish();
                 break;
+            //successful transfer
             case 11:
                 this.alertDialog.setTitle("Transfer Successful");
                 this.alertDialog.show();
                 break;
+            //budget has been successfully saved
             case 12:
-                Retrieve r2 = new Retrieve(((Activity) activity), "http://www.abunities.co.uk/t2022t1/retrieve_budget.php", 1);
+                this.alertDialog.setTitle("Budget Saved");
+                this.alertDialog.show();
                 break;
             //If unexpected error occurs then end any activity open
             default:

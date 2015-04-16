@@ -1,5 +1,14 @@
 <?php
 
+	/**
+	 *
+	 * @file retrieve_budget.php
+	 * @author Artemiy Bozhenok
+	 * @date 14/04/2015
+	 *
+	 * Retrieves data from budget
+	 */
+	
 	require('db.php');
 
 	$uid = $_POST['uid'];

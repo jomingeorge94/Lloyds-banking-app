@@ -5,7 +5,6 @@
 	 * @file config_db.php
 	 * @author Artemiy Bozhenok
 	 * @date 05/02/2015
-	 * @version 0.0.1
 	 *
 	 * A configuration file for database connection
 	 *
