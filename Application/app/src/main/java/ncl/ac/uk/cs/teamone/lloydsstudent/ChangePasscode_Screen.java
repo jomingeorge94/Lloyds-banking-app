@@ -9,6 +9,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -119,22 +120,41 @@ public class ChangePasscode_Screen extends FragmentActivity {
         box[7].addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // Creates a new confirm transfer fragment and initialises it to a variable
-                SettingsChangeVerify fragment = new SettingsChangeVerify();
-
-                if(box[0] == box[4] && box[1] == box[5] && box[2] == box[6] && box[3] == box[7]) {
-                    // New bundle to store data to be transferred
-                    Bundle args = new Bundle();
-                    args.putString("passcode", String.format("%s%s%s%s", box[0].getText().toString(), box[1].getText().toString(), box[2].getText().toString(), box[3].getText().toString()));
-                    // Starts the new fragment
-                    fragment.show(getSupportFragmentManager(), "Confirm");
-                }
 
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Creates a new confirm transfer fragment and initialises it to a variable
+                SettingsChangeVerify fragment = new SettingsChangeVerify();
 
+                box[7].clearFocus();
+
+                String passcode = null;
+                String confirm = null;
+
+                passcode = String.format(box[0].getText().toString(), box[1].getText().toString(), box[2].getText().toString(), box[3].getText().toString());
+                confirm = String.format(box[4].getText().toString(), box[5].getText().toString(), box[6].getText().toString(), box[7].getText().toString());
+
+                Log.w("Vaue", box[0].getText().toString());
+                Log.w("Vaue", box[1].getText().toString());
+                Log.w("Vaue", box[2].getText().toString());
+                Log.w("Vaue", box[3].getText().toString());
+                Log.w("Vaue", box[4].getText().toString());
+                Log.w("Vaue", box[5].getText().toString());
+                Log.w("Vaue", box[6].getText().toString());
+                Log.w("Vaue", box[7].getText().toString());
+
+                if(passcode.equals(confirm)) {
+                    // New bundle to store data to be transferred
+                    Bundle args = new Bundle();
+                    args.putString("passcode", passcode);
+                    fragment.setArguments(args);
+                    // Starts the new fragment
+                    fragment.show(getSupportFragmentManager(), "Confirm");
+                } else {
+                    Log.w("ERROR", "Didn't Match");
+                }
             }
 
             @Override
@@ -221,15 +241,16 @@ public class ChangePasscode_Screen extends FragmentActivity {
             box[3].addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    // Clears the focus of the current box
-                    box[3].clearFocus();
-                    // Request the focus of the next box
-                    changePasscode(String.format("%s%s%s%s", box[0].getText().toString(), box[1].getText().toString(), box[2].getText().toString(), box[3].getText().toString()));
+
                 }
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                    // Clears the focus of the current box
+                    box[3].clearFocus();
+                    String passcode = String.format("%s%s%s%s", box[0].getText().toString(), box[1].getText().toString(), box[2].getText().toString(), box[3].getText().toString());
+                    // Request the focus of the next box
+                    changePasscode(passcode);
                 }
 
                 @Override
@@ -253,6 +274,7 @@ public class ChangePasscode_Screen extends FragmentActivity {
          * match commit the changed passcode to the database
          */
         private void changePasscode(String passcode) {
+            Log.w("Reached", "Reached");
             // Assigns the passcode the user wishes to change to to a local variable
             String newPasscode = getArguments().getString("passcode");
         }

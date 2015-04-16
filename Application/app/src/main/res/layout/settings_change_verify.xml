@@ -85,12 +85,4 @@
 
     </TableLayout>
 
-    <Button
-        style="@style/LloydsButtonActive"
-        android:id="@+id/transfer_confirm_ok"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/settings_verify_table"
-        android:text="@string/gen_ok" />
-
 </RelativeLayout>

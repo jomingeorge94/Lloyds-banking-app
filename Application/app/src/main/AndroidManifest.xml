@@ -181,10 +181,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" >
         </activity>
-        <activity
-            android:name=".SettingsChangePasscode"
-            android:label="@string/title_activity_settings_change_passcode" >
-        </activity>
     </application>
 
 </manifest>
