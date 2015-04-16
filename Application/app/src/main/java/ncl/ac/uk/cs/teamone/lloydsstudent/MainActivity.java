@@ -125,10 +125,8 @@ public class MainActivity extends ActionBarActivity {
                 if(title.getText().toString().equals("Account Management")){
                     iv.setImageResource(R.drawable.account_management_icon);
                 }
-                else if(title.getText().toString().equals("Settings")) {
-                    iv.setImageResource(R.drawable.settings_icon);
-                }
-                else if(title.getText().toString().equals("Budget Notification")) {
+
+                else if(title.getText().toString().equals("Notification")) {
                     iv.setImageResource(R.drawable.budget_icon);
                 }
                 else if(title.getText().toString().equals("Lloyd's Banking Tour")) {
@@ -173,15 +171,10 @@ public class MainActivity extends ActionBarActivity {
                     Intent accountmanagement =new Intent(getApplicationContext(),AccountManagementScreen.class);
                     startActivity(accountmanagement);
                 }
-                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Settings")){
-                    drawerLayout.closeDrawer(Gravity.LEFT);
-                    Intent settings =new Intent(getApplicationContext(),Settings_Screen.class);
-                    startActivity(settings);
-                }
 
-                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Budget Notification")){
+                else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Notification")){
                     drawerLayout.closeDrawer(Gravity.LEFT);
-                    Intent budgetnotification =new Intent(getApplicationContext(),Budget_Notification.class);
+                    Intent budgetnotification =new Intent(getApplicationContext(),BudgetSettings.class);
                     startActivity(budgetnotification);
                 }
 

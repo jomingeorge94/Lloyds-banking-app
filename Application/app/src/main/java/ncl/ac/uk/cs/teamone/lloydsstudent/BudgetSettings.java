@@ -1,8 +1,8 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -298,6 +298,14 @@ public class BudgetSettings extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i=new Intent(BudgetSettings.this,MainActivity.class);
+        startActivity(i);
+        finish();
     }
 
 }

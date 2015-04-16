@@ -135,8 +135,7 @@
 
     <string-array name="helpmenu">
         <item>Account Management</item>
-        <item>Settings</item>
-        <item>Budget Notification</item>
+        <item>Notification</item>
         <item>Lloyd\'s Banking Tour </item>
         <item>Contact Us</item>
         <item>Other Products</item>
