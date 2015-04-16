@@ -3,6 +3,7 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -123,7 +124,21 @@ public class BudgetSettings extends ActionBarActivity {
      * later for other sections in the budgeting
      */
     private void updateBudget() {
+        // Url to connect to
+        String url = "http://www.abunities.co.uk/t2022t1/updatebudget.php";
 
+
+        Log.v("TEXT",views[0].getText().toString().replaceAll("£",""));
+
+        // Values to send to the PHP file
+        String[] keys = {"uid", "amount", "food", "travel", "beauty", "entertainment", "home", "clothes", "leisure", "other"};
+        String[] values = {new Data().customer.get("uid"), Float.toString(budgetValue), views[0].getText().toString().replaceAll("£",""), views[1].getText().toString().replaceAll("£",""), views[2].getText().toString().replaceAll("£",""), views[3].getText().toString().replaceAll("£",""), views[4].getText().toString().replaceAll("£",""), views[5].getText().toString().replaceAll("£",""), views[6].getText().toString().replaceAll("£",""), views[7].getText().toString().replaceAll("£","")};
+
+        // Create an asynchronous object
+        PHPHandler handler = new PHPHandler(BudgetSettings.this, keys, values, 1);
+
+        // Execute the object
+        handler.execute(url);
     }
 
     /**
@@ -306,6 +321,12 @@ public class BudgetSettings extends ActionBarActivity {
         Intent i=new Intent(BudgetSettings.this,MainActivity.class);
         startActivity(i);
         finish();
+    }
+
+    //Simply prevents the app from being in the background, user has to enter passcode again!
+    @Override
+    protected void onUserLeaveHint() {
+        this.finish();
     }
 
 }

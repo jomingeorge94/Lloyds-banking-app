@@ -302,6 +302,9 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 this.alertDialog.setTitle("Transfer Successful");
                 this.alertDialog.show();
                 break;
+            case 12:
+                Retrieve r2 = new Retrieve(((Activity) activity), "http://www.abunities.co.uk/t2022t1/retrieve_budget.php", 1);
+                break;
             //If unexpected error occurs then end any activity open
             default:
                 ((Activity) activity).finish();

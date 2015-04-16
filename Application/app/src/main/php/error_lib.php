@@ -23,5 +23,6 @@
 	define('SUCCESS_FIRST_TIME', '9');
 	define('ADD_ENTRY_COMPLETE', '10');
 	define('TRANSFER_SUCCESSFUL', '11');
+	define('BUDGET_FINISHED', '12');
 
 ?>
