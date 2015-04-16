@@ -9,17 +9,16 @@
 
     <TextView
         style="@style/LloydsSubTitle"
-        android:id="@+id/main_second_account_name"
+        android:id="@+id/main_first_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="@string/accountType"
         android:gravity="center" />
 
     <ImageButton
-        android:id="@+id/main_second_left"
+        android:id="@+id/main_first_left_overview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -30,15 +29,14 @@
 
     <TextView
         style="@style/LloydsTitleXLarge"
-        android:id="@+id/main_second_account_balance"
+        android:id="@+id/main_first_balance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/main_second_account_name"
-        android:text="@string/currentMoney" />
+        android:layout_below="@id/main_first_name" />
 
     <ImageButton
-        android:id="@+id/main_second_right"
+        android:id="@+id/main_first_right_overview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -49,13 +47,12 @@
 
     <TextView
         style="@style/LloydsSubTitle"
-        android:id="@+id/main_second_details"
+        android:id="@+id/main_first_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/main_second_account_balance"
-        android:text="@string/accountDetails"
+        android:layout_below="@+id/main_first_balance"
         android:gravity="center" />
 
 </RelativeLayout>

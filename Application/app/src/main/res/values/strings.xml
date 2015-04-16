@@ -61,7 +61,16 @@
 
     // Main Tab
     <string name="main_tab_customer">Mike Williams</string>
+    <string name="main_tab_login">LAST LOGIN 11:56 NEWCASTLE</string>
+    <string name="main_tab_transfer">Make a Transfer</string>
+    <string name="main_tab_contact">Pay a Contact</string>
 
+    // Account View
+    <string name="main_account_balance">Balance</string>
+    <string name="main_account_interest">Interest Rate</string>
+    <string name="main_account_overdraft">Overdraft Limit</string>
+    <string name="main_account_this">This Month</string>
+    <string name="main_account_last">Last Month</string>
 
 
     <string name="app_name">Lloyds Student</string>
@@ -71,23 +80,17 @@
     <string name="action_settings">Action Settings</string>
     <string name="title_activity_login">Activity Login</string>
 
-    <string name="lastLogin">LAST LOGIN 11:56 NEWCASTLE</string>
     <string name="accountType">Student Account</string>
     <string name="currentMoney">£2000.00</string>
     <string name="accountDetails">20-14-19 | 12345678</string>
-    <string name="makeTransferButton">Make a Transfer</string>
-    <string name="payContactButton">Pay a Contact</string>
     <string name="main_title">Homepage</string>
     <string name="spaceinbetweenthebuttons"></string>
     <string name="accountTypeInfo">Account Overview</string>
     <string name="balanceAvailable">Balance</string>
-    <string name="interestRateText">Interest Rate</string>
-    <string name="overdraftText">Overdraft Limit</string>
+
     <string name="interestRate">0.5%</string>
     <string name="overdraftLimit">£1500.00</string>
     <string name="title_activity_first_time">FirstTime</string>
-    <string name="lastmonth">Last Month</string>
-    <string name="thismonth">This Month</string>
     <string name="transactiondate1">29th August</string>
     <string name="transactionstorename1">Amazon EU</string>
     <string name="transactioncost1">-£12.99</string>

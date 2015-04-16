@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/lastLogin"
+        android:text="@string/main_tab_login"
         android:paddingBottom="5dp"
         android:id="@+id/main_lag_last_login"
         android:layout_gravity="center_horizontal|top"
@@ -124,7 +124,7 @@
             <Button
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="@string/makeTransferButton"
+                android:text="@string/main_tab_transfer"
                 android:id="@+id/main_tab_transfer"
                 android:background="#5DAD68" />
 
@@ -140,7 +140,7 @@
             <Button
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="@string/payContactButton"
+                android:text="@string/main_tab_contact"
                 android:id="@+id/main_tab_contact"
                 android:background="#5DAD68" />
 

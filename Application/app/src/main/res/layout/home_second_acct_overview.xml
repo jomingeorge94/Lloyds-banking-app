@@ -1,0 +1,587 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_second_overview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:background="@color/white" >
+
+    <TextView
+        style="@style/LloydsTitleXLarge"
+        android:id="@+id/main_second_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center" />
+
+    <View
+        android:id="@+id/main_second_underline"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@id/main_second_title"
+        android:background="@color/dark_green" />
+
+    <TextView
+        style="@style/LloydsTitleLarge"
+        android:id="@+id/main_second_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/main_second_underline"
+        android:gravity="center" />
+
+    <TextView
+        style="@style/LloydsTextSmall"
+        android:id="@+id/main_second_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@id/main_second_account"
+        android:gravity="center" />
+
+    <TextView
+        style="@style/LloydsTitleLarge"
+        android:id="@+id/main_second_balance_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/main_second_details"
+        android:text="@string/main_account_balance"
+        android:gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/main_second_left_overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/main_second_balance_overview"
+        android:layout_toStartOf="@+id/main_second_balance_overview"
+        android:layout_marginRight="20dp"
+        android:layout_alignTop="@id/main_second_balance_overview"
+        android:layout_alignBottom="@id/main_second_balance_overview"
+        android:src="@drawable/ic_leftarrow"
+        android:background="@color/white" />
+
+    <TextView
+        style="@style/LloydsTitleXLarge"
+        android:id="@+id/main_second_balance_overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/main_second_balance_label" />
+
+    <ImageButton
+        android:id="@+id/main_second_right_overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/main_second_balance_overview"
+        android:layout_toEndOf="@+id/main_second_balance_overview"
+        android:layout_marginLeft="20dp"
+        android:layout_alignTop="@id/main_second_balance_overview"
+        android:layout_alignBottom="@id/main_second_balance_overview"
+        android:src="@drawable/ic_rightarrow"
+        android:background="@color/white" />
+
+    <TextView
+        style="@style/LloydsTitleLarge"
+        android:id="@+id/main_second_interest_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/main_second_balance_overview"
+        android:text="@string/main_account_interest" />
+
+    <TextView
+        style="@style/LloydsTextLarge"
+        android:id="@+id/main_second_interest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/main_second_interest_label" />
+
+    <TextView
+        style="@style/LloydsTitleLarge"
+        android:id="@+id/main_second_overdraft_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/main_second_balance_overview"
+        android:text="@string/main_account_overdraft" />
+
+    <TextView
+        style="@style/LloydsTextLarge"
+        android:id="@+id/main_second_overdraft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/main_second_overdraft_label" />
+
+    <TableLayout
+        android:id="@+id/main_second_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_second_interest"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:stretchColumns="*" >
+
+        <TableRow>
+
+            <Button
+                style="@style/LloydsButtonActive"
+                android:id="@+id/thisMonth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:text="@string/main_account_this" />
+
+            <Button
+                style="@style/LloydsButtonActive"
+                android:id="@+id/lastMonthButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@string/main_account_last" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <ScrollView
+        android:id="@+id/main_second_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="151dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/main_second_button_layout"
+        android:layout_alignRight="@+id/main_second_overdraft_label"
+        android:layout_alignEnd="@+id/main_second_overdraft_label">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_title_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Test Transaction"/>
+
+                    <ImageButton
+                        android:id="@+id/main_second_trans_btn_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/main_second_trans_title_1"
+                        android:background="#fffbfffb"
+                        android:src="@drawable/ic_fraud"/>
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/main_second_trans_date_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/main_second_trans_title_1"
+                        android:text="Test Date"/>
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_amount_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:text="+£11.12" />
+
+                    <View
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_under_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_below="@id/main_second_trans_date_1"
+                        android:background="@color/medium_grey" />
+
+                </RelativeLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_title_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Test Transaction"/>
+
+                    <ImageButton
+                        android:id="@+id/main_second_trans_btn_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/main_second_trans_title_2"
+                        android:background="#fffbfffb"
+                        android:src="@drawable/ic_fraud"/>
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/main_second_trans_date_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/main_second_trans_title_2"
+                        android:text="Test Date"/>
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_amount_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:text="+£11.12" />
+
+                    <View
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_under_2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_below="@id/main_second_trans_date_2"
+                        android:background="@color/medium_grey" />
+
+                </RelativeLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_title_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Test Transaction"/>
+
+                    <ImageButton
+                        android:id="@+id/main_second_trans_btn_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/main_second_trans_title_3"
+                        android:background="#fffbfffb"
+                        android:src="@drawable/ic_fraud"/>
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/main_second_trans_date_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/main_second_trans_title_3"
+                        android:text="Test Date"/>
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_amount_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:text="+£11.12" />
+
+                    <View
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_under_3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_below="@id/main_second_trans_date_3"
+                        android:background="@color/medium_grey" />
+
+                </RelativeLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_title_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Test Transaction"/>
+
+                    <ImageButton
+                        android:id="@+id/main_second_trans_btn_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/main_second_trans_title_4"
+                        android:background="#fffbfffb"
+                        android:src="@drawable/ic_fraud"/>
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/main_second_trans_date_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/main_second_trans_title_4"
+                        android:text="Test Date"/>
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_amount_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:text="+£11.12" />
+
+                    <View
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_under_4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_below="@id/main_second_trans_date_4"
+                        android:background="@color/medium_grey" />
+
+                </RelativeLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_title_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Test Transaction"/>
+
+                    <ImageButton
+                        android:id="@+id/main_second_trans_btn_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/main_second_trans_title_5"
+                        android:background="#fffbfffb"
+                        android:src="@drawable/ic_fraud"/>
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/main_second_trans_date_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/main_second_trans_title_5"
+                        android:text="Test Date"/>
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_amount_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:text="+£11.12" />
+
+                    <View
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_under_5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_below="@id/main_second_trans_date_5"
+                        android:background="@color/medium_grey" />
+
+                </RelativeLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_title_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Test Transaction"/>
+
+                    <ImageButton
+                        android:id="@+id/main_second_trans_btn_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/main_second_trans_title_6"
+                        android:background="#fffbfffb"
+                        android:src="@drawable/ic_fraud"/>
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/main_second_trans_date_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/main_second_trans_title_6"
+                        android:text="Test Date"/>
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_amount_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:text="+£11.12" />
+
+                    <View
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_under_6"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_below="@id/main_second_trans_date_6"
+                        android:background="@color/medium_grey" />
+
+                </RelativeLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_title_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Test Transaction"/>
+
+                    <ImageButton
+                        android:id="@+id/main_second_trans_btn_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/main_second_trans_title_7"
+                        android:background="#fffbfffb"
+                        android:src="@drawable/ic_fraud"/>
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/main_second_trans_date_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/main_second_trans_title_7"
+                        android:text="Test Date"/>
+
+                    <TextView
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_amount_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:text="+£11.12" />
+
+                    <View
+                        style="@style/LloydsTitleMedium"
+                        android:id="@+id/main_second_trans_under_7"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_below="@id/main_second_trans_date_7"
+                        android:background="@color/medium_grey" />
+
+                </RelativeLayout>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

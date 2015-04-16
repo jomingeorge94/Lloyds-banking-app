@@ -5,10 +5,10 @@
     android:id="@+id/main_tab_switch"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
     android:background="@color/white" >
 
     <TextView
@@ -16,8 +16,9 @@
         android:id="@+id/main_tag_customer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="@string/main_tab_customer"
         android:gravity="center" />
 
     <TextView
@@ -28,7 +29,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@id/main_tag_customer"
-        android:text="@string/lastLogin"
+        android:text="@string/main_tab_login"
         android:gravity="center" />
 
     <View
@@ -45,7 +46,6 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_below="@id/main_tab_underline"
-        android:layout_span="2"
         android:layout_gravity="center_vertical"/>
 
     <TableLayout
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/main_tag_account_switcher"
-        android:paddingBottom="8dp"
+        android:paddingBottom="16dp"
         android:stretchColumns="*" >
 
         <TableRow android:layout_height="400dp">
@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="4dp"
-                android:text="@string/makeTransferButton"
+                android:text="@string/main_tab_transfer"
                 android:layout_weight="50"/>
 
             <Button
@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
-                android:text="@string/payContactButton"
+                android:text="@string/main_tab_contact"
                 android:layout_weight="50"/>
 
         </TableRow>
