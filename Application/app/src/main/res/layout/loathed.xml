@@ -5,14 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:padding="5dp"
-    android:background="#ffdcdcff">
+    android:background="#ffffffff">
 
     <ImageView
         android:id="@+id/dealicon"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/icon"
-        android:background="#ffdcdcff" />
+        android:src="@drawable/icon" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -20,14 +19,13 @@
         android:layout_weight="0.14"
         android:orientation="vertical"
         android:padding="3dp"
-         >
+        android:layout_marginTop="10dp">
 
         <TextView
             android:id="@+id/dealtitle"
-            android:layout_width="wrap_content"
+            android:layout_width="243dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="Reduced Easter Eggs @Tesco" 
+            android:text="Reduced Easter Eggs @Tesco"
             android:lines="1"
  
             android:textSize="16sp"
@@ -42,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:orientation="vertical"
-                 android:layout_marginRight="5dp" >
+                 android:layout_marginRight="30dp">
             
             <TextView
                 android:id="@+id/hearttext"
@@ -59,14 +57,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                
-                android:src="@drawable/heart"
-                android:background="#ffdcdcff" />
-            </LinearLayout>
+                android:src="@drawable/heart" />
+
+               </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:orientation="vertical" 
-                android:layout_marginRight="5dp">
+                android:orientation="vertical"
+                android:layout_marginRight="20dp">
 
             <TextView
                 android:id="@+id/brokenhearttext"
@@ -84,21 +82,21 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 
-                android:src="@drawable/brokenheart"
-                android:background="#ffdcdcff" />
+                android:src="@drawable/brokenheart" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:layout_marginRight="5dp">
 
                 <TextView
                     android:id="@+id/milestext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0.1"
-                    android:textSize="23sp"
+                    android:textSize="20sp"
                     android:textColor="#ff000000" />
 
                 <TextView
@@ -107,9 +105,19 @@
                     android:layout_height="wrap_content"
                      android:text="miles"
                      android:layout_marginTop="-5dp"
-                    android:textSize="14sp"
-                    android:textColor="#ff000000" /></LinearLayout>
-            
+                    android:textSize="12sp"
+                    android:textColor="#ff000000" />
+
+                <View
+                    android:id="@+id/main_tab_underline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_below="@id/main_lag_last_login"
+                    android:background="@color/dark_green" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>

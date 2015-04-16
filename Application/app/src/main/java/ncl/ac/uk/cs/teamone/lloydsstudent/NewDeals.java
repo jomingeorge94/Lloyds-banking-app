@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,14 +33,18 @@ public class NewDeals extends Fragment {
         deal=(SwipeListView)v.findViewById(R.id.newDealList);
         NewDeals.click = false;
         deal.setSwipeOpenOnLongPress(false);
-
+        TextView distance = (TextView) v.findViewById(R.id.milestext);
         if(COUNTER == 0){
             itemData=new ArrayList<ItemRow>();
             forLoved=new ArrayList<String>();
-            itemData.add(new ItemRow("Reduced Easter Eggs @ Tesco",R.drawable.icon));
-            itemData.add(new ItemRow("BluTacPacket Incorrectly",R.drawable.icon));
-            itemData.add(new ItemRow("241 Pizza @zizzi with ",R.drawable.icon));
-            itemData.add(new ItemRow("£5 top up with EE",R.drawable.icon));
+            itemData.add(new ItemRow("Reduced Easter Eggs @ Tesco!",R.drawable.food));
+            itemData.add(new ItemRow("Hugo Boss Bottled for £40",R.drawable.beauty));
+            itemData.add(new ItemRow("Vouchers for Cinema",R.drawable.entertainment));
+            itemData.add(new ItemRow("£5 top up with EE",R.drawable.misc));
+            itemData.add(new ItemRow("Win a ticket to France",R.drawable.travel));
+            itemData.add(new ItemRow("Yoghurt's 4 for £1 @ ASDA",R.drawable.food));
+            itemData.add(new ItemRow("£35 monthly plan for iPhone 6s",R.drawable.food));
+
             COUNTER++;
         }
 
