@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +47,8 @@ public class NewDeals extends Fragment {
         adapter=new ItemAdapter(getActivity(),R.layout.loathed,itemData);
 
 
+
+
         deal.setOffsetLeft(convertDpToPixel(260f)); // left side offset
         deal.setOffsetRight(convertDpToPixel(0f)); // right side offset
         deal.setOnTouchListener(new View.OnTouchListener() {
@@ -69,29 +70,10 @@ public class NewDeals extends Fragment {
         deal.setSwipeListViewListener(new BaseSwipeListViewListener() {
             @Override
             public void onOpened(int position, boolean toRight) {
-                // CAlled first
-                Log.i("Gingers", Float.toString(WHERE));
-                if(WHERE < getSize()/2)
-                    toRight = false;
-                else
-                    toRight = true;
 
-                if  (!toRight) {
-                    Loathed.itemDataLoathed.add(NewDeals.itemData.get(position));
-                    NewDeals.itemData.remove(position);
-                    Loathed.adapter.notifyDataSetChanged();
-                    Toast.makeText(getActivity().getBaseContext(),"Left",Toast.LENGTH_LONG).show();
-                }
-                else  {
-                    Loved.itemDataLoved.add(NewDeals.itemData.get(position));
-                    NewDeals.itemData.remove(position);
-                    Loved.adapter.notifyDataSetChanged();
-                    Toast.makeText(getActivity().getBaseContext(),"Left",Toast.LENGTH_LONG).show();
-                }
 
-                adapter.notifyDataSetChanged();
 
-                deal.closeOpenedItems();
+
             }
 
 
@@ -103,18 +85,7 @@ public class NewDeals extends Fragment {
             @Override
             public void onStartOpen(int position, int action, boolean right) {
                 Log.i("On click" , "OPEN");
-                // TODO Auto-generated method stub
-    	/* if  (action==deal.getSwipeActionLeft()) {
-    		 Loathed.itemDataLoathed.add(itemData.get(position));
-    		 itemData.remove(position);
-    		 Toast.makeText(getActivity().getBaseContext(),"Left",Toast.LENGTH_LONG).show();
-    	 }
-    	 else if(action==deal.getSwipeActionRight()) {
-    		 Loved.itemDataLoved.add(itemData.get(position));
-    		 itemData.remove(position);
-    		 Toast.makeText(getActivity().getBaseContext(),"Right",Toast.LENGTH_LONG).show();
-    	 }
-    	*/
+
                 adapter.notifyDataSetChanged();
                 deal.closeOpenedItems();
 
@@ -130,6 +101,36 @@ public class NewDeals extends Fragment {
             @Override
             public void onClickBackView(int position) {
 
+
+                final ArrayList<Integer> fix = new ArrayList<Integer>();
+                fix.add(position);
+
+                deal.getChildAt(position).findViewById(R.id.brokenheart).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Log.i("WHAT THE FUCK",NewDeals.itemData.get(0).itemName);
+
+                        Loathed.itemDataLoathed.add(NewDeals.itemData.get(fix.get(fix.size()-1)));
+                        NewDeals.itemData.remove(fix.get(fix.size()-1).intValue());
+                        Loathed.adapter.notifyDataSetChanged();
+                        adapter.notifyDataSetChanged();
+
+                        deal.closeOpenedItems();
+                    }
+                });
+
+                deal.getChildAt(position).findViewById(R.id.heart).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Loved.itemDataLoved.add(NewDeals.itemData.get(fix.get(fix.size()-1)));
+                        NewDeals.itemData.remove(fix.get(fix.size()-1).intValue());
+                        Loved.adapter.notifyDataSetChanged();
+                        adapter.notifyDataSetChanged();
+
+                        deal.closeOpenedItems();
+                    }
+                });
+
                 // TODO Auto-generated method stub
                 deal.closeAnimate(position);
             }
@@ -138,7 +139,7 @@ public class NewDeals extends Fragment {
             @Override
             public void onClickFrontView(int position) {
                 // TODO Auto-generated method stub
-                Log.i("On click" , "FRONT");
+
                 deal.openAnimate(position);
 
             }
