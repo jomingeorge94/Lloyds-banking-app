@@ -3,6 +3,9 @@
     // Generics
     <string name="gen_next">Next</string>
     <string name="gen_finished">Finished</string>
+    <string name="gen_cancel">Cancel</string>
+    <string name="gen_ok">Ok</string>
+    <string name="gen_edit">Edit</string>
 
     // Login Activity
     <string name="login_title">Enter Passcode:</string>
@@ -72,6 +75,20 @@
     <string name="main_account_this">This Month</string>
     <string name="main_account_last">Last Month</string>
 
+    // Transaction / Pay A Contact
+    <string name="transaction_confirm_title">Confirm Your Transaction</string>
+    <string name="transaction_description">Select which of your accounts you want to transfer the money between then add a payment reference and the amount you want to transfer (You\'ll have the option to review the payment before it\'s confirmed)</string>
+    <string name="transaction_details_correct">Are all the details correct ?</string>
+    <string name="transaction_title">Transfer money between your Lloyd\'s accounts</string>
+    <string name="transaction_transfer_from">From:</string>
+    <string name="transaction_transfer_to">To:</string>
+    <string name="transaction_reference">Payment Reference</string>"
+    <string name="transaction_amount">Amount</string>
+    <string name="transaction_review">Review Payment</string>
+    
+    
+    
+    
 
     <string name="app_name">Lloyds Student</string>
     <string name="hello_world">Hello World</string>
@@ -108,9 +125,7 @@
     <string name="CallUsButtonCancel">Cancel</string>
     <string name="AlertMessage">If you don\'t recognise this payment/transfer we might need to take some action. To keep your money safe we need you to call our Fraud
     Team or fill a case online right now and it will be dealt with one of our staffs right away to investigate this transaction. </string>
-    <string name="makeatransfertitle">Transfer money between your Lloyd\'s accounts</string>
-    <string name="makeatransferfrom">From:</string>
-    <string name="makeatransferto">To:</string>
+
 
     <string-array name="accounts">
         <item>Current Account</item>
@@ -129,8 +144,8 @@
         copies of the Code can be obtained from www.lendingstandardsboard.org.uk.</string>
     <string name="transfermoneytitle">Transfer money between your accounts</string>
     <string name="confirmdetails">Confirm your transaction details</string>
-    <string name="amount">Amount</string>
-    <string name="reference">Payment Reference</string>
+
+    
     <string name="payacontacttitle">Pay a Contact</string>
     <string name="red_string">Red</string>
     <string name="green_string">Green</string>

@@ -1,169 +1,158 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#ffc0c0c0">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:background="@color/white" >
+
+    <TextView
+        style="@style/LloydsTitleLarge"
+        android:id="@+id/transfer_confirm_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/transaction_confirm_title"/>
+
+    <View
+        android:id="@+id/transfer_confirm_underline"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@+id/transfer_confirm_title"
+        android:background="@color/dark_green" />
 
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="420dp"
-        android:id="@+id/scrollView4"
+        android:id="@+id/transfer_confirm_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:paddingTop="10dp">
+        android:layout_below="@id/transfer_confirm_underline" >
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView27"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ff000000"
-                android:text="@string/transfermoneytitle"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <View
+                style="@style/LloydsTextSmall"
+                android:id="@+id/transfer_confirm_question"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#ffe0e0e0"
-                android:layout_marginTop="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/confirmdetails"
-                android:id="@+id/textView28"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:textColor="#ff000000"
-                android:textSize="16sp"
-                android:paddingLeft="10dp"
-                android:layout_marginTop="10dp" />
+                android:text="@string/transaction_details_correct"/>
 
             <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/transfer_confirm_from_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView29"
-                android:textColor="#ff000000"
-                android:text="@string/makeatransferfrom"
-                android:textStyle="bold"
-                android:textSize="12sp"
-                android:layout_marginTop="20dp"
-                android:paddingLeft="10dp" />
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/transfer_confirm_question"
+                android:text="@string/transaction_transfer_from" />
 
             <TextView
+                style="@style/LloydsTextSmall"
+                android:id="@+id/transfer_confirm_from"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/makeatransferconfirmationFrom"
-                android:textColor="#ff000000"
-                android:drawableLeft="@drawable/transferaccount_icon"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/transfer_confirm_from_label"
                 android:drawablePadding="10dp"
-                android:paddingLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="16sp" />
+                android:drawableLeft="@drawable/transferaccount_icon" />
 
             <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/transfer_confirm_to_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView31"
-                android:textColor="#ff000000"
-                android:text="@string/makeatransferto"
-                android:textStyle="bold"
-                android:textSize="12sp"
-                android:layout_marginTop="20dp"
-                android:paddingLeft="10dp" />
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/transfer_confirm_from"
+                android:text="@string/transaction_transfer_to" />
 
             <TextView
+                style="@style/LloydsTextSmall"
+                android:id="@+id/transfer_confirm_to"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/makeatransferconfirmationTo"
-                android:textColor="#ff000000"
-                android:drawableLeft="@drawable/transferaccount_icon"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/transfer_confirm_to_label"
                 android:drawablePadding="10dp"
-                android:paddingLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="16sp" />
+                android:drawableLeft="@drawable/transferaccount_icon" />
 
             <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/transfer_confirm_amount_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView33"
-                android:textColor="#ff000000"
-                android:text="@string/amount"
-                android:textStyle="bold"
-                android:textSize="12sp"
-                android:layout_marginTop="20dp"
-                android:paddingLeft="10dp" />
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/transfer_confirm_to"
+                android:text="@string/transaction_amount" />
 
             <TextView
+                style="@style/LloydsTextSmall"
+                android:id="@+id/transfer_confirm_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/makeaTransferconfirmationamount"
-                android:textColor="#ff000000"
-                android:drawableLeft="@drawable/pound_sign"
-                android:drawablePadding="10dp"
-                android:paddingLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="16sp" />
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/transfer_confirm_amount_label" />
 
             <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/transfer_confirm_reference_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView35"
-                android:textColor="#ff000000"
-                android:text="@string/reference"
-                android:textStyle="bold"
-                android:textSize="12sp"
-                android:layout_marginTop="20dp"
-                android:paddingLeft="10dp" />
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/transfer_confirm_amount"
+                android:text="@string/transaction_reference" />
 
             <TextView
+                style="@style/LloydsTextSmall"
+                android:id="@+id/transfer_confirm_reference"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/makeaTransferconfirmationreference"
-                android:textColor="#ff000000"
-                android:paddingLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="16sp" />
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/transfer_confirm_reference_label" />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="70dp">
+        </RelativeLayout>
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OK"
-                    android:id="@+id/makeaTransferOk"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cancel"
-                    android:id="@+id/makeaTransferCancel"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="30dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" />
-            </LinearLayout>
-
-        </LinearLayout>
     </ScrollView>
+
+    <TableLayout
+        android:id="@+id/transfer_confirm_tabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/transfer_confirm_scroll"
+        android:stretchColumns="*">
+
+        <TableRow>
+
+            <Button
+                style="@style/LloydsButtonActive"
+                android:id="@+id/transfer_confirm_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="4dp"
+                android:text="@string/gen_edit" />
+
+            <Button
+                style="@style/LloydsButtonActive"
+                android:id="@+id/transfer_confirm_ok"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:text="@string/gen_ok" />
+
+        </TableRow>
+
+    </TableLayout>
 
 </RelativeLayout>

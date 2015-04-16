@@ -39,7 +39,7 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
         }
 
         //initialize the spinner
-        makeaTransferSpinnerAccountFrom = (Spinner) v.findViewById(R.id.spinnermakeaTransferAccountFrom);
+        makeaTransferSpinnerAccountFrom = (Spinner) v.findViewById(R.id.transfer_from_spinner);
         //initialize the adapter with values in list
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, list);
         //set the adapter and the prompt for the user
@@ -47,16 +47,16 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
         makeaTransferSpinnerAccountFrom.setPrompt("Select an account");
 
         //initialize second spinner
-        MakeaTransferSpinnerAccountTo = (Spinner) v.findViewById(R.id.spinnermakeaTransferAccountTo);
+        MakeaTransferSpinnerAccountTo = (Spinner) v.findViewById(R.id.transfer_to_spinner);
         //same as above
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, list);
         //set the adapter and the prompt for the user
         MakeaTransferSpinnerAccountTo.setAdapter(adapter2);
         MakeaTransferSpinnerAccountTo.setPrompt("Select an account");
 
-        final EditText amount = (EditText)v.findViewById(R.id.spinnermakeaTransferAccountamount);
-        final EditText reference = (EditText)v.findViewById(R.id.spinnermakeaTransferAccountreference);
-        final Button reviewButton = (Button)v.findViewById(R.id.maketransferReviewButton);
+        final EditText amount = (EditText)v.findViewById(R.id.transfer_amount);
+        final EditText reference = (EditText)v.findViewById(R.id.transfer_reference);
+        final Button reviewButton = (Button)v.findViewById(R.id.transfer_confirm);
 
         final TextWatcher watcher = new TextWatcher() {
 
@@ -86,7 +86,7 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
         amount.addTextChangedListener(watcher);
         reference.addTextChangedListener(watcher);
 
-        v.findViewById(R.id.maketransferReviewButton).setOnClickListener(new View.OnClickListener() {
+        v.findViewById(R.id.transfer_confirm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //total money of the account in the 'From' spinner

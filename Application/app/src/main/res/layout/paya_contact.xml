@@ -26,15 +26,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/paycontacttitle"
-                android:id="@+id/textView10"
+                android:id="@+id/transfer_title"
                 android:textSize="16sp"
                 android:textColor="#ff000000" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView12"
-                android:text="@string/makeatransferfrom"
+                android:id="@+id/transfer_from_label"
+                android:text="@string/transaction_transfer_from"
                 android:textColor="#ff000000"
                 android:textSize="20sp"
                 android:paddingTop="10dp"
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView13"
-                android:text="@string/makeatransferto"
+                android:text="@string/transaction_transfer_to"
                 android:textColor="#ff000000"
                 android:textSize="20sp"
                 android:paddingTop="10dp"

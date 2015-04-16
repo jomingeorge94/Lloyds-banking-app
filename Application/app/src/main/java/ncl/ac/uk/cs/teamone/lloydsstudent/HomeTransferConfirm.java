@@ -36,20 +36,20 @@ public class HomeTransferConfirm extends DialogFragment {
         params.x = 0;
         params.y = 300;
 
-        TextView spinnerAccountFromText = (TextView) theDIalog.findViewById(R.id.makeatransferconfirmationFrom);
+        TextView spinnerAccountFromText = (TextView) theDIalog.findViewById(R.id.transfer_confirm_from);
         spinnerAccountFromText.setText(strSelectedAccountFromSpinner);
 
-        TextView spinnerAccountToText = (TextView) theDIalog.findViewById(R.id.makeatransferconfirmationTo);
+        TextView spinnerAccountToText = (TextView) theDIalog.findViewById(R.id.transfer_confirm_to);
         spinnerAccountToText.setText(strSelectedAccountToSpinner);
 
-        TextView spinnerAccountMakeaTransferAmount = (TextView) theDIalog.findViewById(R.id.makeaTransferconfirmationamount);
+        TextView spinnerAccountMakeaTransferAmount = (TextView) theDIalog.findViewById(R.id.transfer_confirm_amount);
         spinnerAccountMakeaTransferAmount.setText(strSelectedAccountMakeaTransferAmountSpinner);
 
-        TextView spinnerAccountMakeaTransferReference = (TextView) theDIalog.findViewById(R.id.makeaTransferconfirmationreference);
+        TextView spinnerAccountMakeaTransferReference = (TextView) theDIalog.findViewById(R.id.transfer_confirm_reference);
         spinnerAccountMakeaTransferReference.setText(strSelectedAccountMakeaTransferReferenceSpinner);
 
 
-        theDIalog.findViewById(R.id.makeaTransferOk).setOnClickListener(new View.OnClickListener() {
+        theDIalog.findViewById(R.id.transfer_confirm_ok).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                     //initialize the async task
@@ -62,7 +62,7 @@ public class HomeTransferConfirm extends DialogFragment {
         });
 
 
-        theDIalog.findViewById(R.id.makeaTransferCancel).setOnClickListener(new View.OnClickListener() {
+        theDIalog.findViewById(R.id.transfer_confirm_edit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 firstdialog.dismiss();
