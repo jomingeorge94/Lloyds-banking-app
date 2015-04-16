@@ -5,7 +5,7 @@
     <string name="gen_finished">Finished</string>
 
     // Login Activity
-    <string name="login_title">Login Lloyds Student</string>
+    <string name="login_title">Enter Passcode:</string>
 
     // First Time Setup
     <string name="first_title">Lloyds Student Setup</string>

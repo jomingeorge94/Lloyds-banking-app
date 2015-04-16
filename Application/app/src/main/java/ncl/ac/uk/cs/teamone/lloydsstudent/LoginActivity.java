@@ -21,7 +21,7 @@ public class LoginActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        //Locates the text edit box and creates an editable object
+        // Locates the text edit box and creates an editable object
         final EditText passCode = (EditText) findViewById(R.id.login_passcode_one);
 
         // Get an input manager to mange soft keyboard during inputs
@@ -121,7 +121,7 @@ public class LoginActivity extends ActionBarActivity {
 
     }
 
-    //Simply prevents the app from being in the background, user has to enter passcode again!
+    // Simply prevents the app from being in the background, user has to enter passcode again!
     @Override
     protected void onUserLeaveHint() {
         this.finish();
