@@ -277,10 +277,10 @@ public class HomeFragment extends Fragment {
             TextView overdraft = (TextView) v.findViewById(R.id.main_second_overdraft);
 
             // Assign their values from the database
-            type_of_account.setText(d.accounts.get(0).get("type_of_account"));
-            total_money.setText(d.accounts.get(0).get("total_money"));
-            account_number_and_sortcode.setText(d.accounts.get(0).get("sortcode") + " | " + d.accounts.get(0).get("account_number"));
-            overdraft.setText(d.accounts.get(0).get("overdraft"));
+            type_of_account.setText(d.accounts.get(1).get("type_of_account"));
+            total_money.setText(d.accounts.get(1).get("total_money"));
+            account_number_and_sortcode.setText(d.accounts.get(1).get("sortcode") + " | " + d.accounts.get(1).get("account_number"));
+            overdraft.setText(d.accounts.get(1).get("overdraft"));
 
             // Listener to detect click of the last month button
             v.findViewById(R.id.lastMonthButton).setOnClickListener(new View.OnClickListener() {
