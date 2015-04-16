@@ -3,9 +3,11 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 /**
  * Created by Jomin on 15/04/2015.
  */
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.util.Log;
 
 public class FragmentAdapter extends FragmentStatePagerAdapter {
 
@@ -15,7 +17,13 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
     }
 
     @Override
+    public int getItemPosition(Object object){
+        return PagerAdapter.POSITION_NONE;
+    }
+
+    @Override
     public Fragment getItem(int arg0) {
+        Log.i("HI", "I WORK");
         // TODO Auto-generated method stub
         Fragment fragment = new NewDeals();
         switch(arg0){

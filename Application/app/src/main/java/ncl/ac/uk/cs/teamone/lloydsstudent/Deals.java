@@ -26,13 +26,12 @@ public class Deals extends Fragment{
 
         View v=inflater.inflate(R.layout.viewpager_main,container,false);
         viewPager=(ViewPager)v.findViewById(R.id.pager);
-        adapter=new FragmentAdapter(getActivity().getSupportFragmentManager());
+        adapter=new FragmentAdapter(getChildFragmentManager());
         viewPager.setAdapter(adapter);
         viewPager.setOnTouchListener(new OnTouchListener() {
 
             @Override
             public boolean onTouch(View arg0, MotionEvent arg1) {
-                // TODO Auto-generated method stub
                 return true;
             }
         });

@@ -8,6 +8,8 @@
        android:id="@+id/newDealList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+       app:swipeMode="both"
+
        app:swipeActionLeft="dismiss"
         android:listSelector="#00000000"
 
