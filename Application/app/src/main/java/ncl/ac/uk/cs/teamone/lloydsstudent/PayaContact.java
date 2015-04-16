@@ -63,7 +63,7 @@ public class PayaContact extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(payacontactphoneNumber.length() == 11 && payacontactsortCode.length() == 8 && payacontactamount.length() >=1 && payacontactreference.length() >= 3) {
+                if(payacontactphoneNumber.length() == 11 && payacontactsortCode.length() == 6 && payacontactamount.length() >=1 && payacontactreference.length() >= 3) {
                     payacontact_reviewButton.setEnabled(true);
                     payacontact_reviewButton.setBackgroundColor(Color.parseColor("#369742"));
                 } else  {
@@ -71,10 +71,6 @@ public class PayaContact extends Fragment {
                     payacontact_reviewButton.setBackgroundColor(Color.parseColor("#ffcacaca"));
                 }
 
-                if(payacontactsortCode.length() == 6) {
-                    String tmp = payacontactsortCode.getText().toString().replaceAll("([0-9]{2})([0-9]{2})([0-9]{2})", "$1-$2-$3");
-                    payacontactsortCode.setText(tmp);
-                }
             }
         };
 

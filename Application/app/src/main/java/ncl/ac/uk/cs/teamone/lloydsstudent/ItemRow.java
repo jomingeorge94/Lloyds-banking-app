@@ -24,5 +24,4 @@ public class ItemRow {
     public void setIcon(long icon) {
         this.icon = icon;
     }
-
 }
