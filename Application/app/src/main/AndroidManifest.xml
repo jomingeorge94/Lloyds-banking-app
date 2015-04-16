@@ -106,7 +106,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".ChangeAccountName_Screen"
+            android:name=".MoneyManagement"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>

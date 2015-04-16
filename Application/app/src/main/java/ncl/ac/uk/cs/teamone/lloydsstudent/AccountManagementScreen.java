@@ -42,10 +42,10 @@ public class AccountManagementScreen extends FragmentActivity  {
             }
         });
 
-        findViewById(R.id.AccountManagement_AccountName).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.MoneyManagementPage).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent cahngeaccountname=new Intent(AccountManagementScreen.this,ChangeAccountName_Screen.class);
+                Intent cahngeaccountname=new Intent(AccountManagementScreen.this,MoneyManagement.class);
                 startActivity(cahngeaccountname);
                 finish();
             }

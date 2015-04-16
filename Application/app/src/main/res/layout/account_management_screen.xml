@@ -130,7 +130,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/AccountManagement_AccountName"
+                    android:id="@+id/MoneyManagementPage"
                     android:background="#FFFFFFFF"
                     android:src="@drawable/account_management_changeaccountl" />
 
@@ -154,11 +154,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/AccountManagementAccountName"
+                    android:text="Money Management"
                     android:id="@+id/textView46"
                     android:textColor="#ff6a6a6a"
                     android:textIsSelectable="false"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:layout_marginLeft="15dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
