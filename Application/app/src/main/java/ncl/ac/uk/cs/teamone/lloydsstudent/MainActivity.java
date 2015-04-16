@@ -59,7 +59,7 @@ public class MainActivity extends ActionBarActivity {
 
 
         tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("", getResources().getDrawable(R.drawable.ic_deals)),
-                DealsFragment.class, null);
+                Deals.class, null);
 
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
