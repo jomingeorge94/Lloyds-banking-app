@@ -2,7 +2,6 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.Gravity;
@@ -11,13 +10,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 /**
  * Created by Jomin on 15/03/2015.
  */
-public class MakeaTransferConfirm extends DialogFragment {
+public class HomeTransferConfirm extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -28,7 +24,7 @@ public class MakeaTransferConfirm extends DialogFragment {
         String strSelectedAccountToSpinner = getArguments().getString("spinnerAccountTo");
         final String strSelectedAccountMakeaTransferAmountSpinner = getArguments().getString("spinnerAccountAmount");
         String strSelectedAccountMakeaTransferReferenceSpinner = getArguments().getString("spinnerAccountReference");
-        final View theDIalog = inf.inflate(R.layout.makea_transfer_confirm, null);
+        final View theDIalog = inf.inflate(R.layout.home_transfer_confirm, null);
         builder.setView(theDIalog);
 
         builder.setCancelable(true);

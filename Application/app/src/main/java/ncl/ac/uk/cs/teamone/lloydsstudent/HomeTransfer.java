@@ -21,7 +21,7 @@ import java.util.ArrayList;
 /**
  * Created by Jomin on 07/03/2015.
  */
-public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelectedListener {
+public class HomeTransfer extends Fragment implements AdapterView.OnItemSelectedListener {
 
     Spinner makeaTransferSpinnerAccountFrom;
     Spinner MakeaTransferSpinnerAccountTo;
@@ -29,7 +29,7 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View v = inflater.inflate(R.layout.makea_transfer, container, false);
+        final View v = inflater.inflate(R.layout.home_transfer, container, false);
 
         ArrayList<String> list = new ArrayList<String>();
         final Data d = new Data();
@@ -100,7 +100,7 @@ public class MakeaTransfer extends Fragment implements AdapterView.OnItemSelecte
                 //checks to make sure that the current money + overdraft do not go less than 0 before opening confirmation box
                 if((from + fromOverdraft) - transferAmount > 0) {
 
-                    MakeaTransferConfirm fragment = new MakeaTransferConfirm();
+                    HomeTransferConfirm fragment = new HomeTransferConfirm();
 
                     Bundle args = new Bundle();
                     args.putString("spinnerAccountFrom", makeaTransferSpinnerAccountFrom.getSelectedItem().toString());
