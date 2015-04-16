@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,16 +33,15 @@ public class Loved extends Fragment {
         if(itemDataLoved != null)
             Log.i("i", itemDataLoved.toString());
 
-        deal.setSwipeListViewListener(new SwipeListViewListener() {
+        deal.setSwipeListViewListener(new BaseSwipeListViewListener() {
 
             @Override
-            public void onStartOpen(int position, int action, boolean right) {
+            public void onOpened(int position, boolean toRight) {
                 // TODO Auto-generated method stub
-                if  (action==deal.getSwipeActionLeft()) {
-                    itemDataLoved.remove(position);
-                    Toast.makeText(getActivity().getBaseContext(), "Left", Toast.LENGTH_LONG).show();
-                    adapter.notifyDataSetChanged();
-                }
+                itemDataLoved.remove(position);
+
+                adapter.notifyDataSetChanged();
+
 
                 deal.closeOpenedItems();
             }
@@ -54,12 +52,7 @@ public class Loved extends Fragment {
                 adapter.notifyDataSetChanged();
             }
 
-            @Override
-            public void onOpened(int position, boolean toRight) {
-                // TODO Auto-generated method stub
-                adapter.notifyDataSetChanged();
 
-            }
 
             @Override
             public void onClosed(int position, boolean fromRight) {
