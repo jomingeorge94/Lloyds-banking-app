@@ -89,7 +89,7 @@ public class ChangePasscode_Screen extends FragmentActivity {
             }
         });
 
-        for(int i = 4; i < 8; i++) {
+        for(int i = 4; i < 7; i++) {
             // Temporary integer for passing into embedded class
             final int j = i;
             // Adds listener to change focus when "next" key is pressed
