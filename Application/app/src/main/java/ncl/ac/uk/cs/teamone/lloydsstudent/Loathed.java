@@ -27,7 +27,7 @@ public class Loathed extends Fragment {
         // TODO Auto-generated method stub
         View v=inflater.inflate(R.layout.newdeal,container,false);
         deal=(SwipeListView)v.findViewById(R.id.newDealList);
-
+        NewDeals.click = true;
         adapter=new ItemAdapter(getActivity(),R.layout.loathed, Loathed.itemDataLoathed);
 
         Log.i("WHEN AM ILOADED", "NOW?");
