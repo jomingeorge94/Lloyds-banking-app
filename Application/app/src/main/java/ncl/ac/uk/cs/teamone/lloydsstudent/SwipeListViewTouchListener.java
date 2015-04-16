@@ -78,7 +78,7 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
     private int swipeDrawableUnchecked = 0;
 
     // Fixed properties
-    private JominSwipe swipeListView; // TODO EDIT
+    private ncl.ac.uk.cs.teamone.lloydsstudent.SwipeListView swipeListView; // TODO EDIT
     private int viewWidth = 1; // 1 and not 0 to prevent dividing by zero
 
     private List<PendingDismissData> pendingDismisses = new ArrayList<PendingDismissData>();
@@ -94,10 +94,10 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
     private View backView;
     private boolean paused;
 
-    private int swipeCurrentAction = com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_NONE;
+    private int swipeCurrentAction = ncl.ac.uk.cs.teamone.lloydsstudent.SwipeListView.SWIPE_ACTION_NONE;
 
-    private int swipeActionLeft = com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_REVEAL;
-    private int swipeActionRight = com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_REVEAL;
+    private int swipeActionLeft = ncl.ac.uk.cs.teamone.lloydsstudent.SwipeListView.SWIPE_ACTION_REVEAL;
+    private int swipeActionRight = ncl.ac.uk.cs.teamone.lloydsstudent.SwipeListView.SWIPE_ACTION_REVEAL;
 
     private List<Boolean> opened = new ArrayList<Boolean>();
     private List<Boolean> openedRight = new ArrayList<Boolean>();
@@ -115,7 +115,7 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
      * @param swipeFrontView front view Identifier
      * @param swipeBackView  back view Identifier
      */
-    public SwipeListViewTouchListener(SwipeListView swipeListView, int swipeFrontView, int swipeBackView) {
+    public SwipeListViewTouchListener(ncl.ac.uk.cs.teamone.lloydsstudent.SwipeListView swipeListView, int swipeFrontView, int swipeBackView) {
         this.swipeFrontView = swipeFrontView;
         this.swipeBackView = swipeBackView;
         ViewConfiguration vc = ViewConfiguration.get(swipeListView.getContext());
@@ -124,7 +124,7 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
         maxFlingVelocity = vc.getScaledMaximumFlingVelocity();
         configShortAnimationTime = swipeListView.getContext().getResources().getInteger(android.R.integer.config_shortAnimTime);
         animationTime = configShortAnimationTime;
-        this.swipeListView = (JominSwipe) swipeListView;
+        this.swipeListView = swipeListView;
     }
 
     /**
@@ -253,7 +253,7 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
      * @return
      */
     protected boolean isSwipeEnabled() {
-        return swipeMode != com.fortysevendeg.swipelistview.SwipeListView.SWIPE_MODE_NONE;
+        return swipeMode != SwipeListView.SWIPE_MODE_NONE;
     }
 
     /**
@@ -369,7 +369,7 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
         if (lastCount == 0 && count == 1) {
             swipeListView.onChoiceStarted();
             closeOpenedItems();
-            setActionsTo(com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_CHOICE);
+            setActionsTo(SwipeListView.SWIPE_ACTION_CHOICE);
         }
         if (lastCount == 1 && count == 0) {
             swipeListView.onChoiceEnded();
@@ -473,8 +473,8 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
                 count++;
             }
         }
-        if(com.fortysevendeg.swipelistview.SwipeListView.DEBUG){
-            Log.d(com.fortysevendeg.swipelistview.SwipeListView.TAG, "selected: " + count);
+        if(SwipeListView.DEBUG){
+            Log.d(SwipeListView.TAG, "selected: " + count);
         }
         return count;
     }
@@ -527,16 +527,16 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
      * @param position  Position of list
      */
     private void generateAnimate(final View view, final boolean swap, final boolean swapRight, final int position) {
-        if(com.fortysevendeg.swipelistview.SwipeListView.DEBUG){
-            Log.d(com.fortysevendeg.swipelistview.SwipeListView.TAG, "swap: " + swap + " - swapRight: " + swapRight + " - position: " + position);
+        if(SwipeListView.DEBUG){
+            Log.d(SwipeListView.TAG, "swap: " + swap + " - swapRight: " + swapRight + " - position: " + position);
         }
-        if (swipeCurrentAction == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_REVEAL) {
+        if (swipeCurrentAction == SwipeListView.SWIPE_ACTION_REVEAL) {
             generateRevealAnimate(view, swap, swapRight, position);
         }
-        if (swipeCurrentAction == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_DISMISS) {
+        if (swipeCurrentAction == SwipeListView.SWIPE_ACTION_DISMISS) {
             generateDismissAnimate(parentView, swap, swapRight, position);
         }
-        if (swipeCurrentAction == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_CHOICE) {
+        if (swipeCurrentAction == SwipeListView.SWIPE_ACTION_CHOICE) {
             generateChoiceAnimate(view, position);
         }
     }
@@ -647,7 +647,7 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
 
     private void resetCell() {
         if (downPosition != ListView.INVALID_POSITION) {
-            if (swipeCurrentAction == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_CHOICE) {
+            if (swipeCurrentAction == SwipeListView.SWIPE_ACTION_CHOICE) {
                 backView.setVisibility(View.VISIBLE);
             }
             frontView.setClickable(opened.get(downPosition));
@@ -764,7 +764,7 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
                 if (paused && downPosition != ListView.INVALID_POSITION) {
                     return false;
                 }
-                swipeCurrentAction = com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_NONE;
+                swipeCurrentAction = SwipeListView.SWIPE_ACTION_NONE;
 
                 int childCount = swipeListView.getChildCount();
                 int[] listViewCoords = new int[2];
@@ -813,10 +813,10 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
                 velocityTracker.computeCurrentVelocity(1000);
                 float velocityX = Math.abs(velocityTracker.getXVelocity());
                 if (!opened.get(downPosition)) {
-                    if (swipeMode == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_MODE_LEFT && velocityTracker.getXVelocity() > 0) {
+                    if (swipeMode == SwipeListView.SWIPE_MODE_LEFT && velocityTracker.getXVelocity() > 0) {
                         velocityX = 0;
                     }
-                    if (swipeMode == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_MODE_RIGHT && velocityTracker.getXVelocity() < 0) {
+                    if (swipeMode == SwipeListView.SWIPE_MODE_RIGHT && velocityTracker.getXVelocity() < 0) {
                         velocityX = 0;
                     }
                 }
@@ -825,8 +825,8 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
                 boolean swapRight = false;
                 if (minFlingVelocity <= velocityX && velocityX <= maxFlingVelocity && velocityY * 2 < velocityX) {
                     swapRight = velocityTracker.getXVelocity() > 0;
-                    if(com.fortysevendeg.swipelistview.SwipeListView.DEBUG){
-                        Log.d(com.fortysevendeg.swipelistview.SwipeListView.TAG, "swapRight: " + swapRight + " - swipingRight: " + swipingRight);
+                    if(SwipeListView.DEBUG){
+                        Log.d(SwipeListView.TAG, "swapRight: " + swapRight + " - swipingRight: " + swipingRight);
                     }
                     if (swapRight != swipingRight && swipeActionLeft != swipeActionRight) {
                         swap = false;
@@ -844,7 +844,7 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
 
 
                 generateAnimate(frontView, swap, swapRight, downPosition);
-                if (swipeCurrentAction == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_CHOICE) {
+                if (swipeCurrentAction == SwipeListView.SWIPE_ACTION_CHOICE) {
                     swapChoiceState(downPosition);
                 }
 
@@ -879,43 +879,43 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
                     swipeMode = changeSwipeMode;
                 }
 
-                if (swipeMode == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_MODE_NONE) {
+                if (swipeMode == SwipeListView.SWIPE_MODE_NONE) {
                     deltaMode = 0;
-                } else if (swipeMode != com.fortysevendeg.swipelistview.SwipeListView.SWIPE_MODE_BOTH) {
+                } else if (swipeMode != SwipeListView.SWIPE_MODE_BOTH) {
                     if (opened.get(downPosition)) {
-                        if (swipeMode == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_MODE_LEFT && deltaX < 0) {
+                        if (swipeMode == SwipeListView.SWIPE_MODE_LEFT && deltaX < 0) {
                             deltaMode = 0;
-                        } else if (swipeMode == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_MODE_RIGHT && deltaX > 0) {
+                        } else if (swipeMode == SwipeListView.SWIPE_MODE_RIGHT && deltaX > 0) {
                             deltaMode = 0;
                         }
                     } else {
-                        if (swipeMode == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_MODE_LEFT && deltaX > 0) {
+                        if (swipeMode == SwipeListView.SWIPE_MODE_LEFT && deltaX > 0) {
                             deltaMode = 0;
-                        } else if (swipeMode == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_MODE_RIGHT && deltaX < 0) {
+                        } else if (swipeMode == SwipeListView.SWIPE_MODE_RIGHT && deltaX < 0) {
                             deltaMode = 0;
                         }
                     }
                 }
-                if (deltaMode > slop && swipeCurrentAction == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_NONE && velocityY < velocityX) {
+                if (deltaMode > slop && swipeCurrentAction == SwipeListView.SWIPE_ACTION_NONE && velocityY < velocityX) {
                     swiping = true;
                     swipingRight = (deltaX > 0);
-                    if(com.fortysevendeg.swipelistview.SwipeListView.DEBUG){
-                        Log.d(com.fortysevendeg.swipelistview.SwipeListView.TAG, "deltaX: " + deltaX + " - swipingRight: " + swipingRight);
+                    if(SwipeListView.DEBUG){
+                        Log.d(SwipeListView.TAG, "deltaX: " + deltaX + " - swipingRight: " + swipingRight);
                     }
                     if (opened.get(downPosition)) {
                         swipeListView.onStartClose(downPosition, swipingRight);
-                        swipeCurrentAction = com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_REVEAL;
+                        swipeCurrentAction = SwipeListView.SWIPE_ACTION_REVEAL;
                     } else {
-                        if (swipingRight && swipeActionRight == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_DISMISS) {
-                            swipeCurrentAction = com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_DISMISS;
-                        } else if (!swipingRight && swipeActionLeft == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_DISMISS) {
-                            swipeCurrentAction = com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_DISMISS;
-                        } else if (swipingRight && swipeActionRight == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_CHOICE) {
-                            swipeCurrentAction = com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_CHOICE;
-                        } else if (!swipingRight && swipeActionLeft == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_CHOICE) {
-                            swipeCurrentAction = com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_CHOICE;
+                        if (swipingRight && swipeActionRight == SwipeListView.SWIPE_ACTION_DISMISS) {
+                            swipeCurrentAction = SwipeListView.SWIPE_ACTION_DISMISS;
+                        } else if (!swipingRight && swipeActionLeft == SwipeListView.SWIPE_ACTION_DISMISS) {
+                            swipeCurrentAction = SwipeListView.SWIPE_ACTION_DISMISS;
+                        } else if (swipingRight && swipeActionRight == SwipeListView.SWIPE_ACTION_CHOICE) {
+                            swipeCurrentAction = SwipeListView.SWIPE_ACTION_CHOICE;
+                        } else if (!swipingRight && swipeActionLeft == SwipeListView.SWIPE_ACTION_CHOICE) {
+                            swipeCurrentAction = SwipeListView.SWIPE_ACTION_CHOICE;
                         } else {
-                            swipeCurrentAction = com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_REVEAL;
+                            swipeCurrentAction = SwipeListView.SWIPE_ACTION_REVEAL;
                         }
                         swipeListView.onStartOpen(downPosition, swipeCurrentAction, swipingRight);
                     }
@@ -924,7 +924,7 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
                     cancelEvent.setAction(MotionEvent.ACTION_CANCEL |
                             (MotionEventCompat.getActionIndex(motionEvent) << MotionEventCompat.ACTION_POINTER_INDEX_SHIFT));
                     swipeListView.onTouchEvent(cancelEvent);
-                    if (swipeCurrentAction == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_CHOICE) {
+                    if (swipeCurrentAction == SwipeListView.SWIPE_ACTION_CHOICE) {
                         backView.setVisibility(View.GONE);
                     }
                 }
@@ -966,34 +966,34 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
             posX += openedRight.get(downPosition) ? -viewWidth + rightOffset : viewWidth - leftOffset;
         }
         if (posX > 0 && !swipingRight) {
-            if(com.fortysevendeg.swipelistview.SwipeListView.DEBUG){
-                Log.d(com.fortysevendeg.swipelistview.SwipeListView.TAG, "change to right");
+            if(SwipeListView.DEBUG){
+                Log.d(SwipeListView.TAG, "change to right");
             }
             swipingRight = !swipingRight;
             swipeCurrentAction = swipeActionRight;
-            if (swipeCurrentAction == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_CHOICE) {
+            if (swipeCurrentAction == SwipeListView.SWIPE_ACTION_CHOICE) {
                 backView.setVisibility(View.GONE);
             } else {
                 backView.setVisibility(View.VISIBLE);
             }
         }
         if (posX < 0 && swipingRight) {
-            if(com.fortysevendeg.swipelistview.SwipeListView.DEBUG){
-                Log.d(com.fortysevendeg.swipelistview.SwipeListView.TAG, "change to left");
+            if(SwipeListView.DEBUG){
+                Log.d(SwipeListView.TAG, "change to left");
             }
             swipingRight = !swipingRight;
             swipeCurrentAction = swipeActionLeft;
-            if (swipeCurrentAction == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_CHOICE) {
+            if (swipeCurrentAction == SwipeListView.SWIPE_ACTION_CHOICE) {
                 backView.setVisibility(View.GONE);
             } else {
                 backView.setVisibility(View.VISIBLE);
             }
         }
-        if (swipeCurrentAction == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_DISMISS) {
+        if (swipeCurrentAction == SwipeListView.SWIPE_ACTION_DISMISS) {
             setTranslationX(parentView, deltaX);
             setAlpha(parentView, Math.max(0f, Math.min(1f,
                     1f - 2f * Math.abs(deltaX) / viewWidth)));
-        } else if (swipeCurrentAction == com.fortysevendeg.swipelistview.SwipeListView.SWIPE_ACTION_CHOICE) {
+        } else if (swipeCurrentAction == SwipeListView.SWIPE_ACTION_CHOICE) {
             if ((swipingRight && deltaX > 0 && posX < DISPLACE_CHOICE)
                     || (!swipingRight && deltaX < 0 && posX > -DISPLACE_CHOICE)
                     || (swipingRight && deltaX < DISPLACE_CHOICE)

@@ -10,14 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.fortysevendeg.swipelistview.BaseSwipeListViewListener;
-import com.fortysevendeg.swipelistview.SwipeListView;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class NewDeals extends Fragment {
-    SwipeListView deal;
+    ncl.ac.uk.cs.teamone.lloydsstudent.SwipeListView deal;
     ItemAdapter adapter;
     List<ItemRow> itemData;
     String string;
@@ -26,13 +23,13 @@ public class NewDeals extends Fragment {
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         View v=inflater.inflate(R.layout.newdeal,container,false);
-        deal=(SwipeListView)v.findViewById(R.id.newDealList);
+        deal=(ncl.ac.uk.cs.teamone.lloydsstudent.SwipeListView)v.findViewById(R.id.newDealList);
         itemData=new ArrayList<ItemRow>();
         itemData.add(new ItemRow("Reduced Easter Eggs @ Tesco",R.drawable.icon));
         itemData.add(new ItemRow("BluTacPacket Incorrectly",R.drawable.icon));
         itemData.add(new ItemRow("241 Pizza @zizzi with The Co..",R.drawable.icon));
         adapter=new ItemAdapter(getActivity(),R.layout.loathed,itemData);
-        deal.setSwipeListViewListener(new BaseSwipeListViewListener() {
+        deal.setSwipeListViewListener(new ncl.ac.uk.cs.teamone.lloydsstudent.BaseSwipeListViewListener() {
             @Override
             public void onOpened(int position, boolean toRight) {
                 if(toRight)

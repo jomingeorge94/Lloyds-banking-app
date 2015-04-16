@@ -1,9 +1,8 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import com.fortysevendeg.swipelistview.SwipeListView;
-import com.fortysevendeg.swipelistview.SwipeListViewListener;
 
-public class BaseSwipeListViewListener implements SwipeListViewListener {
+public class BaseSwipeListViewListener implements ncl.ac.uk.cs.teamone.lloydsstudent.SwipeListViewListener {
     @Override
     public void onOpened(int position, boolean toRight) {
     }
