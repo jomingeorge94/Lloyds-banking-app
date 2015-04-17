@@ -3,19 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-        <com.viewpagerindicator.TitlePageIndicator
-       android:id="@+id/indicator"
+
+    <com.viewpagerindicator.TitlePageIndicator
+        android:id="@+id/indicator"
         android:padding="10dip"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-            android:textColor="#000000"
-
-
-      
-        
-        />
-
-
+        android:textColor="#000000" />
 
      <android.support.v4.view.ViewPager
         android:id="@+id/pager"

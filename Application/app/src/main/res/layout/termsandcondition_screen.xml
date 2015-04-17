@@ -46,355 +46,306 @@
                 android:padding="5dp">
 
                 <TextView
+                    style="@style/LloydsTitleLarge"
+                    android:id="@+id/tc_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionTitle"
-                    android:id="@+id/textView53"
-                    android:textColor="#ff000000"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:text="@string/TermsandConditionTitle" />
 
                 <View
+                    android:id="@+id/settings_about_underline"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="@android:color/holo_green_dark"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_below="@id/settings_about_title"
+                    android:background="@color/dark_green" />
 
                 <TextView
+                    style="@style/LloydsTitleMedium"
+                    android:id="@+id/tc_mainsec_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Section A - Introduction to agreement"
-                    android:id="@+id/textView54"
-                    android:textColor="#ff000000"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp" />
+                    android:text="Section A - Introduction to agreement"/>
 
                 <TextView
+                    style="@style/LloydsTitleSmall"
+                    android:id="@+id/tc_section_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView57"
-                    android:textColor="#ff000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
                     android:text="1. The services this agreement covers" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionA1"
-                    android:id="@+id/textView56"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionA1" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionA"
-                    android:id="@+id/textView55"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionA" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionA2"
-                    android:id="@+id/textView58"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionA2" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionA3"
-                    android:id="@+id/textView59"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionA3" />
 
                 <TextView
+                    style="@style/LloydsTitleMedium"
+                    android:id="@+id/tc_section_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView60"
-                    android:textColor="#ff000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
                     android:text="2. How this agreement works" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionA2.1"
-                    android:id="@+id/textView61"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionA2.1" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionA2.2"
-                    android:id="@+id/textView62"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionA2.2" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_mainsec_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Section B - Contact and Security"
-                    android:id="@+id/textView63"
-                    android:textColor="#ff000000"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="Section B - Contact and Security" />
 
                 <TextView
+                    style="@style/LloydsTitleSmall"
+                    android:id="@+id/tc_section_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView64"
-                    android:textColor="#ff000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
                     android:text="3. Contacting each other" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionB3.1"
-                    android:id="@+id/textView65"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionB3.1" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionB3.2"
-                    android:id="@+id/textView66"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionB3.2" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionB3.3"
-                    android:id="@+id/textView67"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionB3.3" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionB3.4"
-                    android:id="@+id/textView68"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionB3.4" />
 
                 <TextView
+                    style="@style/LloydsTitleSmall"
+                    android:id="@+id/tc_section_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView69"
-                    android:textColor="#ff000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
                     android:text="4. Security" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionB4.1"
-                    android:id="@+id/textView70"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionB4.1" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionB4.1a"
-                    android:id="@+id/textView71"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionB4.1a" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionB4.1b"
-                    android:id="@+id/textView72"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionB4.1b" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionB4.1c"
-                    android:id="@+id/textView73"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionB4.1c"/>
 
                 <TextView
+                    style="@style/LloydsTitleMedium"
+                    android:id="@+id/tc_mainsec_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Section C - Banking Services"
-                    android:id="@+id/textView74"
-                    android:textColor="#ff000000"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="Section C - Banking Services" />
 
                 <TextView
+                    style="@style/LloydsTitleSmall"
+                    android:id="@+id/tc_section_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView75"
-                    android:textColor="#ff000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
                     android:text="5. Payments into your account (deposits)" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView76"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"
                     android:text="@string/TermsandConditionMessageSectionC5.1" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView77"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"
                     android:text="@string/TermsandConditionMessageSectionC5.1a" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView78"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"
                     android:text="@string/TermsandConditionMessageSectionC5.1b" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView79"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"
                     android:text="@string/TermsandConditionMessageSectionC5.1c" />
 
                 <TextView
+                    style="@style/LloydsTextMedium"
+                    android:id="@+id/tc_mainsec_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Section D - General Conditions"
-                    android:id="@+id/textView80"
-                    android:textColor="#ff000000"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="Section D - General Conditions" />
 
                 <TextView
+                    style="@style/LloydsTitleSmall"
+                    android:id="@+id/tc_section_6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView81"
-                    android:textColor="#ff000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
                     android:text="6. Joint Customers" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionD6.1"
-                    android:id="@+id/textView82"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionD6.1"/>
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionD6.1a"
-                    android:id="@+id/textView83"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionD6.1a" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionD6.1b"
-                    android:id="@+id/textView84"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionD6.1b" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionD6.1c"
-                    android:id="@+id/textView85"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/TermsandConditionMessageSectionD6.1c" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionMessageSectionD6.1d"
-                    android:id="@+id/textView88"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="10dp" />
+                    android:text="@string/TermsandConditionMessageSectionD6.1d" />
 
                 <View
+                    android:id="@+id/settings_about_underline"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="@android:color/holo_green_dark"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_below="@id/settings_about_title"
+                    android:background="@color/dark_green" />
 
                 <TextView
+                    style="@style/LloydsTitleMedium"
+                    android:id="@+id/tc_important_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView87"
-                    android:textColor="#ff000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
                     android:text="Important Information" />
 
                 <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/tc_para_23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TermsandConditionAddress"
-                    android:id="@+id/textView86"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#ff000000"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="20dp" />
+                    android:text="@string/TermsandConditionAddress" />
 
 
             </LinearLayout>

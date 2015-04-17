@@ -95,7 +95,6 @@
                     android:textColor="@color/blue"
                     android:text="@string/settings_money_link" />
 
-
             </LinearLayout>
 
         </ScrollView>
