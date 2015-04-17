@@ -24,10 +24,10 @@ public class AccountSwitchingOverview extends FragmentPagerAdapter {
         switch (i){
             case 0:
                 // First account
-                return new HomeFragment.FirstOverview();
+                return new HomeFirstOverview();
             case 1:
                 // Second Account
-                return new HomeFragment.SecondOverview();
+                return new HomeSecondOverview();
         }
 
         // Error
