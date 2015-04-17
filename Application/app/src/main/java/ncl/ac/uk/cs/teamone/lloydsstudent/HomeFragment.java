@@ -2,17 +2,13 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * This is a fragment which will be used to generate the GUI for the Home Tab of the application.
@@ -56,6 +52,7 @@ public class HomeFragment extends Fragment {
                 ((FrameLayout)getActivity().findViewById(android.R.id.tabcontent)).removeAllViews();
                 // Adds the fragment to be show to the transaction
                 transaction.replace(android.R.id.tabcontent, new Transfer(), "");
+
                 // Replaces the fragment
                 transaction.commit();
             }
@@ -73,7 +70,6 @@ public class HomeFragment extends Fragment {
                 // Adds the fragment to be show to the transaction
                 transaction.replace(android.R.id.tabcontent, new PayContact(), "");
                 // Makes it possible to return from the new fragment
-                transaction.addToBackStack("");
                 // Replaces the fragment
                 transaction.commit();
             }
