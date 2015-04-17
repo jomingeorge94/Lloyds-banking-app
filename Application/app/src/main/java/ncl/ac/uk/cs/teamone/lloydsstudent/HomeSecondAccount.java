@@ -33,14 +33,14 @@ public class HomeSecondAccount extends Fragment {
 
         // Change the text of the fields to data pulled from the server
         type_of_account.setText(d.accounts.get(1).get("type_of_account"));
-        total_money.setText(d.accounts.get(1).get("total_money"));
+        total_money.setText(currencyFormatter(Float.parseFloat(d.accounts.get(1).get("total_money"))));
         account_number_and_sortcode.setText(d.accounts.get(1).get("sortcode") + " | " + d.accounts.get(1).get("account_number"));
 
         // Add listener to balance to detect when a user clicks the balance
         v.findViewById(R.id.main_second_balance).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create fragment transaction to deal with swapping the fragmetn views
+                // Create fragment transaction to deal with swapping the fragment views
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 // Removes view from parent fragemnt (Main Tabs)
                 ((RelativeLayout)getActivity().findViewById(R.id.main_tab_switch)).removeAllViews();

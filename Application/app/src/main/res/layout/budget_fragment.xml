@@ -14,13 +14,13 @@
         android:paddingTop="3dp"
         android:gravity="center_horizontal">
         <TextView
-            style="@style/LloydsTextLarge"
+            style="@style/LloydsTitleLarge"
             android:text="@string/budget_my_budget"
             android:layout_weight="1"
             android:gravity="right"/>
 
         <TextView
-            style="@style/LloydsTextMedium"
+            style="@style/LloydsTitleLarge"
             android:layout_weight="1"
             android:gravity="left"
             android:id="@+id/budget_total_budget"/>
@@ -47,7 +47,7 @@
         android:layout_width="fill_parent"
         android:gravity="center_horizontal">
         <TextView
-            style="@style/LloydsTextSmall"
+            style="@style/LloydsTitleSmall"
             android:text="£0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

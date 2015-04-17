@@ -15,6 +15,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
+ * Fragment which generates a GUI
+ *
  * Created by Jomin on 26/02/2015.
  */
 public class BudgetFragment extends Fragment {
@@ -32,7 +34,7 @@ public class BudgetFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Create the view for this fragment
-        v =  inflater.inflate(R.layout.budget_test, container, false);
+        v =  inflater.inflate(R.layout.budget_fragment, container, false);
 
         // Initialise layout variables from XML file
         total = (TextView) v.findViewById(R.id.budget_total_budget);
