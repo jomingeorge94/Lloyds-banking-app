@@ -75,7 +75,7 @@ public class UpdateDetails extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 // Create intent to open previous fragment
-                Intent i=new Intent(UpdateDetails.this,SettingsAccountManagement.class);
+                Intent i=new Intent(UpdateDetails.this,SettingsAccount.class);
                 startActivity(i);
                 // Close current fragment
                 finish();
@@ -99,7 +99,7 @@ public class UpdateDetails extends FragmentActivity {
     public void onBackPressed() {
         super.onBackPressed();
         // Create intent to open previous fragment
-        Intent i=new Intent(UpdateDetails.this, SettingsAccountManagement.class);
+        Intent i=new Intent(UpdateDetails.this, SettingsAccount.class);
         startActivity(i);
         // Close current fragment
         finish();
