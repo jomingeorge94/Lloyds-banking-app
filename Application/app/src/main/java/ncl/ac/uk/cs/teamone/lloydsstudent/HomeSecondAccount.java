@@ -45,7 +45,8 @@ public class HomeSecondAccount extends Fragment {
                 // Removes view from parent fragemnt (Main Tabs)
                 ((RelativeLayout)getActivity().findViewById(R.id.main_tab_switch)).removeAllViews();
                 // Adds replacing the view with new fragment to the transaction
-                transaction.replace(R.id.main_tab_switch, new OverviewFragment());
+                transaction.replace(R.id.main_tab_switch, (new AccountSwitchingOverview(getFragmentManager())).getItem(1), "");
+
                 // Applies the transaction, showing the new fragment
                 transaction.commit();
             }
