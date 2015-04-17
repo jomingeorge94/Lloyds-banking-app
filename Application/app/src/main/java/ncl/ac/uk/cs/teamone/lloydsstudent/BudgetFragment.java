@@ -66,7 +66,7 @@ public class BudgetFragment extends Fragment {
         ViewPager page = (ViewPager) v.findViewById(R.id.chart_view);
 
         // Dictates the number of fragments to keep loaded
-        page.setOffscreenPageLimit(3);
+        page.setOffscreenPageLimit(1);
         // Sets the start position of the ViewPager
         page.setCurrentItem(1);
 
