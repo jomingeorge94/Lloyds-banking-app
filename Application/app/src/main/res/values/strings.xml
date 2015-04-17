@@ -402,6 +402,8 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_settings_change_passcode">SettingsChangePasscode</string>
+    <string name="profileExplaination">Here\'s a quick summary of your activity within the money saving forum</string>
+    <string name="profileExplain">Here\'s a quick summary of your activity in the money saving forum. Here you can see your most loved deals, how many deals you have used and any rewards you have earned. The more deals you post the better your stats!</string>
 
 
 </resources>

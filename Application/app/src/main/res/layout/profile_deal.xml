@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/deal_profile_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Deal Page"
+        android:autoText="false"
+        style="@style/LloydsTitleXLarge"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center_vertical"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@color/dark_green"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/deal_profile_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/deal_profile_underline" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/profileExplain"
+        android:id="@+id/textViewDeal"
+        android:textColor="#ff000000"
+        android:textSize="16sp"
+        android:layout_weight="1.13"
+        android:layout_below="@+id/deal_profile_underline"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mike Williams"
+        android:fontFamily="sans-serif-light"
+        android:id="@+id/customerName"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ff000000"
+        style="@style/LloydsTitleXLarge"
+        android:layout_below="@+id/textViewDeal"
+        android:paddingBottom="30dp"></TextView>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@color/dark_green"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/customerName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/deal_profile_underline_two"
+        android:gravity="center"/>
+
+    <TableLayout
+        android:id="@+id/main_tab_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/deal_profile_underline_two"
+        android:paddingBottom="16dp"
+        android:stretchColumns="*" >
+
+        <TableRow
+
+        >
+        </TableRow>
+
+
+        </TableLayout>
+
+
+</RelativeLayout>
