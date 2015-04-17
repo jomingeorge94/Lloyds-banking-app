@@ -17,7 +17,7 @@ public class HorsePointerDealsSection extends ActionBarActivity implements View.
 
     private ShowcaseView showcaseView;
     private int counter = 0;
-    private Target t1,t2,t3;
+    private Target t1,t2,t3,t4;
 
 
     @Override
@@ -28,6 +28,7 @@ public class HorsePointerDealsSection extends ActionBarActivity implements View.
         t1 = new ViewTarget(R.id.deals_newdeals_horse,this);
         t2 = new ViewTarget(R.id.deals_loathed,this);
         t3 = new ViewTarget(R.id.deals_loved_horse,this);
+        t4 = new ViewTarget(R.id.deals_dealicon,this);
 
         showcaseView = new ShowcaseView.Builder(this).setTarget(Target.NONE).setOnClickListener(this).setContentTitle("Welcome to Deals Tutorial mode").setStyle(R.style.Transparency).build();
 
@@ -52,17 +53,20 @@ public class HorsePointerDealsSection extends ActionBarActivity implements View.
 
             case 1:
                 showcaseView.setShowcase(t2, true);
-                showcaseView.setContentTitle("This is the section where the deals that you don't like will appear ");
-
+                showcaseView.setContentTitle("This is the section where the deals that you don't like will appear and you can remove the deals from this section by holding it down on the deal  ");
                 break;
 
             case 2:
-                showcaseView.setShowcase(t2, true);
-                showcaseView.setContentTitle("This is the section where the deals that you don't like will appear and you can  ");
-
+                showcaseView.setShowcase(t3, true);
+                showcaseView.setContentTitle("This is the section where the deals that you like will appear and you can remove the deals from this section by holding it down on the deal  ");
                 break;
 
             case 3:
+                showcaseView.setShowcase(t4, true);
+                showcaseView.setContentTitle("This is the section where the deals that you like will appear and you can remove the deals from this section by holding it down on the deal  ");
+                break;
+
+            case 4:
                 showcaseView.hide();
                 Intent home =new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(home);
