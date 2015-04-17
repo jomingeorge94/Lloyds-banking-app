@@ -90,7 +90,7 @@ public class HorsePointerMain extends ActionBarActivity implements View.OnClickL
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i=new Intent(HorsePointerFIrstTrial.this,MainActivity.class);
+        Intent i=new Intent(HorsePointerMain.this,MainActivity.class);
         startActivity(i);
         finish();
     }
