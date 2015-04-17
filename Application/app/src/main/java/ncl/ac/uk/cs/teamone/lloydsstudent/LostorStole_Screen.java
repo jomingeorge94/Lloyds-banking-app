@@ -20,7 +20,7 @@ public class LostorStole_Screen extends FragmentActivity {
         findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(LostorStole_Screen.this,AccountManagementScreen.class);
+                Intent i=new Intent(LostorStole_Screen.this,SettingsAccountManagement.class);
                 startActivity(i);
                 finish();
             }
@@ -50,7 +50,7 @@ public class LostorStole_Screen extends FragmentActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i=new Intent(LostorStole_Screen.this,AccountManagementScreen.class);
+        Intent i=new Intent(LostorStole_Screen.this,SettingsAccountManagement.class);
         startActivity(i);
         finish();
     }

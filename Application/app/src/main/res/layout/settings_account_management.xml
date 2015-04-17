@@ -1,0 +1,199 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/settings_manager_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/settings_manager_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/dark_green" >
+
+        <ImageButton
+            android:id="@+id/settings_manager_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_arrow_icon"
+            android:background="@color/dark_green"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="8dp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/settings_manager_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="401dp"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/LloydsTitleXLarge"
+                android:id="@+id/settings_manager_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/settings_manager_details"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="8dp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:paddingBottom="8dp">
+
+                    <ImageButton
+                        android:id="@+id/settings_manager_personal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/account_management_personal"
+                        android:background="@color/white"/>
+
+                    <ImageButton
+                        android:id="@+id/settings_manager_passcode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/account_management_security"
+                        android:background="@color/white"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/settings_manager_personal_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/settings_manager_personal" />
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/settings_manager_passcode_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/settings_manager_passcode" />
+
+                </TableRow>
+
+                <TableRow
+                    android:paddingBottom="8dp">
+
+                    <ImageButton
+                        android:id="@+id/settings_manager_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/account_management_changeaccountl"
+                        android:background="@color/white"/>
+
+                    <ImageButton
+                        android:id="@+id/settings_manager_statement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/account_management_changebackground"
+                        android:background="@color/white"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/settings_manager_money_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/settings_manager_money" />
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/settings_manager_statement_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/settings_manager_statements" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                style="@style/LloydsTitleXLarge"
+                android:id="@+id/settings_manager_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/settings_manager_report"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="16dp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:paddingBottom="8dp">
+
+                    <ImageButton
+                        android:id="@+id/settings_manager_lost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/report_lost"
+                        android:background="@color/white"/>
+
+                    <ImageButton
+                        android:id="@+id/settings_manager_issue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/report_issue"
+                        android:background="@color/white"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/settings_manager_lost_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/settings_manager_lost" />
+
+                    <TextView
+                        style="@style/LloydsTitleSmall"
+                        android:id="@+id/settings_manager_issue_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/settings_manager_issue" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+

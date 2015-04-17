@@ -168,7 +168,7 @@ public class MainActivity extends ActionBarActivity {
 
                 if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("Account Management")){
                     drawerLayout.closeDrawer(Gravity.LEFT);
-                    Intent accountmanagement =new Intent(getApplicationContext(),AccountManagementScreen.class);
+                    Intent accountmanagement =new Intent(getApplicationContext(),SettingsAccountManagement.class);
                     startActivity(accountmanagement);
                 }
 

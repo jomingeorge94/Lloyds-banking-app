@@ -37,7 +37,7 @@ public class UpdateYourDetails extends FragmentActivity {
         findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(UpdateYourDetails.this,AccountManagementScreen.class);
+                Intent i=new Intent(UpdateYourDetails.this,SettingsAccountManagement.class);
                 startActivity(i);
                 finish();
             }
@@ -48,7 +48,7 @@ public class UpdateYourDetails extends FragmentActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i=new Intent(UpdateYourDetails.this,AccountManagementScreen.class);
+        Intent i=new Intent(UpdateYourDetails.this,SettingsAccountManagement.class);
         startActivity(i);
         finish();
     }

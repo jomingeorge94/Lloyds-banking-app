@@ -32,7 +32,7 @@ public class ReportLostorStole extends FragmentActivity {
         findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(ReportLostorStole.this,AccountManagementScreen.class);
+                Intent i=new Intent(ReportLostorStole.this,SettingsAccountManagement.class);
                 startActivity(i);
                 finish();
             }
@@ -85,7 +85,7 @@ public class ReportLostorStole extends FragmentActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i=new Intent(ReportLostorStole.this,AccountManagementScreen.class);
+        Intent i=new Intent(ReportLostorStole.this,SettingsAccountManagement.class);
         startActivity(i);
         finish();
     }

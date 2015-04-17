@@ -131,7 +131,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".AccountManagementScreen"
+            android:name=".SettingsAccountManagement"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>

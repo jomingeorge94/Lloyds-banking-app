@@ -135,7 +135,7 @@ public class SettingsChangePasscode extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 // Create new intent
-                Intent i=new Intent(SettingsChangePasscode.this, AccountManagementScreen.class);
+                Intent i=new Intent(SettingsChangePasscode.this, SettingsAccountManagement.class);
                 startActivity(i);
                 // End current activity
                 finish();
@@ -153,7 +153,7 @@ public class SettingsChangePasscode extends FragmentActivity {
         // Call to super
         super.onBackPressed();
         // New intent to change view
-        Intent i=new Intent(SettingsChangePasscode.this,AccountManagementScreen.class);
+        Intent i=new Intent(SettingsChangePasscode.this,SettingsAccountManagement.class);
         // Start the new intent
         startActivity(i);
         // Close current view

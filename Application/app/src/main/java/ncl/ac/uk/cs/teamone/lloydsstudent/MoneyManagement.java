@@ -20,7 +20,7 @@ public class MoneyManagement extends FragmentActivity {
         findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(MoneyManagement.this,AccountManagementScreen.class);
+                Intent i=new Intent(MoneyManagement.this,SettingsAccountManagement.class);
                 startActivity(i);
                 finish();
             }
@@ -39,7 +39,7 @@ public class MoneyManagement extends FragmentActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i=new Intent(MoneyManagement.this,AccountManagementScreen.class);
+        Intent i=new Intent(MoneyManagement.this,SettingsAccountManagement.class);
         startActivity(i);
         finish();
     }
