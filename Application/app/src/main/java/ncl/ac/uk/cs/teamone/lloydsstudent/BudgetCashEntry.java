@@ -239,7 +239,7 @@ public class BudgetCashEntry extends DialogFragment {
                     .setNegativeButton("Continue", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             // Call method to log purchase
-                            addCashPurchase();
+                            //addCashPurchase();
                         }
                     });
 
