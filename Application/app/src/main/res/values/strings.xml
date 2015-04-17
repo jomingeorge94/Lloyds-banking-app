@@ -140,6 +140,23 @@
     With the Deals facilities you will be able to find deals that meets you budget that has been set by yourself.</string>
     <string name="settings_money_link">Find more about Money Management with Lloyds</string>
 
+    // Settings FAQs
+    <string name="settings_faq_title">Frequently Asked Questions</string>
+    <string name="settings_faq_message" >Welcome to our help centre. Here you can find answers to out Frequently Asked Questions. If for any reason you couldn\'t find what you are looking for, then
+    please do try and get in touch with us either via phone or email. </string>
+    <string name="settings_faq_q1">How can I contact my local branch?</string>
+    <string name="settings_faq_a1"> To contact us by phone, please call us on 0845 3 000 000 (calls may be recorded). Our UK-based advisers are able to answer a wide range of banking queries and are available 24 hours a day, 7 days a week. They are able to put you in touch with your local branch if required.</string>
+    <string name="settings_faq_q2">I don\'t recognise a transaction on my account - what do I do?</string>
+    <string name="settings_faq_a2">You can use our Fraud Detection feature we have introduced new to our app. Next to every transaction there is a question mark symbol next to it, if you believe that
+    that transaction is not been made by you then click on the symbol and follow the wizard on the screen. </string>
+    <string name="settings_faq_q3">Who can I contact if I have a query on my balance and transaction?</string>
+    <string name="settings_faq_a3">If you want to talk to us about your balance or transactions, call Phonebank on 0845 3 000 000 or go to any Lloyds Bank branch. </string>
+    <string name="settings_faq_q4">How do I transfer money to another person?</string>
+    <string name="settings_faq_a4">If you\'re registered for Mobile Banking, you can transfer money between accounts and also make payments to pay a bill or another person through your phone, please do have a look on our
+        Lloyds Banking Tour to familiarise your self with how to go about it.</string>
+    <string name="settings_faq_q5">Can I change my Passcode?</string>
+    <string name="settings_faq_a5">Yes you can, click on the Account Management option inside the Help Menu. This will take you to another window where you will have the option to change your Passcode. </string>
+
 
 
     <string name="app_name">Lloyds Student</string>
@@ -197,7 +214,7 @@
     <string name="transfermoneytitle">Transfer money between your accounts</string>
     <string name="confirmdetails">Confirm your transaction details</string>
 
-    
+
     <string name="payacontacttitle">Pay a Contact</string>
     <string name="red_string">Red</string>
     <string name="green_string">Green</string>
@@ -283,7 +300,7 @@
     help detect or prevent fraud or other crimes.</string>
     <string name="TermsandConditionMessageSectionB4.1">4.1 When we contact you or you contact us we need to check your identity before you can give us instructions or we can disclose or discuss confidential information about your accounts.
     For this reason:</string>
-     <string name="TermsandConditionMessageSectionB4.1a">a.  you must sign instructions given on paper;</string>
+    <string name="TermsandConditionMessageSectionB4.1a">a.  you must sign instructions given on paper;</string>
     <string name="TermsandConditionMessageSectionB4.1b">b.  when you are in a branch, we may ask you for identification; and</string>
     <string name="TermsandConditionMessageSectionB4.1c">c.  if you are contacting us or giving us instructions by any other method (for example by using a card, Telephone Banking, Internet Banking or
     by Mobile Banking) you must do so using the ‘Security Details’ we have given to you or agreed with you personally.</string>
@@ -313,20 +330,6 @@
         number 119278.\n
         \nInformation correct as at April 2014.</string>
 
-    <string name="FAQSmessage" >Welcome to our help centre. Here you can find answers to out Frequently Asked Questions. If for any reason you couldn\'t find what you are looking for, then
-    please do try and get in touch with us either via phone or email. </string>
-    <string name="FAQQuestion1">How can I contact my local branch?</string>
-    <string name="FAQAnswer1"> To contact us by phone, please call us on 0845 3 000 000 (calls may be recorded). Our UK-based advisers are able to answer a wide range of banking queries and are available 24 hours a day, 7 days a week. They are able to put you in touch with your local branch if required.</string>
-    <string name="FAQQuestion2">I don\'t recognise a transaction on my account - what do I do?</string>
-    <string name="FAQAnswer2">You can use our Fraud Detection feature we have introduced new to our app. Next to every transaction there is a question mark symbol next to it, if you believe that
-    that transaction is not been made by you then click on the symbol and follow the wizard on the screen. </string>
-    <string name="FAQQuestion3">Who can I contact if I have a query on my balance and transaction?</string>
-    <string name="FAQAnswer3">If you want to talk to us about your balance or transactions, call Phonebank on 0845 3 000 000 or go to any Lloyds Bank branch. </string>
-    <string name="FAQQuestion4">How do I transfer money to another person?</string>
-    <string name="FAQAnswer4">If you\'re registered for Mobile Banking, you can transfer money between accounts and also make payments to pay a bill or another person through your phone, please do have a look on our
-        Lloyds Banking Tour to familiarise your self with how to go about it.</string>
-    <string name="FAQQuestion5">Can I change my Passcode?</string>
-    <string name="FAQAnswer5">Yes you can, click on the Account Management option inside the Help Menu. This will take you to another window where you will have the option to change your Passcode. </string>
     <string name="ReportOnline">Report Online</string>
     <string name="LostorStoleTitle">Lost or stolen cards</string>
     <string name="LostorStoleMessage">If your Lloyds Bank credit or debit card has been lost or stolen you should report it immediately. You can report it through this app or by calling us.\n

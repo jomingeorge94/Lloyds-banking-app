@@ -24,7 +24,7 @@ public class ContactUs extends FragmentActivity {
         setContentView(R.layout.contact_us_screen);
 
         // Assign listener to detect back button click
-        findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.contact_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Create intent to go to home screen
