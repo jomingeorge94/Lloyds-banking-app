@@ -71,4 +71,10 @@ public class OtherProducts extends FragmentActivity {
         finish();
     }
 
+    //Simply prevents the app from being in the background, user has to enter passcode again!
+    @Override
+    protected void onUserLeaveHint() {
+        this.finish();
+    }
+
 }

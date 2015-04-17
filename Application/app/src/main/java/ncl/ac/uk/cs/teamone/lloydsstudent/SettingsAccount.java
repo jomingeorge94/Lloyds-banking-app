@@ -103,4 +103,10 @@ public class SettingsAccount extends FragmentActivity  {
         startActivity(i);
         finish();
     }
+
+    //Simply prevents the app from being in the background, user has to enter passcode again!
+    @Override
+    protected void onUserLeaveHint() {
+        this.finish();
+    }
  }

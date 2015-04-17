@@ -98,6 +98,12 @@ public class FeedbackSettings extends FragmentActivity implements RatingBar.OnRa
         ratingbar.setRating(1.5f);
     }
 
+    //Simply prevents the app from being in the background, user has to enter passcode again!
+    @Override
+    protected void onUserLeaveHint() {
+        this.finish();
+    }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
