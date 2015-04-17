@@ -17,7 +17,7 @@ public class HorsePointerFIrstTrial extends ActionBarActivity implements View.On
 
     private ShowcaseView showcaseView;
     private int counter = 0;
-    private Target t1,t2,t3,t4;
+    private Target t1,t2,t3,t4,t5;
 
 
     @Override
@@ -29,6 +29,7 @@ public class HorsePointerFIrstTrial extends ActionBarActivity implements View.On
         t2 = new ViewTarget(R.id.main_tab_contact,this);
         t3 = new ViewTarget(R.id.main_tag_circle_progress,this);
         t4 = new ViewTarget(R.id.currentMoney,this);
+        t5 = new ViewTarget(R.id.main_tag_customer,this);
 
         showcaseView = new ShowcaseView.Builder(this).setTarget(Target.NONE).setOnClickListener(this).setContentTitle("Welcome to Tutorial mode").setStyle(R.style.Transparency).build();
 
@@ -46,35 +47,31 @@ public class HorsePointerFIrstTrial extends ActionBarActivity implements View.On
     public void onClick(View v) {
         switch (counter){
             case 0:
-                showcaseView.setContentTitle(" ");
+                showcaseView.setShowcase(t5, true);
                 showcaseView.setContentTitle("This is the main screen of the app, where you have a basic overview and functionality");
 
                 break;
 
             case 1:
                 showcaseView.setShowcase(t4,true);
-                //showcaseView.setContentTitle("Account Balance");
                 showcaseView.setContentTitle("This is the current balance of your account. Swipe left or right to access different accounts and click once to view account transactions.");
 
                 break;
 
             case 2:
                 showcaseView.setShowcase(t1,true);
-                //showcaseView.setContentTitle("Make transfer button");
                 showcaseView.setContentTitle("Click on this button to transfer money from one of your accounts to another");
 
                 break;
                 
             case 3:
                 showcaseView.setShowcase(t2,true);
-                //showcaseView.setContentTitle("Pay contact button");
                 showcaseView.setContentTitle("Click on this button to transfer money from your account to another account. ");
 
                 break;
                 
             case 4:
                 showcaseView.setShowcase(t3,true);
-                //showcaseView.setContentTitle("Budget Bubble");
                 showcaseView.setContentTitle("This bubble represents your budget. The shaded portion of the bubble is the proportion of your budget you have spent.");
                 showcaseView.setButtonText("Close");
                 break;
