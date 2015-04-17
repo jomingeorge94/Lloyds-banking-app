@@ -11,28 +11,29 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
+        style="@style/LloydsTitleXLarge"
         android:id="@+id/cash_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cash_title"
-        android:autoText="false"
-        style="@style/LloydsTitleXLarge"/>
+        android:autoText="false"/>
+
 
     <View
+        android:layout_below="@+id/cash_title"
+        android:id="@+id/cash_underline"
+        android:layout_alignParentLeft="true"
         android:layout_width="fill_parent"
         android:layout_height="2dp"
         android:background="@color/dark_green"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/cash_title"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/cash_underline" />
+        android:layout_alignParentStart="true"/>
 
 <ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:layout_alignTop="@+id/cash_underline"
     android:layout_above="@+id/cash_buttons"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:paddingBottom="16dp">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -40,7 +41,7 @@
 
     <TextView
         style="@style/LloydsTextSmall"
-        android:id="@+id/cash_desctiption"
+        android:id="@+id/cash_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/cash_description"
@@ -52,23 +53,23 @@
 
     <TextView
         style="@style/LloydsTitleLarge"
+        android:id="@+id/cash_name_label"
+        android:layout_below="@+id/cash_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/cash_name"
-        android:id="@+id/cash_name_label"
         android:textColor="@color/text_dark"
-        android:layout_below="@+id/cash_desctiption"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
 
     <EditText
         style="@style/LloydsEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/cash_name_input"
         android:layout_below="@+id/cash_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -82,11 +83,11 @@
 
     <TextView
         style="@style/LloydsTitleLarge"
+        android:id="@+id/cash_category_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/cash_category"
-        android:id="@+id/cash_category_label"
         android:textColor="@color/text_dark"
         android:layout_below="@+id/cash_name_input"
         android:layout_alignParentLeft="true"
