@@ -27,8 +27,7 @@ public class HorsePointerBudget extends ActionBarActivity implements View.OnClic
 
         t1 = new ViewTarget(R.id.budget_analytical,this);
         t2 = new ViewTarget(R.id.budget_bar_horse,this);
-        t3 = new ViewTarget(R.id.budget_remaining,this);
-
+   
         showcaseView = new ShowcaseView.Builder(this).setTarget(Target.NONE).setOnClickListener(this).setContentTitle("Welcome to Budget Tutorial mode").setStyle(R.style.Transparency).build();
 
     }
@@ -53,12 +52,6 @@ public class HorsePointerBudget extends ActionBarActivity implements View.OnClic
             case 1:
                 showcaseView.setShowcase(t2, true);
                 showcaseView.setContentTitle("Find out how much you have spend this week ");
-
-                break;
-
-            case 2:
-                showcaseView.setShowcase(t3, true);
-                showcaseView.setContentTitle("See how much you have left to spend this week. ");
                 showcaseView.setButtonText("Close");
                 break;
 
