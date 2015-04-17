@@ -75,6 +75,9 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 else if(num == 6) {
                     Retrieve r2 = new Retrieve(((Activity) tActivity), "http://www.abunities.co.uk/t2022t1/retrieve_budget.php", 1);
                 }
+                else if(num == 7) {
+                    Retrieve r2 = new Retrieve(((Activity) tActivity), "http://www.abunities.co.uk/t2022t1/retrieve_customer.php", 1);
+                }
                 else {
                     dialog.dismiss();
                 }
@@ -149,6 +152,8 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //assign data to a string variable
             String result = sb.toString();
 
+            Log.v("DATA", result);
+
             try {
                 //see if an error was returned from the PHP Script
                 checkForError(result);
@@ -185,6 +190,9 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                     }
                     else if(params[0].contains("retrieve_last_week_budget.php")) {
                         d.previousBudget = getData();
+                    }
+                    else if(params[0].contains("retrieve_customer.php")) {
+                        d.customer = getData();
                     }
                 }
             }
@@ -317,9 +325,8 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
                 break;
             //when add entry is successful
             case 10:
-                Intent oi = new Intent(activity, LoginActivity.class);
-                activity.startActivity(oi);
-                ((Activity) activity).finish();
+                this.alertDialog.setTitle("Your Entry has been added");
+                this.alertDialog.show();
                 break;
             //successful transfer
             case 11:
@@ -329,6 +336,11 @@ public class PHPHandler extends AsyncTask<String, Void, String> {
             //budget has been successfully saved
             case 12:
                 this.alertDialog.setTitle("Budget Saved");
+                this.alertDialog.show();
+                break;
+            //change passcode
+            case 13:
+                this.alertDialog.setTitle("Passcode has been changed");
                 this.alertDialog.show();
                 break;
             //If unexpected error occurs then end any activity open

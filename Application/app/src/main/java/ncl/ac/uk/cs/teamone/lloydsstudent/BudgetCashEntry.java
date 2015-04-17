@@ -262,13 +262,16 @@ public class BudgetCashEntry extends DialogFragment {
 
         // Values to send to the PHP file
         String[] keys = {"uid", "purchase", "category"};
-        String[] values = {new Data().getUid(), Float.toString(purchaseBalance), category.getSelectedItem().toString()};
+        String[] values = {new Data().customer.get("uid"), Float.toString(purchaseBalance), category.getSelectedItem().toString()};
 
         // Create an asynchronous object
-        PHPHandler handler = new PHPHandler(getActivity(), keys, values, 0);
+        PHPHandler handler = new PHPHandler(getActivity(), keys, values, 6);
 
         // Execute the object
         handler.execute(url);
+
+        // Close fragment
+        dismiss();
 
     }
 

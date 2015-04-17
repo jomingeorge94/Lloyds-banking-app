@@ -2,6 +2,7 @@ package ncl.ac.uk.cs.teamone.lloydsstudent;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,7 @@ public class BudgetPieChart extends Fragment {
         float beauty = Float.parseFloat(d.budget.get("beauty_and_hygiene_spend"));
         float entertainment = Float.parseFloat(d.budget.get("entertainment_spend"));
         float home = Float.parseFloat(d.budget.get("home_spend"));
+        Log.v("HOME", Float.toString(home));
         float clothes = Float.parseFloat(d.budget.get("clothes_spend"));
         float leisure = Float.parseFloat(d.budget.get("leisurely_activities_spend"));
         float other = Float.parseFloat(d.budget.get("other_spend"));

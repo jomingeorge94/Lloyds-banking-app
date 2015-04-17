@@ -1,5 +1,15 @@
 <?php
 
+	/**
+	 *
+	 * @file add_entry.php
+	 * @author Artemiy Bozhenok
+	 * @date 15/02/2015
+	 *
+	 * modifies a category and the total spend
+	 *
+	 */
+
 	require('db.php');
 	require('error_lib.php');
 
@@ -7,8 +17,8 @@
 	$purchase = $_POST['purchase'];
 	$category = $_POST['category'];
 
-	if(isset($purchase) && isset($category)) {
-
+	if(isset($uid) && isset($purchase) && isset($category)) {
+		//modifies the spend depending on which category is chosen
 		switch($category) {
 			case "Food":
 				$current_purchase = fetch("Budget", "groceries_spend", $uid, BUDGET);
@@ -28,11 +38,11 @@
 				break;
 			case "Home":
 				$current_purchase = fetch("Budget", "home_spend", $uid, BUDGET);
-				modify("Budget", "home_spend", $purchase, $current_purchase + $uid, BUDGET);
+				modify("Budget", "home_spend", $current_purchase + $purchase, $uid, BUDGET);
 				break;
 			case "Clothes":
 				$current_purchase = fetch("Budget", "clothes_spend", $uid, BUDGET);
-				modify("Budget", "clothes_spend", $purchase, $current_purchase + $uid, BUDGET);
+				modify("Budget", "clothes_spend", $current_purchase + $purchase, $uid, BUDGET);
 				break;
 			case "Leisure":
 				$current_purchase = fetch("Budget", "leisurely_activities_spend", $uid, BUDGET);
@@ -43,6 +53,9 @@
 				modify("Budget", "other_spend", $current_purchase + $purchase, $uid, BUDGET);
 				break;
 		}
+		//adds the entry to the total spend as well
+		$current_spend = fetch("Budget", "spend", $uid, BUDGET);
+		modify("Budget", "spend", $current_spend + $purchase, $uid, BUDGET);
 
 		echo ADD_ENTRY_COMPLETE;
 

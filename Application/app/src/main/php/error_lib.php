@@ -24,5 +24,6 @@
 	define('ADD_ENTRY_COMPLETE', '10');
 	define('TRANSFER_SUCCESSFUL', '11');
 	define('BUDGET_FINISHED', '12');
+	define('PASSCODE_CHANGED', '13');
 
 ?>

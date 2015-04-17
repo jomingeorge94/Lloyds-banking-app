@@ -1,10 +1,13 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
@@ -18,6 +21,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Timer;
+
 /**
  * Fragment activity that represents a settings page and creates a GUI to allow the user to change
  * their login passcode and save the change on the server
@@ -26,6 +31,7 @@ import android.widget.Toast;
  */
 public class SettingsPasscode extends FragmentActivity {
 
+    private static CountDownTimer timer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -226,18 +232,39 @@ public class SettingsPasscode extends FragmentActivity {
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     // Clears the focus of the current box
                     box[3].clearFocus();
-                    String passcode = String.format("%s%s%s%s", box[0].getText().toString(), box[1].getText().toString(), box[2].getText().toString(), box[3].getText().toString());
-                    // Request the focus of the next box
-                    if(!changePasscode(passcode)) {
-                        dismiss();
-                    } else {
-                        box[0].requestFocus();
-                    }
+
+                    box[0].requestFocus();
                 }
 
                 @Override
                 public void afterTextChanged(Editable s) {
 
+                    if(!box[0].getText().toString().isEmpty() && !box[1].getText().toString().isEmpty() && !box[2].getText().toString().isEmpty() && !box[3].getText().toString().isEmpty()) {
+                        String passcode = String.format("%s%s%s%s", box[0].getText().toString(), box[1].getText().toString(), box[2].getText().toString(), box[3].getText().toString());
+                        //checks if the passcode was successfully changed
+                        if (changePasscode(passcode)) {
+                            dismiss();
+                        } else {
+                            AlertDialog ad = new AlertDialog.Builder(getActivity()).create();
+
+                            ad.setButton(DialogInterface.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    //clears all the boxes to enable user to re-enter the passcode
+                                    for (int i = 0; i < 4; i++) {
+                                        box[i].setText("");
+                                    }
+                                    //sets the focus to the first box
+                                    box[0].requestFocus();
+                                    //removes the dialog
+                                    dialog.dismiss();
+                                }
+
+                            });
+
+                            ad.setTitle("Wrong Passcode");
+                            ad.show();
+                        }
+                    }
                 }
             });
 
@@ -256,10 +283,25 @@ public class SettingsPasscode extends FragmentActivity {
          * match commit the changed passcode to the database
          */
         private boolean changePasscode(String passcode) {
-            Log.w("Reached", "Reached");
-            // Assigns the passcode the user wishes to change to to a local variable
-            String newPasscode = getArguments().getString("passcode");
-            return true;
+
+            Data d = new Data();
+
+            if(passcode.equalsIgnoreCase(d.customer.get("passcode"))) {
+                // Assigns the passcode the user wishes to change to a local variable
+                String newPasscode = getArguments().getString("passcode");
+
+                String[] keys = {"uid", "passcode"};
+                String[] values = {d.customer.get("uid"), newPasscode};
+
+                PHPHandler handler = new PHPHandler(getActivity(), keys, values, 7);
+
+                handler.execute("http://www.abunities.co.uk/t2022t1/changepasscode.php");
+
+                return true;
+            }
+            else {
+                return false;
+            }
         }
 
     }
