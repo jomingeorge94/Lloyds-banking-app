@@ -1,92 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contact_layout"
     android:orientation="vertical"
-    android:background="#fffcfdff"
-    android:weightSum="1">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/contact_topbar"
         android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:weightSum="1">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_green" >
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
+        <ImageButton
+            android:id="@+id/contact_back"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#5DAD68">
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/settings_change_back"
-                android:layout_weight="0.05"
-                android:src="@drawable/back_arrow_icon"
-                android:background="#5DAD68"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:paddingLeft="10dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.91"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ContactUsMessage"
-                android:id="@+id/textView30"
-                android:textColor="#ff000000"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="116dp"
-            android:layout_weight="0.09"
-            android:layout_marginBottom="10dp">
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="2dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@android:color/holo_green_dark"/>
-
-            <Button
-                android:layout_width="250dp"
-                android:layout_height="40dp"
-                android:text="@string/ContactUsEmail"
-                android:id="@+id/email"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:background="#369742"
-                android:textColor="#ffffffff" />
-
-            <Button
-                android:layout_width="250dp"
-                android:layout_height="40dp"
-                android:id="@+id/callus"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/ContactUsPhone"
-                android:background="#369742"
-                android:layout_marginTop="10dp"
-                android:textColor="#ffffffff" />
-
-        </LinearLayout>
+            android:src="@drawable/back_arrow_icon"
+            android:background="@color/dark_green"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp" />
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@color/white" >
+
+        <TextView
+            style="@style/LloydsTitleXLarge"
+            android:id="@+id/contact_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="Contact Us" />
+
+        <View
+            android:id="@+id/contact_underline"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@id/contact_title"
+            android:background="@color/dark_green" />
+
+        <TextView
+            style="@style/LloydsTextSmall"
+            android:id="@+id/contact_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contact_underline"
+            android:text="@string/ContactUsMessage" />
+
+        <Button
+            style="@style/LloydsButtonActive"
+            android:id="@+id/contact_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/contact_call"
+            android:layout_marginBottom="8dp"
+            android:text="@string/ContactUsEmail" />
+
+        <Button
+            style="@style/LloydsButtonActive"
+            android:id="@+id/contact_call"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/ContactUsPhone" />
+
+    </RelativeLayout>
 
 </LinearLayout>
