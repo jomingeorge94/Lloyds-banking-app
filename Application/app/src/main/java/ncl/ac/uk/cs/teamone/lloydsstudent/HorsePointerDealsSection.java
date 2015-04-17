@@ -17,7 +17,7 @@ public class HorsePointerDealsSection extends ActionBarActivity implements View.
 
     private ShowcaseView showcaseView;
     private int counter = 0;
-    private Target t1,t2,t3,t4;
+    private Target t1,t2,t3,t4,t5,t6,t7,t8;
 
 
     @Override
@@ -29,6 +29,10 @@ public class HorsePointerDealsSection extends ActionBarActivity implements View.
         t2 = new ViewTarget(R.id.deals_loathed,this);
         t3 = new ViewTarget(R.id.deals_loved_horse,this);
         t4 = new ViewTarget(R.id.deals_dealicon,this);
+        t5 = new ViewTarget(R.id.deal_dealtitle,this);
+        t6 = new ViewTarget(R.id.deals_heart,this);
+        t7 = new ViewTarget(R.id.deals_brokenheart,this);
+        t8 = new ViewTarget(R.id.deals_milestext,this);
 
         showcaseView = new ShowcaseView.Builder(this).setTarget(Target.NONE).setOnClickListener(this).setContentTitle("Welcome to Deals Tutorial mode").setStyle(R.style.Transparency).build();
 
@@ -63,10 +67,31 @@ public class HorsePointerDealsSection extends ActionBarActivity implements View.
 
             case 3:
                 showcaseView.setShowcase(t4, true);
-                showcaseView.setContentTitle("This is the section where the deals that you like will appear and you can remove the deals from this section by holding it down on the deal  ");
+                showcaseView.setContentTitle("Each deal is presented with a deal icon that will be linked with what category it is linked with ");
                 break;
 
             case 4:
+                showcaseView.setShowcase(t5, true);
+                showcaseView.setContentTitle("Each deal will have a title and within the title you will know what the deal is all about ");
+                break;
+
+            case 5:
+                showcaseView.setShowcase(t6, true);
+                showcaseView.setContentTitle("To send a deal to your Loved section, click on the heart icon. You will also get to see on top of the icon how many people liked this deal  ");
+                break;
+
+            case 6:
+                showcaseView.setShowcase(t7, true);
+                showcaseView.setContentTitle("To send a deal to your Loathed section, click on the broken heart icon. You will also get to see on top of the icon how many people disliked this deal  ");
+                break;
+
+            case 7:
+                showcaseView.setShowcase(t8, true);
+                showcaseView.setContentTitle("This part of the deal will tell you how far you are away from getting this deal. You have fully completed the tutorial, to go back to the Main Screen click on the close button  ");
+                showcaseView.setButtonText("Close");
+                break;
+
+            case 8:
                 showcaseView.hide();
                 Intent home =new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(home);
