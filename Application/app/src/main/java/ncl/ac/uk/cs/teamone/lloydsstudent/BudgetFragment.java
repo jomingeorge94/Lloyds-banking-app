@@ -50,8 +50,8 @@ public class BudgetFragment extends Fragment {
         ArrayList<Fragment>  fragmentList = new ArrayList<Fragment>();
 
         // Add fragments to the list
-        fragmentList.add(new BudgetLineChart());
         fragmentList.add(new BudgetOverview());
+        fragmentList.add(new BudgetLineChart());
         fragmentList.add(new BudgetPieChart());
 
         // Create fragment manager to control popup fragment
