@@ -1,7 +1,7 @@
 package ncl.ac.uk.cs.teamone.lloydsstudent;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,8 +53,12 @@ public class BudgetPieChart extends Fragment {
         float leisure = Float.parseFloat(d.budget.get("leisurely_activities_spend"));
         float other = Float.parseFloat(d.budget.get("other_spend"));
 
-        // Calls the format method to put the data in the correct format for the chart
-        formatData(new float[]{food, travel, beauty, entertainment, home, clothes, leisure, other});
+        if(!mutex){
+            // Calls the format method to put the data in the correct format for the chart
+            formatData(new float[]{food, travel, beauty, entertainment, home, clothes, leisure, other});
+            mutex = true;
+        }
+
 
         // Calls the create chart method to generate the chart in the view
         createChart(v);
@@ -77,6 +81,9 @@ public class BudgetPieChart extends Fragment {
         }
     }
 
+    private static boolean mutex = false;
+    PieDataSet pie = null;
+
     /**
      * Method which takes a view and searches for a PieChart holder and formats the data in the
      * fragment and generates a visual chart
@@ -87,8 +94,12 @@ public class BudgetPieChart extends Fragment {
 
         // Searches the XML file for the PieChart holder and assigns it to a variable
         PieChart chart = (PieChart) v.findViewById(R.id.pie_chart);
+
+        pie = formatData();
+
+
         // Creates a PieData variable which can be added to a PieChart
-        PieData data = new PieData(CATEGORIES, formatData());
+        PieData data = new PieData(CATEGORIES, pie);
 
         // Assigns the values to the charts
         chart.setData(data);
@@ -135,6 +146,7 @@ public class BudgetPieChart extends Fragment {
                 getResources().getColor(R.color.clothes),
                 getResources().getColor(R.color.leisure),
                 getResources().getColor(R.color.other)});
+
 
         // Returns the data ready to be added to the chart
         return weeklyData;

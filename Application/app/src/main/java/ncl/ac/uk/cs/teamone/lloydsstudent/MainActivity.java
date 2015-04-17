@@ -237,6 +237,12 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public void onBackPressed() {
+        // Fragment management
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//
+//        if(fragmentManager.getBackStackEntryCount() > 1){
+//            fragmentManager.popBackStackImmediate();
+//        }
 
         drawerLayout.closeDrawer(Gravity.LEFT);
     }
@@ -269,4 +275,7 @@ public class MainActivity extends ActionBarActivity {
         }
         return super.onKeyDown(keycode, e);
     }
+
+
+
 }

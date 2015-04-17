@@ -55,7 +55,7 @@ public class BudgetFragment extends Fragment {
         fragmentList.add(new BudgetPieChart());
 
         // Create fragment manager to control popup fragment
-        FragmentManager manager = getFragmentManager();
+        FragmentManager manager = getChildFragmentManager();
 
         // Create chart adapter to fill ViewPager
         ChartAdapter adapter = new ChartAdapter(manager, fragmentList);
