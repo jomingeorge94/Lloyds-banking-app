@@ -92,9 +92,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:textColor="#ff1611ff"
-                    android:text="@string/settings_money_link"
-                    android:background="#ffffffff" />
+                    android:textColor="@color/blue"
+                    android:text="@string/settings_money_link" />
+
 
             </LinearLayout>
 
