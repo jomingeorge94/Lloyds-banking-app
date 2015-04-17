@@ -13,7 +13,7 @@ import com.github.amlcurran.showcaseview.targets.ViewTarget;
 /**
  * Created by Jomin on 12/03/2015.
  */
-public class HorsePointerFIrstTrial extends ActionBarActivity implements View.OnClickListener {
+public class HorsePointerMain extends ActionBarActivity implements View.OnClickListener {
 
     private ShowcaseView showcaseView;
     private int counter = 0;
