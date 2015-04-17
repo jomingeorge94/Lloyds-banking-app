@@ -21,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -102,8 +101,9 @@ public class MainActivity extends ActionBarActivity {
                     Intent horse =new Intent(getApplicationContext(),HorsePointerFIrstTrial.class);
                     startActivity(horse);
 
-                }else if(entry.getTag().equals("OverView")){
-                    Toast.makeText(getApplication(), "Horse pointer - Button is in here in overview", Toast.LENGTH_SHORT).show();
+                }else if(entry.getTag().equals("tab3")){
+                    Intent deals_horse =new Intent(getApplicationContext(),HorsePointerDealsSection.class);
+                    startActivity(deals_horse);
                 }
             }
         });
