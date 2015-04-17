@@ -16,15 +16,22 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
+ * Fragment activity that represents a settings page and creates a GUI to allow the user to change
+ * their login passcode and save the change on the server
+ *
  * Created by Jomin on 21/03/2015.
  */
 public class SettingsChangePasscode extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        // Call to super
         super.onCreate(savedInstanceState);
+        // Inflate the view to show the XML in the current window
         setContentView(R.layout.settings_change_passcode);
 
         // Get an input manager to mange soft keyboard during inputs
@@ -41,56 +48,8 @@ public class SettingsChangePasscode extends FragmentActivity {
         box[6] = (EditText) findViewById(R.id.settings_change_confirm_3);
         box[7] = (EditText) findViewById(R.id.settings_change_confirm_4);
 
-        for(int i = 0; i < 3; i++) {
-            // Temporary integer for passing into embedded class
-            final int j = i;
-            // Adds listener to change focus when "next" key is pressed
-            box[i].addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                }
-
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    // Clears the focus of the current box
-                    box[j].clearFocus();
-                    // Request the focus of the next box
-                    box[j + 1].requestFocus();
-                    // SHows the keyboard for the next box
-                    keyboard.showSoftInput(box[j + 1], InputMethodManager.SHOW_IMPLICIT);
-                }
-
-                @Override
-                public void afterTextChanged(Editable s) {
-
-                }
-            });
-        }
-
-        box[3].addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // Clears the focus of the current box
-                box[3].clearFocus();
-                // Request the focus of the next box
-                box[4].requestFocus();
-                // SHows the keyboard for the next box
-                keyboard.showSoftInput(box[4], InputMethodManager.SHOW_IMPLICIT);
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        for(int i = 4; i < 7; i++) {
+        // Loop to assign listeners to each input box
+        for(int i = 0; i < 7; i++) {
             // Temporary integer for passing into embedded class
             final int j = i;
             // Adds listener to change focus when "next" key is pressed
@@ -128,32 +87,39 @@ public class SettingsChangePasscode extends FragmentActivity {
                 // Creates a new confirm transfer fragment and initialises it to a variable
                 SettingsChangeVerify fragment = new SettingsChangeVerify();
 
+                // Clears the focus of the textox
                 box[7].clearFocus();
 
+                // Creates two strings to hold inputs
                 String passcode = null;
                 String confirm = null;
 
-                passcode = String.format(box[0].getText().toString(), box[1].getText().toString(), box[2].getText().toString(), box[3].getText().toString());
-                confirm = String.format(box[4].getText().toString(), box[5].getText().toString(), box[6].getText().toString(), box[7].getText().toString());
+                // Gets the inputs from the user and assigns the passcode and the confirm to variables
+                passcode = String.format("%s%s%s%s", box[0].getText().toString(), box[1].getText().toString(), box[2].getText().toString(), box[3].getText().toString());
+                confirm = String.format("%s%s%s%s", box[4].getText().toString(), box[5].getText().toString(), box[6].getText().toString(), box[7].getText().toString());
 
-                Log.w("Vaue", box[0].getText().toString());
-                Log.w("Vaue", box[1].getText().toString());
-                Log.w("Vaue", box[2].getText().toString());
-                Log.w("Vaue", box[3].getText().toString());
-                Log.w("Vaue", box[4].getText().toString());
-                Log.w("Vaue", box[5].getText().toString());
-                Log.w("Vaue", box[6].getText().toString());
-                Log.w("Vaue", box[7].getText().toString());
-
+                // Statement checking inputs match
                 if(passcode.equals(confirm)) {
                     // New bundle to store data to be transferred
                     Bundle args = new Bundle();
+                    // Adds new passcode tot he arguments
                     args.putString("passcode", passcode);
                     fragment.setArguments(args);
                     // Starts the new fragment
                     fragment.show(getSupportFragmentManager(), "Confirm");
                 } else {
-                    Log.w("ERROR", "Didn't Match");
+                    // Resets the values for each of the
+                    for(int i = 0; i < 8; i++) {
+                        box[i].setText("");
+                    }
+
+                    // Show message to user
+                    Toast.makeText(getApplicationContext(), "Passwords Didn't Match", Toast.LENGTH_LONG);
+
+                    // Requests the focus to the first text box
+                    box[1].requestFocus();
+                    // Shows the keyboard
+                    keyboard.showSoftInput(box[1], InputMethodManager.SHOW_IMPLICIT);
                 }
             }
 
@@ -163,21 +129,34 @@ public class SettingsChangePasscode extends FragmentActivity {
             }
         });
 
+        // Assigns on click listener to back button to swap to previous view
         findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(SettingsChangePasscode.this,AccountManagementScreen.class);
+                // Create new intent
+                Intent i=new Intent(SettingsChangePasscode.this, AccountManagementScreen.class);
                 startActivity(i);
+                // End current activity
                 finish();
             }
+
         });
     }
 
+    /**
+     * Waits for a back button to be pressed, when it is the previous view is displayed and the
+     * current closed
+     */
     @Override
     public void onBackPressed() {
+        // Call to super
         super.onBackPressed();
+        // New intent to change view
         Intent i=new Intent(SettingsChangePasscode.this,AccountManagementScreen.class);
+        // Start the new intent
         startActivity(i);
+        // Close current view
         finish();
     }
 
@@ -249,7 +228,11 @@ public class SettingsChangePasscode extends FragmentActivity {
                     box[3].clearFocus();
                     String passcode = String.format("%s%s%s%s", box[0].getText().toString(), box[1].getText().toString(), box[2].getText().toString(), box[3].getText().toString());
                     // Request the focus of the next box
-                    changePasscode(passcode);
+                    if(!changePasscode(passcode)) {
+                        dismiss();
+                    } else {
+                        box[0].requestFocus();
+                    }
                 }
 
                 @Override
@@ -272,10 +255,11 @@ public class SettingsChangePasscode extends FragmentActivity {
          * Method which should check the current passcode against the checked passcode, and if they
          * match commit the changed passcode to the database
          */
-        private void changePasscode(String passcode) {
+        private boolean changePasscode(String passcode) {
             Log.w("Reached", "Reached");
             // Assigns the passcode the user wishes to change to to a local variable
             String newPasscode = getArguments().getString("passcode");
+            return true;
         }
 
     }
