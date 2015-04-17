@@ -91,18 +91,23 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name=".HorsePointerBudget"
+            android:label="Horse Pointer"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".Settings_Screen"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".HorsePointerMain"
-            android:label="@string/title_activity_first_time"
+            android:label="Horse Pointer"
             android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".HorsePointerDealsSection"
-            android:label="@string/title_activity_first_time"
+            android:label="Horse Pointer"
             android:screenOrientation="portrait" >
         </activity>
         <activity

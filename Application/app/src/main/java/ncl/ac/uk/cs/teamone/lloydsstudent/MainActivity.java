@@ -105,6 +105,11 @@ public class MainActivity extends ActionBarActivity {
                     Intent deals_horse =new Intent(getApplicationContext(),HorsePointerDealsSection.class);
                     startActivity(deals_horse);
                 }
+
+                else if(entry.getTag().equals("tab1")){
+                    Intent budget_horse =new Intent(getApplicationContext(),HorsePointerBudget.class);
+                    startActivity(budget_horse);
+                }
             }
         });
 
