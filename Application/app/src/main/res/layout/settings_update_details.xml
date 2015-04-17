@@ -1,0 +1,177 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/settings_update_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/settings_update_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/dark_green" >
+
+        <ImageButton
+            android:id="@+id/settings_update_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_arrow_icon"
+            android:background="@color/dark_green"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@color/white" >
+
+        <TextView
+            style="@style/LloydsTitleXLarge"
+            android:id="@+id/settings_update_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_update_title" />
+
+        <View
+            android:id="@+id/settings_update_underline"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@id/settings_update_title"
+            android:background="@color/dark_green" />
+
+    <ScrollView
+        android:id="@+id/settings_update_scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/settings_update_underline"
+        android:layout_above="@+id/settings_update_button">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/settings_update_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/gen_notice" />
+
+            <TextView
+                style="@style/LloydsTextSmall"
+                android:id="@+id/settings_update_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/settings_update_notice"
+                android:text="@string/UpdateYourDetailsimportant" />
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/settings_update_email_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/settings_update_message"
+                android:text="@string/settings_update_email" />
+
+            <EditText
+                style="@style/LloydsEditText"
+                android:id="@+id/settings_update_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/settings_update_email_label"
+                android:inputType="textEmailAddress"
+                android:maxLength="45" />
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/settings_update_number_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/settings_update_email"
+                android:text="@string/settings_update_number" />
+
+            <EditText
+                style="@style/LloydsEditText"
+                android:id="@+id/settings_update_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/settings_update_number_label"
+                android:inputType="number"
+                android:maxLength="11"
+                android:numeric="integer" />
+
+            <TextView
+                style="@style/LloydsTitleMedium"
+                android:id="@+id/settings_update_preference_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/settings_update_number"
+                android:text="@string/settings_update_preferred" />
+
+            <RadioGroup
+                android:id="@+id/settings_update_preference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/settings_update_preference_label"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true">
+
+                <RadioButton
+                    style="@style/LloydsTitleSmall"
+                    android:id="@+id/settings_update_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/settings_update_phone" />
+
+                <RadioButton
+                    style="@style/LloydsTitleSmall"
+                    android:id="@+id/settings_update_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_update_text" />
+
+                <RadioButton
+                    style="@style/LloydsTitleSmall"
+                    android:id="@+id/settings_update_post"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_update_post" />
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+        <Button
+        style="@style/LloydsButtonDisabled"
+        android:id="@+id/settings_update_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/gen_update" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

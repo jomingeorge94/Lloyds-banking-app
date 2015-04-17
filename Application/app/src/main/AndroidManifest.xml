@@ -136,7 +136,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".UpdateYourDetails"
+            android:name=".UpdateDetails"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>

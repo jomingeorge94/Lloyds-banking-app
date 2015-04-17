@@ -34,7 +34,7 @@ public class SettingsAccountManagement extends FragmentActivity  {
         findViewById(R.id.settings_manager_personal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(SettingsAccountManagement.this,UpdateYourDetails.class);
+                Intent i=new Intent(SettingsAccountManagement.this,UpdateDetails.class);
                 startActivity(i);
                 finish();
             }

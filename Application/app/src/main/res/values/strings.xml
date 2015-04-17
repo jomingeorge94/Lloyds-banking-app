@@ -6,6 +6,8 @@
     <string name="gen_cancel">Cancel</string>
     <string name="gen_ok">Ok</string>
     <string name="gen_edit">Edit</string>
+    <string name="gen_notice">Notice</string>
+    <string name="gen_update">Update</string>
 
     // Login Activity
     <string name="login_title">Enter Passcode:</string>
@@ -120,6 +122,15 @@
     <string name="settings_manager_statements">Manage Statements</string>
     <string name="settings_manager_lost">Lost/Stolen</string>
     <string name="settings_manager_issue">Having an Issue</string>
+
+    // Settings Update Your Details
+    <string name="settings_update_title">Update Your Details</string>
+    <string name="settings_update_email">Email</string>
+    <string name="settings_update_number">Contact Number</string>
+    <string name="settings_update_preferred">Preferred Contact</string>
+    <string name="settings_update_phone">Phone</string>
+    <string name="settings_update_text">SMS</string>
+    <string name="settings_update_post">Post</string>
 
 
 
