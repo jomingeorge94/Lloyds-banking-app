@@ -24,7 +24,7 @@ import android.widget.Toast;
  *
  * Created by Jomin on 21/03/2015.
  */
-public class SettingsChangePasscode extends FragmentActivity {
+public class SettingsPasscode extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,7 +135,7 @@ public class SettingsChangePasscode extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 // Create new intent
-                Intent i=new Intent(SettingsChangePasscode.this, SettingsAccountManagement.class);
+                Intent i=new Intent(SettingsPasscode.this, SettingsAccount.class);
                 startActivity(i);
                 // End current activity
                 finish();
@@ -153,7 +153,7 @@ public class SettingsChangePasscode extends FragmentActivity {
         // Call to super
         super.onBackPressed();
         // New intent to change view
-        Intent i=new Intent(SettingsChangePasscode.this,SettingsAccountManagement.class);
+        Intent i=new Intent(SettingsPasscode.this,SettingsAccount.class);
         // Start the new intent
         startActivity(i);
         // Close current view

@@ -18,7 +18,7 @@ public class SettingsAboutUs extends FragmentActivity  {
 
         // Call to super
         super.onCreate(savedInstanceState);
-        // Set the XML layout file
+        // Set the XML layout file to generate view from
         setContentView(R.layout.settings_about_us);
 
         // Set on click listener to back button and take the user back to previous fragment

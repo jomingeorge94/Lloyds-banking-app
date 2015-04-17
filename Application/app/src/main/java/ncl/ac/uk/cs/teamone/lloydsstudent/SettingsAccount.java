@@ -10,7 +10,7 @@ import android.view.View;
  *
  * Created by Jomin on 27/03/2015.
  */
-public class SettingsAccountManagement extends FragmentActivity  {
+public class SettingsAccount extends FragmentActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class SettingsAccountManagement extends FragmentActivity  {
         findViewById(R.id.settings_manager_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(SettingsAccountManagement.this,MainActivity.class);
+                Intent i=new Intent(SettingsAccount.this,MainActivity.class);
                 startActivity(i);
                 finish();
             }
@@ -34,7 +34,7 @@ public class SettingsAccountManagement extends FragmentActivity  {
         findViewById(R.id.settings_manager_personal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(SettingsAccountManagement.this,UpdateDetails.class);
+                Intent i=new Intent(SettingsAccount.this,UpdateDetails.class);
                 startActivity(i);
                 finish();
             }
@@ -44,7 +44,7 @@ public class SettingsAccountManagement extends FragmentActivity  {
         findViewById(R.id.settings_manager_passcode).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent passcode = new Intent(SettingsAccountManagement.this,SettingsChangePasscode.class);
+                Intent passcode = new Intent(SettingsAccount.this,SettingsPasscode.class);
                 startActivity(passcode);
                 finish();
             }
@@ -54,7 +54,7 @@ public class SettingsAccountManagement extends FragmentActivity  {
         findViewById(R.id.settings_manager_money).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent name = new Intent(SettingsAccountManagement.this,MoneyManagement.class);
+                Intent name = new Intent(SettingsAccount.this,SettingsMoney.class);
                 startActivity(name);
                 finish();
             }
@@ -64,7 +64,7 @@ public class SettingsAccountManagement extends FragmentActivity  {
         findViewById(R.id.settings_manager_statement).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent statements = new Intent(SettingsAccountManagement.this,ManageStatements.class);
+                Intent statements = new Intent(SettingsAccount.this,ManageStatements.class);
                 startActivity(statements);
                 finish();
             }
@@ -74,7 +74,7 @@ public class SettingsAccountManagement extends FragmentActivity  {
         findViewById(R.id.settings_manager_lost).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent lost = new Intent(SettingsAccountManagement.this,LostorStole_Screen.class);
+                Intent lost = new Intent(SettingsAccount.this,LostorStole_Screen.class);
                 startActivity(lost);
                 finish();
             }
@@ -84,7 +84,7 @@ public class SettingsAccountManagement extends FragmentActivity  {
         findViewById(R.id.settings_manager_issue).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent issue = new Intent(SettingsAccountManagement.this,HavingIssues.class);
+                Intent issue = new Intent(SettingsAccount.this,HavingIssues.class);
                 startActivity(issue);
                 finish();
             }
@@ -99,7 +99,7 @@ public class SettingsAccountManagement extends FragmentActivity  {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i=new Intent(SettingsAccountManagement.this,MainActivity.class);
+        Intent i=new Intent(SettingsAccount.this,MainActivity.class);
         startActivity(i);
         finish();
     }

@@ -132,6 +132,14 @@
     <string name="settings_update_text">SMS</string>
     <string name="settings_update_post">Post</string>
 
+    // Settings Money Management
+    <string name="settings_money_title">Money Management</string>
+    <string name="settings_money_mess_1">Money Management can have different meaning to different people, for a student it is about helping them with their day to day budget and encouraging them to maintain a healthy bank account. Hear at
+        Lloyds we help our customers to achieve these goals with ease and help you overcome your daily banking challenges with our free Internet Banking Service.  </string>
+    <string name="settings_money_mess_2">The Spending Analysis shows all your monthly income and expenditure in more detail. You can plan for the future using Budget Settings from the Help Menu and maybe save for something special with Savings Goals, both designed to help you keep a closer eye on your finances.
+    With the Deals facilities you will be able to find deals that meets you budget that has been set by yourself.</string>
+    <string name="settings_money_link">Find more about Money Management with Lloyds</string>
+
 
 
     <string name="app_name">Lloyds Student</string>
@@ -390,11 +398,7 @@
 </string>
     <string name="FraudScreenMEssage1">Whenever you buy goods or services online with participating retailers, Lloyds Bank ClickSafe® will give you extra protection against card crime.</string>
 
-    <string name="MoneyManagementMessage">Money Management can have different meaning to different people, for a student it is about helping them with their day to day budget and encouraging them to maintain a healthy bank account. Hear at
-        Lloyds we help our customers to achieve these goals with ease and help you overcome your daily banking challenges with our free Internet Banking Service.  </string>
-    <string name="MoneyMnagementMessage2">The Spending Analysis shows all your monthly income and expenditure in more detail. You can plan for the future using Budget Settings from the Help Menu and maybe save for something special with Savings Goals, both designed to help you keep a closer eye on your finances.
-    With the Deals facilities you will be able to find deals that meets you budget that has been set by yourself.</string>
-    <string name="MoneyMangementLink">Find more about Money Management with Lloyds</string>
+
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_settings_change_passcode">SettingsChangePasscode</string>

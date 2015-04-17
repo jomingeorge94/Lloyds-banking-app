@@ -101,12 +101,12 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".SettingsChangePasscode"
+            android:name=".SettingsPasscode"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".MoneyManagement"
+            android:name=".SettingsMoney"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>
@@ -131,7 +131,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".SettingsAccountManagement"
+            android:name=".SettingsAccount"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>
