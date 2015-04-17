@@ -84,7 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/setings_about_ceck_1" />
+                    android:text="@string/settings_about_check_1" />
 
                 <TextView
                     style="@style/LloydsTextSmall"
@@ -94,7 +94,7 @@
                     android:layout_marginTop="10dp"
                     android:drawableLeft="@drawable/checklist"
                     android:drawablePadding="5dp"
-                    android:text="@string/setings_about_ceck_2" />
+                    android:text="@string/settings_about_check_2" />
 
                 <TextView
                     style="@style/LloydsTextSmall"
@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:drawablePadding="5dp"
                     android:drawableLeft="@drawable/checklist"
-                    android:text="@string/setings_about_ceck_3" />
+                    android:text="@string/settings_about_check_3" />
 
                 <TextView
                     style="@style/LloydsTextSmall"
@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/checklist"
                     android:drawablePadding="5dp"
-                    android:text="@string/setings_about_ceck_4" />
+                    android:text="@string/settings_about_check_4" />
 
                 <TextView
                     style="@style/LloydsTextSmall"
@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/checklist"
                     android:drawablePadding="5dp"
-                    android:text="@string/setings_about_ceck_5" />
+                    android:text="@string/settings_about_check_5" />
 
                 <TextView
                     style="@style/LloydsTitleMedium"

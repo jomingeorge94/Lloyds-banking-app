@@ -102,17 +102,24 @@
     <string name="settings_about_title">About the Lloyds Banking App</string>
     <string name="settings_about_status">Service Status</string>
     <string name="settings_about_message">Be wary of suspicious calls, we\'ll never ask you to transfer money out of your account to another account for security purposes. </string>
-    <string name="setings_about_ceck_1">There are simple solutions you can put in place to keep you and your information safe online. Find out how you can:</string>
-    <string name="setings_about_ceck_2">Use anti-virus software</string>
-    <string name="setings_about_ceck_3">Prevent spam </string>
-    <string name="setings_about_ceck_4">Secure your wireless connection</string>
-    <string name="setings_about_ceck_5">Keep your operating system up to date</string>
+    <string name="settings_about_check_1">There are simple solutions you can put in place to keep you and your information safe online. Find out how you can:</string>
+    <string name="settings_about_check_2">Use anti-virus software</string>
+    <string name="settings_about_check_3">Prevent spam </string>
+    <string name="settings_about_check_4">Secure your wireless connection</string>
+    <string name="settings_about_check_5">Keep your operating system up to date</string>
     <string name="settings_about_legal_label">Important Legal Information</string>
     <string name="settings_about_legal">Lloyds Bank plc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority under registration number 119278. Authorisation can be checked on the Financial Services Register at www.fca.org.uk. Lloyds Bank plc is a member of the Financial Services Compensation Scheme and the Financial Ombudsman Service. We subscribe to the Lending Code; copies of the Code can be obtained from www.lendingstandardsboard.org.uk.\n
 \nLloyds Bank plc Registered Office: 25 Gresham Street, London EC2V 7HN. Registered in England and Wales No. 2065.</string>
 
-
-
+    // Settings Account Management
+    <string name="settings_manager_details">Personal Details</string>
+    <string name="settings_manager_report">Report An Issue</string>
+    <string name="settings_manager_personal">Update your details</string>
+    <string name="settings_manager_passcode">Change Passcode</string>
+    <string name="settings_manager_money">Money Management</string>
+    <string name="settings_manager_statements">Manage Statements</string>
+    <string name="settings_manager_lost">Lost/Stolen</string>
+    <string name="settings_manager_issue">Having an Issue</string>
 
 
 
@@ -220,10 +227,7 @@
     to our Fraud Team with a touch of a button. </string>
     <string name="LloydsTour6Message">Now it\'s been made easier for you to transfer money to a payee with using our Lloyds Banking App. Transactions are carried out instantly and within minutes it will appear on
     your Account Overview. </string>
-    <string name="AccountManagementPersonal">Update your details </string>
-    <string name="AccountManagementSecurity">Change Passcode</string>
-    <string name="AccountManagementAccountName">Change Account name</string>
-    <string name="AccountManagementBackground">Change Background</string>
+
     <string name="title_activity_network_error">NetworkErrorActivity</string>
     <string name="ReportLost">Lost/Stole</string>
     <string name="ReportIssue">Having an issue</string>
