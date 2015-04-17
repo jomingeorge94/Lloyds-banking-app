@@ -23,7 +23,7 @@ public class HorsePointerMain extends ActionBarActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.horse_first_trial);
+        setContentView(R.layout.horse_main);
 
         t1 = new ViewTarget(R.id.main_tab_transfer,this);
         t2 = new ViewTarget(R.id.main_tab_contact,this);
