@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,26 +75,37 @@ public class NewDeals extends Fragment {
                 deal.getChildAt(position).findViewById(R.id.brokenheart).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        try {
 
-                        Loathed.itemDataLoathed.add(NewDeals.itemData.get(fix.get(fix.size()-1)));
-                        NewDeals.itemData.remove(fix.get(fix.size()-1).intValue());
-                        Loathed.adapter.notifyDataSetChanged();
-                        adapter.notifyDataSetChanged();
+                            Loathed.itemDataLoathed.add(NewDeals.itemData.get(fix.get(fix.size() - 1)));
+                            NewDeals.itemData.remove(fix.get(fix.size() - 1).intValue());
+                            Loathed.adapter.notifyDataSetChanged();
+                            adapter.notifyDataSetChanged();
 
-                        deal.closeOpenedItems();
+                            deal.closeOpenedItems();
+                        }
+                    catch(IndexOutOfBoundsException e){
+                        Toast.makeText(getActivity().getApplicationContext(),"Unexpected error occurred !",Toast.LENGTH_LONG).show();
+                    }
                     }
                 });
 
                 deal.getChildAt(position).findViewById(R.id.heart).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Loved.itemDataLoved.add(NewDeals.itemData.get(fix.get(fix.size()-1)));
-                        NewDeals.itemData.remove(fix.get(fix.size()-1).intValue());
-                        Loved.adapter.notifyDataSetChanged();
-                        adapter.notifyDataSetChanged();
+                        try {
+                            Loved.itemDataLoved.add(NewDeals.itemData.get(fix.get(fix.size() - 1)));
+                            NewDeals.itemData.remove(fix.get(fix.size() - 1).intValue());
+                            Loved.adapter.notifyDataSetChanged();
+                            adapter.notifyDataSetChanged();
 
-                        deal.closeOpenedItems();
+                            deal.closeOpenedItems();
+                        }
+                        catch(IndexOutOfBoundsException e){
+                            Toast.makeText(getActivity().getApplicationContext(),"Unexpected error occurred !",Toast.LENGTH_LONG).show();
+                        }
                     }
+
                 });
             }
 
