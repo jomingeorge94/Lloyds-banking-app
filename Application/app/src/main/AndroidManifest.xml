@@ -96,7 +96,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".HorsePointerFIrstTrial"
+            android:name=".HorsePointerMain"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>
