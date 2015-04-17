@@ -15,7 +15,7 @@ public class FAQs extends FragmentActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.faqs_screen);
 
-        findViewById(R.id.settings_change_back).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.settings_faq_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(FAQs.this,MainActivity.class);
