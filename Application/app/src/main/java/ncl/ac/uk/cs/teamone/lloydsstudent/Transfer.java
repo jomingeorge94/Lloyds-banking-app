@@ -28,9 +28,9 @@ import java.util.ArrayList;
  *
  * Created by Jomin on 07/03/2015.
  */
-public class HomeTransfer extends Fragment implements AdapterView.OnItemSelectedListener {
+public class Transfer extends Fragment implements AdapterView.OnItemSelectedListener {
 
-    // Declare variable to be used to store spinner objecs form XML files
+    // Declare variable to be used to store spinner object form XML files
     private Spinner from;
     private Spinner to;
 
@@ -39,7 +39,7 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        final View v = inflater.inflate(R.layout.home_transfer, container, false);
+        final View v = inflater.inflate(R.layout.transfer, container, false);
 
         // Initialise variable to store spinner values
         ArrayList<String> list = new ArrayList<>();
@@ -67,12 +67,12 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
         from.setPrompt("Select an account");
         to.setPrompt("Select an account");
 
-        // Initialise text fields and buttons form XML to local vaiables
+        // Initialise text fields and buttons form XML to local variables
         final EditText amount = (EditText)v.findViewById(R.id.transfer_amount);
         final EditText reference = (EditText)v.findViewById(R.id.transfer_reference);
-        final Button reviewButton = (Button)v.findViewById(R.id.transfer_confirm);
+        final Button review = (Button)v.findViewById(R.id.transfer_confirm);
 
-        // Create a TExt watcher to make sure each input has some value before enabling finish button
+        // Create a Text watcher to make sure each input has some value before enabling finish button
         final TextWatcher watcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -89,12 +89,12 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
                 // Checks amount has at least one character and reference at least 5
                 if(amount.length() >= 1 && reference.length() >= 5){
                     // Enable Button
-                    reviewButton.setEnabled(true);
-                    reviewButton.setBackgroundColor(getResources().getColor(R.color.dark_green));
+                    review.setEnabled(true);
+                    review.setBackgroundColor(getResources().getColor(R.color.dark_green));
                 } else  {
                     // Disable Button
-                    reviewButton.setEnabled(false);
-                    reviewButton.setBackgroundColor(getResources().getColor(R.color.medium_grey));
+                    review.setEnabled(false);
+                    review.setBackgroundColor(getResources().getColor(R.color.medium_grey));
                 }
             }
         };
@@ -109,11 +109,11 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
             public void onClick(View v) {
 
                 // Total money of the account in the 'From' spinner
-                float from = Float.parseFloat(d.accounts.get(HomeTransfer.this.from.getSelectedItemPosition()).get("total_money"));
-                float fromOverdraft = Float.parseFloat(d.accounts.get(HomeTransfer.this.from.getSelectedItemPosition()).get("overdraft"));
+                float from = Float.parseFloat(d.accounts.get(Transfer.this.from.getSelectedItemPosition()).get("total_money"));
+                float fromOverdraft = Float.parseFloat(d.accounts.get(Transfer.this.from.getSelectedItemPosition()).get("overdraft"));
 
                 // Total money of the account in the 'To' spinner
-                float to = Float.parseFloat(d.accounts.get(HomeTransfer.this.to.getSelectedItemPosition()).get("total_money"));
+                float to = Float.parseFloat(d.accounts.get(Transfer.this.to.getSelectedItemPosition()).get("total_money"));
 
                 // The amount to transfer
                 float transferAmount = Float.parseFloat(amount.getText().toString());
@@ -128,31 +128,31 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
                     Bundle args = new Bundle();
 
                     // Add each input value to the bundle
-                    args.putString("spinnerAccountFrom", HomeTransfer.this.from.getSelectedItem().toString());
-                    fragment.setArguments(args);
-                    args.putString("spinnerAccountTo", HomeTransfer.this.to.getSelectedItem().toString());
-                    fragment.setArguments(args);
-                    args.putString("spinnerAccountAmount", amount.getText().toString());
-                    fragment.setArguments(args);
-                    args.putString("spinnerAccountReference", reference.getText().toString());
+                    args.putString("spinner_from", Transfer.this.from.getSelectedItem().toString());
                     fragment.setArguments(args);
 
-                    // Sets the account number 'From'
-                    args.putString("from", d.accounts.get(HomeTransfer.this.from.getSelectedItemPosition()).get("account_number"));
+                    args.putString("spinner_to", Transfer.this.to.getSelectedItem().toString());
                     fragment.setArguments(args);
-                    // Sets the money 'From'
+
+                    args.putString("spinner_amount", amount.getText().toString());
+                    fragment.setArguments(args);
+
+                    args.putString("spinner_reference", reference.getText().toString());
+                    fragment.setArguments(args);
+
+                    args.putString("from", d.accounts.get(Transfer.this.from.getSelectedItemPosition()).get("account_number"));
+                    fragment.setArguments(args);
+
                     args.putString("from_money", Float.toString(from));
                     fragment.setArguments(args);
-                    // Sets the account number 'To'
-                    args.putString("to", d.accounts.get(HomeTransfer.this.to.getSelectedItemPosition()).get("account_number"));
+
+                    args.putString("to", d.accounts.get(Transfer.this.to.getSelectedItemPosition()).get("account_number"));
                     fragment.setArguments(args);
-                    // Sets the money 'To'
+
                     args.putString("to_money", Float.toString(to));
                     fragment.setArguments(args);
-                    // The transfer amount
-                    args.putString("transferAmount", Float.toString(transferAmount));
 
-                    // Sets the argument for the new fragment
+                    args.putString("transferAmount", Float.toString(transferAmount));
                     fragment.setArguments(args);
 
                     // Starts the new fragment
@@ -207,46 +207,46 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
 
             // Create and inflater to inflate the view and align the inflated view to a local variable
             final LayoutInflater inflater = getActivity().getLayoutInflater();
-            final View dialog = inflater.inflate(R.layout.home_transfer_confirm, null);
+            final View view = inflater.inflate(R.layout.transfer_confirm, null);
 
             // Create strings from arguments passed to dialog
-            final String from = getArguments().getString("spinnerAccountFrom");
-            final String to = getArguments().getString("spinnerAccountTo");
-            final String reference = getArguments().getString("spinnerAccountReference");
+            final String from = getArguments().getString("spinner_from");
+            final String to = getArguments().getString("spinner_to");
+            final String reference = getArguments().getString("spinner_reference");
             // Call to currency formatter method to convert string into a string in format £xx.xx
-            final String amount = currencyFormatter(Float.parseFloat(getArguments().getString("spinnerAccountAmount")));
+            final String amount = currencyFormatter(Float.parseFloat(getArguments().getString("spinner_amount")));
 
-            // Initialises a dilouge builder to disaply the dialouge
+            // Initialises a dialog builder to display the dialog
             final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             // Assigns the view to the builder
-            builder.setView(dialog);
-            // To allow the dialouge to be closed
+            builder.setView(view);
+            // To allow the dialog to be closed
             builder.setCancelable(true);
 
-            // Uses the diaolouge builder to create the dialouge
-            final AlertDialog firstdialog = builder.create();
+            // Uses the dialog builder to create the dialog
+            final AlertDialog dialog = builder.create();
 
             // Get and set the position of the window and align with parent
-            WindowManager.LayoutParams params = firstdialog.getWindow().getAttributes();
+            WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
             params.gravity = Gravity.TOP | Gravity.RIGHT;
             params.x = 0;
             params.y = 300;
 
             // Assign received values to label
-            TextView fromView = (TextView) dialog.findViewById(R.id.transfer_confirm_from);
+            TextView fromView = (TextView) view.findViewById(R.id.transfer_confirm_from);
             fromView.setText(from);
 
-            TextView toView = (TextView) dialog.findViewById(R.id.transfer_confirm_to);
+            TextView toView = (TextView) view.findViewById(R.id.transfer_confirm_to);
             toView.setText(to);
 
-            TextView amountView = (TextView) dialog.findViewById(R.id.transfer_confirm_amount);
+            TextView amountView = (TextView) view.findViewById(R.id.transfer_confirm_amount);
             amountView.setText(amount);
 
-            TextView referenceView = (TextView) dialog.findViewById(R.id.transfer_confirm_reference);
+            TextView referenceView = (TextView) view.findViewById(R.id.transfer_confirm_reference);
             referenceView.setText(reference);
 
             // Assigns listener to dialog positive button to submit request to database handler
-            dialog.findViewById(R.id.transfer_confirm_ok).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.transfer_confirm_ok).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -264,18 +264,18 @@ public class HomeTransfer extends Fragment implements AdapterView.OnItemSelected
             });
 
             // Assigns listener to negative button to return to previous screen
-            dialog.findViewById(R.id.transfer_confirm_edit).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.transfer_confirm_edit).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     // Close dialog
-                    firstdialog.dismiss();
+                    dialog.dismiss();
 
                 }
             });
 
             // Return the view
-            return firstdialog;
+            return dialog;
         }
 
         /**

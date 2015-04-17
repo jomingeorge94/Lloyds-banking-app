@@ -8,48 +8,49 @@
     android:paddingBottom="8dp"
     android:background="@color/white" >
 
+    <TextView
+        style="@style/LloydsTitleXLarge"
+        android:id="@+id/pay_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/pay_title"
+        android:gravity="center" />
+
+    <View
+        android:id="@+id/pay_underline"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@+id/pay_title"
+        android:background="@color/dark_green" />
+
     <ScrollView
         android:id="@+id/pay_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
-        android:background="@color/white">
+        android:layout_below="@id/pay_underline"
+        android:layout_above="@+id/pay_review"
+        android:background="@color/white" >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                style="@style/LloydsTitleXLarge"
-                android:id="@+id/pay_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:text="@string/pay_title"
-                android:gravity="center" />
-
-            <View
-                android:id="@+id/pay_underline"
-                android:layout_width="fill_parent"
-                android:layout_height="2dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_below="@+id/pay_title"
-                android:background="@color/dark_green" />
-
-            <TextView
                 style="@style/LloydsTitleLarge"
                 android:id="@+id/pay_from_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@id/pay_underline"
                 android:text="@string/transaction_transfer_from" />
 
             <Spinner
@@ -62,6 +63,7 @@
                 android:layout_below="@+id/pay_from_label" />
 
             <View
+                style="@style/LloydsTitleLarge"
                 android:id="@+id/pay_underline_mid"
                 android:layout_width="fill_parent"
                 android:layout_height="2dp"
@@ -73,7 +75,7 @@
                 android:background="@color/dark_green" />
 
             <TextView
-                style="@style/LloydsTextLarge"
+                style="@style/LloydsTitleLarge"
                 android:id="@+id/pay_to_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,6 +88,7 @@
                 android:id="@+id/pay_phone_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@id/pay_to_label"
                 android:text="@string/pay_phone" />
@@ -97,6 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
+                android:layout_marginBottom="4dp"
                 android:layout_below="@id/pay_phone_label"
                 android:inputType="numberDecimal"
                 android:maxLength="11"
@@ -118,6 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
+                android:layout_marginBottom="4dp"
                 android:layout_below="@id/pay_sortcode_label"
                 android:inputType="numberDecimal"
                 android:maxLength="8"
@@ -139,6 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:layout_marginBottom="4dp"
                 android:layout_below="@id/pay_to_reference_label"
                 android:inputType="text"
                 android:maxLength="25"
@@ -160,6 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
+                android:layout_marginBottom="4dp"
                 android:layout_below="@id/pay_to_amount_label"
                 android:inputType="numberDecimal"
                 android:maxLength="6"
