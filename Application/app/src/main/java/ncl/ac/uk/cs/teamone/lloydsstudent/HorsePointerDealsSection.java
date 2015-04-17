@@ -17,7 +17,7 @@ public class HorsePointerDealsSection extends ActionBarActivity implements View.
 
     private ShowcaseView showcaseView;
     private int counter = 0;
-    private Target t1;
+    private Target t1,t2,t3;
 
 
     @Override
@@ -25,8 +25,9 @@ public class HorsePointerDealsSection extends ActionBarActivity implements View.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.horse_deals);
 
-        t1 = new ViewTarget(R.id.deals_loathed,this);
-
+        t1 = new ViewTarget(R.id.deals_newdeals_horse,this);
+        t2 = new ViewTarget(R.id.deals_loathed,this);
+        t3 = new ViewTarget(R.id.deals_loved_horse,this);
 
         showcaseView = new ShowcaseView.Builder(this).setTarget(Target.NONE).setOnClickListener(this).setContentTitle("Welcome to Deals Tutorial mode").setStyle(R.style.Transparency).build();
 
@@ -45,11 +46,23 @@ public class HorsePointerDealsSection extends ActionBarActivity implements View.
         switch (counter){
             case 0:
                 showcaseView.setShowcase(t1, true);
-                showcaseView.setContentTitle("This is the main screen of the app, where you have a basic overview and functionality");
-                showcaseView.setButtonText("Close");
+                showcaseView.setContentTitle("This is where you will see all the deals that are available to you ");
+
                 break;
 
             case 1:
+                showcaseView.setShowcase(t2, true);
+                showcaseView.setContentTitle("This is the section where the deals that you don't like will appear ");
+
+                break;
+
+            case 2:
+                showcaseView.setShowcase(t2, true);
+                showcaseView.setContentTitle("This is the section where the deals that you don't like will appear and you can  ");
+
+                break;
+
+            case 3:
                 showcaseView.hide();
                 Intent home =new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(home);
