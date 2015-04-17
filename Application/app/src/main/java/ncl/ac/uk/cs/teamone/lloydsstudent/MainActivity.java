@@ -98,7 +98,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Fragment entry = getSupportFragmentManager().findFragmentById(android.R.id.tabcontent);
                 if(entry.getTag().equals("tab2")){
-                    Intent horse =new Intent(getApplicationContext(),HorsePointerFIrstTrial.class);
+                    Intent horse =new Intent(getApplicationContext(),HorsePointerMain.class);
                     startActivity(horse);
 
                 }else if(entry.getTag().equals("tab3")){
