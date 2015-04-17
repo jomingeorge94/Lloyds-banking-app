@@ -217,7 +217,7 @@ public class MainActivity extends ActionBarActivity {
 
                 else  if((( TextView) arg1.findViewById(R.id.helpmenu)).getText().equals("About")){
                     drawerLayout.closeDrawer(Gravity.LEFT);
-                    Intent about =new Intent(getApplicationContext(),About_Us_Screen.class);
+                    Intent about =new Intent(getApplicationContext(),SettingsAboutUs.class);
                     startActivity(about);
                 }
 

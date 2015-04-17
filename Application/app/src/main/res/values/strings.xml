@@ -98,7 +98,23 @@
     <string name="settings_change_confirm">Confirm Passcode</string>
     <string name="settings_verify_passcode">Enter Your Old Passcode</string>
 
-    
+    // Settings About Us
+    <string name="settings_about_title">About the Lloyds Banking App</string>
+    <string name="settings_about_status">Service Status</string>
+    <string name="settings_about_message">Be wary of suspicious calls, we\'ll never ask you to transfer money out of your account to another account for security purposes. </string>
+    <string name="setings_about_ceck_1">There are simple solutions you can put in place to keep you and your information safe online. Find out how you can:</string>
+    <string name="setings_about_ceck_2">Use anti-virus software</string>
+    <string name="setings_about_ceck_3">Prevent spam </string>
+    <string name="setings_about_ceck_4">Secure your wireless connection</string>
+    <string name="setings_about_ceck_5">Keep your operating system up to date</string>
+    <string name="settings_about_legal_label">Important Legal Information</string>
+    <string name="settings_about_legal">Lloyds Bank plc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority under registration number 119278. Authorisation can be checked on the Financial Services Register at www.fca.org.uk. Lloyds Bank plc is a member of the Financial Services Compensation Scheme and the Financial Ombudsman Service. We subscribe to the Lending Code; copies of the Code can be obtained from www.lendingstandardsboard.org.uk.\n
+\nLloyds Bank plc Registered Office: 25 Gresham Street, London EC2V 7HN. Registered in England and Wales No. 2065.</string>
+
+
+
+
+
 
     <string name="app_name">Lloyds Student</string>
     <string name="hello_world">Hello World</string>
@@ -296,14 +312,7 @@
     <string name="Reportlostorstoledownmessage">We guarantee to refund your money in the unlikely event you experience fraud with our Internet Banking service – as long as you’ve been careful, for example, by taking reasonable steps to keep your security information safe.</string>
     <string name="RportLostorStolelastMessage">We will trace your report and get in touch with you to inform the outcome. One of our member from the Fraud Department will be in touch with you and this usually happens
     within the 12 hour period that you have reported to us. </string>
-    <string name="AboutUsLegal">Lloyds Bank plc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority under registration number 119278. Authorisation can be checked on the Financial Services Register at www.fca.org.uk. Lloyds Bank plc is a member of the Financial Services Compensation Scheme and the Financial Ombudsman Service. We subscribe to the Lending Code; copies of the Code can be obtained from www.lendingstandardsboard.org.uk.\n
-\nLloyds Bank plc Registered Office: 25 Gresham Street, London EC2V 7HN. Registered in England and Wales No. 2065.</string>
-    <string name="AboutUsMessage">Be wary of suspicious calls, we\'ll never ask you to transfer money out of your account to another account for security purposes. </string>
-    <string name="AboutUsChecklist">There are simple solutions you can put in place to keep you and your information safe online. Find out how you can:</string>
-    <string name="AboutUsChecklistList1">Use anti-virus software</string>
-    <string name="AboutUsChecklistList2">Prevent spam </string>
-    <string name="AboutUsChecklistList3">Secure your wireless connection</string>
-    <string name="AboutUsChecklistList4">Keep your operating system up to date</string>
+
     <string name="ManageStatementMessage">Make fast, easy transfers between Lloyds Bank accounts and easily access your credit card, current account and savings account statements online or either by paper statement. </string>
     <string name="ManageStatement1">Switch to paperless and receive your credit card, current account and savings statements safely and easily online. </string>
     <string name="ManageStatement2">Why get your statements online?</string>

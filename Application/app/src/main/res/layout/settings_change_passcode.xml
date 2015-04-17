@@ -6,218 +6,218 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/toppartofthescreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/dark_green">
+
+        <ImageButton
+            android:id="@+id/settings_change_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_arrow_icon"
+            android:background="@color/dark_green"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/dark_green"
-        android:id="@+id/toppartofthescreen">
+        android:layout_height="match_parent"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@color/white" >
 
-    <ImageButton
-        android:id="@+id/settings_change_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/back_arrow_icon"
-        android:background="@color/dark_green"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="10dp" />
+        <TextView
+            style="@style/LloydsTitleXLarge"
+            android:id="@+id/settings_change_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/settings_change_title"
+            android:gravity="center_horizontal" />
 
-</LinearLayout>
+        <View
+            android:id="@+id/settings_change_underline"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@id/settings_change_title"
+            android:background="@color/dark_green" />
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp"
-    android:background="@color/white" >
+        <TextView
+            style="@style/LloydsTextSmall"
+            android:id="@+id/settings_change_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/settings_change_underline"
+            android:text="@string/settings_change_description" />
 
-    <TextView
-        style="@style/LloydsTitleXLarge"
-        android:id="@+id/settings_change_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:text="@string/settings_change_title"
-        android:gravity="center_horizontal" />
+        <TextView
+            style="@style/LloydsTitleMedium"
+            android:id="@+id/settings_change_passcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="32dp"
+            android:layout_below="@id/settings_change_description"
+            android:text="@string/settings_change_passcode"
+            android:gravity="center" />
 
-    <View
-        android:id="@+id/settings_change_underline"
-        android:layout_width="fill_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_below="@id/settings_change_title"
-        android:background="@color/dark_green" />
+        <TableLayout
+            android:id="@+id/settings_change_passcode_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_below="@id/settings_change_passcode"
+            android:stretchColumns="*" >
 
-    <TextView
-        style="@style/LloydsTextSmall"
-        android:id="@+id/settings_change_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/settings_change_underline"
-        android:text="@string/settings_change_description" />
+            <TableRow>
 
-    <TextView
-        style="@style/LloydsTitleMedium"
-        android:id="@+id/settings_change_passcode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="32dp"
-        android:layout_below="@id/settings_change_description"
-        android:text="@string/settings_change_passcode"
-        android:gravity="center" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp" />
 
-    <TableLayout
-        android:id="@+id/settings_change_passcode_table"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_below="@id/settings_change_passcode"
-        android:stretchColumns="*" >
+                <EditText
+                    style="@style/LloydsEditPasscode"
+                    android:id="@+id/settings_change_passcode_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionNone"
+                    android:password="true"
+                    android:maxLength="1"
+                    android:gravity="center" />
 
-        <TableRow>
+                <EditText
+                    style="@style/LloydsEditPasscode"
+                    android:id="@+id/settings_change_passcode_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionNone"
+                    android:password="true"
+                    android:maxLength="1"
+                    android:gravity="center" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp" />
+                <EditText
+                    style="@style/LloydsEditPasscode"
+                    android:id="@+id/settings_change_passcode_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionNone"
+                    android:password="true"
+                    android:maxLength="1"
+                    android:gravity="center" />
 
-            <EditText
-                style="@style/LloydsEditPasscode"
-                android:id="@+id/settings_change_passcode_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:imeOptions="actionNone"
-                android:password="true"
-                android:maxLength="1"
-                android:gravity="center" />
+                <EditText
+                    style="@style/LloydsEditPasscode"
+                    android:id="@+id/settings_change_passcode_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionNone"
+                    android:password="true"
+                    android:maxLength="1"
+                    android:gravity="center" />
 
-            <EditText
-                style="@style/LloydsEditPasscode"
-                android:id="@+id/settings_change_passcode_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:imeOptions="actionNone"
-                android:password="true"
-                android:maxLength="1"
-                android:gravity="center" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
 
-            <EditText
-                style="@style/LloydsEditPasscode"
-                android:id="@+id/settings_change_passcode_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:imeOptions="actionNone"
-                android:password="true"
-                android:maxLength="1"
-                android:gravity="center" />
+            </TableRow>
 
-            <EditText
-                style="@style/LloydsEditPasscode"
-                android:id="@+id/settings_change_passcode_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:imeOptions="actionNone"
-                android:password="true"
-                android:maxLength="1"
-                android:gravity="center" />
+        </TableLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp" />
+        <TextView
+            style="@style/LloydsTitleMedium"
+            android:id="@+id/settings_change_confirm_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="32dp"
+            android:layout_below="@id/settings_change_passcode_table"
+            android:text="@string/settings_change_confirm"
+            android:gravity="center" />
 
-        </TableRow>
+        <TableLayout
+            android:id="@+id/settings_change_confirm_tabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_below="@id/settings_change_confirm_label"
+            android:stretchColumns="*" >
 
-    </TableLayout>
+            <TableRow>
 
-    <TextView
-        style="@style/LloydsTitleMedium"
-        android:id="@+id/settings_change_confirm_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="32dp"
-        android:layout_below="@id/settings_change_passcode_table"
-        android:text="@string/settings_change_confirm"
-        android:gravity="center" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp" />
 
-    <TableLayout
-        android:id="@+id/settings_change_confirm_tabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_below="@id/settings_change_confirm_label"
-        android:stretchColumns="*" >
+                <EditText
+                    style="@style/LloydsEditPasscode"
+                    android:id="@+id/settings_change_confirm_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionNone"
+                    android:password="true"
+                    android:maxLength="1"
+                    android:gravity="center" />
 
-        <TableRow>
+                <EditText
+                    style="@style/LloydsEditPasscode"
+                    android:id="@+id/settings_change_confirm_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionNone"
+                    android:password="true"
+                    android:maxLength="1"
+                    android:gravity="center" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp" />
+                <EditText
+                    style="@style/LloydsEditPasscode"
+                    android:id="@+id/settings_change_confirm_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionNone"
+                    android:password="true"
+                    android:maxLength="1"
+                    android:gravity="center" />
 
-            <EditText
-                style="@style/LloydsEditPasscode"
-                android:id="@+id/settings_change_confirm_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:imeOptions="actionNone"
-                android:password="true"
-                android:maxLength="1"
-                android:gravity="center" />
+                <EditText
+                    style="@style/LloydsEditPasscode"
+                    android:id="@+id/settings_change_confirm_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionNone"
+                    android:password="true"
+                    android:maxLength="1"
+                    android:gravity="center" />
 
-            <EditText
-                style="@style/LloydsEditPasscode"
-                android:id="@+id/settings_change_confirm_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:imeOptions="actionNone"
-                android:password="true"
-                android:maxLength="1"
-                android:gravity="center" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
 
-            <EditText
-                style="@style/LloydsEditPasscode"
-                android:id="@+id/settings_change_confirm_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:imeOptions="actionNone"
-                android:password="true"
-                android:maxLength="1"
-                android:gravity="center" />
+            </TableRow>
 
-            <EditText
-                style="@style/LloydsEditPasscode"
-                android:id="@+id/settings_change_confirm_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:imeOptions="actionNone"
-                android:password="true"
-                android:maxLength="1"
-                android:gravity="center" />
+        </TableLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp" />
-
-        </TableRow>
-
-    </TableLayout>
-
-</RelativeLayout>
+    </RelativeLayout>
 
 </LinearLayout>

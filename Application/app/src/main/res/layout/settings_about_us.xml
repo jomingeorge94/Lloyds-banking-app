@@ -1,0 +1,148 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/settings_about_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/settings_about_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/dark_green" >
+
+        <ImageButton
+            android:id="@+id/settings_about_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_arrow_icon"
+            android:background="@color/dark_green"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@color/white" >
+
+        <TextView
+            style="@style/LloydsTitleXLarge"
+            android:id="@+id/settings_about_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_about_title" />
+
+        <View
+            android:id="@+id/settings_about_underline"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@id/settings_about_title"
+            android:background="@color/dark_green" />
+
+        <ScrollView
+            android:id="@+id/settings_about_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/settings_about_underline" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/LloydsTitleMedium"
+                    android:id="@+id/settings_about_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/service_status"
+                    android:drawablePadding="5dp"
+                    android:text="@string/settings_about_status" />
+
+                <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/settings_about_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/settings_about_message" />
+
+                <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/settings_about_check_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/setings_about_ceck_1" />
+
+                <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/settings_about_check_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/checklist"
+                    android:drawablePadding="5dp"
+                    android:text="@string/setings_about_ceck_2" />
+
+                <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/settings_about_check_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/checklist"
+                    android:text="@string/setings_about_ceck_3" />
+
+                <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/settings_about_check_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/checklist"
+                    android:drawablePadding="5dp"
+                    android:text="@string/setings_about_ceck_4" />
+
+                <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/settings_about_check_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/checklist"
+                    android:drawablePadding="5dp"
+                    android:text="@string/setings_about_ceck_5" />
+
+                <TextView
+                    style="@style/LloydsTitleMedium"
+                    android:id="@+id/settings_about_legal_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/settings_about_legal_label" />
+
+                <TextView
+                    style="@style/LloydsTextSmall"
+                    android:id="@+id/settings_about_legal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/settings_about_legal" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</LinearLayout>

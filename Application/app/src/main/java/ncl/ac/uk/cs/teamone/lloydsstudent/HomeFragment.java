@@ -15,11 +15,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
+ * This is a fragment which will be used to generate the GUI for the Home Tab of the application.
+ * As well as displaying information it also initiates other activities such as payment and
+ * transfers
+ *
  * Created by Jomin on 19/02/2015.
  */
 public class HomeFragment extends Fragment {
+
+    // Variables to use across methods and nested classes
     View v;
     ViewPager viewPager;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
