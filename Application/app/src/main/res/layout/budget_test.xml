@@ -14,19 +14,15 @@
         android:paddingTop="3dp"
         android:gravity="center_horizontal">
         <TextView
+            style="@style/LloydsTextLarge"
             android:text="@string/budget_my_budget"
             android:layout_weight="1"
-            android:gravity="right"
-            android:textSize="@dimen/abc_text_size_large_material"
-            android:textColor="@color/text_dark"
-            android:fontFamily="sans-serif-light"/>
+            android:gravity="right"/>
 
         <TextView
+            style="@style/LloydsTextMedium"
             android:layout_weight="1"
             android:gravity="left"
-            android:textColor="#369742"
-            android:textSize="@dimen/abc_text_size_large_material"
-            android:fontFamily="sans-serif-light"
             android:id="@+id/budget_total_budget"/>
     </TableRow>
 
@@ -51,24 +47,20 @@
         android:layout_width="fill_parent"
         android:gravity="center_horizontal">
         <TextView
+            style="@style/LloydsTextSmall"
             android:text="£0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="left"
-            android:textSize="@dimen/abc_text_size_small_material"
-            android:textColor="@color/text_dark"
-            android:fontFamily="sans-serif-light"/>
+            android:gravity="left"/>
 
         <TextView
+            style="@style/LloydsTitleSmall"
+            android:id="@+id/right_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="right"
-            android:textColor="@color/text_dark"
-            android:textSize="@dimen/abc_text_size_small_material"
-            android:fontFamily="sans-serif-light"
-            android:id="@+id/right_label"/>
+            android:gravity="right"/>
     </TableRow>
 
     <TableRow
@@ -86,33 +78,28 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent">
                 <TextView
+                    style="@style/LloydsTextSmall"
                     android:text="@string/budget_remaining_start"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="right"
-                    android:textSize="@dimen/abc_text_size_small_material"
-                    android:textColor="@color/text_dark"
-                    android:fontFamily="sans-serif-light"/>
+                    android:gravity="right"/>
 
                 <TextView
+                    style="@style/LloydsTextSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textSize="@dimen/abc_text_size_small_material"
-                    android:fontFamily="sans-serif-light"
                     android:id="@+id/budget_remaining"/>
 
                 <TextView
+                    style="@style/LloydsTextSmall"
                     android:text="@string/budget_remaining_end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="left"
-                    android:textSize="@dimen/abc_text_size_small_material"
-                    android:textColor="@color/text_dark"
-                    android:fontFamily="sans-serif-light"/>
+                    android:gravity="left"/>
             </TableRow>
         </TableLayout>
     </TableRow>

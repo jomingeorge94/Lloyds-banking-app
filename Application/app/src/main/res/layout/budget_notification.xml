@@ -7,23 +7,23 @@
     android:weightSum="1">
 
     <LinearLayout
+        android:id="@+id/settings_change_top_bar"
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:weightSum="1"
-        android:id="@+id/settings_change_top_bar">
+        android:weightSum="1">
 
         <LinearLayout
+            android:id="@+id/toppartofthescreen"
             android:orientation="vertical"
             android:layout_width="381dp"
             android:layout_height="wrap_content"
-            android:background="#5DAD68"
-            android:id="@+id/toppartofthescreen">
+            android:background="#5DAD68">
 
             <ImageButton
+                android:id="@+id/settings_change_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/settings_change_back"
                 android:layout_weight="0.05"
                 android:src="@drawable/back_arrow_icon"
                 android:background="#5DAD68"
@@ -36,10 +36,10 @@
     </LinearLayout>
 
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
         android:id="@+id/scrollView9"
         android:layout_below="@+id/settings_change_top_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -54,13 +54,11 @@
             android:padding="5dp">
 
             <TextView
+                style="@style/LloydsTextMedium"
+                android:id="@+id/textView138"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Budget Notification"
-                android:id="@+id/textView138"
-                android:textColor="#ff000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:text="Budget Notification" />
         </LinearLayout>
     </ScrollView>
 

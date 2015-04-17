@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/main_tab_switch"
+    android:background="#ffffffff">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deals_loathed"
+            android:background="#ffffffff"
+            android:src="@drawable/deals_first"
+            android:layout_marginLeft="10dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deals_newdeals_horse"
+            android:background="#ffffffff"
+            android:src="@drawable/deals_second" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deals_loved_horse"
+            android:src="@drawable/deals_third"
+            android:background="#ffffffff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="102dp">
+
+        <ImageView
+            android:id="@+id/deals_dealicon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/icon" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:layout_weight="0.14"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/dealtitle"
+                android:layout_width="243dp"
+                android:layout_height="wrap_content"
+                android:text="Reduced Easter Eggs @Tesco"
+                android:lines="1"
+
+                android:textSize="16sp"
+                android:textColor="#ff000000" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:layout_marginRight="30dp">
+
+                    <TextView
+                        android:id="@+id/hearttext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_gravity="center_horizontal"
+
+                        android:text="20"
+                        android:textSize="12sp"
+                        android:textColor="#ff000000" />
+                    <ImageView
+                        android:id="@+id/heart"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+
+                        android:src="@drawable/heart" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:layout_marginRight="20dp">
+
+                    <TextView
+                        android:id="@+id/brokenhearttext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="3dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="0"
+                        android:textSize="12sp"
+                        android:textColor="#ff000000" />
+
+                    <ImageView
+                        android:id="@+id/brokenheart"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+
+                        android:src="@drawable/brokenheart" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:layout_marginRight="5dp">
+
+                    <TextView
+                        android:id="@+id/milestext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.1"
+                        android:textSize="20sp"
+                        android:textColor="#ff000000" />
+
+                    <TextView
+                        android:id="@+id/miles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="miles"
+                        android:layout_marginTop="-5dp"
+                        android:textSize="12sp"
+                        android:textColor="#ff000000" />
+
+                    <View
+                        android:id="@+id/main_tab_underline"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_below="@id/main_lag_last_login" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        </LinearLayout>
+</LinearLayout>

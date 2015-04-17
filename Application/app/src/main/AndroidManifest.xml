@@ -101,6 +101,11 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name=".HorsePointerDealsSection"
+            android:label="@string/title_activity_first_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".SettingsPasscode"
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
@@ -115,6 +120,7 @@
             android:label="@string/title_activity_first_time"
             android:screenOrientation="portrait" >
         </activity>
+
         <activity
             android:name=".Loans"
             android:label="@string/title_activity_first_time"
